@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/training-shop/static/css/main.073c9b0a.css",
+    "main.js": "/training-shop/static/js/main.97819d0a.js",
+    "static/js/787.47ca6e30.chunk.js": "/training-shop/static/js/787.47ca6e30.chunk.js",
+    "static/media/logo.svg": "/training-shop/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/training-shop/index.html",
+    "main.073c9b0a.css.map": "/training-shop/static/css/main.073c9b0a.css.map",
+    "main.97819d0a.js.map": "/training-shop/static/js/main.97819d0a.js.map",
+    "787.47ca6e30.chunk.js.map": "/training-shop/static/js/787.47ca6e30.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.97819d0a.js"
+  ]
+}
