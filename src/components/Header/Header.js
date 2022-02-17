@@ -68,16 +68,16 @@ function header() {
                     </ul>
                 </div>
                 <div className='instryment'>
-                    <a href='#'>
+                    <a href='https://www.google.by/'>
                         <img src = {Search} alt='' />
                     </a>
-                    <a href='#'>
+                    <a href='https://www.google.by/'>
                         <img src = {Global} alt='' />
                     </a>
-                    <a href='#'>
+                    <a href='https://www.google.by/'>
                         <img src = {User} alt='' />
                     </a>
-                    <a href='#'>
+                    <a href='https://www.google.by/'>
                         <img src = {Shopping} alt='' />
                     </a>
                 </div>

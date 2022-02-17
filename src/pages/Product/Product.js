@@ -69,10 +69,10 @@ function product() {
                         <span>Blue</span>
                     </div>
                     <div className='color_img'>
-                    <img className='color_1'/>
-                    <img className='color_2'/>
-                    <img className='color_3'/>
-                    <img className='color_4'/>
+                    <img className='color_1' alt=''/>
+                    <img className='color_2' alt=''/>
+                    <img className='color_3' alt=''/>
+                    <img className='color_4' alt=''/>
                     </div>
                     <div className='size'>
                         <p>Size:</p>
