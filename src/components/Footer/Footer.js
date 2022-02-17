@@ -38,7 +38,7 @@ function footer() {
                     <a href="#terms">Terms & Conditions</a>
                     <a href="#returns">Returns & Exchanges</a>
                     <a href="#shipping">Shipping & Delivery</a>
-                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#privacya">Privacy Policy</a>
                 </div>
                 <div className='categories'>
                     <h3>Contact Us</h3>
