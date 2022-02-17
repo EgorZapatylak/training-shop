@@ -21,24 +21,24 @@ function footer() {
         </div><div className='footer_main'>
                 <div className='categories'>
                     <h3>Categories</h3>
-                    <a href="#">Men</a>
-                    <a href="#">Women</a>
-                    <a href="#">Accessories</a>
-                    <a href="#">Beauty</a>
+                    <a href="#men">Men</a>
+                    <a href="#women">Women</a>
+                    <a href="#accessories">Accessories</a>
+                    <a href="#beauty">Beauty</a>
                 </div>
                 <div className='categories'>
                     <h3>Information</h3>
-                    <a href="#">About Us</a>
-                    <a href="#">Contact Us</a>
-                    <a href="#">Blog</a>
-                    <a href="#">FAQs</a>
+                    <a href="#aboutus">About Us</a>
+                    <a href="#contactus">Contact Us</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#fqs">FAQs</a>
                 </div>
                 <div className='categories'>
                     <h3>Useful Links</h3>
-                    <a href="#">Terms & Conditions</a>
-                    <a href="#">Returns & Exchanges</a>
-                    <a href="#">Shipping & Delivery</a>
-                    <a href="#">Privacy Policy</a>
+                    <a href="#terms">Terms & Conditions</a>
+                    <a href="#returns">Returns & Exchanges</a>
+                    <a href="#shipping">Shipping & Delivery</a>
+                    <a href="#privacy">Privacy Policy</a>
                 </div>
                 <div className='categories'>
                     <h3>Contact Us</h3>
