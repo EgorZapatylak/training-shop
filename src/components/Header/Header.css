@@ -1,0 +1,146 @@
+.header_container {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top_bar {
+
+    display: flex;
+    background-color: #121212;
+    justify-content: space-between;
+    height: 24px;
+    width: 1280px;
+}
+
+.phone p,
+.time p {
+font-family: inherit;
+font-style: normal;
+font-weight: 500;
+font-size: 11px;
+line-height: 12px;
+color: white;
+opacity: 0.8;
+}
+
+
+.location p {
+font-family: inherit;
+font-style: normal;
+font-weight: normal;
+font-size: 11px;
+line-height: 13px;
+letter-spacing: 0.03em;
+color: white;
+opacity: 0.8;
+}
+
+.info {
+    display: flex;
+    border: 1px solid red;
+}
+
+.phone, 
+.location,
+.time {
+    height: max-content;
+    margin: auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid red;
+}
+
+.phone img, 
+.location img,
+.time img {
+    margin-right: 10px;
+}
+
+.social {
+    display: flex;
+    justify-content: space-between;
+    height: 14px;
+    width: 86px;
+    margin: auto 15px;
+    border: 1px solid red;
+}
+
+.social img {
+    display: flex;
+    margin: 0;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    height: 66px;
+    width: 1280px;
+}
+
+h1 {
+    margin-left: 15px;
+    padding: 0;
+    border: 1px solid red;
+    font-family: Playfair Display SC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.nav-item {
+    border: 1px solid red;
+    height: 16px;
+    width: 585px;
+}
+
+.nav-item li {
+    list-style-type: none;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 16px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #121212;
+}
+
+.instryment {
+    display: flex;
+    border: 1px solid #ff0000;
+    justify-content: space-between;
+    gap: 27px;
+    margin-right: 15px;
+}
+
+.instryment a {
+    height: 24px;
+}
+
+.instryment img {
+    margin: 0;
+}
+
+.line {
+    width: 1280px;
+    height: 2px;
+    background-color: #F8F8F8;
+}

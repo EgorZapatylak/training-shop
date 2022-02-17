@@ -1,0 +1,107 @@
+import React from 'react';
+import './Men.css';
+
+function men() {
+    return (
+        <section>
+        <div className='men_header'>
+            <div className='road'>
+                <p>Home</p>
+                <div className='ul'/>
+                <span>Men</span>
+            </div>
+            <div className='share'>
+                <div className='share_img'/>
+                <p>Share</p>
+            </div>
+        </div>
+        <div className='title'>
+            <h1>Men</h1>
+        </div>
+        <div className='edit'>
+            <div className='filter'>
+            <div className='filter_img'/>
+            <p>Filter</p>
+            </div>
+            <div className='veia'>
+            <div className='tabl'/>
+            <div className='plit'/>
+            </div>
+            <div className='categor'>
+                <p>BESTSELLERS</p>
+                <div className='vector'/>
+            </div>
+        </div>
+        <div className='items'>
+        <div className='clothes'>
+                    <div className='id_1'></div>
+                    <p>Women's tracksuit Q109</p>
+                    <div className='cost-rate'>
+                        <p>$30.00</p>
+                        <div className='stars'></div>
+                    </div>
+                </div>
+                <div className='clothes'>
+                    <div className='id_2'></div>
+                    <p>Women's tracksuit Q109</p>
+                    <div className='cost-rate'>
+                        <p>$30.00</p>
+                        <div className='stars'></div>
+                    </div>
+                </div>
+                <div className='clothes'>
+                    <div className='id_3'></div>
+                    <p>Women's tracksuit Q109</p>
+                    <div className='cost-rate'>
+                        <p>$30.00</p>
+                        <div className='stars'></div>
+                    </div>
+                </div>
+                <div className='clothes'>
+                    <div className='id_4'></div>
+                    <p>Women's tracksuit Q109</p>
+                    <div className='cost-rate'>
+                        <p>$30.00</p>
+                        <div className='stars'></div>
+                    </div>
+                </div>
+                <div className='clothes'>
+                    <div className='id_5'></div>
+                    <p>Women's tracksuit Q109</p>
+                    <div className='cost-rate'>
+                        <p>$30.00</p>
+                        <div className='stars'></div>
+                    </div>
+                </div>
+                <div className='clothes'>
+                    <div className='id_6'></div>
+                    <p>Women's tracksuit Q109</p>
+                    <div className='cost-rate'>
+                        <p>$30.00</p>
+                        <div className='stars'></div>
+                    </div>
+                </div>
+                <div className='clothes'>
+                    <div className='id_7'></div>
+                    <p>Women's tracksuit Q109</p>
+                    <div className='cost-rate'>
+                        <p>$30.00</p>
+                        <div className='stars'></div>
+                    </div>
+                </div>
+                <div className='clothes'>
+                    <div className='id_8'></div>
+                    <p>Women's tracksuit Q109</p>
+                    <div className='cost-rate'>
+                        <p>$30.00</p>
+                        <div className='stars'></div>
+                    </div>
+                </div>
+        </div>
+        <div className='loading'>
+        </div>
+        </section>
+    )
+}
+
+export default men;
