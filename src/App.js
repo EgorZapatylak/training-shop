@@ -8,12 +8,12 @@ import Men from './pages/Men/Men.js';
 import Product from './pages/Product/Product.js';
 
 function App() {
-    return ( 
-    <div className = "App" >
-        <Header/>
-        <Main/>
-        <Footer />
-    </div>
+    return (
+        <div className="App">
+            <Header/>
+            <Main/>
+            <Footer/>
+        </div>
     );
 }
 

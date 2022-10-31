@@ -687,11 +687,18 @@ h5 {
     display: flex;
     position: absolute;
     width: 302px;
-    height: 122px;
-    bottom: -24%;
+    height: 174px;
+    bottom: -43%;
     background-color: #FFFFFF;
     flex-direction: column;
     transition: 0.5s all;
+
+}
+
+.box_info:hover {
+  bottom: -31%;
+  height: 159px;
+  transition: 0.5s all;
 }
 
 .box_info h3 {
@@ -722,7 +729,8 @@ h5 {
 }
 
 .data {
-    display: none;
+ border: 1px solid red;
+  height: 13px;
 }
 
 .data p{
