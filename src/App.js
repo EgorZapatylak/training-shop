@@ -1,18 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header/Header.js';
 import Main from './pages/Main/Main.js';
 import Footer from "./components/Footer/Footer.js"
-import Women from './pages/Women/Women.js';
-import Men from './pages/Men/Men.js';
-import Product from './pages/Product/Product.js';
+import {HashRouter as Router, Route, Routes} from "react-router-dom";
+import Men from "./pages/Men/Men";
+import Women from "./pages/Women/Women";
+import Product from "./pages/Product/Product";
 
-function App() {
+
+const App = () => {
     return (
         <div className="App">
-            <Header/>
-            <Main/>
-            <Footer/>
+            <Router>
+                <Header/>
+                <Routes>
+                    <Route exact path="/" element={<Main/>}/>
+                    <Route exact path="/men" element={<Men/>}/>
+                    <Route exact path="/women" element={<Women/>}/>
+                    <Route exact path="/product" element={<Product/>}/>
+                </Routes>
+                <Footer/>
+            </Router>
         </div>
     );
 }

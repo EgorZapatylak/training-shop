@@ -11,6 +11,7 @@ import Search from '../Header/img/search.svg';
 import Global from '../Header/img/global.svg';
 import User from '../Header/img/user.svg';
 import Shopping from '../Header/img/shopping-bag.svg';
+import {Link} from "react-router-dom";
 
 function header() {
     return (
@@ -47,16 +48,19 @@ function header() {
             </div>
             <div className="nav">
                 <div className='logo'>
-                    <h1>CleverShop</h1>
+                    <Link to="/"><h1>CleverShop</h1></Link>
                 </div>
                 <div className='nav-item'>
                     <ul>
                         <li>
-                        <a href='#about'>About Us</a></li>
+                        <a href='#about'>About Us</a>
+                        </li>
                         <li>
-                        <a href='#women'>Women</a></li>
+                            <Link to="/women"><a href='#women'>Women</a></Link>
+                        </li>
                         <li>
-                        <a href='#men'>Men</a></li>
+                            <Link to="/men"><a href='#men'>Men</a></Link>
+                        </li>
                         <li>
                         <a href='#beauty'>Beauty</a></li>
                         <li>
