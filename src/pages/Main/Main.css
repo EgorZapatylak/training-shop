@@ -404,7 +404,8 @@ h5 {
 .stars {
   display: flex;
   height: 14px;
-  width: 70px;
+  width:70px;
+  background-repeat: no-repeat;
   background-image: url("../Women/img/stars.svg");
 }
 
