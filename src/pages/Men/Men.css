@@ -172,41 +172,41 @@
     height: 14px;
 }
 
-.id_1,
-.id_2,
-.id_3,
-.id_4,
-.id_5,
-.id_6,
-.id_7,
-.id_8 {
+.mid_1,
+.mid_2,
+.mid_3,
+.mid_4,
+.mid_5,
+.mid_6,
+.mid_7,
+.mid_8 {
     display: flex;
     width: 255px;
     height: 318px;
 }
 
-.id_1 {
+.mid_1 {
     background-image: url('./img/men_1.jpg');
 }
-.id_2 {
+.mid_2 {
     background-image: url('./img/men_2.jpg');
 }
-.id_3 {
+.mid_3 {
     background-image: url('./img/men_3.jpg');
 }
-.id_4 {
+.mid_4 {
     background-image: url('./img/men_4.jpg');
 }
-.id_5 {
+.mid_5 {
     background-image: url('./img/men_5.jpg');
 }
-.id_6 {
+.mid_6 {
     background-image: url('./img/men_6.jpg');
 }
-.id_7 {
+.mid_7 {
     background-image: url('./img/men_7.jpg');
 }
-.id_8 {
+.mid_8 {
     background-image: url('./img/men_8.jpg');
 }
 
