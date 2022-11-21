@@ -98,12 +98,88 @@ function product() {
                     </div>
                     <div className='line'></div>
                 </div>
-                <div className='price'></div>
-                <div className='ship'></div>
-                <div className='pay'></div>
-                <div className='description'></div>
-                <div className='add_inf'></div>
-                <div className='reviews'></div>
+                <div className='price'>
+                    <p>$379.99</p>
+                    <button>ADD TO CART</button>
+                    <div className="heart_1"></div>
+                    <div className="scale_1"></div>
+                </div>
+                <div className="line"></div>
+                <div className='ship'>
+                    <div className="shipping_prod">
+                        <div className="shipping_prod_img"></div>
+                        <p>Shipping & Delivery</p>
+                    </div>
+                    <div className="returns_prod">
+                        <div className="returns_prod_img"></div>
+                        <p>Returns & Exchanges</p>
+                    </div>
+                    <div className="ask_prod">
+                        <div className="ask_prod_img"></div>
+                        <p>Ask a question</p>
+                    </div>
+                </div>
+                <div className='safe'>
+                    <p>guaranteed safe checkout</p>
+                </div>
+                <div className='pay'>
+                    <div className='pay_1'/>
+                    <div className='pay_2'/>
+                    <div className='pay_3'/>
+                    <div className='pay_4'/>
+                    <div className='pay_5'/>
+                    <div className='pay_6'/>
+                    <div className='pay_7'/>
+                </div>
+                <div className="line"></div>
+                <div className='description'>
+                    <p>DESCRIPTION</p>
+                </div>
+                <div className="line"></div>
+                <div className='add_inf'>
+                    <div className="add_inf_text">
+                        ADDITIONAL INFORMATION
+                    </div>
+                    <div className="add_inf_color">Color:
+                        <p>Blue, White, Black, Grey</p>
+                    </div>
+                    <div className="add_inf_color">Size:
+                    <p>XS, S, M, L</p>
+                    </div>
+                    <div className="add_inf_color">Material:
+                    <p>	100% Polyester</p>
+                    </div>
+                </div>
+                <div className="line"></div>
+                <div className='reviews_d'>
+                    <div className="reviews_d_title">
+                        REVIEWS
+                    </div>
+                    <div className="reviews_d_status">
+                        <div className="reviews_d_status_info">
+                            <div className="stars"></div>
+                            <p>2 Reviews</p>
+                        </div>
+                        <div className="reviews_d_status_write">
+                            <div className="write"></div>
+                            <p>Write a review</p>
+                        </div>
+                    </div>
+                    <div className="reviews_d_feedback">
+                        <div className="reviews_d_feedback_info">
+                            <h5>Oleh Chabanov</h5>
+                            <div className="stars"></div>
+                        </div>
+                        <p>On the other hand, we denounce with righteous indignation and like
+                            men who are so beguiled and demoralized by the charms of pleasure of the moment</p>
+                        <div className="reviews_d_feedback_info">
+                            <h5>ShAmAn design</h5>
+                            <div className="stars"></div>
+                        </div>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti</p>
+                    </div>
+                </div>
+                <div className="line"></div>
             </div>
         </div>
         <div className='related'></div>
