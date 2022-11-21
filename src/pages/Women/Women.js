@@ -1,46 +1,49 @@
 import React from 'react';
 import './Women.css';
+import {Link} from "react-router-dom";
 
 function women() {
     return (
         <section>
-        <div className='women_header'>
-            <div className='road'>
-                <p>Home</p>
-                <div className='ul'/>
-                <span>Women</span>
-            </div>
-            <div className='share'>
-                <div className='share_img'/>
-                <p>Share</p>
-            </div>
-        </div>
-        <div className='title'>
-            <h1>Women</h1>
-        </div>
-        <div className='edit'>
-            <div className='filter'>
-            <div className='filter_img'/>
-            <p>Filter</p>
-            </div>
-            <div className='veia'>
-            <div className='tabl'/>
-            <div className='plit'/>
-            </div>
-            <div className='categor'>
-                <p>BESTSELLERS</p>
-                <div className='vector'/>
-            </div>
-        </div>
-        <div className='items'>
-        <div className='clothes'>
-                    <div className='id_1'></div>
-                    <p>Women's tracksuit Q109</p>
-                    <div className='cost-rate'>
-                        <p>$30.00</p>
-                        <div className='stars'></div>
-                    </div>
+            <div className='women_header'>
+                <div className='road'>
+                    <p>Home</p>
+                    <div className='ul'/>
+                    <span>Women</span>
                 </div>
+                <div className='share'>
+                    <div className='share_img'/>
+                    <p>Share</p>
+                </div>
+            </div>
+            <div className='title'>
+                <h1>Women</h1>
+            </div>
+            <div className='edit'>
+                <div className='filter'>
+                    <div className='filter_img'/>
+                    <p>Filter</p>
+                </div>
+                <div className='veia'>
+                    <div className='tabl'/>
+                    <div className='plit'/>
+                </div>
+                <div className='categor'>
+                    <p>BESTSELLERS</p>
+                    <div className='vector'/>
+                </div>
+            </div>
+            <div className='items'>
+                <Link to="/product">
+                    <div className='clothes'>
+                        <div className='id_1'></div>
+                        <p>Women's tracksuit Q109</p>
+                        <div className='cost-rate'>
+                            <p>$30.00</p>
+                            <div className='stars'></div>
+                        </div>
+                    </div>
+                </Link>
                 <div className='clothes'>
                     <div className='id_2'></div>
                     <p>Women's tracksuit Q109</p>
@@ -97,9 +100,9 @@ function women() {
                         <div className='stars'></div>
                     </div>
                 </div>
-        </div>
-        <div className='loading'>
-        </div>
+            </div>
+            <div className='loading'>
+            </div>
         </section>
     )
 }
