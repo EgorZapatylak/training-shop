@@ -221,7 +221,7 @@
     background-color: #F8F8F8;
 }
 
-.btn_rigth:hover {
+.btn_right:hover {
     background-color: #F8F8F8;
 }
 
@@ -298,7 +298,7 @@
     border-radius: 50%;
 }
 
-.btn_rigth {
+.btn_right {
     display: flex;
     position: relative;
     height: 40px;
@@ -3349,4 +3349,72 @@
     /* dark */
 
     color: #121212;
+}
+
+.related {
+    display: flex;
+    width: 1110px;
+    height: 459px;
+    border: 1px solid red;
+}
+
+.related_status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid green;
+    height: 40px;
+    width: 1110px;
+}
+
+.related_status p {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 25px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+    /* dark */
+
+    color: #121212;
+}
+
+.related_status_btn {
+    width: 96px;
+    height: 40px;
+    display: flex;
+    align-content: center;
+    border: 1px solid black;
+    gap: 16px;
+}
+
+.related_left{
+    display: flex;
+    height: 40px;
+    width: 40px;
+    background-color: #ffffff;
+    background-image: url("../Main/img/hero/chevron-left.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+.related_right{
+    display: flex;
+    height: 40px;
+    width: 40px;
+    background-color: #ffffff;
+    background-image: url("../Main/img/hero/chevron-right.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+.related_left:hover,
+.related_right:hover {
+    background-color: #F8F8F8;
 }
