@@ -3355,14 +3355,15 @@
     display: flex;
     width: 1110px;
     height: 459px;
-    border: 1px solid red;
+    flex-direction: column;
+    margin-top: 96px;
 }
 
 .related_status {
     display: flex;
+    margin-bottom: 48px;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid green;
     height: 40px;
     width: 1110px;
 }
@@ -3389,7 +3390,6 @@
     height: 40px;
     display: flex;
     align-content: center;
-    border: 1px solid black;
     gap: 16px;
 }
 
@@ -3417,4 +3417,10 @@
 .related_left:hover,
 .related_right:hover {
     background-color: #F8F8F8;
+}
+
+.related_img {
+    display: flex;
+    height: 255px;
+    width: 1110px;
 }
