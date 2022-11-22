@@ -183,7 +183,7 @@
 .content {
     display: flex;
     width: 1250px;
-    padding: 0 15px;
+    padding: 0 81px;
     margin-top: 32px;
 }
 
@@ -3357,6 +3357,7 @@
     height: 459px;
     flex-direction: column;
     margin-top: 96px;
+    padding-left: 96px;
 }
 
 .related_status {
