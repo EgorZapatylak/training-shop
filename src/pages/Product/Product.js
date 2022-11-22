@@ -59,7 +59,7 @@ function product() {
             </div>    
                 <div className='choise'>
                     <div className='btn_left'></div>
-                    <div className='btn_rigth'></div>
+                    <div className='btn_right'></div>
                 </div>
             </div>
             <div className='content_info'>
@@ -182,7 +182,16 @@ function product() {
                 <div className="line"></div>
             </div>
         </div>
-        <div className='related'></div>
+        <div className='related'>
+            <div className="related_status">
+                <p>RELATED PRODUCTS</p>
+                <div className='related_status_btn'>
+                    <div className='related_left'></div>
+                    <div className='related_right'></div>
+                </div>
+            </div>
+            <div className="related_img"></div>
+        </div>
         </section>
     )
 }
