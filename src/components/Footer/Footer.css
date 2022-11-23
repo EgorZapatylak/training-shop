@@ -24,6 +24,7 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: #FFFFFF;
+    margin-left: 66px;
 }
 
 .join {
@@ -68,10 +69,10 @@
 
 .social_bot {
     display: flex;
-    border: 1px solid red;
     width: 108px;
     height: 18px;
     justify-content: space-between;
+    margin-right: 66px;
 } 
 
 .f_1 {
@@ -103,8 +104,9 @@
     width: 1250px;
     height: 237px;
     padding: 0 15px;
+    margin: 0 66px;
     align-items: center;
-    justify-content: space-between;
+    gap: 30px;
     background: #FFFFFF;
 }
 
@@ -114,7 +116,6 @@
     width: 255px;
     height: 157px;
     flex-direction: column;
-    border: 1px solid red;
 }
 
 .categories h3 {
@@ -200,6 +201,7 @@
 .prava {
     display: flex;
     align-items: center;
+    margin-left: 66px;
 }
 
 .prava p {
@@ -256,4 +258,5 @@
     text-decoration-line: underline;
     color: #121212;
     opacity: 0.8;
+    margin-right: 66px;
 }
