@@ -9,8 +9,7 @@ h5 {
 .hero {
   display: flex;
   justify-content: space-between;
-  border: 1px solid rebeccapurple;
-  margin-top: 32px;
+  margin: 32px 70px 0 70px;
   padding: 0 15px;
 }
 
@@ -161,8 +160,8 @@ h5 {
 
 .advantage {
   display: flex;
+  margin: 0 70px;
   padding: 0 15px;
-  border: 1px solid brown;
   justify-content: space-between;
 }
 
@@ -207,8 +206,7 @@ h5 {
   justify-content: space-between;
   align-items: center;
   padding: 0 15px;
-  margin-top: 96px;
-  margin-bottom: 48px;
+  margin: 96px 70px 48px 70px;
 }
 
 .item_info {
@@ -430,7 +428,7 @@ h5 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 96px 15px;
+  margin: 96px 85px;
 }
 
 .new_colection {
@@ -636,17 +634,17 @@ h5 {
 
 .blog_header {
     display: flex;
-    width: 1250px;
+    width: 1180px;
     align-items: center;
-    justify-content: space-between;
-    margin: 96px 0 48px 0;
+justify-content: space-between;
+    margin: 96px 70px 48px 70px;
     padding: 0 15px;
 }
 
 .blog_post {
     display: flex;
     justify-content: space-between;
-    margin: 0 15px;
+    margin: 0 85px;
 }
 
 .box_1 {
