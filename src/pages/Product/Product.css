@@ -11,6 +11,7 @@
 
 .road {
     display: flex;
+    margin-left: 66px;
 }
 
 .road p {
@@ -45,6 +46,7 @@
     width: 53px;
     height: 18px;
     align-items: center;
+    margin-right: 66px;
 }
 
 .share_img {
@@ -98,6 +100,7 @@
 
 .reviews {
     display: flex;
+    margin-left: 66px;
 }
 
 .star {
@@ -131,6 +134,7 @@
     width: 200px;
     height: 18px;
     align-items: center;
+    margin-right: 66px;
     justify-content: space-between;
 }
 
@@ -182,9 +186,8 @@
 
 .content {
     display: flex;
-    width: 1250px;
-    padding: 0 81px;
-    margin-top: 32px;
+    width: 1095px;
+    margin: 32px 85px 0 85px;
 }
 
 .content_img {
