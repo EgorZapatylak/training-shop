@@ -813,8 +813,8 @@
     justify-content: space-between;
 }
 
-.reviews_d_status_info {
-    width: 177px;
+.reviews_d_status_info p {
+    width: 60px;
     font-style: normal;
     font-weight: 500;
     font-size: 11px;
@@ -3280,7 +3280,6 @@
 }
 
 .reviews_d_status_info {
-    width: 177px;
     font-style: normal;
     font-weight: 500;
     font-size: 11px;
