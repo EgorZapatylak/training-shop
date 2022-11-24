@@ -44,62 +44,76 @@ function women() {
                         </div>
                     </div>
                 </Link>
-                <div className='clothes'>
-                    <div className='id_2'></div>
-                    <p>Women's tracksuit Q109</p>
-                    <div className='cost-rate'>
-                        <p>$30.00</p>
-                        <div className='stars'></div>
+                <Link to="/product">
+                    <div className='clothes'>
+                        <div className='id_2'></div>
+                        <p>Women's tracksuit Q109</p>
+                        <div className='cost-rate'>
+                            <p>$30.00</p>
+                            <div className='stars'></div>
+                        </div>
                     </div>
-                </div>
-                <div className='clothes'>
-                    <div className='id_3'></div>
-                    <p>Women's tracksuit Q109</p>
-                    <div className='cost-rate'>
-                        <p>$30.00</p>
-                        <div className='stars'></div>
+                </Link>
+                <Link to="/product">
+                    <div className='clothes'>
+                        <div className='id_3'></div>
+                        <p>Women's tracksuit Q109</p>
+                        <div className='cost-rate'>
+                            <p>$30.00</p>
+                            <div className='stars'></div>
+                        </div>
                     </div>
-                </div>
-                <div className='clothes'>
-                    <div className='id_4'></div>
-                    <p>Women's tracksuit Q109</p>
-                    <div className='cost-rate'>
-                        <p>$30.00</p>
-                        <div className='stars'></div>
+                </Link>
+                <Link to="/product">
+                    <div className='clothes'>
+                        <div className='id_4'></div>
+                        <p>Women's tracksuit Q109</p>
+                        <div className='cost-rate'>
+                            <p>$30.00</p>
+                            <div className='stars'></div>
+                        </div>
                     </div>
-                </div>
-                <div className='clothes'>
-                    <div className='id_5'></div>
-                    <p>Women's tracksuit Q109</p>
-                    <div className='cost-rate'>
-                        <p>$30.00</p>
-                        <div className='stars'></div>
+                </Link>
+                <Link to="/product">
+                    <div className='clothes'>
+                        <div className='id_5'></div>
+                        <p>Women's tracksuit Q109</p>
+                        <div className='cost-rate'>
+                            <p>$30.00</p>
+                            <div className='stars'></div>
+                        </div>
                     </div>
-                </div>
-                <div className='clothes'>
-                    <div className='id_6'></div>
-                    <p>Women's tracksuit Q109</p>
-                    <div className='cost-rate'>
-                        <p>$30.00</p>
-                        <div className='stars'></div>
+                </Link>
+                <Link to="/product">
+                    <div className='clothes'>
+                        <div className='id_6'></div>
+                        <p>Women's tracksuit Q109</p>
+                        <div className='cost-rate'>
+                            <p>$30.00</p>
+                            <div className='stars'></div>
+                        </div>
                     </div>
-                </div>
-                <div className='clothes'>
-                    <div className='id_7'></div>
-                    <p>Women's tracksuit Q109</p>
-                    <div className='cost-rate'>
-                        <p>$30.00</p>
-                        <div className='stars'></div>
+                </Link>
+                <Link to="/product">
+                    <div className='clothes'>
+                        <div className='id_7'></div>
+                        <p>Women's tracksuit Q109</p>
+                        <div className='cost-rate'>
+                            <p>$30.00</p>
+                            <div className='stars'></div>
+                        </div>
                     </div>
-                </div>
-                <div className='clothes'>
-                    <div className='id_8'></div>
-                    <p>Women's tracksuit Q109</p>
-                    <div className='cost-rate'>
-                        <p>$30.00</p>
-                        <div className='stars'></div>
+                </Link>
+                <Link to="/product">
+                    <div className='clothes'>
+                        <div className='id_8'></div>
+                        <p>Women's tracksuit Q109</p>
+                        <div className='cost-rate'>
+                            <p>$30.00</p>
+                            <div className='stars'></div>
+                        </div>
                     </div>
-                </div>
+                </Link>
             </div>
             <div className='loading'>
             </div>
