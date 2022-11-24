@@ -88,6 +88,7 @@ function main() {
                         </div>
                     </div>
                 </Link>
+                <Link to="/product">
                 <div className='clothes'>
                     <div className='women_2'></div>
                     <p>Women's tracksuit Q109</p>
@@ -96,6 +97,8 @@ function main() {
                         <div className='stars'></div>
                     </div>
                 </div>
+                </Link>
+                <Link to="/product">
                 <div className='clothes'>
                     <div className='women_3'></div>
                     <p>Women's tracksuit Q109</p>
@@ -104,6 +107,8 @@ function main() {
                         <div className='stars'></div>
                     </div>
                 </div>
+                </Link>
+                <Link to="/product">
                 <div className='clothes'>
                     <div className='women_4'></div>
                     <p>Women's tracksuit Q109</p>
@@ -112,6 +117,8 @@ function main() {
                         <div className='stars'></div>
                     </div>
                 </div>
+                </Link>
+                <Link to="/product">
                 <div className='clothes'>
                     <div className='women_5'></div>
                     <p>Women's tracksuit Q109</p>
@@ -120,6 +127,8 @@ function main() {
                         <div className='stars'></div>
                     </div>
                 </div>
+                </Link>
+                <Link to="/product">
                 <div className='clothes'>
                     <div className='women_6'></div>
                     <p>Women's tracksuit Q109</p>
@@ -128,6 +137,8 @@ function main() {
                         <div className='stars'></div>
                     </div>
                 </div>
+                </Link>
+                <Link to="/product">
                 <div className='clothes'>
                     <div className='women_7'></div>
                     <p>Women's tracksuit Q109</p>
@@ -136,6 +147,8 @@ function main() {
                         <div className='stars'></div>
                     </div>
                 </div>
+                </Link>
+                <Link to="/product">
                 <div className='clothes'>
                     <div className='women_8'></div>
                     <p>Women's tracksuit Q109</p>
@@ -144,6 +157,7 @@ function main() {
                         <div className='stars'></div>
                     </div>
                 </div>
+                </Link>
                 <Link to="/women">
                     <button className='women_button'>See All</button>
                 </Link>
@@ -171,6 +185,7 @@ function main() {
                         </div>
                     </div>
                 </Link>
+                <Link to="/product">
                 <div className='clothes'>
                     <div className='menid_2'></div>
                     <p>Men's tracksuit Q101</p>
@@ -179,6 +194,8 @@ function main() {
                         <div className='stars'></div>
                     </div>
                 </div>
+                </Link>
+                <Link to="/product">
                 <div className='clothes'>
                     <div className='menid_3'></div>
                     <p>Men's tracksuit Q101</p>
@@ -187,6 +204,8 @@ function main() {
                         <div className='stars'></div>
                     </div>
                 </div>
+                </Link>
+                <Link to="/product">
                 <div className='clothes'>
                     <div className='menid_4'></div>
                     <p>Men's tracksuit Q101</p>
@@ -195,6 +214,8 @@ function main() {
                         <div className='stars'></div>
                     </div>
                 </div>
+                </Link>
+                <Link to="/product">
                 <div className='clothes'>
                     <div className='menid_5'></div>
                     <p>Men's tracksuit Q101</p>
@@ -203,6 +224,8 @@ function main() {
                         <div className='stars'></div>
                     </div>
                 </div>
+                </Link>
+                <Link to="/product">
                 <div className='clothes'>
                     <div className='menid_6'></div>
                     <p>Men's tracksuit Q101</p>
@@ -211,6 +234,8 @@ function main() {
                         <div className='stars'></div>
                     </div>
                 </div>
+                </Link>
+                <Link to="/product">
                 <div className='clothes'>
                     <div className='menid_7'></div>
                     <p>Men's tracksuit Q101</p>
@@ -219,6 +244,8 @@ function main() {
                         <div className='stars'></div>
                     </div>
                 </div>
+                </Link>
+                <Link to="/product">
                 <div className='clothes'>
                     <div className='menid_8'></div>
                     <p>Men's tracksuit Q101</p>
@@ -227,6 +254,7 @@ function main() {
                         <div className='stars'></div>
                     </div>
                 </div>
+                </Link>
                 <Link to="/men">
                     <button className='women_button'>See All</button>
                 </Link>
