@@ -727,8 +727,15 @@ justify-content: space-between;
 }
 
 .data {
- border: 1px solid red;
+  position: absolute;
+  padding-top: 150px;
   height: 13px;
+  opacity: 0;
+  transition: 0.9s all;
+}
+
+.data:hover{
+ opacity: 1;
 }
 
 .data p{
