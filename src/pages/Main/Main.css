@@ -116,8 +116,8 @@ h5 {
 }
 
 .green_button:hover {
-  left: 0%;
-  right: 0%;
+  left: 0;
+  right: 0;
   top: 38%;
   bottom: 38%;
   width: 100%;
@@ -152,8 +152,8 @@ h5 {
 }
 
 .accessories_button:hover {
-  left: 0%;
-  right: 0%;
+  left: 0;
+  right: 0;
   width: 100%;
   border-radius: 0;
 }
@@ -252,8 +252,7 @@ h5 {
 }
 
 .clothes {
-  margin: 0 15px;
-  margin-bottom: 30px;
+  margin: 0 15px 30px 0;
   display: flex;
   height: 378px;
   width: 255px;
