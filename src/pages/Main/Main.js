@@ -9,7 +9,7 @@ import Accessories from '../Main/img/hero/accessories.jpg';
 import Truck from '../Main/img/advantage/truck.svg'
 import Refresh from '../Main/img/advantage/refresh.svg'
 import Support from '../Main/img/advantage/support.svg'
-import {Link, NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 function main() {
     return (
