@@ -44,6 +44,7 @@ function men() {
                         </div>
                     </div>
                 </Link>
+                <Link to="/product">
                 <div className='clothes'>
                     <div className='mid_2'></div>
                     <p>Men's tracksuit Q109</p>
@@ -52,6 +53,8 @@ function men() {
                         <div className='stars'></div>
                     </div>
                 </div>
+                </Link>
+                <Link to="/product">
                 <div className='clothes'>
                     <div className='mid_3'></div>
                     <p>Men's tracksuit Q109</p>
@@ -60,6 +63,8 @@ function men() {
                         <div className='stars'></div>
                     </div>
                 </div>
+                </Link>
+                <Link to="/product">
                 <div className='clothes'>
                     <div className='mid_4'></div>
                     <p>Men's tracksuit Q109</p>
@@ -68,6 +73,8 @@ function men() {
                         <div className='stars'></div>
                     </div>
                 </div>
+                </Link>
+                <Link to="/product">
                 <div className='clothes'>
                     <div className='mid_5'></div>
                     <p>Men's tracksuit Q109</p>
@@ -76,6 +83,8 @@ function men() {
                         <div className='stars'></div>
                     </div>
                 </div>
+                </Link>
+                <Link to="/product">
                 <div className='clothes'>
                     <div className='mid_6'></div>
                     <p>Men's tracksuit Q109</p>
@@ -84,6 +93,8 @@ function men() {
                         <div className='stars'></div>
                     </div>
                 </div>
+                </Link>
+                <Link to="/product">
                 <div className='clothes'>
                     <div className='mid_7'></div>
                     <p>Men's tracksuit Q109</p>
@@ -92,6 +103,8 @@ function men() {
                         <div className='stars'></div>
                     </div>
                 </div>
+                </Link>
+                <Link to="/product">
                 <div className='clothes'>
                     <div className='mid_8'></div>
                     <p>Men's tracksuit Q109</p>
@@ -100,6 +113,7 @@ function men() {
                         <div className='stars'></div>
                     </div>
                 </div>
+                </Link>
             </div>
             <div className='loading'>
             </div>
