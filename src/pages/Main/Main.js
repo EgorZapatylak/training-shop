@@ -81,10 +81,39 @@ function main() {
                 <Link to="/product">
                     <div className='clothes'>
                         <div className='women_1'></div>
-                        <p>Women's tracksuit Q109</p>
-                        <div className='cost-rate'>
-                            <p>$30.00</p>
-                            <div className='stars'></div>
+                        <div className='clothes_info'>
+                            <p>Women's tracksuit Q109</p>
+                            <div className='cost-rate'>
+                                <p>$30.00</p>
+                                <div className='stars'></div>
+                            </div>
+                            <div className='clothes_event'>
+                                <div className="clothes_info_img">
+                                        <img width={40} height={40} src='img/blue.jpg' alt='blue'/>
+                                        <img width={40} height={40} alt='white'/>
+                                        <img width={40} height={40} alt='black'/>
+                                        <img width={40} height={40} alt='grey'/>
+                                </div>
+                                <div className='clothes_info_size'>
+                                    <div className='xs'>
+                                        <p>XS</p>
+                                    </div>
+                                    <div className='s'>
+                                        <p>S</p>
+                                    </div>
+                                    <div className='m'>
+                                        <p>M</p>
+                                    </div>
+                                    <div className='l'>
+                                        <p>L</p>
+                                    </div>
+                                </div>
+                                <div className='clothes_info_event'>
+                                    <button>ADD TO CART</button>
+                                    <div className="heart_1"></div>
+                                    <div className="scale_1"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </Link>
