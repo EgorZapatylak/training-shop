@@ -635,9 +635,13 @@ h5 {
     display: flex;
     width: 1180px;
     align-items: center;
-justify-content: space-between;
+    justify-content: space-between;
     margin: 96px 70px 48px 70px;
     padding: 0 15px;
+}
+
+.blog_header p {
+  margin-right: 70px;
 }
 
 .blog_post {
