@@ -271,6 +271,36 @@ h5 {
   opacity: 0.6;
 }
 
+.clothes_info {
+  position: absolute;
+  background-color: #FFFFFF;
+  margin-top: 320px;
+  height: 60px;
+  transition: 0.8s all;
+}
+
+.clothes_info_img,
+.clothes_info_size,
+.clothes_info_event {
+  display: flex;
+  gap: 8px;
+}
+.clothes_event {
+  opacity: 0;
+  transition: 0.25s all;
+}
+
+.clothes_event:hover {
+  opacity: 1;
+  transition: 1.4s all;
+}
+
+.clothes_info:hover {
+  margin-top: 180px;
+  height: 212px;
+  transition: 0.8s all;
+}
+
 .women_1 {
   display: flex;
   width: 255px;
