@@ -99,6 +99,7 @@
     width: 95px;
     height: 32px;
     align-items: center;
+    margin-left: 70px;
     justify-content: space-between;
 }
 
@@ -150,6 +151,7 @@
     width: 120px;
     height: 15px;
     align-items: center;
+    margin-right: 70px;
     justify-content: space-between;
 }
 
