@@ -90,9 +90,9 @@ function main() {
                             <div className='clothes_event'>
                                 <div className="clothes_info_img">
                                         <img width={40} height={40} src='img/blue.jpg' alt='blue'/>
-                                        <img width={40} height={40} alt='white'/>
-                                        <img width={40} height={40} alt='black'/>
-                                        <img width={40} height={40} alt='grey'/>
+                                        <img width={40} height={40} src='img/blue.jpg' alt='white'/>
+                                        <img width={40} height={40} src='img/blue.jpg' alt='black'/>
+                                        <img width={40} height={40} src='img/gray_1.svg' alt='grey'/>
                                 </div>
                                 <div className='clothes_info_size'>
                                     <div className='xs'>
