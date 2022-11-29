@@ -205,7 +205,7 @@
     height: 40px;
     width: 40px;
     background-color: #ffffff;
-    background-image: url("../Main/img/hero/chevron-right.svg");
+    background-image: url("../../components/Hero/img/chevron-right.svg");
     background-position: center;
     background-repeat: no-repeat;
     transform: rotate(-90deg);
@@ -233,7 +233,7 @@
     height: 40px;
     width: 40px;
     background-color: #ffffff;
-    background-image: url("../Main/img/hero/chevron-right.svg");
+    background-image: url("../../components/Hero/img/chevron-right.svg");
     background-position: center;
     background-repeat: no-repeat;
     transform: rotate(90deg);
@@ -294,7 +294,7 @@
     top: calc(50% - 40px / 2);
     left: calc(8% - 40px / 2);
     background-color: #ffffff;
-    background-image: url("../Main/img/hero/chevron-right.svg");
+    background-image: url("../../components/Hero/img/chevron-right.svg");
     background-position: center;
     background-repeat: no-repeat;
     transform: rotate(180deg);
@@ -309,7 +309,7 @@
     top: calc(50% - 40px / 2);
     left: calc(84% - 40px / 2);
     background-color: #ffffff;
-    background-image: url("../Main/img/hero/chevron-right.svg");
+    background-image: url("../../components/Hero/img/chevron-right.svg");
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 50%;
@@ -3401,7 +3401,7 @@
     height: 40px;
     width: 40px;
     background-color: #ffffff;
-    background-image: url("../Main/img/hero/chevron-left.svg");
+    background-image: url("../../components/Hero/img/chevron-left.svg");
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 50%;
@@ -3412,7 +3412,7 @@
     height: 40px;
     width: 40px;
     background-color: #ffffff;
-    background-image: url("../Main/img/hero/chevron-right.svg");
+    background-image: url("../../components/Hero/img/chevron-right.svg");
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 50%;

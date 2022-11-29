@@ -192,7 +192,7 @@ function product() {
             </div>
             <div className="related_img">
                 <div className='clothes'>
-                    <div className='id_2'></div>
+                    <div className='id_1'></div>
                     <p>Women's tracksuit Q109</p>
                     <div className='cost-rate'>
                         <p>$30.00</p>
@@ -208,7 +208,7 @@ function product() {
                     </div>
                 </div>
                 <div className='clothes'>
-                    <div className='id_2'></div>
+                    <div className='id_3'></div>
                     <p>Women's tracksuit Q109</p>
                     <div className='cost-rate'>
                         <p>$30.00</p>
@@ -216,7 +216,7 @@ function product() {
                     </div>
                 </div>
                 <div className='clothes'>
-                    <div className='id_2'></div>
+                    <div className='id_4'></div>
                     <p>Women's tracksuit Q109</p>
                     <div className='cost-rate'>
                         <p>$30.00</p>
