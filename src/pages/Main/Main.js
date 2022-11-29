@@ -5,6 +5,7 @@ import Banner from '../Main/img/hero/banner.jpg';
 import Women from '../Main/img/hero/women.jpg';
 import Men from '../Main/img/hero/men.jpg';
 import Accessories from '../Main/img/hero/accessories.jpg';
+import Card from '../Main/img/gray.png';
 
 import Truck from '../Main/img/advantage/truck.svg'
 import Refresh from '../Main/img/advantage/refresh.svg'
@@ -89,10 +90,10 @@ function main() {
                             </div>
                             <div className='clothes_event'>
                                 <div className="clothes_info_img">
-                                        <img width={40} height={40} src='img/blue.jpg' alt='blue'/>
-                                        <img width={40} height={40} src='img/blue.jpg' alt='white'/>
-                                        <img width={40} height={40} src='img/blue.jpg' alt='black'/>
-                                        <img width={40} height={40} src='img/gray_1.svg' alt='grey'/>
+                                        <img width={40} height={40} src={Card} />
+                                        <img width={40} height={40} src={Card} />
+                                        <img width={40} height={40} src={Card} />
+                                        <img width={40} height={40} src={Card} />
                                 </div>
                                 <div className='clothes_info_size'>
                                     <div className='xs'>
