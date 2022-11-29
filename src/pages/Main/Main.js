@@ -1,47 +1,17 @@
 import React from 'react';
 import './Main.css';
-
-import Banner from '../Main/img/hero/banner.jpg';
-import Women from '../Main/img/hero/women.jpg';
-import Men from '../Main/img/hero/men.jpg';
-import Accessories from '../Main/img/hero/accessories.jpg';
-import Card from '../Main/img/gray.png';
-
+import{Swiper} from 'swiper/react'
+import Card from '../Main/img/gray.svg';
 import Truck from '../Main/img/advantage/truck.svg'
 import Refresh from '../Main/img/advantage/refresh.svg'
 import Support from '../Main/img/advantage/support.svg'
 import {Link} from "react-router-dom";
+import {Hero} from "../../components/Hero/Hero";
 
 function main() {
     return (
         <section className='main'>
-            <div className='hero'>
-                <div className='banner'>
-                    <img src={Banner} alt=''/>
-                    <div className='banner_content'>
-                        <p>Banner</p>
-                        <span>Your Title Text</span>
-                    </div>
-                    <div className='chevron-right'></div>
-                    <div className='chevron-left'></div>
-                </div>
-                <div className='red'>
-                    <div className='green'>
-                        <div className='women'>
-                            <img src={Women} alt=''/>
-                            <button className='green_button'>Women</button>
-                        </div>
-                        <div className='men'>
-                            <img src={Men} alt=''/>
-                            <button className='green_button'>Men</button>
-                        </div>
-                    </div>
-                    <div className='accessories'>
-                        <img src={Accessories} alt=''/>
-                        <button className='accessories_button'>Accessories</button>
-                    </div>
-                </div>
-            </div>
+            <Hero/>
             <div className='advantage'>
                 <div className='truck'>
                     <img src={Truck} alt=''/>
