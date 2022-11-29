@@ -2,40 +2,16 @@ import React from 'react';
 import './Main.css';
 import{Swiper} from 'swiper/react'
 import Card from '../Main/img/gray.svg';
-import Truck from '../Main/img/advantage/truck.svg'
-import Refresh from '../Main/img/advantage/refresh.svg'
-import Support from '../Main/img/advantage/support.svg'
 import {Link} from "react-router-dom";
 import {Hero} from "../../components/Hero/Hero";
+import {Advantage} from "../../components/Advantage/Advantage";
 
 function main() {
     return (
         <section className='main'>
             <Hero/>
-            <div className='advantage'>
-                <div className='truck'>
-                    <img src={Truck} alt=''/>
-                    <div className='inform'>
-                        <p>FREE SHIPPING</p>
-                        <span>On all UA order or order above $100</span>
-                    </div>
-                </div>
-                <div className='truck'>
-                    <img src={Refresh} alt=''/>
-                    <div className='inform'>
-                        <p>30 DAYS RETURN</p>
-                        <span>Simply return it within 30 days for an exchange</span>
-                    </div>
-                </div>
-                <div className='truck'>
-                    <img src={Support} alt=''/>
-                    <div className='inform'>
-                        <p>SUPPORT 24/7</p>
-                        <span>Contact us 24 hours a day, 7 days a week</span>
-                    </div>
-                </div>
-            </div>
-            <div className='line'></div>
+            <Advantage/>
+            <div className='line'></div> /// need sink about it =)
             <div className='item_hed'>
                 <div className='item_info'>
                     <h2>Women's</h2>
