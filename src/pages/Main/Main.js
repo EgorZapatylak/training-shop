@@ -90,10 +90,10 @@ function main() {
                             </div>
                             <div className='clothes_event'>
                                 <div className="clothes_info_img">
-                                        <img width={40} height={40} src={Card} />
-                                        <img width={40} height={40} src={Card} />
-                                        <img width={40} height={40} src={Card} />
-                                        <img width={40} height={40} src={Card} />
+                                        <img width={40} height={40} src={Card} alt='blue'/>
+                                        <img width={40} height={40} src={Card} alt='white'/>
+                                        <img width={40} height={40} src={Card} alt='black'/>
+                                        <img width={40} height={40} src={Card} alt='grey'/>
                                 </div>
                                 <div className='clothes_info_size'>
                                     <div className='xs'>
