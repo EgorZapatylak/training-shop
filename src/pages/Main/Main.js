@@ -1,6 +1,6 @@
 import React from 'react';
 import './Main.css';
-import{Swiper} from 'swiper/react'
+// import {Swiper} from 'swiper/react'
 import Card from '../Main/img/gray.svg';
 import {Link} from "react-router-dom";
 import {Hero} from "../../components/Hero/Hero";
@@ -11,7 +11,7 @@ function main() {
         <section className='main'>
             <Hero/>
             <Advantage/>
-            <div className='line'></div> /// need sink about it =)
+            <div className='line'></div> {/*need sink about it =)*/}
             <div className='item_hed'>
                 <div className='item_info'>
                     <h2>Women's</h2>
