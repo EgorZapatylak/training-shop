@@ -1,0 +1,41 @@
+
+.advantage {
+    display: flex;
+    margin: 0 70px;
+    padding: 0 15px;
+    justify-content: space-between;
+}
+
+.truck {
+    display: flex;
+}
+
+.inform {
+    display: flex;
+    margin-top: 35px;
+    margin-bottom: 32px;
+    margin-left: 8px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.inform p {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+}
+
+.inform span {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 22px;
+    color: #121212;
+    opacity: 0.9;
+}
