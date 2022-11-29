@@ -276,6 +276,7 @@ h5 {
   background-color: #FFFFFF;
   margin-top: 320px;
   height: 60px;
+  width: 255px;
   transition: 0.8s all;
 }
 
@@ -284,6 +285,7 @@ h5 {
 .clothes_info_event {
   display: flex;
   gap: 8px;
+  margin-top: 10px;
 }
 .clothes_event {
   opacity: 0;
@@ -292,13 +294,13 @@ h5 {
 
 .clothes_event:hover {
   opacity: 1;
-  transition: 1.4s all;
+  transition: 1.8s all;
 }
 
 .clothes_info:hover {
   margin-top: 180px;
   height: 212px;
-  transition: 0.8s all;
+  transition: 0.3s all;
 }
 
 .women_1 {
