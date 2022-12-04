@@ -5,6 +5,7 @@ import Card from '../Main/img/gray.svg';
 import {Link} from "react-router-dom";
 import {Hero} from "../../components/Hero/Hero";
 import {Advantage} from "../../components/Advantage/Advantage";
+import {Promice} from "../../components/Promice/Promice";
 
 function main() {
     return (
@@ -235,20 +236,7 @@ function main() {
                     <button className='women_button'>See All</button>
                 </Link>
             </div>
-            <div className='promice'>
-                <div className='new_colection'>
-                    <div className='col_item'>
-                        <p>New Season</p>
-                        <span>lookbook collection</span>
-                    </div>
-                </div>
-                <div className='sale'>
-                    <div className='sale_item'>
-                        <p>Sale</p>
-                        <span>Get UP to 50% off</span>
-                    </div>
-                </div>
-            </div>
+            <Promice />
             <div className='offer'>
                 <div className='women_img'></div>
                 <div className='men_img'></div>
