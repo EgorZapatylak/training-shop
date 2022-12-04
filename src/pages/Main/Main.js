@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 import {Hero} from "../../components/Hero/Hero";
 import {Advantage} from "../../components/Advantage/Advantage";
 import {Promice} from "../../components/Promice/Promice";
+import Offer, {SpecialOffer} from "../../components/SpecialOffer/SpecialOffer";
 
 function main() {
     return (
@@ -237,16 +238,7 @@ function main() {
                 </Link>
             </div>
             <Promice />
-            <div className='offer'>
-                <div className='women_img'></div>
-                <div className='men_img'></div>
-                <div className='offer_container'>
-                    <p>Special Offer</p>
-                    <span>Subscribe <br/> And Get 10% Off</span>
-                    <input type='email' placeholder="Enter your email"/>
-                    <button>Subscribe</button>
-                </div>
-            </div>
+            <SpecialOffer />
             <div className='blog_header'>
                 <h2>LATEST FROM BLOG</h2>
                 <p>SEE ALL</p>
