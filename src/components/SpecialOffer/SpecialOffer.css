@@ -1,0 +1,102 @@
+.offer {
+    display: flex;
+    position: relative;
+    width: 1280px;
+    height: 580px;
+    background: linear-gradient(180deg, #f3f2f2 0%, #dcdbdb 100%);
+    align-items: center;
+    justify-content: center;
+}
+
+.women_img {
+    position: absolute;
+    left: 115px;
+    top: 35px;
+    width: 311px;
+    height: 584px;
+    background-image: url("./img/women.svg");
+}
+
+.men_img {
+    position: absolute;
+    top: 45px;
+    right: 168px;
+    width: 219px;
+    height: 524px;
+    background-image: url("./img/men.svg");
+}
+
+.offer_container {
+    display: flex;
+    width: 532px;
+    height: 461px;
+    background: #ffffff;
+    border-radius: 4px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.offer_container p {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 13px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+    opacity: 0.4;
+    margin-top: 80px;
+}
+
+.offer_container span {
+    margin-top: 16px;
+    width: 282px;
+    height: 72px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+}
+
+.offer_container input {
+    margin-top: 32px;
+    width: 340px;
+    height: 64px;
+    background-color: #f8f8f8;
+    border: none;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #121212;
+    opacity: 0.4;
+}
+
+.offer_container button {
+    margin-top: 24px;
+    width: 340px;
+    height: 64px;
+    background-color: #121212;
+    border: 2px solid #121212;
+    box-sizing: border-box;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    opacity: 0.9;
+    cursor: pointer;
+}
