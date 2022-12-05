@@ -1,0 +1,196 @@
+.item_hed {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    margin: 96px 70px 48px 70px;
+}
+
+.item_info {
+    display: flex;
+}
+
+.item_info h2 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 25px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+}
+
+.sort {
+    display: flex;
+    gap: 32px;
+}
+
+.sort h3 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 13px;
+    text-align: right;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+    opacity: 0.6;
+}
+
+.sort h3:hover {
+    font-weight: 500;
+    opacity: 1;
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.clothes {
+    margin: 0 15px 30px 0;
+    display: flex;
+    height: 378px;
+    width: 255px;
+    flex-direction: column;
+}
+
+.clothes p {
+    display: flex;
+    margin-top: 16px;
+    margin-bottom: 12px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #121212;
+    opacity: 0.6;
+}
+
+.clothes_info {
+    position: absolute;
+    background-color: #FFFFFF;
+    margin-top: 320px;
+    height: 60px;
+    width: 255px;
+    transition: 0.8s all;
+}
+
+.clothes_info_img,
+.clothes_info_size,
+.clothes_info_event {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+.clothes_event {
+    opacity: 0;
+    transition: 0.25s all;
+}
+
+.clothes_event:hover {
+    opacity: 1;
+    transition: 1.8s all;
+}
+
+.clothes_info:hover {
+    margin-top: 180px;
+    height: 212px;
+    transition: 0.3s all;
+}
+
+.women_1 {
+    display: flex;
+    width: 255px;
+    height: 318px;
+    background-image: url("../../pages/Women/img/women_1.jpg");
+}
+
+.women_2 {
+    display: flex;
+    width: 255px;
+    height: 318px;
+    background-image: url("../../pages/Women/img/women_2.jpg");
+}
+
+.women_3 {
+    display: flex;
+    width: 255px;
+    height: 318px;
+    background-image: url("../../pages/Women/img/women_3.jpg");
+}
+
+.women_4 {
+    display: flex;
+    width: 255px;
+    height: 318px;
+    background-image: url("../../pages/Women/img/women_4.jpg");
+}
+
+.women_5 {
+    display: flex;
+    width: 255px;
+    height: 318px;
+    background-image: url("../../pages/Women/img/women_5.jpg");
+}
+
+.women_6 {
+    display: flex;
+    width: 255px;
+    height: 318px;
+    background-image: url("../../pages/Women/img/women_6.jpg");
+}
+
+.women_7 {
+    display: flex;
+    width: 255px;
+    height: 318px;
+    background-image: url("../../pages/Women/img/women_7.jpg");
+}
+
+.women_8 {
+    display: flex;
+    width: 255px;
+    height: 318px;
+    background-image: url("../../pages/Women/img/women_8.jpg");
+}
+.cost-rate {
+    display: flex;
+    height: 16px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cost-rate p {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #121212;
+}
+
+.stars {
+    display: flex;
+    height: 14px;
+    width:70px;
+    background-repeat: no-repeat;
+    background-image: url("../../pages/Women/img/stars.svg");
+}
+
+.women_button {
+    width: 1110px;
+    height: 48px;
+    background: #f8f8f8;
+    border: 2px solid #f8f8f8;
+    box-sizing: border-box;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+    opacity: 0.8;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 15px;
+    cursor: pointer;
+}
