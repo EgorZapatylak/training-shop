@@ -8,60 +8,10 @@ h5 {
 
 /*------WOMEN'S-------*/
 
-.menid_1 {
+.men_id img {
   display: flex;
   width: 255px;
   height: 318px;
-  background-image: url("../Men/img/men_1.jpg");
-}
-
-.menid_2 {
-  display: flex;
-  width: 255px;
-  height: 318px;
-  background-image: url("../Men/img/men_2.jpg");
-}
-
-.menid_3 {
-  display: flex;
-  width: 255px;
-  height: 318px;
-  background-image: url("../Men/img/men_3.jpg");
-}
-
-.menid_4 {
-  display: flex;
-  width: 255px;
-  height: 318px;
-  background-image: url("../Men/img/men_4.jpg");
-}
-
-.menid_5 {
-  display: flex;
-  width: 255px;
-  height: 318px;
-  background-image: url("../Men/img/men_5.jpg");
-}
-
-.menid_6 {
-  display: flex;
-  width: 255px;
-  height: 318px;
-  background-image: url("../Men/img/men_6.jpg");
-}
-
-.menid_7 {
-  display: flex;
-  width: 255px;
-  height: 318px;
-  background-image: url("../Men/img/men_7.jpg");
-}
-
-.menid_8 {
-  display: flex;
-  width: 255px;
-  height: 318px;
-  background-image: url("../Men/img/men_8.jpg");
 }
 
 
