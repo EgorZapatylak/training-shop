@@ -1,0 +1,128 @@
+.blog_header {
+    display: flex;
+    width: 1180px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 96px 70px 48px 70px;
+    padding: 0 15px;
+}
+
+.blog_header p {
+    margin-right: 70px;
+}
+
+.blog_post {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 85px;
+}
+
+.box_1 {
+    display: flex;
+    position: relative;
+    width: 350px;
+    height: 276px;
+    background-image: url('./img/blog_1.jpg');
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+.box_2 {
+    display: flex;
+    position: relative;
+    width: 350px;
+    height: 276px;
+    background-image: url('./img/blog_2.jpg');
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+.box_3 {
+    display: flex;
+    position: relative;
+    width: 350px;
+    height: 276px;
+    background-image: url('./img/blog_3.jpg');
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.box_info {
+    display: flex;
+    position: absolute;
+    width: 302px;
+    height: 174px;
+    bottom: -43%;
+    background-color: #FFFFFF;
+    flex-direction: column;
+    transition: 0.5s all;
+
+}
+
+.box_info:hover {
+    bottom: -31%;
+    height: 159px;
+    transition: 0.5s all;
+}
+
+.box_info h3 {
+    display: flex;
+    width: 263px;
+    height: 22px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+    margin: 24px 51px 12px 16px;
+
+}
+
+.box_info p {
+    width: 270px;
+    height: 64px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #121212;
+    opacity: 0.8;
+    margin-left: 16px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.data {
+    position: absolute;
+    padding-top: 150px;
+    height: 13px;
+    opacity: 0;
+    transition: 0.9s all;
+}
+
+.data:hover{
+    opacity: 1;
+}
+
+.data p{
+    height: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.data span {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 13px;
+    text-align: right;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+}
