@@ -100,61 +100,6 @@
     transition: 0.3s all;
 }
 
-.women_1 {
-    display: flex;
-    width: 255px;
-    height: 318px;
-    background-image: url("../../pages/Women/img/women_1.jpg");
-}
-
-.women_2 {
-    display: flex;
-    width: 255px;
-    height: 318px;
-    background-image: url("../../pages/Women/img/women_2.jpg");
-}
-
-.women_3 {
-    display: flex;
-    width: 255px;
-    height: 318px;
-    background-image: url("../../pages/Women/img/women_3.jpg");
-}
-
-.women_4 {
-    display: flex;
-    width: 255px;
-    height: 318px;
-    background-image: url("../../pages/Women/img/women_4.jpg");
-}
-
-.women_5 {
-    display: flex;
-    width: 255px;
-    height: 318px;
-    background-image: url("../../pages/Women/img/women_5.jpg");
-}
-
-.women_6 {
-    display: flex;
-    width: 255px;
-    height: 318px;
-    background-image: url("../../pages/Women/img/women_6.jpg");
-}
-
-.women_7 {
-    display: flex;
-    width: 255px;
-    height: 318px;
-    background-image: url("../../pages/Women/img/women_7.jpg");
-}
-
-.women_8 {
-    display: flex;
-    width: 255px;
-    height: 318px;
-    background-image: url("../../pages/Women/img/women_8.jpg");
-}
 .cost-rate {
     display: flex;
     height: 16px;
