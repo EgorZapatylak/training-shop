@@ -61,7 +61,7 @@ export function Products(props) {
                             </div>
                         </div>
                     </Link>))}
-                <Link to="/men">
+                <Link to={"/" + props.title.toLowerCase().slice(0,-2)}>
                     <button className='women_button'>See All</button>
                 </Link>
             </div>
