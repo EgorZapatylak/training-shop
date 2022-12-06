@@ -31,32 +31,32 @@ export function Products(props) {
                                     <p>{el.price}</p>
                                     <div className='stars'></div>
                                 </div>
-                            </div>
-                            <div className='clothes_event'>
-                                <div className="clothes_info_img">
-                                    <img width={40} height={40} src={Card} alt='blue'/>
-                                    <img width={40} height={40} src={Card} alt='white'/>
-                                    <img width={40} height={40} src={Card} alt='black'/>
-                                    <img width={40} height={40} src={Card} alt='grey'/>
-                                </div>
-                                <div className='clothes_info_size'>
-                                    <div className='xs'>
-                                        <p>XS</p>
+                                <div className='clothes_event'>
+                                    <div className="clothes_info_img">
+                                        <img width={40} height={40} src={Card} alt='blue'/>
+                                        <img width={40} height={40} src={Card} alt='white'/>
+                                        <img width={40} height={40} src={Card} alt='black'/>
+                                        <img width={40} height={40} src={Card} alt='grey'/>
                                     </div>
-                                    <div className='s'>
-                                        <p>S</p>
+                                    <div className='clothes_info_size'>
+                                        <div className='xs'>
+                                            <p>XS</p>
+                                        </div>
+                                        <div className='s'>
+                                            <p>S</p>
+                                        </div>
+                                        <div className='m'>
+                                            <p>M</p>
+                                        </div>
+                                        <div className='l'>
+                                            <p>L</p>
+                                        </div>
                                     </div>
-                                    <div className='m'>
-                                        <p>M</p>
+                                    <div className='clothes_info_event'>
+                                        <button>ADD TO CART</button>
+                                        <div className="heart_1"></div>
+                                        <div className="scale_1"></div>
                                     </div>
-                                    <div className='l'>
-                                        <p>L</p>
-                                    </div>
-                                </div>
-                                <div className='clothes_info_event'>
-                                    <button>ADD TO CART</button>
-                                    <div className="heart_1"></div>
-                                    <div className="scale_1"></div>
                                 </div>
                             </div>
                         </div>

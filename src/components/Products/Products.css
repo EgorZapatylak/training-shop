@@ -84,7 +84,9 @@
     gap: 8px;
     margin-top: 10px;
 }
+
 .clothes_event {
+    width: 255px;
     opacity: 0;
     transition: 0.25s all;
 }
