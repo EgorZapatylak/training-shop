@@ -87,21 +87,28 @@
 
 .clothes_event {
     width: 255px;
+    visibility: hidden;
     opacity: 0;
     transition: 0.25s all;
 }
 
-.clothes_event:hover {
-    opacity: 1;
-    transition: 1.8s all;
-}
+/*.clothes_event:hover {*/
+/*    visibility: hidden;*/
+/*    opacity: 1;*/
+/*    transition: 1.8s all;*/
+/*}*/
 
 .clothes_info:hover {
     margin-top: 180px;
     height: 212px;
-    transition: 0.3s all;
+    transition: 0.4s all;
 }
 
+.clothes_info:hover > .clothes_event{
+    visibility: visible;
+    opacity: 1;
+    transition: 2.8s all;
+}
 .cost-rate {
     display: flex;
     height: 16px;
