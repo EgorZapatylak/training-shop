@@ -101,14 +101,14 @@
     .promise {
         display: flex;
         margin: 25px auto;
-        width: 320px;
+        width: 330px;
         flex-direction: column;
         gap: 10px;
     }
 
     .new_collection,
     .sale{
-        width: 320px;
+        width: 330px;
         height: 210px;
         background-position: center;
         background-size: cover;
