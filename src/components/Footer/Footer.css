@@ -260,7 +260,7 @@
     margin-right: 66px;
 }
 
-@media (max-width: 360px) {
+@media screen and (max-width: 360px) {
     .footer {
         width: 360px;
         padding-top: 20px;
@@ -296,7 +296,24 @@
         width: 330px;
         margin: 10px auto;
         flex-direction: column;
+        gap: 10px;
         height: auto;
+    }
+
+    .categories {
+        height: auto;
+        width: 330px;
+    }
+
+    .categories h3 {
+        margin: 0;
+    }
+
+    .categories a{
+        display: flex;
+        align-items: center;
+        height: 24px;
+        width: auto;
     }
 
     .footer_bot {
