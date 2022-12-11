@@ -148,3 +148,33 @@
     line-height: 15px;
     cursor: pointer;
 }
+
+@media (max-width: 360px) {
+    .item_hed {
+        display: flex;
+        margin: 20px auto;
+        width: 320px;
+    }
+
+    .sort {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .items{
+        margin: 0 auto;
+        width: 360px;
+    }
+    .clothes_info:hover {
+        margin-top: 320px;
+        height: 60px;
+    }
+
+    .clothes_event{
+        display: none;
+    }
+
+    .women_button {
+        width: 360px;
+    }
+}
