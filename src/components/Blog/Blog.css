@@ -129,7 +129,7 @@
 
 @media (max-width: 360px) {
     .blog_header {
-        width: 340px;
+        width: 330px;
         margin: 15px auto;
     }
     .blog_header p {
