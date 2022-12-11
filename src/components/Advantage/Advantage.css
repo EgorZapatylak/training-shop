@@ -39,3 +39,15 @@
     color: #121212;
     opacity: 0.9;
 }
+
+@media (max-width: 360px) {
+    .advantage {
+        display: flex;
+        margin: 0 auto;
+        width: 320px;
+        flex-direction: column;
+    }
+    .truck > .inform{
+        margin: 15px;
+    }
+}
