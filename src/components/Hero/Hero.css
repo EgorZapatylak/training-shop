@@ -185,6 +185,18 @@
         margin-top: 15px;
     }
 
+    .women,
+    .men {
+        display: flex;
+        justify-content: center;
+    }
+
+    .women img,
+    .men img {
+        margin: auto 15px;
+        height: 200px;
+    }
+
     .accessories {
         display: flex;
         width: 330px;
