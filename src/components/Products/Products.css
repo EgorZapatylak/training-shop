@@ -153,7 +153,7 @@
     .item_hed {
         display: flex;
         margin: 20px auto;
-        width: 320px;
+        width: 330px;
     }
 
     .sort {
@@ -165,6 +165,11 @@
         margin: 0 auto;
         width: 360px;
     }
+
+    .clothes{
+        margin-right: 0;
+    }
+
     .clothes_info:hover {
         margin-top: 320px;
         height: 60px;
