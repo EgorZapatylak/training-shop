@@ -1,11 +1,11 @@
-.promice {
+.promise {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 96px 85px;
 }
 
-.new_colection {
+.new_collection {
     display: flex;
     width: 540px;
     height: 260px;
@@ -14,7 +14,7 @@
     justify-content: center;
 }
 
-.col_item {
+.coll_item {
     display: flex;
     width: 293px;
     height: 71px;
@@ -26,7 +26,7 @@
     gap: 8px;
 }
 
-.col_item p {
+.coll_item p {
     width: 99px;
     height: 13px;
     font-style: normal;
@@ -39,7 +39,7 @@
     opacity: 0.6;
 }
 
-.col_item span {
+.coll_item span {
     width: 245px;
     height: 18px;
     font-style: normal;
@@ -95,4 +95,30 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: #121212;
+}
+
+@media (max-width: 360px) {
+    .promise {
+        display: flex;
+        margin: 25px auto;
+        width: 320px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .new_collection,
+    .sale{
+        width: 320px;
+        height: 210px;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .coll_item{
+        width: calc(65% + 90px/2);
+    }
+
+    .sale_item {
+        width: calc(50% + 90px/2);
+    }
 }
