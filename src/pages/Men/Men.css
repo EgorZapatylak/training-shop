@@ -216,7 +216,7 @@
     display: flex;
     width: 231px;
     height: 50px;
-    background-image: url('../../components/Loading.png');
+    background-image: url('../../components/loading.svg');
     align-items: center;
     margin: 0 auto;
     cursor: pointer;
