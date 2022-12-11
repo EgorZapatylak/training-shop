@@ -6,6 +6,7 @@ import './Products.css'
 export function Products(props) {
     return (
         <>
+            <div className='line'></div>
             <div className='item_hed'>
                 <div className='item_info'>
                     <h2>{props.title}</h2>
