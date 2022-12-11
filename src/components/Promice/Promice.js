@@ -3,11 +3,11 @@ import './Promice.css'
 
 export function Promice ()  {
     return (
-        <div className='promice'>
-            <div className='new_colection'>
-                <div className='col_item'>
+        <div className='promise'>
+            <div className='new_collection'>
+                <div className='coll_item'>
                     <p>New Season</p>
-                    <span>lookbook collection</span>
+                    <span>look book collection</span>
                 </div>
             </div>
             <div className='sale'>
