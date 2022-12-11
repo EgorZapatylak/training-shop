@@ -260,7 +260,7 @@
     margin-right: 66px;
 }
 
-@media screen and (max-width: 360px) {
+@media (max-width: 360px) {
     .footer {
         width: 360px;
         padding-top: 20px;
