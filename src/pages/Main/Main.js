@@ -4,7 +4,7 @@ import './Main.css';
 import {Link} from "react-router-dom";
 import {Hero} from "../../components/Hero/Hero";
 import {Advantage} from "../../components/Advantage/Advantage";
-import {Promice} from "../../components/Promise/Promise";
+import {Promise} from "../../components/Promise/Promise";
 import {SpecialOffer} from "../../components/SpecialOffer/SpecialOffer";
 import {Blog} from "../../components/Blog/Blog";
 import {Products} from "../../components/Products/Products";
@@ -38,7 +38,7 @@ function main() {
             <div className='line'></div> {/*need sink about it =)*/}
             <Products title="Women's" item={women}/>
             <Products title="Men's" item={men}/>
-            <Promice />
+            <Promise />
             <SpecialOffer />
             <Blog />
         </section>
