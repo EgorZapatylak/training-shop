@@ -133,7 +133,7 @@
         margin: 15px auto;
     }
     .blog_header p {
-        margin-right: 20px;
+        margin-right: 0;
         font-size: 0.7em;
     }
 
@@ -143,11 +143,15 @@
 
     .box_info h3 {
         margin: 15px 10px;
-        width: 251px;
+        width: 252px;
+    }
+    .box_info p {
+        width: 252px;
+        margin: 0 auto;
     }
 
     .blog_post {
-        width: 350px;
+        width: 330px;
         margin: 0 auto;
         flex-direction: column;
         gap: 10px;
@@ -156,26 +160,28 @@
     .box_1,
     .box_2,
     .box_3 {
+        width: 330px;
         position: unset;
         justify-content: center;
         align-items: center;
+        background-size: 330px;
     }
 
     .data {
-        width: 245px;
-        padding-top: 140px;
+        width: 271px;
+        padding-top: 130px;
         opacity: 1;
         transition: none;
     }
 
     .data p {
         margin:0 10px;
-        width: 230px;
+        width: 252px;
     }
 
     .box_info {
         position: unset;
-        margin-top: 80px;
+        margin-top: 60px;
         width: 272px;
         height: 159px;
         transition: none;
