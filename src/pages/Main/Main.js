@@ -35,7 +35,6 @@ function main() {
         <section className='main'>
             <Hero/>
             <Advantage/>
-            <div className='line'></div> {/*need sink about it =)*/}
             <Products title="Women's" item={women}/>
             <Products title="Men's" item={men}/>
             <Promise />

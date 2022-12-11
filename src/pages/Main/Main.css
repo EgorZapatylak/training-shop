@@ -7,7 +7,6 @@ h5 {
 }
 
 /*------WOMEN'S-------*/
-
 .men_id img {
   display: flex;
   width: 255px;
@@ -15,12 +14,10 @@ h5 {
 }
 
 @media (max-width: 360px) {
-  .line{
+  .main {
     margin: 0 auto;
     width: 360px;
   }
 }
-
-
 /*------FOOTER-------*/
 
