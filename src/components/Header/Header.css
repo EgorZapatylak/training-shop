@@ -138,3 +138,72 @@ h1 {
     height: 2px;
     background-color: #F8F8F8;
 }
+
+@media (max-width: 360px) {
+
+    .header_container {
+        width: 360px;
+        margin: 0 auto;
+    }
+
+    .top_bar{
+        display: flex;
+        width: 360px;
+        height: auto;
+    }
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-left: 20px;
+    }
+
+    .phone {
+        margin-top: 5px;
+        justify-content: normal;
+    }
+
+    .time {
+        justify-content: normal;
+        margin-bottom: 5px;
+    }
+
+    .social {
+        margin-right: 20px;
+    }
+
+    .nav {
+        display: flex;
+        width: 360px;
+    }
+    .logo {
+        width: 150px;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-left: 0;
+    }
+
+    .instryment{
+        display: flex;
+        gap: 10px;
+        margin-right: 20px;
+        justify-items: center;
+    }
+    .instryment a,
+    .instryment img {
+        height: 20px;
+        width: 20px;
+    }
+
+    .nav-item {
+        display: none;
+    }
+
+   .line {
+       width: 360px;
+   }
+
+
+}
