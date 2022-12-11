@@ -8,7 +8,7 @@ export function SpecialOffer () {
             <div className='men_img'></div>
             <div className='offer_container'>
                 <p>Special Offer</p>
-                <span>Subscribe <br/> And Get 10% Off</span>
+                <span>Subscribe <br/>And Get 10% Off</span>
                 <input type='email' placeholder="Enter your email"/>
                 <button>Subscribe</button>
             </div>
