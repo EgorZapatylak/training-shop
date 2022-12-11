@@ -150,6 +150,11 @@
 }
 
 @media (max-width: 360px) {
+
+    .line {
+        margin: 0 auto;
+        width: 360px !important;
+    }
     .item_hed {
         display: flex;
         margin: 20px auto;
