@@ -44,7 +44,7 @@
     .advantage {
         display: flex;
         margin: 0 auto;
-        width: 320px;
+        width: 330px;
         flex-direction: column;
     }
     .truck > .inform{
