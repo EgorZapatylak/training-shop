@@ -260,3 +260,58 @@
     opacity: 0.8;
     margin-right: 66px;
 }
+
+@media (max-width: 360px) {
+    .footer {
+        width: 360px;
+        padding-top: 20px;
+        margin: 0 auto;
+    }
+
+    .footer_top {
+        width: 330px;
+        margin-top: 20px;
+    }
+
+    .footer_top p{
+        margin: 0;
+        width: 70px;
+        font-size: 8px;
+    }
+
+    .join input {
+        width: 60%;
+        font-size: 8px;
+    }
+
+    .join button {
+        width: 50%;
+        font-size: 8px;
+        margin-right: 10px;
+    }
+    .social_bot {
+        margin-right: 0;
+    }
+
+    .footer_main {
+        width: 330px;
+        margin: 10px auto;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .footer_bot {
+        width: 330px;
+        margin: 0 auto;
+    }
+    .prava {
+        margin: 0;
+    }
+
+    .spons {
+        display: none;
+    }
+    .clever a{
+        margin: 0;
+    }
+}
