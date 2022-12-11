@@ -155,7 +155,7 @@ h1 {
         display: flex;
         flex-direction: column;
         gap: 5px;
-        margin-left: 20px;
+        margin-left: 0;
     }
 
     .phone {
@@ -178,6 +178,7 @@ h1 {
     }
     .logo {
         width: 150px;
+        margin-left: 15px;
     }
 
     h1 {
@@ -188,7 +189,7 @@ h1 {
     .instryment{
         display: flex;
         gap: 10px;
-        margin-right: 20px;
+        margin-right: 15px;
         justify-items: center;
     }
     .instryment a,
