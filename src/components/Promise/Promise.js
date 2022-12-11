@@ -1,7 +1,7 @@
 import React from 'react';
-import './Promice.css'
+import './Promise.css'
 
-export function Promice ()  {
+export function Promise ()  {
     return (
         <div className='promise'>
             <div className='new_collection'>
