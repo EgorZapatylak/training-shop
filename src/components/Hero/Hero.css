@@ -185,6 +185,17 @@
         margin-top: 15px;
     }
 
+    .green_button:hover {
+        left: calc(50% - 118px / 2);
+        top: calc(50% - 48px / 2);
+        width: 118px;
+    }
+
+    .accessories_button:hover {
+        left: calc(50% - 166px / 2);
+        width: 166px;
+    }
+
     .women,
     .men {
         display: flex;
@@ -193,8 +204,8 @@
 
     .women img,
     .men img {
-        margin: auto 15px;
-        height: 200px;
+        height: auto;
+        width: 330px;
     }
 
     .accessories {
