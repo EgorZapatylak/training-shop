@@ -295,14 +295,14 @@
     .footer_main {
         width: 330px;
         margin: 10px auto;
-        flex-direction: column;
+        flex-wrap: wrap;
         gap: 10px;
         height: auto;
     }
 
     .categories {
         height: auto;
-        width: 330px;
+        width: 160px;
     }
 
     .categories h3 {
@@ -314,6 +314,17 @@
         align-items: center;
         height: 24px;
         width: auto;
+    }
+
+    .categories p {
+        font-size: 12px;
+    }
+
+    .loc,
+    .num,
+    .times,
+    .mail {
+        margin-bottom: 6px;
     }
 
     .footer_bot {
