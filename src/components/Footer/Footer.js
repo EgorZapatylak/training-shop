@@ -33,22 +33,22 @@ export function Footer() {
                     <h3>Categories</h3>
                     <Link to="/men">Men</Link>
                     <Link to="/women">Women</Link>
-                    <a href="#accessories">Accessories</a>
-                    <a href="#beauty">Beauty</a>
+                    <a href="/accessories">Accessories</a>
+                    <a href="/beauty">Beauty</a>
                 </div>
                 <div className='categories'>
                     <h3>Information</h3>
-                    <a href="#aboutus">About Us</a>
-                    <a href="#contactus">Contact Us</a>
-                    <a href="#blog">Blog</a>
-                    <a href="#fqs">FAQs</a>
+                    <a href="/aboutus">About Us</a>
+                    <a href="/contactus">Contact Us</a>
+                    <a href="/blog">Blog</a>
+                    <a href="/fqs">FAQs</a>
                 </div>
                 <div className='categories'>
                     <h3>Useful Links</h3>
-                    <a href="#terms">Terms & Conditions</a>
-                    <a href="#returns">Returns & Exchanges</a>
-                    <a href="#shipping">Shipping & Delivery</a>
-                    <a href="#privacya">Privacy Policy</a>
+                    <a href="/terms">Terms & Conditions</a>
+                    <a href="/returns">Returns & Exchanges</a>
+                    <a href="/shipping">Shipping & Delivery</a>
+                    <a href="/privacya">Privacy Policy</a>
                 </div>
                 <div className='categories'>
                     <h3>Contact Us</h3>
