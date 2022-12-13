@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import {Link} from "react-router-dom";
 
 export function Footer() {
     return (
@@ -30,8 +31,8 @@ export function Footer() {
             <div className='footer_main'>
                 <div className='categories'>
                     <h3>Categories</h3>
-                    <a href="#men">Men</a>
-                    <a href="#women">Women</a>
+                    <Link to="/men">Men</Link>
+                    <Link to="/women">Women</Link>
                     <a href="#accessories">Accessories</a>
                     <a href="#beauty">Beauty</a>
                 </div>
