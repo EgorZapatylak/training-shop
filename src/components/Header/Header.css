@@ -91,6 +91,10 @@ opacity: 0.8;
     width: 1280px;
 }
 
+.logo {
+    text-align: left;
+}
+
 h1 {
     margin-left: 81px;
     padding: 0;
