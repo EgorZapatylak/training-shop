@@ -221,3 +221,9 @@
     margin: 0 auto;
     cursor: pointer;
 }
+
+@media (max-width: 360px) {
+    .men_header {
+        width: 330px;
+    }
+}
