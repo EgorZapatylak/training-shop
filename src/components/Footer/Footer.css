@@ -317,7 +317,7 @@
     }
 
     .categories p {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .loc,
@@ -325,6 +325,7 @@
     .times,
     .mail {
         margin-bottom: 6px;
+        width: auto;
     }
 
     .footer_bot {
