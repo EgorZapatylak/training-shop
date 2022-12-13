@@ -221,3 +221,26 @@
     margin: 0 auto;
     cursor: pointer;
 }
+
+@media (max-width: 360px) {
+    .women_header {
+        width: 330px;
+    }
+
+    .road,
+    .share,
+    .filter,
+    .veia,
+    .categor {
+        margin: 0 !important;
+    }
+
+    .title {
+        width: 360px !important;
+    }
+
+    .edit {
+        width: 330px;
+        align-items: center;
+    }
+}
