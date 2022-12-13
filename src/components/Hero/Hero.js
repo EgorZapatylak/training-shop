@@ -4,6 +4,7 @@ import Women from "./img/women.jpg";
 import Men from "./img/men.jpg";
 import Accessories from "./img/accessories.jpg";
 import './Hero.css'
+import {Link} from "react-router-dom";
 
 export function Hero ()  {
     return (
@@ -21,11 +22,15 @@ export function Hero ()  {
                 <div className='green'>
                     <div className='women'>
                         <img src={Women} alt=''/>
-                        <button className='green_button'>Women</button>
+                        <Link to="/women">
+                            <button className='green_button'>Women</button>
+                        </Link>
                     </div>
                     <div className='men'>
                         <img src={Men} alt=''/>
-                        <button className='green_button'>Men</button>
+                        <Link to='/men'>
+                            <button className='green_button'>Men</button>
+                        </Link>
                     </div>
                 </div>
                 <div className='accessories'>
