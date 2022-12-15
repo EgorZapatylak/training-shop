@@ -3427,3 +3427,109 @@
     height: 255px;
     width: 1110px;
 }
+
+@media (max-width: 360px) {
+    .product_header {
+        width: 330px;
+    }
+
+    .rate_info {
+        width: 330px;
+    }
+
+    .reviews {
+        margin-left: 0;
+    }
+
+    .sa {
+        margin-right: 0;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    .content {
+        width: 360px;
+        margin: 15px 0 0 0;
+        padding: 0 15px;
+        flex-direction: column;
+    }
+
+    .choise {
+        width: 330px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 420px;
+    }
+
+    .btn_right {
+        left: calc(79% - 40px / 2);
+    }
+
+    .content {
+        width: 330px;
+    }
+
+    .content_row {
+        display: none;
+    }
+
+    .content_info {
+        padding: 0;
+        width: 330px;
+    }
+
+    .color_img {
+        width: 330px;
+        justify-content: space-between;
+    }
+
+    .line {
+        width: 330px !important;
+    }
+
+    .shipping_prod_img {
+        width: 30px;
+    }
+
+    .pay {
+        width: 330px;
+        height: 54px;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .add_inf {
+        width: 330px;
+    }
+
+    .reviews_d {
+        width: 330px;
+    }
+
+    .related {
+        width: 330px;
+        margin: 15px;
+        padding: 0;
+    }
+
+    .related_status {
+        width: 330px;
+        margin-bottom: 15px;
+    }
+
+    .related_status p {
+        font-size: 18px;
+    }
+
+    .related_img {
+        width: 330px;
+        justify-content: center;
+    }
+
+    .id2,
+    .id3,
+    .id4 {
+        display: none;
+    }
+}
