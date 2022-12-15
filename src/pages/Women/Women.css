@@ -51,10 +51,7 @@
 .share_img {
     width: 15px;
     height: 15px;
-    background: url('../../components/share.svg');
-    background-color: #F8F8F8;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: #F8F8F8 url('../../components/share.svg') no-repeat center;
 }
 
 .share p {
