@@ -132,7 +132,12 @@
     background-repeat: no-repeat;
     background-position: center;
     width: 24px;
-    height: 24px; 
+    height: 24px;
+}
+
+.tabl:hover,
+.tabl:active{
+    background-image: url('../../components/veiu_tabl_active.svg');
 }
 
 .plit {
@@ -141,6 +146,11 @@
     background-position: center;
     width: 24px;
     height: 24px; 
+}
+
+.plit:hover,
+.plit:active{
+    background-image: url('../../components/veiu_plit_active.svg');
 }
 
 .categor {
