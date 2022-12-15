@@ -550,6 +550,11 @@
     background-repeat: no-repeat;
 }
 
+.heart_1:hover,
+.heart_1:active{
+    background-image: url("../../components/like_active.svg");
+}
+
 .scale_1 {
     display: flex;
     margin-left: 16px;
@@ -558,6 +563,11 @@
     background-image: url("../../components/vesy.svg");
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.scale_1:hover,
+.scale_1:active{
+    background-image: url("../../components/vesy_active.svg");
 }
 
 .ship {
