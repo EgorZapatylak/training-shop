@@ -191,7 +191,7 @@ function product() {
                 </div>
             </div>
             <div className="related_img">
-                <div className='clothes'>
+                <div className='clothes id1'>
                     <div className='id_1'></div>
                     <p>Women's tracksuit Q109</p>
                     <div className='cost-rate'>
@@ -199,7 +199,7 @@ function product() {
                         <div className='stars'></div>
                     </div>
                 </div>
-                <div className='clothes'>
+                <div className='clothes id2'>
                     <div className='id_2'></div>
                     <p>Women's tracksuit Q109</p>
                     <div className='cost-rate'>
@@ -207,7 +207,7 @@ function product() {
                         <div className='stars'></div>
                     </div>
                 </div>
-                <div className='clothes'>
+                <div className='clothes id3'>
                     <div className='id_3'></div>
                     <p>Women's tracksuit Q109</p>
                     <div className='cost-rate'>
@@ -215,7 +215,7 @@ function product() {
                         <div className='stars'></div>
                     </div>
                 </div>
-                <div className='clothes'>
+                <div className='clothes id4'>
                     <div className='id_4'></div>
                     <p>Women's tracksuit Q109</p>
                     <div className='cost-rate'>
