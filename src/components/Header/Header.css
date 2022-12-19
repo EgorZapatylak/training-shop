@@ -143,6 +143,27 @@ h1 {
     background-color: #F8F8F8;
 }
 
+@media (max-width: 992px) {
+    .header_container {
+      width: 992px;
+        margin: 0 auto;
+    }
+
+    .top_bar {
+        width: 992px;
+        height: auto;
+    }
+
+    .nav {
+        width: 992px;
+    }
+
+    .nav-item {
+        display: none;
+    }
+    
+}
+
 @media (max-width: 360px) {
 
     .header_container {
