@@ -150,6 +150,43 @@
     border-radius: 0;
 }
 
+@media (max-width: 992px) {
+    .hero {
+        margin: 15px auto;
+        width: 992px;
+        flex-direction: column;
+    }
+
+    .banner {
+        width: 962px;
+        justify-content: center;
+        background-color: #eeeeeede;
+    }
+
+    .red {
+        margin-top: 15px;
+        width: 962px;
+    }
+
+    .green {
+        justify-content: space-around;
+    }
+
+    .women{
+        width: 470px;
+        background-color: #f2f2f2;
+    }
+
+    .men {
+        width: 470px;
+        background-color: #eaeaea;
+    }
+
+    .accessories {
+        background-color: #eaeaea;
+    }
+}
+
 @media (max-width: 360px) {
        .hero {
         margin: 0 auto ;
