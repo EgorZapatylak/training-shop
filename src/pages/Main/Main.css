@@ -12,6 +12,12 @@ h5 {
   width: 255px;
   height: 318px;
 }
+@media (max-width: 992px) {
+  .main{
+    margin: 0 auto;
+    width: 992px;
+  }
+}
 
 @media (max-width: 360px) {
   .main {
