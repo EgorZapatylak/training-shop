@@ -229,6 +229,20 @@
     cursor: pointer;
 }
 
+@media (max-width: 992px) {
+    .women_header {
+        width: 962px;
+    }
+
+    .title {
+        width: 992px !important;
+    }
+
+    .edit {
+        width: 962px;
+    }
+}
+
 @media (max-width: 360px) {
     .women_header {
         width: 330px;
