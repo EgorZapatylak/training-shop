@@ -149,7 +149,13 @@
     cursor: pointer;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 992px) {
+    .women_button {
+        width: 962px;
+    }
+}
+
+@media (max-width:360px) {
 
     .line {
         margin: 0 auto;
