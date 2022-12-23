@@ -127,6 +127,56 @@
     color: #121212;
 }
 
+@media (max-width: 992px) {
+    .blog_header {
+        width: 962px;
+        margin-left: 0;
+    }
+
+    .blog_post {
+        margin: 0 15px;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .box_1,
+    .box_2,
+    .box_3 {
+        width: 450px;
+        height: 355px;
+        background-size: 450px;
+    }
+
+    .box_info {
+        width: 350px;
+        height: 160px;
+        top: 150px;
+        bottom: 0;
+    }
+
+    .box_info p {
+        width: 320px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .box_info:hover {
+        bottom: 0;
+        height: 160px;
+    }
+
+    .data  {
+        padding-top: 120px;
+        opacity: 1;
+    }
+
+    .data:hover {
+
+    }
+
+}
+
 @media (max-width: 360px) {
     .blog_header {
         width: 330px;
