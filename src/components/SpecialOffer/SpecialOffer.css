@@ -101,6 +101,20 @@
     cursor: pointer;
 }
 
+@media (max-width: 992px) {
+    .offer {
+        width: 100%;
+    }
+
+    .women_img {
+        left: 0;
+    }
+
+    .men_img {
+        right: 42px;
+    }
+}
+
 @media (max-width: 360px) {
     .offer {
         width: 360px;
