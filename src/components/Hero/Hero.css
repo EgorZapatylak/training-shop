@@ -153,7 +153,7 @@
 @media (max-width: 992px) {
     .hero {
         margin: 15px auto;
-        width: 992px;
+        width: 962px;
         flex-direction: column;
     }
 
@@ -162,16 +162,28 @@
         justify-content: center;
         background-color: #eeeeeede;
     }
-
-    .women{
-        background-color: #f2f2f2;
+    .red {
+        width: 962px;
+        gap: 15px;
     }
 
-    .men {
-        background-color: #eaeaea;
+    .green {
+        margin-top: 25px;
+        justify-items: center;
+        width: 962px;
+        height: auto;
+    }
+
+    .women img{
+        width: 460px;
+    }
+
+    .men img{
+        width: 460px;
     }
 
     .accessories {
+        width: 962px;
         background-color: #eaeaea;
     }
 }
@@ -202,6 +214,10 @@
         left: calc(50% - 220px / 2);
     }
 
+    .red {
+        width: 330px;
+    }
+
     .red > .green {
         display: flex;
         height: auto;
@@ -209,6 +225,7 @@
         justify-content: center;
         flex-direction: column;
         margin-top: 15px;
+        width: 330px;
     }
 
     .green_button:hover {
@@ -225,6 +242,7 @@
     .women,
     .men {
         display: flex;
+        width: 330px;
         justify-content: center;
     }
 

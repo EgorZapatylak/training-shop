@@ -12,9 +12,18 @@ code {
     monospace;
 }
 
+@media (max-width: 992px) {
+  body {
+    margin: 0 auto;
+    width: 992px;
+    transition: 0.5s all;
+  }
+}
+
 @media (max-width: 360px) {
   body {
     margin: 0 auto;
     width: 360px;
+    transition: 0.5s all;
   }
 }
