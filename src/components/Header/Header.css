@@ -161,6 +161,59 @@ h1 {
     .nav-item {
         display: none;
     }
+
+
+    ul.active {
+        transform: translateX(0);
+        transition: 0.5s all;
+    }
+
+    nav {
+        height: 40px;
+        width: 40px;
+        background-color: white;
+        z-index: 50;
+        display: flex;
+        align-items: center;
+    }
+
+    .burger_btn {
+        width: 20px;
+        height: 20px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .burger_btn:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 20px;
+        background-color: black;
+        height: 1px;
+    }
+
+    .burger_btn span {
+        position: absolute;
+        top: 9px;
+        width: 20px;
+        background-color: black;
+        height: 1px;
+    }
+
+    .burger_btn:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 20px;
+        background-color: black;
+        height: 1px;
+    }
+
+    .instryment {
+        margin-right: 70px;
+        align-items: center;
+    }
     
 }
 
