@@ -54,7 +54,7 @@ export function Header() {
                     <Link to="/"><h1>CleverShop</h1></Link>
                 </div>
                 <div className='nav-item'>
-                    <ul className={menuActive ? 'active' : ''}>
+                    <ul className={menuActive ? 'active' : ''} onClick={()=> setMenuActive(false)}>
                         <li>
                             <a href='#about'>About Us</a>
                         </li>
