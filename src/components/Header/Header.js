@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Header.css';
 import Phone from '../Header/img/phone.svg';
 import Location from '../Header/img/location.svg';
@@ -13,7 +13,10 @@ import User from '../Header/img/user.svg';
 import Shopping from '../Header/img/shopping-bag.svg';
 import {Link} from "react-router-dom";
 
-function header() {
+export function Header() {
+
+    const [menuActive, setMenuActive] = useState(false)
+
     return (
         <div className="header_container">
             <div className="top_bar">
@@ -51,7 +54,7 @@ function header() {
                     <Link to="/"><h1>CleverShop</h1></Link>
                 </div>
                 <div className='nav-item'>
-                    <ul>
+                    <ul className={menuActive ? 'active' : ''}>
                         <li>
                             <a href='#about'>About Us</a>
                         </li>
