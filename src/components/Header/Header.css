@@ -160,7 +160,7 @@ h1 {
     ul {
         position: fixed;
         width: 100%;
-        height: 100%;
+        height: 100vh;
         top: 80px;
         left: 0;
         flex-direction: column;
@@ -181,8 +181,8 @@ h1 {
     }
 
     nav {
-        height: 40px;
-        width: 40px;
+        height: 20px;
+        width: 20px;
         background-color: white;
         z-index: 50;
         display: flex;
@@ -196,30 +196,71 @@ h1 {
         cursor: pointer;
     }
 
+    .toggle{
+        width: 20px;
+        height: 20px;
+        position: relative;
+        cursor: pointer;
+    }
+
     .burger_btn:before {
         content: '';
         position: absolute;
-        top: 0;
+        top: 1px;
+        left: 0;
         width: 20px;
         background-color: black;
         height: 1px;
+        transition: 0.5s all;
     }
 
     .burger_btn span {
         position: absolute;
         top: 9px;
+        left: 0;
         width: 20px;
         background-color: black;
         height: 1px;
+        transition: 0.25s all;
+    }
+
+    span.active {
+        visibility: hidden;
+        transition: 0.5s all;
     }
 
     .burger_btn:after {
         content: '';
         position: absolute;
-        bottom: 0;
+        bottom: 1px;
+        left: 0;
         width: 20px;
         background-color: black;
         height: 1px;
+        transition: 0.5s all;
+    }
+
+    .toggle:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 20px;
+        background-color: black;
+        height: 1px;
+        transform: rotate(-45deg);
+        bottom: 9px;
+        transition: 0.5s all;
+    }
+    .toggle:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 20px;
+        background-color: black;
+        height: 1px;
+        transform: rotate(45deg);
+        top: 9px;
+        transition: 0.5s all;
     }
 
     .instryment {
