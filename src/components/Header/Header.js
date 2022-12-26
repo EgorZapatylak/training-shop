@@ -88,8 +88,8 @@ export function Header() {
                         <img src={Shopping} alt=''/>
                     </a>
                     <nav>
-                        <div className="burger_btn" onClick={() => setMenuActive(!menuActive)}>
-                            <span/>
+                        <div className={menuActive? 'toggle' : 'burger_btn'} onClick={() => setMenuActive(!menuActive)}>
+                            <span className={menuActive ? 'active' : ''}/>
                         </div>
                     </nav>
                 </div>
