@@ -11,6 +11,26 @@
     height: 490px;
 }
 
+/*// swiper content //*/
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+/*// swiper content //*/
+
 .banner_content {
     display: flex;
     position: absolute;
@@ -26,32 +46,33 @@
     gap: 14px;
 }
 
-.chevron-right {
-    display: flex;
-    position: absolute;
-    top: calc(50% - 50px / 2);
-    left: calc(94% - 50px / 2);
-    height: 40px;
-    width: 40px;
-    background-color: #ffffff;
-    background-image: url("img/chevron-right.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 50%;
+.swiper-button-next{
+    display: flex !important;
+    position: absolute !important;
+    top: calc(50% - 50px / 2) !important;
+    left: calc(95% - 50px / 2) !important;
+    height: 40px !important;
+    width: 40px !important;
+    background-color: #ffffff !important;
+    background-image: url("img/chevron-right.svg") !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    border-radius: 50% !important;
+
 }
 
-.chevron-left {
-    display: flex;
-    position: absolute;
-    top: calc(50% - 50px / 2);
-    right: calc(94% - 50px / 2);
-    height: 40px;
-    width: 40px;
-    background-color: #ffffff;
-    background-image: url("img/chevron-left.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 50%;
+.swiper-button-prev {
+    display: flex !important;
+    position: absolute !important;
+    top: calc(50% - 50px / 2) !important;
+    right: calc(94% - 50px / 2) !important;
+    height: 40px !important;
+    width: 40px !important;
+    background-color: #ffffff !important;
+    background-image: url("img/chevron-left.svg") !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    border-radius: 50% !important;
 }
 
 .banner_content p {
