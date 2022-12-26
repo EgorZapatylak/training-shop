@@ -5,8 +5,13 @@ import Men from "./img/men.jpg";
 import Accessories from "./img/accessories.jpg";
 import './Hero.css'
 import {Link} from "react-router-dom";
+import {Swiper, SwiperSlide} from "swiper/react"
 
-export function Hero ()  {
+import "swiper/css";
+import "swiper/css/navigation";
+import {Navigation} from "swiper";
+
+export function Hero() {
     return (
         <div className='hero'>
             <div className='banner'>
@@ -15,8 +20,8 @@ export function Hero ()  {
                     <p>Banner</p>
                     <span>Your Title Text</span>
                 </div>
-                <div className='chevron-right'></div>
-                <div className='chevron-left'></div>
+                <div className='swiper-button-next'></div>
+                <div className='swiper-button-prev'></div>
             </div>
             <div className='red'>
                 <div className='green'>
