@@ -1,8 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Product.css';
+import Choise from './img/item_1_992.svg';
+import Slider_1 from './img/smol_1.png';
+import Slider_2 from './img/smol_1.png';
+import Slider_3 from './img/smol_1.png';
+import Slider_4 from './img/smol_1.png';
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Navigation, Controller, FreeMode, Thumbs} from "swiper";
 
 
-function product() {
+export default function Product(props) {
+
+    const [firstSwiper, setFirstSwiper] = useState(null);
+    const [secondSwiper, setSecondSwiper] = useState(null);
+
     return(
         <section>
         <div className='product_header'>
@@ -47,17 +58,56 @@ function product() {
             <div className='content_img'>
             <div className='content_row'>
                 <div className='btn'>
-                    <div className='but_up'></div>
-                    <div className='but_down'></div>
+                    <div className='btn_up'></div>
+                    <div className='btn_down'></div>
                 </div>
                 <div className='slider'>
-                    <div className='slider_1'></div>
-                    <div className='slider_2'></div>
-                    <div className='slider_3'></div>
-                    <div className='slider_4'></div>
+                    <Swiper
+                        modules={[Controller, Navigation, Thumbs]}
+                        onSwiper={setFirstSwiper}
+                        // controller={{ control: secondSwiper }}
+                        className='slider-top'
+                        direction={'vertical'}
+                        slidesPerView={4}
+                        spaceBetween={16}
+                        navigation = {{
+                            nextEl: '.btn_down',
+                            prevEl: '.btn_up'
+                        }}
+                    >
+                        <SwiperSlide>
+                            <img src={Slider_1} alt='' />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src={Slider_1} alt='' />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src={Slider_1} alt='' />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src={Slider_1} alt='' />
+                        </SwiperSlide>
+                    </Swiper>
                 </div>
             </div>    
                 <div className='choise'>
+                    <Swiper
+                        modules={[Controller, Navigation, Thumbs, FreeMode]}
+                        onSwiper={setSecondSwiper}
+                        // controller={{ control: firstSwiper }}
+                        // modules={[FreeMode, Navigation, Thumbs, Controller]}
+                        thumbs={{ swiper: firstSwiper }}
+                        navigation={{
+                            nextEl: '.btn_right',
+                            prevEl: '.btn_left'
+                        }}
+                        >
+                        <SwiperSlide><img src={Choise} alt=''/></SwiperSlide>
+                        <SwiperSlide><img src={Choise} alt=''/></SwiperSlide>
+                        <SwiperSlide><img src={Choise} alt=''/></SwiperSlide>
+                        <SwiperSlide><img src={Choise} alt=''/></SwiperSlide>
+                    </Swiper>
+
                     <div className='btn_left'></div>
                     <div className='btn_right'></div>
                 </div>
@@ -228,6 +278,3 @@ function product() {
         </section>
     )
 }
-
-
-export default product;
