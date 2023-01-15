@@ -197,7 +197,7 @@
     gap: 14px;
 }
 
-.but_up {
+.btn_up {
     display: flex;
     height: 40px;
     width: 40px;
@@ -207,25 +207,17 @@
     background-repeat: no-repeat;
     transform: rotate(-90deg);
     border-radius: 50%;
+    z-index: 1;
 }
 
-.but_up:hover {
+.btn_up:hover,
+.btn_down:hover,
+.btn_right:hover,
+.btn_left:hover{
     background-color: #F8F8F8;
 }
 
-.but_down:hover {
-    background-color: #F8F8F8;
-}
-
-.btn_left:hover {
-    background-color: #F8F8F8;
-}
-
-.btn_right:hover {
-    background-color: #F8F8F8;
-}
-
-.but_down {
+.btn_down {
     display: flex;
     height: 40px;
     width: 40px;
@@ -235,6 +227,7 @@
     background-repeat: no-repeat;
     transform: rotate(90deg);
     border-radius: 50%;
+    z-index: 1;
 }
 
 .slider {
@@ -242,17 +235,31 @@
     height: 504px;
     width: 94px;
     justify-content: center;
-    flex-direction: column;
     gap: 16px;
     margin-top: 16px;
     margin-right: 16px;
 }
 
+.slider img{
+    width: 94px;
+}
+
+.slider-top {
+    display: flex;
+    flex-direction: column;
+}
+
+.slider-top .swiper-slide {
+    opacity: 0.4;
+}
+
+.slider-top .swiper-slide-thumb-active {
+    opacity: 1;
+}
 .slider_1 {
     display: flex;
     width: 94px;
     height: 114px;
-    background-image: url('./img/smol_1.png');
 }
 
 .slider_2 {
@@ -278,14 +285,14 @@
 
 .choise {
     display: flex;
+    position: relative;
     width: 448px;
     height: 560px;
-    background-image: url('./img/item_1_992.svg');
 }
 
 .btn_left {
     display: flex;
-    position: relative;
+    position: absolute;
     height: 40px;
     width: 40px;
     top: calc(50% - 40px / 2);
@@ -296,22 +303,28 @@
     background-repeat: no-repeat;
     transform: rotate(180deg);
     border-radius: 50%;
+    z-index: 1;
 }
 
 .btn_right {
     display: flex;
-    position: relative;
+    position: absolute;
     height: 40px;
     width: 40px;
     top: calc(50% - 40px / 2);
-    left: calc(84% - 40px / 2);
+    left: calc(92% - 40px / 2);
     background-color: #ffffff;
     background-image: url("../../components/Hero/img/chevron-right.svg");
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 50%;
+    z-index: 1;
 }
 
+.btn_right.swiper-button-disabled,
+.btn_left.swiper-button-disabled {
+    opacity: 0.35;
+}
 .content_info {
     display: flex;
     flex-direction: column;
@@ -1030,14 +1043,14 @@
     }
 
     .choise {
-        width: 448px;
+        width: 962px;
         background-size: contain;
         background-repeat: no-repeat;
         height: 560px;
     }
 
     .btn_right {
-        left: calc(83% - 40px / 2);
+        left: calc(92% - 40px / 2);
     }
 
     .content_row {
@@ -1125,7 +1138,7 @@
     }
 
     .content {
-        width: 360px;
+        width: 330px;
         margin: 15px 0 0 0;
         padding: 0 15px;
         flex-direction: column;
@@ -1138,8 +1151,13 @@
         height: 412px;
     }
 
+    .choise img {
+        width: 330px;
+        height: 412px;
+    }
+
     .btn_right {
-        left: calc(79% - 40px / 2);
+        left: calc(92% - 40px / 2);
     }
 
     .content {
