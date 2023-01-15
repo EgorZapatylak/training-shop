@@ -14,14 +14,24 @@ import {Navigation} from "swiper";
 export function Hero() {
     return (
         <div className='hero'>
-            <div className='banner'>
-                <img src={Banner} alt=''/>
+            <div className='mySwiper'>
+                <Swiper
+                    modules={[Navigation]}
+                    navigation={{
+                        nextEl: '.chevron-right',
+                        prevEl: '.chevron-left'
+                    }}
+                >
+                    <SwiperSlide><img src={Banner} alt=''/></SwiperSlide>
+                    <SwiperSlide><img src={Banner} alt=''/></SwiperSlide>
+                    <SwiperSlide><img src={Banner} alt=''/></SwiperSlide>
+                </Swiper>
                 <div className='banner_content'>
                     <p>Banner</p>
                     <span>Your Title Text</span>
                 </div>
-                <div className='swiper-button-next'></div>
-                <div className='swiper-button-prev'></div>
+                <div className='chevron-right'></div>
+                <div className='chevron-left'></div>
             </div>
             <div className='red'>
                 <div className='green'>
