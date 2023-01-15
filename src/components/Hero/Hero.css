@@ -5,30 +5,15 @@
     padding: 0 15px;
 }
 
-.banner {
+.mySwiper {
     display: flex;
     position: relative;
     height: 490px;
+    width: 540px;
 }
 
 /*// swiper content //*/
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
 
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-}
 /*// swiper content //*/
 
 .banner_content {
@@ -44,35 +29,50 @@
     justify-content: center;
     flex-direction: column;
     gap: 14px;
+    z-index: 1;
 }
 
-.swiper-button-next{
-    display: flex !important;
-    position: absolute !important;
-    top: calc(50% - 50px / 2) !important;
-    left: calc(95% - 50px / 2) !important;
-    height: 40px !important;
-    width: 40px !important;
-    background-color: #ffffff !important;
-    background-image: url("img/chevron-right.svg") !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    border-radius: 50% !important;
 
+.chevron-right {
+    display: flex;
+    position: absolute;
+    top: calc(50% - 50px / 2);
+    left: calc(94% - 50px / 2);
+    height: 40px;
+    width: 40px;
+    background-color: #ffffff;
+    background-image: url("img/chevron-right.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    z-index: 1;
+    cursor: pointer;
 }
 
-.swiper-button-prev {
-    display: flex !important;
-    position: absolute !important;
-    top: calc(50% - 50px / 2) !important;
-    right: calc(94% - 50px / 2) !important;
-    height: 40px !important;
-    width: 40px !important;
-    background-color: #ffffff !important;
-    background-image: url("img/chevron-left.svg") !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    border-radius: 50% !important;
+.chevron-right.swiper-button-disabled,
+.chevron-left.swiper-button-disabled {
+    opacity: 0.35;
+}
+
+.chevron-left {
+    display: flex;
+    position: absolute;
+    top: calc(50% - 50px / 2);
+    right: calc(94% - 50px / 2);
+    height: 40px;
+    width: 40px;
+    background-color: #ffffff;
+    background-image: url("img/chevron-left.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.chevron-right:hover,
+.chevron-left:hover {
+    background-color: #F8F8F8;
 }
 
 .banner_content p {
@@ -178,11 +178,12 @@
         flex-direction: column;
     }
 
-    .banner {
+    .mySwiper {
         width: 962px;
         justify-content: center;
         background-color: #eeeeeede;
     }
+
     .red {
         width: 962px;
         gap: 15px;
@@ -195,11 +196,11 @@
         height: auto;
     }
 
-    .women img{
+    .women img {
         width: 460px;
     }
 
-    .men img{
+    .men img {
         width: 460px;
     }
 
@@ -210,18 +211,19 @@
 }
 
 @media (max-width: 360px) {
-       .hero {
-        margin: 0 auto ;
+    .hero {
+        margin: 0 auto;
         display: flex;
         width: 330px;
         flex-direction: column;
     }
 
-    .banner img {
+    .mySwiper img {
         width: 330px;
         height: 320px;
     }
-    .banner {
+
+    .mySwiper {
         display: flex;
         width: 330px;
         height: auto;
@@ -280,7 +282,7 @@
         margin-top: 15px;
     }
 
-    .accessories img{
+    .accessories img {
         width: 330px;
         height: 200px;
     }
