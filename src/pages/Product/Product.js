@@ -240,40 +240,102 @@ export default function Product(props) {
                     <div className='related_right'></div>
                 </div>
             </div>
-            <div className="related_img">
-                <div className='clothes id1'>
-                    <div className='id_1'></div>
-                    <p>Women's tracksuit Q109</p>
-                    <div className='cost-rate'>
-                        <p>$30.00</p>
-                        <div className='stars'></div>
+                <div className="related_img">
+                    <Swiper
+                        modules={[Navigation]}
+                        breakpoints = {{
+                            320: {slidesPerView:1},
+                            480: {slidesPerView:2},
+                            800: {slidesPerView:3},
+                            1100: {slidesPerView:4}
+                        }}
+                        navigation={{
+                            nextEl: '.related_right',
+                            prevEl: '.related_left'
+                        }}
+                    >
+                    <SwiperSlide>
+                        <div className='clothes'>
+                            <div className='id_1'></div>
+                            <p>Women's tracksuit Q109</p>
+                            <div className='cost-rate'>
+                                <p>$30.00</p>
+                                <div className='stars'></div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='clothes'>
+                            <div className='id_2'></div>
+                            <p>Women's tracksuit Q109</p>
+                            <div className='cost-rate'>
+                                <p>$30.00</p>
+                                <div className='stars'></div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='clothes id3'>
+                            <div className='id_3'></div>
+                            <p>Women's tracksuit Q109</p>
+                            <div className='cost-rate'>
+                                <p>$30.00</p>
+                                <div className='stars'></div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='clothes'>
+                            <div className='id_4'></div>
+                            <p>Women's tracksuit Q109</p>
+                            <div className='cost-rate'>
+                                <p>$30.00</p>
+                                <div className='stars'></div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='clothes'>
+                            <div className='id_1'></div>
+                            <p>Women's tracksuit Q109</p>
+                            <div className='cost-rate'>
+                                <p>$30.00</p>
+                                <div className='stars'></div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='clothes'>
+                            <div className='id_2'></div>
+                            <p>Women's tracksuit Q109</p>
+                            <div className='cost-rate'>
+                                <p>$30.00</p>
+                                <div className='stars'></div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='clothes'>
+                            <div className='id_3'></div>
+                            <p>Women's tracksuit Q109</p>
+                            <div className='cost-rate'>
+                                <p>$30.00</p>
+                                <div className='stars'></div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='clothes'>
+                            <div className='id_4'></div>
+                            <p>Women's tracksuit Q109</p>
+                            <div className='cost-rate'>
+                                <p>$30.00</p>
+                                <div className='stars'></div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    </Swiper>
                     </div>
-                </div>
-                <div className='clothes id2'>
-                    <div className='id_2'></div>
-                    <p>Women's tracksuit Q109</p>
-                    <div className='cost-rate'>
-                        <p>$30.00</p>
-                        <div className='stars'></div>
-                    </div>
-                </div>
-                <div className='clothes id3'>
-                    <div className='id_3'></div>
-                    <p>Women's tracksuit Q109</p>
-                    <div className='cost-rate'>
-                        <p>$30.00</p>
-                        <div className='stars'></div>
-                    </div>
-                </div>
-                <div className='clothes id4'>
-                    <div className='id_4'></div>
-                    <p>Women's tracksuit Q109</p>
-                    <div className='cost-rate'>
-                        <p>$30.00</p>
-                        <div className='stars'></div>
-                    </div>
-                </div>
-            </div>
         </div>
         </section>
     )
