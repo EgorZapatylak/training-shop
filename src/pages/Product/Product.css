@@ -946,7 +946,7 @@
 
 .related_status {
     display: flex;
-    margin-bottom: 48px;
+    margin-bottom: 40px;
     align-items: center;
     justify-content: space-between;
     height: 40px;
@@ -1007,7 +1007,7 @@
 
 .related_img {
     display: flex;
-    height: 255px;
+    height: auto;
     width: 1110px;
 }
 
@@ -1108,14 +1108,9 @@
 
     .related_img {
         width: 962px;
+        height: auto;
         justify-content: center;
     }
-
-
-    .id4 {
-        display: none;
-    }
-
 }
 
 @media (max-width: 360px) {
@@ -1219,12 +1214,7 @@
 
     .related_img {
         width: 330px;
+        height: auto;
         justify-content: center;
-    }
-
-    .id2,
-    .id3,
-    .id4 {
-        display: none;
     }
 }
