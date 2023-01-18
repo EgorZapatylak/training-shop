@@ -1005,10 +1005,11 @@
     background-color: #F8F8F8;
 }
 
-.related_img {
+.related_img .swiper-slide{
     display: flex;
     height: auto;
-    width: 1110px;
+    width: auto;
+    justify-content: center;
 }
 
 @media (max-width: 992px) {
@@ -1106,8 +1107,8 @@
         font-size: 18px;
     }
 
-    .related_img {
-        width: 962px;
+    .related_img .swiper-slide{
+        width: auto;
         height: auto;
         justify-content: center;
     }
@@ -1212,8 +1213,8 @@
         font-size: 18px;
     }
 
-    .related_img {
-        width: 330px;
+    .related_img .swiper-slide{
+        width: auto;
         height: auto;
         justify-content: center;
     }
