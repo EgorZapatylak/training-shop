@@ -191,6 +191,10 @@
     display: flex;
 }
 
+.content_row {
+    height: 560px;
+}
+
 .btn {
     display: flex;
     width: 94px;

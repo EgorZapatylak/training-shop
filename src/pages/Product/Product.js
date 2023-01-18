@@ -6,13 +6,14 @@ import Slider_2 from './img/smol_1.png';
 import Slider_3 from './img/smol_1.png';
 import Slider_4 from './img/smol_1.png';
 import {Swiper, SwiperSlide} from "swiper/react";
-import {Navigation, Controller, FreeMode, Thumbs} from "swiper";
+import {Navigation, Controller, FreeMode, Thumbs, Pagination, Scrollbar} from "swiper";
 
 
 export default function Product(props) {
 
     const [firstSwiper, setFirstSwiper] = useState(null);
     const [secondSwiper, setSecondSwiper] = useState(null);
+    const [activeSlide, setActiveSlide] = useState(0);
 
     return(
         <section>
@@ -63,12 +64,12 @@ export default function Product(props) {
                 </div>
                 <div className='slider'>
                     <Swiper
-                        modules={[Controller, Navigation, Thumbs]}
+                        modules={[Controller,Navigation, Thumbs]}
                         onSwiper={setFirstSwiper}
                         // controller={{ control: secondSwiper }}
                         className='slider-top'
-                        direction={'vertical'}
                         slidesPerView={4}
+                        direction={'vertical'}
                         spaceBetween={16}
                         navigation = {{
                             nextEl: '.btn_down',
@@ -76,23 +77,23 @@ export default function Product(props) {
                         }}
                     >
                         <SwiperSlide>
-                            <img src={Slider_1} alt='' />
+                            <img src={Slider_1} alt=''/>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={Slider_1} alt='' />
+                            <img src={Slider_2} alt='' />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={Slider_1} alt='' />
+                            <img src={Slider_3} alt='' />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={Slider_1} alt='' />
+                            <img src={Slider_4} alt='' />
                         </SwiperSlide>
                     </Swiper>
                 </div>
             </div>    
                 <div className='choise'>
                     <Swiper
-                        modules={[Controller, Navigation, Thumbs, FreeMode]}
+                        modules={[Controller, Navigation, Thumbs, FreeMode, Pagination]}
                         onSwiper={setSecondSwiper}
                         // controller={{ control: firstSwiper }}
                         // modules={[FreeMode, Navigation, Thumbs, Controller]}
