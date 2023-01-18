@@ -245,9 +245,9 @@ export default function Product(props) {
                         modules={[Navigation]}
                         breakpoints = {{
                             320: {slidesPerView:1},
-                            480: {slidesPerView:2},
-                            800: {slidesPerView:3},
-                            1100: {slidesPerView:4}
+                            375: {slidesPerView:2},
+                            745: {slidesPerView:3},
+                            1024: {slidesPerView:4}
                         }}
                         navigation={{
                             nextEl: '.related_right',
