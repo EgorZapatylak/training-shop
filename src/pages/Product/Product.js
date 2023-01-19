@@ -13,7 +13,6 @@ export default function Product(props) {
 
     const [firstSwiper, setFirstSwiper] = useState(null);
     const [secondSwiper, setSecondSwiper] = useState(null);
-    const [activeSlide, setActiveSlide] = useState(0);
 
     return(
         <section>
@@ -68,7 +67,7 @@ export default function Product(props) {
                         onSwiper={setFirstSwiper}
                         // controller={{ control: secondSwiper }}
                         className='slider-top'
-                        slidesPerView={4}
+                        slidesPerView={1}
                         direction={'vertical'}
                         spaceBetween={16}
                         navigation = {{
