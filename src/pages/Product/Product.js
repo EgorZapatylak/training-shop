@@ -67,7 +67,7 @@ export default function Product(props) {
                         onSwiper={setFirstSwiper}
                         // controller={{ control: secondSwiper }}
                         className='slider-top'
-                        slidesPerView={1}
+                        slidesPerView={4}
                         direction={'vertical'}
                         spaceBetween={16}
                         navigation = {{
