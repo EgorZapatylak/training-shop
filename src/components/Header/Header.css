@@ -89,6 +89,7 @@ opacity: 0.8;
     background-color: white;
     height: 66px;
     width: 1280px;
+    overflow: hidden;
 }
 
 .logo {
@@ -160,7 +161,7 @@ h1 {
     ul {
         position: fixed;
         width: 100%;
-        height: 70vh;
+        height: 85%;
         top: 80px;
         left: 0;
         flex-direction: column;
