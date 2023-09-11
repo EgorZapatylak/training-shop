@@ -16,6 +16,11 @@ import {Link} from "react-router-dom";
 export function Header() {
 
     const [menuActive, setMenuActive] = useState(false)
+    if (menuActive) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'unset';
+    }
 
     return (
         <div className="header_container">
@@ -54,7 +59,7 @@ export function Header() {
                     <Link to="/"><h1>CleverShop</h1></Link>
                 </div>
                 <div className='nav-item'>
-                    <ul className={menuActive ? 'active' : ''} onClick={()=> setMenuActive(false)}>
+                    <ul className={menuActive ? 'active' : ''} onClick={() => setMenuActive(false)}>
                         <li>
                             <a href='#about'>About Us</a>
                         </li>
@@ -88,7 +93,8 @@ export function Header() {
                         <img src={Shopping} alt=''/>
                     </a>
                     <nav>
-                        <div className={menuActive? 'toggle' : 'burger_btn'} onClick={() => setMenuActive(!menuActive)}>
+                        <div className={menuActive ? 'toggle' : 'burger_btn'}
+                             onClick={() => setMenuActive(!menuActive)}>
                             <span className={menuActive ? 'active' : ''}/>
                         </div>
                     </nav>
