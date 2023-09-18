@@ -134,15 +134,6 @@ export default function Product(props) {
                                     <p>{el.toString()}</p>
                                 </div>)
                             )}
-                            <div className='s'>
-                                <p>S</p>
-                            </div>
-                            <div className='m'>
-                                <p>M</p>
-                            </div>
-                            <div className='l'>
-                                <p>L</p>
-                            </div>
                         </div>
                         <div className='size_guide'>
                             <div className='size_img'/>
