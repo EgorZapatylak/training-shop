@@ -58,14 +58,14 @@ export default function Product(props) {
             <div className='content_img'>
             <div className='content_row'>
                 <div className='btn'>
-                    <div className='btn_up'></div>
                     <div className='btn_down'></div>
+                    <div className='btn_up'></div>
                 </div>
                 <div className='slider'>
                     <Swiper
                         modules={[Controller,Navigation, Thumbs]}
                         onSwiper={setFirstSwiper}
-                        // controller={{ control: secondSwiper }}
+                        // controller={{ control: secondSwiper &&! secondSwiper.destroyed? secondSwiper:null }}
                         className='slider-top'
                         slidesPerView={4}
                         direction={'vertical'}
@@ -89,14 +89,14 @@ export default function Product(props) {
                         </SwiperSlide>
                     </Swiper>
                 </div>
-            </div>    
+            </div>
                 <div className='choise'>
                     <Swiper
                         modules={[Controller, Navigation, Thumbs, FreeMode, Pagination]}
                         onSwiper={setSecondSwiper}
-                        // controller={{ control: firstSwiper }}
+                        // controller={{ control: firstSwiper &&! firstSwiper.destroyed? firstSwiper:null}}
                         // modules={[FreeMode, Navigation, Thumbs, Controller]}
-                        thumbs={{ swiper: firstSwiper }}
+                        thumbs={{ swiper: firstSwiper &&! firstSwiper.destroyed? firstSwiper:null }}
                         navigation={{
                             nextEl: '.btn_right',
                             prevEl: '.btn_left'
