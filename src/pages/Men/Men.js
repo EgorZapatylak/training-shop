@@ -1,8 +1,9 @@
 import React from 'react';
 import './Men.css';
 import {Link} from "react-router-dom";
+import {Products_base} from "../../Products_base";
 
-function men() {
+function men(props) {
     return (
         <section>
             <div className='men_header'>
@@ -36,11 +37,13 @@ function men() {
             <div className='items'>
                 <Link to="/product">
                     <div className='clothes'>
-                        <div className='mid_1'></div>
-                        <p>Men's tracksuit Q109</p>
+                        <div className='mid_1'>
+                            <img src={`https://training.cleverland.by/shop${Products_base.men[0].images[0]?.url}`} alt=""/>
+                        </div>
+                        <p>{Products_base.men[0].name}</p>
                         <div className='cost-rate'>
-                            <p>$30.00</p>
-                            <div className='stars'></div>
+                            <p>${Products_base.men[0].price}.00</p>
+                            <div className='stars'>{Products_base.men[0].rating}</div>
                         </div>
                     </div>
                 </Link>
