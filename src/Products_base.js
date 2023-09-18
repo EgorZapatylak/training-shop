@@ -1,4 +1,4 @@
-export const PRODUCTS = {
+export const Products_base = {
   men: [
     {
       particulars: {
