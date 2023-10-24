@@ -2,7 +2,7 @@ import React from 'react';
 import './Women.css';
 import {Link} from "react-router-dom";
 
-function women() {
+export default function Women() {
     return (
         <section>
             <div className='women_header'>
@@ -121,4 +121,3 @@ function women() {
     )
 }
 
-export default women;
