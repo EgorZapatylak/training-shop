@@ -171,43 +171,36 @@
     height: 14px;
 }
 
-.mid_1,
-.mid_2,
-.mid_3,
-.mid_4,
-.mid_5,
-.mid_6,
-.mid_7,
-.mid_8 {
+.mid {
     display: flex;
     width: 255px;
     height: 318px;
 }
 
-.mid_1 {
-    background-image: url('./img/men_1.jpg');
-}
-.mid_2 {
-    background-image: url('./img/men_2.jpg');
-}
-.mid_3 {
-    background-image: url('./img/men_3.jpg');
-}
-.mid_4 {
-    background-image: url('./img/men_4.jpg');
-}
-.mid_5 {
-    background-image: url('./img/men_5.jpg');
-}
-.mid_6 {
-    background-image: url('./img/men_6.jpg');
-}
-.mid_7 {
-    background-image: url('./img/men_7.jpg');
-}
-.mid_8 {
-    background-image: url('./img/men_8.jpg');
-}
+/*.mid_1 {*/
+/*    background-image: url('./img/men_1.jpg');*/
+/*}*/
+/*.mid_2 {*/
+/*    background-image: url('./img/men_2.jpg');*/
+/*}*/
+/*.mid_3 {*/
+/*    background-image: url('./img/men_3.jpg');*/
+/*}*/
+/*.mid_4 {*/
+/*    background-image: url('./img/men_4.jpg');*/
+/*}*/
+/*.mid_5 {*/
+/*    background-image: url('./img/men_5.jpg');*/
+/*}*/
+/*.mid_6 {*/
+/*    background-image: url('./img/men_6.jpg');*/
+/*}*/
+/*.mid_7 {*/
+/*    background-image: url('./img/men_7.jpg');*/
+/*}*/
+/*.mid_8 {*/
+/*    background-image: url('./img/men_8.jpg');*/
+/*}*/
 
 .loading {
     display: flex;
