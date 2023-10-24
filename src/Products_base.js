@@ -37,10 +37,11 @@ export const Products_base = {
         },
         { name: 'Ivan Vorobeynikov', text: 'норм водолазка', rating: 3, id: '620137a577fffe0cd128be85' },
       ],
+      imageURL: require("../src/pages/Men/img/men_1.jpg"),
       images: [
         {
           color: 'Black',
-          url: '/media/6200e42d1c08840bc803ad24/RTLAAL003701_15010467_2_v1_2x.webp',
+          url: '../img/men_1.jpg',
           id: '62012eeb7d2312f4e7932f0e',
         },
         {
@@ -49,7 +50,7 @@ export const Products_base = {
           id: '62012eef7d2312f4e7932f12',
         },
       ],
-      id: '6200e42d1c08840bc803ad24',
+      id: 1,
     },
     {
       particulars: {
@@ -68,6 +69,7 @@ export const Products_base = {
       sizes: ['M INT'],
       discount: null,
       reviews: [],
+      imageURL: require("../src/pages/Men/img/men_2.jpg"),
       images: [
         {
           color: 'Blue',
@@ -115,7 +117,7 @@ export const Products_base = {
           id: '620130ae7d2312f4e7932f3c',
         },
       ],
-      id: '6200e4b61c08840bc803ad27',
+      id: 2
     },
     {
       particulars: {
@@ -134,6 +136,7 @@ export const Products_base = {
       sizes: ['M INT'],
       discount: null,
       reviews: [],
+      imageURL: require("../src/pages/Men/img/men_3.jpg"),
       images: [
         {
           color: 'Green',
@@ -151,7 +154,7 @@ export const Products_base = {
           id: '6201314f7d2312f4e7932f52',
         },
       ],
-      id: '6200e5031c08840bc803ad2a',
+      id: 3,
     },
     {
       particulars: {
@@ -169,7 +172,9 @@ export const Products_base = {
       price: 148.8,
       sizes: ['M INT'],
       discount: null,
-      reviews: [{ name: 'Alesha Popovich', text: 'Хороший товар!', rating: 1, id: '620134b07d2312f4e7932fa5' }],
+      reviews: [
+          { name: 'Alesha Popovich', text: 'Хороший товар!', rating: 1, id: '620134b07d2312f4e7932fa5' }],
+      imageURL: require("../src/pages/Men/img/men_4.jpg"),
       images: [
         {
           color: 'White',
@@ -197,7 +202,7 @@ export const Products_base = {
           id: '620132207d2312f4e7932f61',
         },
       ],
-      id: '6200e55e1c08840bc803ad2d',
+      id: 4,
     },
     {
       particulars: {
@@ -216,6 +221,7 @@ export const Products_base = {
       sizes: ['M INT', 'S INT', 'L INT', 'XL INT', 'XXL INT'],
       discount: null,
       reviews: [],
+      imageURL: require("../src/pages/Men/img/men_5.jpg"),
       images: [
         {
           color: 'Multicolor',
@@ -233,7 +239,7 @@ export const Products_base = {
           id: '6203642177fffe0cd128c03d',
         },
       ],
-      id: '6200e65a1c08840bc803ad30',
+      id: 5,
     },
     {
       particulars: {
@@ -271,6 +277,7 @@ export const Products_base = {
           id: '620365fb77fffe0cd128c07c',
         },
       ],
+      imageURL: require("../src/pages/Men/img/men_6.jpg"),
       images: [
         {
           color: 'Blue',
@@ -303,7 +310,7 @@ export const Products_base = {
           id: '6203653677fffe0cd128c04f',
         },
       ],
-      id: '6200e6bd1c08840bc803ad33',
+      id: 6,
     },
     {
       particulars: {
@@ -329,6 +336,7 @@ export const Products_base = {
           id: '62039b5977fffe0cd128c1af',
         },
       ],
+      imageURL: require("../src/pages/Men/img/men_7.jpg"),
       images: [
         {
           color: 'Black',
@@ -376,7 +384,7 @@ export const Products_base = {
           id: '62039b1b77fffe0cd128c1a3',
         },
       ],
-      id: '6200e74c1c08840bc803ad39',
+      id: 7,
     },
     {
       particulars: {
@@ -405,6 +413,7 @@ export const Products_base = {
           id: '6203ae3177fffe0cd128c1e5',
         },
       ],
+      imageURL: require("../src/pages/Men/img/men_8.jpg"),
       images: [
         {
           color: 'White',
@@ -417,7 +426,7 @@ export const Products_base = {
           id: '6203ad6e77fffe0cd128c1bf',
         },
       ],
-      id: '6200e7bf1c08840bc803ad3c',
+      id: 8,
     },
     {
       particulars: {
@@ -444,6 +453,7 @@ export const Products_base = {
         },
         { name: 'Olya', text: 'Отлично. Прекрасно сшито, не торчат нитки.', rating: 5, id: '6203af3877fffe0cd128c1f9' },
       ],
+      imageURL: require("../src/pages/Men/img/men_9.jpg"),
       images: [
         {
           color: 'White',
@@ -478,6 +488,7 @@ export const Products_base = {
         },
         { name: 'Sergey', text: 'Приятный материал и цвет', rating: 5, id: '6203b00577fffe0cd128c20a' },
       ],
+      imageURL: require("../src/pages/Men/img/men_10.jpg"),
       images: [
         {
           color: 'Turquoise',
@@ -512,6 +523,7 @@ export const Products_base = {
           id: '6204f6e877fffe0cd128c60c',
         },
       ],
+      imageURL: require("../src/pages/Men/img/men_11.jpg"),
       images: [
         {
           color: 'White',
@@ -546,6 +558,7 @@ export const Products_base = {
         { name: 'Sergey', text: 'Не соответствует размеру.', rating: 2, id: '6204f80b77fffe0cd128c61b' },
         { name: 'Igor', text: 'Качество норм. Маломерка.', rating: 3, id: '6204f81b77fffe0cd128c624' },
       ],
+      imageURL: require("../src/pages/Men/img/men_12.jpg"),
       images: [
         {
           color: 'Blue',
@@ -578,6 +591,7 @@ export const Products_base = {
           id: '6204f8fe77fffe0cd128c62f',
         },
       ],
+      imageURL: require("../src/pages/Men/img/men_13.jpg"),
       images: [
         {
           color: 'Black',
@@ -612,6 +626,7 @@ export const Products_base = {
         },
         { name: 'Ilya', text: 'Приятный к телу. Теплый)', rating: 5, id: '6204f9ad77fffe0cd128c645' },
       ],
+      imageURL: require("../src/pages/Men/img/men_14.jpg"),
       images: [
         {
           color: 'White',
@@ -637,6 +652,7 @@ export const Products_base = {
       sizes: ['S INT', 'M INT', 'L INT', 'XXL INT', 'XL INT'],
       discount: null,
       reviews: [{ name: 'Ilya', text: 'Не подошёл по размеру', rating: 2, id: '62050b2a77fffe0cd128c7bd' }],
+      imageURL: require("../src/pages/Men/img/men_15.jpg"),
       images: [
         {
           color: 'White',
@@ -671,6 +687,7 @@ export const Products_base = {
           id: '62050beb77fffe0cd128c7d3',
         },
       ],
+      imageURL: require("../src/pages/Men/img/men_16.jpg"),
       images: [
         {
           color: 'Grey',
@@ -722,6 +739,7 @@ export const Products_base = {
           id: '62050dd577fffe0cd128c803',
         },
       ],
+      imageURL: require("../src/pages/Men/img/men_17.jpg"),
       images: [
         {
           color: 'Vinous',
@@ -756,6 +774,7 @@ export const Products_base = {
         { name: 'Natali', text: 'Ни о чём', rating: 2, id: '620510d177fffe0cd128c814' },
         { name: 'Andrew', text: 'Хорошее качество', rating: 5, id: '620510ed77fffe0cd128c81d' },
       ],
+      imageURL: require("../src/pages/Men/img/men_18.jpg"),
       images: [
         {
           color: 'Yellow',
@@ -789,6 +808,7 @@ export const Products_base = {
       reviews: [
         { name: 'Andrew', text: 'Немного мал, перезаказали на побольше', rating: 4, id: '620511b177fffe0cd128c828' },
       ],
+      imageURL: require("../src/pages/Men/img/men_19.jpg"),
       images: [
         {
           color: 'Green',
@@ -818,6 +838,7 @@ export const Products_base = {
         { name: 'Sasha', text: 'Просто хотел водолазку', rating: 5, id: '6205125277fffe0cd128c899' },
         { name: 'Yuri', text: 'Качество не очень', rating: 3, id: '6205126077fffe0cd128c8a4' },
       ],
+      imageURL: require("../src/pages/Men/img/men_20.jpg"),
       images: [
         {
           color: 'Blue',
