@@ -1,9 +1,31 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 import Card from "../../pages/Main/img/gray.svg";
-import './Products.css'
+import './Products.css';
 
 export function Products(props) {
+
+    let [filter,setFilter] = useState('isNewArrivals')
+
+    let itemForData = props.partic[0].particularName;
+
+    if (filter === 'isSpecials') {
+        itemForData = props.particulars.filter(i => i.particulars.isSpecial === true)
+    }
+    if (filter === 'isBestseller') {
+        itemForData = props.particulars.filter(i => i.particulars.isBestseller === true)
+    }
+    if (filter === 'isMostViewed') {
+        itemForData = props.particulars.filter(i => i.particulars.isMostViewed === true)
+    }
+    if (filter === 'isFeaturedProducts') {
+        itemForData = props.particulars.filter(i => i.particulars.isFeatured === true)
+    }
+
+    function changeFilter(value) {
+        setFilter(value)
+    }
+
     return (
         <>
             <div className='line'></div>
@@ -12,11 +34,11 @@ export function Products(props) {
                     <h2>{props.title}</h2>
                 </div>
                 <div className='sort'>
-                    <h3>New Arrivals</h3>
-                    <h3>Specials</h3>
-                    <h3>Bestseller</h3>
-                    <h3>Most Viewed</h3>
-                    <h3>Featured Products</h3>
+                    <h3 onClick={()=>console.log(props.partic[0].particularName)}>{props.partic[0].name}</h3>
+                    <h3 onClick={()=>console.log(props.partic[1].particularName)}>{props.partic[1].name}</h3>
+                    <h3 onClick={()=>console.log(props.partic[2].particularName)}>{props.partic[2].name}</h3>
+                    <h3 onClick={()=>console.log(props.partic[3].particularName)}>{props.partic[3].name}</h3>
+                    <h3 onClick={()=>console.log(props.partic[4].particularName)}>{props.partic[4].name}</h3>
                 </div>
             </div>
             <div className='items'>
