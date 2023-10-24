@@ -1,9 +1,19 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './Men.css';
 import {Link} from "react-router-dom";
 import {Products_base} from "../../Products_base";
 
-function men(props) {
+export default function Men(props) {
+
+    const defaultParams = {
+        limit:8,
+        offset:0
+    }
+
+    const [items, setItems] = useState([]);
+    const [params, setParams] = useState(defaultParams)
+
+
     return (
         <section>
             <div className='men_header'>
@@ -35,93 +45,25 @@ function men(props) {
                 </div>
             </div>
             <div className='items'>
-                <Link to="/product">
-                    <div className='clothes'>
-                        <div className='mid_1'>
-                            <img src={`https://training.cleverland.by/shop${Products_base.men[0].images[0]?.url}`} alt=""/>
+                {Products_base.men.map((prod) => (
+                    <>
+                        <div  className='clothes'>
+                            <Link to='/product'>
+                                <div className={`mid_${prod.id}`}>
+                                    <img className='mid' src={prod.imageURL} alt=""/>
+                                </div>
+                                <p>{prod.name}</p>
+                                <div className='cost-rate'>
+                                    <p>${prod.price}.00</p>
+                                    <div className='stars'>{prod.rating}</div>
+                                </div>
+                            </Link>
                         </div>
-                        <p>{Products_base.men[0].name}</p>
-                        <div className='cost-rate'>
-                            <p>${Products_base.men[0].price}.00</p>
-                            <div className='stars'>{Products_base.men[0].rating}</div>
-                        </div>
-                    </div>
-                </Link>
-                <Link to="/product">
-                <div className='clothes'>
-                    <div className='mid_2'></div>
-                    <p>Men's tracksuit Q109</p>
-                    <div className='cost-rate'>
-                        <p>$30.00</p>
-                        <div className='stars'></div>
-                    </div>
-                </div>
-                </Link>
-                <Link to="/product">
-                <div className='clothes'>
-                    <div className='mid_3'></div>
-                    <p>Men's tracksuit Q109</p>
-                    <div className='cost-rate'>
-                        <p>$30.00</p>
-                        <div className='stars'></div>
-                    </div>
-                </div>
-                </Link>
-                <Link to="/product">
-                <div className='clothes'>
-                    <div className='mid_4'></div>
-                    <p>Men's tracksuit Q109</p>
-                    <div className='cost-rate'>
-                        <p>$30.00</p>
-                        <div className='stars'></div>
-                    </div>
-                </div>
-                </Link>
-                <Link to="/product">
-                <div className='clothes'>
-                    <div className='mid_5'></div>
-                    <p>Men's tracksuit Q109</p>
-                    <div className='cost-rate'>
-                        <p>$30.00</p>
-                        <div className='stars'></div>
-                    </div>
-                </div>
-                </Link>
-                <Link to="/product">
-                <div className='clothes'>
-                    <div className='mid_6'></div>
-                    <p>Men's tracksuit Q109</p>
-                    <div className='cost-rate'>
-                        <p>$30.00</p>
-                        <div className='stars'></div>
-                    </div>
-                </div>
-                </Link>
-                <Link to="/product">
-                <div className='clothes'>
-                    <div className='mid_7'></div>
-                    <p>Men's tracksuit Q109</p>
-                    <div className='cost-rate'>
-                        <p>$30.00</p>
-                        <div className='stars'></div>
-                    </div>
-                </div>
-                </Link>
-                <Link to="/product">
-                <div className='clothes'>
-                    <div className='mid_8'></div>
-                    <p>Men's tracksuit Q109</p>
-                    <div className='cost-rate'>
-                        <p>$30.00</p>
-                        <div className='stars'></div>
-                    </div>
-                </div>
-                </Link>
+                    </>
+                ))}
             </div>
-            <div className='loading'>
+            <div className='loading' onClick={()=> setParams({...params, offset: params.offset + params.limit})}>
             </div>
         </section>
     )
 }
-
-export default men;
