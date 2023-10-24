@@ -8,39 +8,41 @@ import {Blog} from "../../components/Blog/Blog";
 import {Products} from "../../components/Products/Products";
 import {Products_base} from "../../Products_base";
 
-function main() {
-
-    const men = [
-    { id:1, name: "Men's tracksuit Q101", price: "30.00", imageURL: require("../../pages/Men/img/men_1.jpg")},
-    { id:2, name: "Men's tracksuit Q101", price: "30.00", imageURL: require("../../pages/Men/img/men_2.jpg")},
-    { id:3, name: "Men's tracksuit Q101", price: "30.00", imageURL: require("../../pages/Men/img/men_3.jpg")},
-    { id:4, name: "Men's tracksuit Q101", price: "30.00", imageURL: require("../../pages/Men/img/men_4.jpg")},
-    { id:5, name: "Men's tracksuit Q101", price: "30.00", imageURL: require("../../pages/Men/img/men_5.jpg")},
-    { id:6, name: "Men's tracksuit Q101", price: "30.00", imageURL: require("../../pages/Men/img/men_6.jpg")},
-    { id:7, name: "Men's tracksuit Q101", price: "30.00", imageURL: require("../../pages/Men/img/men_7.jpg")},
-    { id:8, name: "Men's tracksuit Q101", price: "30.00", imageURL: require("../../pages/Men/img/men_8.jpg")},
+export const MAIN_CLOTHES_BLOCK_MENU =[
+    {
+        particularName: "isNewArrivals",
+        name: "NEW ARRIVALS"
+    },
+    {
+        particularName: "isSpecial",
+        name: "SPECIALS"
+    },
+    {
+        particularName: "isBestseller",
+        name: "BESTSELLERS"
+    },
+    {
+        particularName: "isMostViewed",
+        name: "MOST VIEWED"
+    },
+    {
+        particularName: "isFeatured",
+        name: "FEATURED PRODUCTS"
+    }
 ]
-    const women = [
-        { id:1, name: "Women's tracksuit Q109", price: "30.00", imageURL: require("../../pages/Women/img/women_1.jpg")},
-        { id:2, name: "Women's tracksuit Q109", price: "30.00", imageURL: require("../../pages/Women/img/women_2.jpg")},
-        { id:3, name: "Women's tracksuit Q109", price: "30.00", imageURL: require("../../pages/Women/img/women_3.jpg")},
-        { id:4, name: "Women's tracksuit Q109", price: "30.00", imageURL: require("../../pages/Women/img/women_4.jpg")},
-        { id:5, name: "Women's tracksuit Q109", price: "30.00", imageURL: require("../../pages/Women/img/women_5.jpg")},
-        { id:6, name: "Women's tracksuit Q109", price: "30.00", imageURL: require("../../pages/Women/img/women_6.jpg")},
-        { id:7, name: "Women's tracksuit Q109", price: "30.00", imageURL: require("../../pages/Women/img/women_7.jpg")},
-        { id:8, name: "Women's tracksuit Q109", price: "30.00", imageURL: require("../../pages/Women/img/women_8.jpg")},
-    ]
+
+export default function Main() {
+
     return (
         <section className='main'>
             <Hero/>
             <Advantage/>
-            <Products title="Women's" item={women}/>
-            <Products title="Men's" item={men}/>
-            <Promise />
-            <SpecialOffer />
-            <Blog />
+            <Products title="Women's" item={Products_base.women} partic={MAIN_CLOTHES_BLOCK_MENU}/>
+            <Products title="Men's" item={Products_base.men} partic={MAIN_CLOTHES_BLOCK_MENU}/>
+            <Promise/>
+            <SpecialOffer/>
+            <Blog/>
         </section>
     )
 }
 
-export default main;
