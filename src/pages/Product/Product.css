@@ -192,12 +192,18 @@
 }
 
 .content_row {
+    display: flex;
+    flex-direction: column;
     height: 560px;
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .btn {
     display: flex;
-    width: 94px;
+    position: relative;
+    margin-left: 14px;
+    width: 64px;
     gap: 14px;
 }
 
@@ -209,7 +215,7 @@
     background-image: url("../../components/Hero/img/chevron-right.svg");
     background-position: center;
     background-repeat: no-repeat;
-    transform: rotate(-90deg);
+    transform: rotate(-90deg) !important;
     border-radius: 50%;
     z-index: 1;
 }
@@ -229,7 +235,7 @@
     background-image: url("../../components/Hero/img/chevron-right.svg");
     background-position: center;
     background-repeat: no-repeat;
-    transform: rotate(90deg);
+    transform: rotate(90deg) !important;
     border-radius: 50%;
     z-index: 1;
 }
