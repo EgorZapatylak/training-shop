@@ -7,13 +7,14 @@ import Slider_2 from './img/smol_1.png';
 import Slider_3 from './img/smol_1.png';
 import Slider_4 from './img/smol_1.png';
 import {Swiper, SwiperSlide} from "swiper/react";
-import {Navigation, Controller, FreeMode, Thumbs, Pagination, Scrollbar} from "swiper";
+import {Navigation, Controller, FreeMode, Thumbs, Pagination} from "swiper";
 
 
 export default function Product(props) {
 
     const [firstSwiper, setFirstSwiper] = useState(null);
     const [secondSwiper, setSecondSwiper] = useState(null);
+
 
     return (
         <section>
@@ -59,34 +60,33 @@ export default function Product(props) {
                 <div className='content_img'>
                     <div className='content_row'>
                         <div className='btn'>
-                            <div className='btn_down'></div>
-                            <div className='btn_up'></div>
+                            <div className='btn_up btn_right' ></div>
+                            <div className='btn_down btn_left'></div>
                         </div>
                         <div className='slider'>
                             <Swiper
                                 modules={[Controller, Navigation, Thumbs]}
                                 onSwiper={setFirstSwiper}
-                                // controller={{ control: secondSwiper &&! secondSwiper.destroyed? secondSwiper:null }}
                                 className='slider-top'
                                 slidesPerView={4}
                                 direction={'vertical'}
                                 spaceBetween={16}
                                 navigation={{
-                                    nextEl: '.btn_down',
-                                    prevEl: '.btn_up'
+                                    nextEl: '.btn_up',
+                                    prevEl: '.btn_down'
                                 }}
                             >
                                 <SwiperSlide>
-                                    <img src={Slider_1} alt=''/>
+                                    <img src={Slider_1} alt='Описание изоражения 1'/>
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    <img src={Slider_2} alt=''/>
+                                    <img src={Slider_2} alt='Описание изоражения 2'/>
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    <img src={Slider_3} alt=''/>
+                                    <img src={Slider_3} alt='Описание изоражения 3'/>
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    <img src={Slider_4} alt=''/>
+                                    <img src={Slider_4} alt='Описание изоражения 4'/>
                                 </SwiperSlide>
                             </Swiper>
                         </div>
@@ -95,20 +95,18 @@ export default function Product(props) {
                         <Swiper
                             modules={[Controller, Navigation, Thumbs, FreeMode, Pagination]}
                             onSwiper={setSecondSwiper}
-                            // controller={{ control: firstSwiper &&! firstSwiper.destroyed? firstSwiper:null}}
-                            // modules={[FreeMode, Navigation, Thumbs, Controller]}
+                            controller={{ control: firstSwiper &&! firstSwiper.destroyed? firstSwiper:null}}
                             thumbs={{swiper: firstSwiper && !firstSwiper.destroyed ? firstSwiper : null}}
                             navigation={{
                                 nextEl: '.btn_right',
                                 prevEl: '.btn_left'
                             }}
                         >
-                            <SwiperSlide><img src={Choise} alt=''/></SwiperSlide>
-                            <SwiperSlide><img src={Choise} alt=''/></SwiperSlide>
-                            <SwiperSlide><img src={Choise} alt=''/></SwiperSlide>
-                            <SwiperSlide><img src={Choise} alt=''/></SwiperSlide>
+                            <SwiperSlide><img src={Choise} alt='Описание изоражения 1'/></SwiperSlide>
+                            <SwiperSlide><img src={Choise} alt='Описание изоражения 2'/></SwiperSlide>
+                            <SwiperSlide><img src={Choise} alt='Описание изоражения 3'/></SwiperSlide>
+                            <SwiperSlide><img src={Choise} alt='Описание изоражения 4'/></SwiperSlide>
                         </Swiper>
-
                         <div className='btn_left'></div>
                         <div className='btn_right'></div>
                     </div>
