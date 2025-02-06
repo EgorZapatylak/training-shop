@@ -22,8 +22,9 @@ export default function Product() {
     // Рефы для кнопок Swiper
     const prevThumbsRef = useRef(null);
     const nextThumbsRef = useRef(null);
-    const prevMainRef = useRef (null);
-    const nextMainRef = useRef (null);
+    const prevMainRef = useRef(null);
+    const nextMainRef = useRef(null);
+
     const updateSwiper = () => {
         if (thumbsSwiper) {
             console.log("🔄 Принудительное обновление Swiper...");
@@ -35,17 +36,17 @@ export default function Product() {
                 if (prevBtn && nextBtn) {
                     console.log("✅ Кнопки Swiper найдены, обновляем навигацию!");
 
-// Принудительно привязываем кнопки
+                    // Принудительно привязываем кнопки
                     thumbsSwiper.params.navigation.prevEl = prevBtn;
                     thumbsSwiper.params.navigation.nextEl = nextBtn;
 
-// Перезапускаем навигацию
+                    // Перезапускаем навигацию
                     thumbsSwiper.navigation.init();
                     thumbsSwiper.navigation.update();
                     thumbsSwiper.update();
 
-                    prevBtn.classList.remove('swiper-button-disabled');
-                    nextBtn.classList.remove('swiper-button-disabled');
+                    prevBtn.classList.remove('swiper-button-disabled','swiper-button-lock');
+                    nextBtn.classList.remove('swiper-button-disabled','swiper-button-lock');
 
                     console.log("✅ Кнопки Swiper разблокированы и работают!");
                 } else {
@@ -55,7 +56,7 @@ export default function Product() {
             }, 300);
         }
     };
-
+//
     useEffect(() => {
         if (thumbsSwiper && mainSwiper) {
 // Синхронизируем кнопки
@@ -64,14 +65,6 @@ export default function Product() {
                 mainSwiper.slideNext();
             };
             prevThumbsRef.current.onclick = () => {
-                thumbsSwiper.slidePrev();
-                mainSwiper.slidePrev();
-            };
-            nextMainRef.current.onclick = () => {
-                thumbsSwiper.slideNext();
-                mainSwiper.slideNext();
-            };
-            prevMainRef.current.onclick = () => {
                 thumbsSwiper.slidePrev();
                 mainSwiper.slidePrev();
             };
@@ -145,10 +138,12 @@ export default function Product() {
                             slidesPerView={4}
                             direction="vertical"
                             spaceBetween={16}
+                            loop={false}
                             navigation={{
                                 nextEl: nextThumbsRef.current,
                                 prevEl: prevThumbsRef.current
                             }}
+                            onSlideChange = {()=> mainSwiper?.slideTo(thumbsSwiper.activeIndex)}
                         >
                             <SwiperSlide><img src={Slider_1} alt='Описание изоражения 1'/></SwiperSlide>
                             <SwiperSlide><img src={Slider_2} alt='Описание изоражения 2'/></SwiperSlide>
@@ -166,6 +161,7 @@ export default function Product() {
                                 prevEl: prevMainRef.current
                             }}
                             spaceBetween={10}
+                            onSlideChange = {()=> thumbsSwiper?.slideTo(mainSwiper.activeIndex)}
                         >
                             <SwiperSlide><img src={Choise} alt='Описание изоражения 1'/></SwiperSlide>
                             <SwiperSlide><img src={Choise} alt='Описание изоражения 2'/></SwiperSlide>
