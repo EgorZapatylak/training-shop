@@ -2,24 +2,25 @@ import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 import Card from "../../pages/Main/img/gray.svg";
 import './Products.css';
+import {Products_base} from "../../Products_base";
 
 export function Products(props) {
 
     let [filter,setFilter] = useState('isNewArrivals')
 
-    let itemForData = props.partic[0].particularName;
+    let itemForData = Products_base;
 
     if (filter === 'isSpecials') {
-        itemForData = props.particulars.filter(i => i.particulars.isSpecial === true)
+        itemForData = Products_base.filter(i => i.particulars.isSpecial === true)
     }
     if (filter === 'isBestseller') {
-        itemForData = props.particulars.filter(i => i.particulars.isBestseller === true)
+        itemForData = Products_base.filter(i => i.particulars.isBestseller === true)
     }
     if (filter === 'isMostViewed') {
-        itemForData = props.particulars.filter(i => i.particulars.isMostViewed === true)
+        itemForData = Products_base.filter(i => i.particulars.isMostViewed === true)
     }
     if (filter === 'isFeaturedProducts') {
-        itemForData = props.particulars.filter(i => i.particulars.isFeatured === true)
+        itemForData = Products_base.filter(i => i.particulars.isFeatured === true)
     }
 
     function changeFilter(value) {
