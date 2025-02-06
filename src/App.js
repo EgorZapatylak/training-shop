@@ -7,7 +7,6 @@ import Men from "./pages/Men/Men";
 import Women from "./pages/Women/Women";
 import Product from "./pages/Product/Product";
 
-
 const App = () => {
     return (
         <div className="App">
