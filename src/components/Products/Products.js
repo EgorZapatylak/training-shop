@@ -1,91 +1,82 @@
-import React, {useState} from 'react';
-import {Link} from "react-router-dom";
-import Card from "../../pages/Main/img/gray.svg";
+
+import React, { useState } from 'react';
+import { Link } from "react-router-dom";
+import { Products_base } from "../../Products_base";
 import './Products.css';
-import {Products_base} from "../../Products_base";
 
-export function Products(props) {
+export function Products({ title, category = "men" }) {
+    const [filter, setFilter] = useState(null); // По умолчанию без фильтра
 
-    let [filter,setFilter] = useState('isNewArrivals')
+    // Получаем товары по заданной категории
+    let items = Products_base[category] || [];
 
-    let itemForData = Products_base;
-
-    if (filter === 'isSpecials') {
-        itemForData = Products_base.filter(i => i.particulars.isSpecial === true)
-    }
-    if (filter === 'isBestseller') {
-        itemForData = Products_base.filter(i => i.particulars.isBestseller === true)
-    }
-    if (filter === 'isMostViewed') {
-        itemForData = Products_base.filter(i => i.particulars.isMostViewed === true)
-    }
-    if (filter === 'isFeaturedProducts') {
-        itemForData = Products_base.filter(i => i.particulars.isFeatured === true)
+    // Фильтрация по particulars
+    if (filter) {
+        items = items.filter(product => product.particulars[filter]);
     }
 
-    function changeFilter(value) {
-        setFilter(value)
-    }
+    // Получаем список доступных фильтров (динамически)
+    const availableFilters = Object.keys(items[0]?.particulars || {});
 
     return (
         <>
             <div className='line'></div>
             <div className='item_hed'>
                 <div className='item_info'>
-                    <h2>{props.title}</h2>
+                    <h2>{title}</h2>
                 </div>
                 <div className='sort'>
-                    <h3 onClick={()=>console.log(props.partic[0].particularName)}>{props.partic[0].name}</h3>
-                    <h3 onClick={()=>console.log(props.partic[1].particularName)}>{props.partic[1].name}</h3>
-                    <h3 onClick={()=>console.log(props.partic[2].particularName)}>{props.partic[2].name}</h3>
-                    <h3 onClick={()=>console.log(props.partic[3].particularName)}>{props.partic[3].name}</h3>
-                    <h3 onClick={()=>console.log(props.partic[4].particularName)}>{props.partic[4].name}</h3>
+                    <h3 onClick={() => setFilter(null)}>All</h3>
+                    {availableFilters.map((key) => (
+                        <h3 key={key} onClick={() => setFilter(key)}>
+                            {key.replace(/is/, '')} {/* Убираем "is" для читаемости */}
+                        </h3>
+                    ))}
                 </div>
             </div>
             <div className='items'>
-                {props.item.map((el) => (
-                    <Link to="/product">
-                        <div className='clothes'>
-                            <div className='men_id'>
-                                <img src={el.imageURL}/>
-                            </div>
-                            <div className='clothes_info'>
-                                <p>{el.name}</p>
-                                <div className='cost-rate'>
-                                    <p>{el.price}</p>
-                                    <div className='stars'></div>
+                {items.length > 0 ? (
+                    items.map((el) => (
+                        //<Link key={el.id} to="/product">;
+                        <Link key={el.id} to={`/product/${el.id}`}>
+                            <div className='clothes'>
+                                <div className='men_id'>
+                                    <img src={el.imageURL} alt={el.name} />
                                 </div>
-                                <div className='clothes_event'>
-                                    <div className="clothes_info_img">
-                                        <img width={40} height={40} src={Card} alt='blue'/>
-                                        <img width={40} height={40} src={Card} alt='white'/>
-                                        <img width={40} height={40} src={Card} alt='black'/>
-                                        <img width={40} height={40} src={Card} alt='grey'/>
+                                <div className='clothes_info'>
+                                    <p>{el.name}</p>
+                                    <p><strong>{el.brand}</strong></p>
+                                    <div className='cost-rate'>
+                                        <p>{el.price}$</p>
+                                        <p>⭐ {el.rating}</p>
                                     </div>
-                                    <div className='clothes_info_size'>
-                                        <div className='xs'>
-                                            <p>XS</p>
+                                    <div className='clothes_event'>
+                                        <div className="clothes_info_img">
+                                            {el.images.slice(0, 4).map((img) => (
+                                                <img key={img.id} width={40} height={40} src={img.url} alt={img.color} />
+                                            ))}
                                         </div>
-                                        <div className='s'>
-                                            <p>S</p>
+                                        <div className='clothes_info_size'>
+                                            {el.sizes.map((size, index) => (
+                                                <div key={index} className='size-box'>
+                                                    <p>{size}</p>
+                                                </div>
+                                            ))}
                                         </div>
-                                        <div className='m'>
-                                            <p>M</p>
+                                        <div className='clothes_info_event'>
+                                            <button>ADD TO CART</button>
+                                            <div className="heart_1"></div>
+                                            <div className="scale_1"></div>
                                         </div>
-                                        <div className='l'>
-                                            <p>L</p>
-                                        </div>
-                                    </div>
-                                    <div className='clothes_info_event'>
-                                        <button>ADD TO CART</button>
-                                        <div className="heart_1"></div>
-                                        <div className="scale_1"></div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </Link>))}
-                <Link to={"/" + props.title.toLowerCase().slice(0,-2)}>
+                        </Link>
+                    ))
+                ) : (
+                    <p>No products found</p>
+                )}
+                <Link to={"/" + title.toLowerCase().slice(0, -2)}>
                     <button className='women_button'>See All</button>
                 </Link>
             </div>
