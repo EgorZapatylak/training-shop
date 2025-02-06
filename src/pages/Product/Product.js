@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import './Product.css';
 import {Products_base} from "../../Products_base";
 import Choise from './img/item_1_992.svg';
@@ -7,14 +7,85 @@ import Slider_2 from './img/smol_1.png';
 import Slider_3 from './img/smol_1.png';
 import Slider_4 from './img/smol_1.png';
 import {Swiper, SwiperSlide} from "swiper/react";
-import {Navigation, Controller, FreeMode, Thumbs, Pagination} from "swiper";
+import {Navigation, FreeMode, Thumbs} from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
+import 'swiper/css/free-mode';
 
 
-export default function Product(props) {
+export default function Product() {
 
-    const [firstSwiper, setFirstSwiper] = useState(null);
-    const [secondSwiper, setSecondSwiper] = useState(null);
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
+    const [mainSwiper, setMainSwiper] = useState(null);
 
+    // Рефы для кнопок Swiper
+    const prevThumbsRef = useRef(null);
+    const nextThumbsRef = useRef(null);
+    const prevMainRef = useRef (null);
+    const nextMainRef = useRef (null);
+    const updateSwiper = () => {
+        if (thumbsSwiper) {
+            console.log("🔄 Принудительное обновление Swiper...");
+
+            setTimeout(() => {
+                const prevBtn = document.querySelector('.btn_down');
+                const nextBtn = document.querySelector('.btn_up');
+
+                if (prevBtn && nextBtn) {
+                    console.log("✅ Кнопки Swiper найдены, обновляем навигацию!");
+
+// Принудительно привязываем кнопки
+                    thumbsSwiper.params.navigation.prevEl = prevBtn;
+                    thumbsSwiper.params.navigation.nextEl = nextBtn;
+
+// Перезапускаем навигацию
+                    thumbsSwiper.navigation.init();
+                    thumbsSwiper.navigation.update();
+                    thumbsSwiper.update();
+
+                    prevBtn.classList.remove('swiper-button-disabled');
+                    nextBtn.classList.remove('swiper-button-disabled');
+
+                    console.log("✅ Кнопки Swiper разблокированы и работают!");
+                } else {
+                    console.log("⏳ Кнопки ещё не появились, пробуем снова...");
+                    setTimeout(updateSwiper, 300); // Пробуем ещё раз через 300 мс
+                }
+            }, 300);
+        }
+    };
+
+    useEffect(() => {
+        if (thumbsSwiper && mainSwiper) {
+// Синхронизируем кнопки
+            nextThumbsRef.current.onclick = () => {
+                thumbsSwiper.slideNext();
+                mainSwiper.slideNext();
+            };
+            prevThumbsRef.current.onclick = () => {
+                thumbsSwiper.slidePrev();
+                mainSwiper.slidePrev();
+            };
+            nextMainRef.current.onclick = () => {
+                thumbsSwiper.slideNext();
+                mainSwiper.slideNext();
+            };
+            prevMainRef.current.onclick = () => {
+                thumbsSwiper.slidePrev();
+                mainSwiper.slidePrev();
+            };
+        }
+        updateSwiper();
+    }, [thumbsSwiper, mainSwiper]);
+
+    // Проверяем, есть ли данные
+
+    if (!Products_base?.men?.length) {
+        return <p>Product not found</p>;
+    }
+
+    const product = Products_base.men[0];
 
     return (
         <section>
@@ -24,7 +95,7 @@ export default function Product(props) {
                     <div className='ul'/>
                     <p>Men</p>
                     <div className='ul'/>
-                    <span>{Products_base.men[0].name}</span>
+                    <span>{product.name}</span>
                 </div>
                 <div className='share'>
                     <div className='share_img'/>
@@ -32,90 +103,84 @@ export default function Product(props) {
                 </div>
             </div>
             <div className='title'>
-                <h1>{Products_base.men[0].name}</h1>
+                <h1>{product.name}</h1>
             </div>
-            <div className='rate_info'>
-                <div className='reviews'>
-                    <div className='star'>
-                        <div className='stars_i'/>
-                        <div className='stars_i'/>
-                        <div className='stars_i'/>
-                        <div className='stars_i'/>
-                        <div className='stars_i'/>
-                    </div>
-                    <p>2 Reviews</p>
-                </div>
-                <div className='sa'>
-                    <div className='sku'>
-                        <p>SKU:</p>
-                        <span>777</span>
-                    </div>
-                    <div className='availability'>
-                        <p>Availability:</p>
-                        <span>In Stock</span>
-                    </div>
-                </div>
-            </div>
+            {/*<div className='rate_info'>*/}
+            {/*    <div className='reviews'>*/}
+            {/*        <div className='star'>*/}
+            {/*            <div className='stars_i'/>*/}
+            {/*            <div className='stars_i'/>*/}
+            {/*            <div className='stars_i'/>*/}
+            {/*            <div className='stars_i'/>*/}
+            {/*            <div className='stars_i'/>*/}
+            {/*        </div>*/}
+            {/*        <p>2 Reviews</p>*/}
+            {/*    </div>*/}
+            {/*    <div className='sa'>*/}
+            {/*        <div className='sku'>*/}
+            {/*            <p>SKU:</p>*/}
+            {/*            <span>777</span>*/}
+            {/*        </div>*/}
+            {/*        <div className='availability'>*/}
+            {/*            <p>Availability:</p>*/}
+            {/*            <span>In Stock</span>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
             <div className='content'>
                 <div className='content_img'>
                     <div className='content_row'>
+                        {/*Кнопки управления миниатюрным*/}
                         <div className='btn'>
-                            <div className='btn_up btn_right' ></div>
-                            <div className='btn_down btn_left'></div>
+                            <div className='btn_up' ref={nextThumbsRef}></div>
+                            <div className='btn_down' ref={prevThumbsRef}></div>
                         </div>
-                        <div className='slider'>
-                            <Swiper
-                                modules={[Controller, Navigation, Thumbs]}
-                                onSwiper={setFirstSwiper}
-                                className='slider-top'
-                                slidesPerView={4}
-                                direction={'vertical'}
-                                spaceBetween={16}
-                                navigation={{
-                                    nextEl: '.btn_up',
-                                    prevEl: '.btn_down'
-                                }}
-                            >
-                                <SwiperSlide>
-                                    <img src={Slider_1} alt='Описание изоражения 1'/>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <img src={Slider_2} alt='Описание изоражения 2'/>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <img src={Slider_3} alt='Описание изоражения 3'/>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <img src={Slider_4} alt='Описание изоражения 4'/>
-                                </SwiperSlide>
-                            </Swiper>
-                        </div>
+                        <Swiper
+                            modules={[Navigation, Thumbs]}
+                            onSwiper={(swiper) => {
+                                setThumbsSwiper(swiper);
+                                setTimeout(updateSwiper, 500)// Вызываем после инициализации
+                            }}
+                            className="slider-top"
+                            slidesPerView={4}
+                            direction="vertical"
+                            spaceBetween={16}
+                            navigation={{
+                                nextEl: nextThumbsRef.current,
+                                prevEl: prevThumbsRef.current
+                            }}
+                        >
+                            <SwiperSlide><img src={Slider_1} alt='Описание изоражения 1'/></SwiperSlide>
+                            <SwiperSlide><img src={Slider_2} alt='Описание изоражения 2'/></SwiperSlide>
+                            <SwiperSlide><img src={Slider_3} alt='Описание изоражения 3'/></SwiperSlide>
+                            <SwiperSlide><img src={Slider_4} alt='Описание изоражения 4'/></SwiperSlide>
+                        </Swiper>
                     </div>
                     <div className='choise'>
                         <Swiper
-                            modules={[Controller, Navigation, Thumbs, FreeMode, Pagination]}
-                            onSwiper={setSecondSwiper}
-                            controller={{ control: firstSwiper &&! firstSwiper.destroyed? firstSwiper:null}}
-                            thumbs={{swiper: firstSwiper && !firstSwiper.destroyed ? firstSwiper : null}}
+                            modules={[Navigation, Thumbs, FreeMode]}
+                            onSwiper={setMainSwiper}
+                            thumbs={{swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null}}
                             navigation={{
-                                nextEl: '.btn_right',
-                                prevEl: '.btn_left'
+                                nextEl: nextMainRef.current,
+                                prevEl: prevMainRef.current
                             }}
+                            spaceBetween={10}
                         >
                             <SwiperSlide><img src={Choise} alt='Описание изоражения 1'/></SwiperSlide>
                             <SwiperSlide><img src={Choise} alt='Описание изоражения 2'/></SwiperSlide>
                             <SwiperSlide><img src={Choise} alt='Описание изоражения 3'/></SwiperSlide>
                             <SwiperSlide><img src={Choise} alt='Описание изоражения 4'/></SwiperSlide>
                         </Swiper>
-                        <div className='btn_left'></div>
-                        <div className='btn_right'></div>
+                        <div className='btn_left' ref={prevMainRef}></div>
+                        <div className='btn_right' ref={nextMainRef}></div>
                     </div>
                 </div>
                 <div className='content_info'>
                     <div className='saze_color'>
                         <div className='color'>
                             <p>Color:</p>
-                            <span>{Products_base.men[0].images[0].color}</span>
+                            <span>{product.images[0].color}</span>
                         </div>
                         <div className='color_img'>
                             <img className='color_1' alt=''/>
@@ -125,10 +190,10 @@ export default function Product(props) {
                         </div>
                         <div className='size'>
                             <p>Size:</p>
-                            <span>{Products_base.men[0].sizes[0]}</span>
+                            <span>{product.sizes[0]}</span>
                         </div>
                         <div className='size_info'>
-                            {Products_base.men[0].sizes.map((el) => (<div className='xs'>
+                            {product.sizes.map((el, index) => (<div className='xs' key={index}>
                                     <p>{el.toString()}</p>
                                 </div>)
                             )}
@@ -140,7 +205,7 @@ export default function Product(props) {
                         <div className='line'></div>
                     </div>
                     <div className='price'>
-                        <p>${Products_base.men[0].price}.00</p>
+                        <p>${product.price}.00</p>
                         <button>ADD TO CART</button>
                         <div className="heart_1"></div>
                         <div className="scale_1"></div>
@@ -207,14 +272,14 @@ export default function Product(props) {
                             </div>
                         </div>
                         <div className="reviews_d_feedback">
-                            {Products_base.men[0].reviews.map((rev) => (
-                                <>
+                            {product.reviews.map((rev, index) => (
+                                <div key={index}>
                                     <div className="reviews_d_feedback_info">
                                         <h5>{rev.name}</h5>
-                                        <div className="stars">{rev.rating}</div>
+                                        <div className="stars"> {rev.rating} </div>
                                     </div>
                                     <p>{rev.text}</p>
-                                </>
+                                </div>
                             ))}
                         </div>
                     </div>
