@@ -15,8 +15,8 @@ export default function Main() {
         <section className='main'>
             <Hero/>
             <Advantage/>
-            <Products title="Women's" item={Products_base.women} />
-            <Products title="Men's" item={Products_base.men} />
+            <Products title="Women's" item={Products_base.women}/>
+            <Products title="Men's" item={Products_base.men}/>
             <Promise/>
             <SpecialOffer/>
             <Blog/>
