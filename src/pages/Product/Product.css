@@ -195,29 +195,30 @@
     display: flex;
     flex-direction: column;
     height: 560px;
+    margin-right: 15px;
     gap: 20px;
-    margin-top: 20px;
 }
 
 .btn {
     display: flex;
     position: relative;
-    margin-left: 14px;
-    width: 64px;
+    width: 94px;
     gap: 14px;
 }
 
 .btn_up {
-    display: flex;
+    display: flex !important;
     height: 40px;
     width: 40px;
     background-color: #ffffff;
     background-image: url("../../components/Hero/img/chevron-right.svg");
     background-position: center;
     background-repeat: no-repeat;
-    transform: rotate(90deg) !important;
+    transform: rotate(90deg);
     border-radius: 50%;
     z-index: 1;
+    opacity: 1 !important;
+    pointer-events: auto !important;
 }
 
 .btn_up:hover,
@@ -228,16 +229,18 @@
 }
 
 .btn_down {
-    display: flex;
+    display: flex !important;
     height: 40px;
     width: 40px;
     background-color: #ffffff;
     background-image: url("../../components/Hero/img/chevron-right.svg");
     background-position: center;
     background-repeat: no-repeat;
-    transform: rotate(-90deg) !important;
+    transform: rotate(-90deg);
     border-radius: 50%;
     z-index: 1;
+    opacity: 1 !important;
+    pointer-events: auto !important;
 }
 
 .slider {
@@ -257,6 +260,7 @@
 .slider-top {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .slider-top .swiper-slide {
@@ -331,6 +335,8 @@
     z-index: 1;
 }
 
+.btn_up.swiper-button-disabled,
+.btn_down.swiper-button-disabled,
 .btn_right.swiper-button-disabled,
 .btn_left.swiper-button-disabled {
     opacity: 0.35;
