@@ -37,8 +37,8 @@ export function Products({ title, category = "men" }) {
             <div className='items'>
                 {items.length > 0 ? (
                     items.map((el) => (
-                        //<Link key={el.id} to="/product">;
-                        <Link key={el.id} to={`/product/${el.id}`}>
+                        <Link key={el.id} to="/product">
+                        {/*<Link key={el.id} to={`/product/${el.id}`}>*/}
                             <div className='clothes'>
                                 <div className='men_id'>
                                     <img src={el.imageURL} alt={el.name} />
