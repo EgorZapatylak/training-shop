@@ -13,7 +13,6 @@ export default function Men(props) {
     const [items, setItems] = useState([]);
     const [params, setParams] = useState(defaultParams)
 
-
     return (
         <section>
             <div className='men_header'>
