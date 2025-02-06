@@ -217,8 +217,8 @@
     transform: rotate(90deg);
     border-radius: 50%;
     z-index: 1;
-    opacity: 1 !important;
     pointer-events: auto !important;
+    transition: opacity 0.3s ease;
 }
 
 .btn_up:hover,
@@ -239,8 +239,8 @@
     transform: rotate(-90deg);
     border-radius: 50%;
     z-index: 1;
-    opacity: 1 !important;
     pointer-events: auto !important;
+    transition: opacity 0.3s ease;
 }
 
 .slider {
@@ -260,7 +260,7 @@
 .slider-top {
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: hidden !important;
 }
 
 .slider-top .swiper-slide {
@@ -338,7 +338,7 @@
 .btn_up.swiper-button-disabled,
 .btn_down.swiper-button-disabled,
 .btn_right.swiper-button-disabled,
-.btn_left.swiper-button-disabled {
+.btn_left.swiper-button-disabled{
     opacity: 0.35;
 }
 .content_info {
