@@ -114,59 +114,59 @@ export default function Men() {
             {showFilter && (
                 <div className='filter-modal'>
                     <div className='filter-content'>
-                        <span className='close' onClick={() => setShowFilter(false)}>&times;</span>
-
-                        {/* Фильтр по размеру */}
-                        <label>Размер:</label>
-                        {availableSizes.map(size => (
-                            <label key={size}>
-                                <input
-                                    type="checkbox"
-                                    checked={filters.size.includes(size)}
-                                    onChange={() => handleFilterChange("size", size)}
-                                />
-                                {size.slice(0,-3)}
-                            </label>
-                        ))}
-
-                        {/* Фильтр по бренду */}
-                        <label>Бренд:</label>
-                        {availableBrands.map(brand => (
-                            <label key={brand}>
-                                <input
-                                    type="checkbox"
-                                    checked={filters.brand.includes(brand)}
-                                    onChange={() => handleFilterChange("brand", brand)}
-                                />
-                                {brand}
-                            </label>
-                        ))}
 
                         {/* Фильтр по цвету */}
-                        <label>Цвет:</label>
-                        {availableColors.map(color => (
-                            <label key={color}>
-                                <input
-                                    type="checkbox"
-                                    checked={filters.color.includes(color)}
-                                    onChange={() => handleFilterChange("color", color)}
-                                />
-                                {color}
-                            </label>
-                        ))}
+                        <div className='filter_group'><label>Цвет:</label>
+                            {availableColors.map(color => (
+                                <label key={color}>
+                                    <input
+                                        type="checkbox"
+                                        checked={filters.color.includes(color)}
+                                        onChange={() => handleFilterChange("color", color)}
+                                    />
+                                    {color}
+                                </label>
+                            ))}</div>
+
+                        {/* Фильтр по размеру */}
+                        <div className='filter_group'><label>Размер:</label>
+                            {availableSizes.map(size => (
+                                <label key={size}>
+                                    <input
+                                        type="checkbox"
+                                        checked={filters.size.includes(size)}
+                                        onChange={() => handleFilterChange("size", size)}
+                                    />
+                                    {size.slice(0, -3)}
+                                </label>
+                            ))}</div>
+
+                        {/* Фильтр по бренду */}
+                        <div className='filter_group'><label>Бренд:</label>
+                            {availableBrands.map(brand => (
+                                <label key={brand}>
+                                    <input
+                                        type="checkbox"
+                                        checked={filters.brand.includes(brand)}
+                                        onChange={() => handleFilterChange("brand", brand)}
+                                    />
+                                    {brand}
+                                </label>
+                            ))}</div>
+
 
                         {/* Фильтр по цене */}
-                        <label>Цена:</label>
-                        {priceRanges.map(range => (
-                            <label key={range.label}>
-                                <input
-                                    type="checkbox"
-                                    checked={filters.price.some(p => p.min === range.min && p.max === range.max)}
-                                    onChange={() => handleFilterChange("price", range)}
-                                />
-                                {range.label}
-                            </label>
-                        ))}
+                        <div className='filter_group'><label>Цена:</label>
+                            {priceRanges.map(range => (
+                                <label key={range.label}>
+                                    <input
+                                        type="checkbox"
+                                        checked={filters.price.some(p => p.min === range.min && p.max === range.max)}
+                                        onChange={() => handleFilterChange("price", range)}
+                                    />
+                                    {range.label}
+                                </label>
+                            ))}</div>
                     </div>
                 </div>
             )}
@@ -180,7 +180,6 @@ export default function Men() {
                                 <img className='mid' src={prod.imageURL} alt={prod.name} />
                             </div>
                             <p>{prod.name}</p>
-                            <p className="brand">{prod.brand}</p>
                             <div className='cost-rate'>
                                 <p>${prod.price}</p>
                                 <div className='stars'>{prod.rating}</div>
