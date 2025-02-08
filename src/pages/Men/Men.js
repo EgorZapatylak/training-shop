@@ -73,6 +73,10 @@ export default function Men() {
                     <div className='ul'/>
                     <span>Men</span>
                 </div>
+                <div className='share'>
+                    <div className='share_img'/>
+                    <p>Share</p>
+                </div>
             </div>
             <div className='title'>
                 <h1>Men</h1>
@@ -84,13 +88,11 @@ export default function Men() {
                     <div className='filter_img' onClick={() => setShowFilter(!showFilter)}/>
                     <p>Filter</p>
                 </div>
-                <div className='view-toggle'>
-                    <button className={viewMode === "grid" ? "active" : ""} onClick={() => setViewMode("grid")}>
-                        &#9638;
-                    </button>
-                    <button className={viewMode === "list" ? "active" : ""} onClick={() => setViewMode("list")}>
-                        &#9776;
-                    </button>
+                <div className='veia'>
+                    <div className='tabl' onClick={() => setViewMode("list")}>
+                    </div>
+                    <div className="plit" onClick={() => setViewMode("grid")}>
+                    </div>
                 </div>
                 <div className='categor'>
                     <p>BESTSELLERS</p>
@@ -108,7 +110,7 @@ export default function Men() {
                     ))
                 )}
             </div>
-            {/* Всплывающее бургер-меню фильтров */}
+            {/* Всплывающее бургер-меню фильтро*/}
             {showFilter && (
                 <div className='filter-modal'>
                     <div className='filter-content'>
@@ -190,8 +192,7 @@ export default function Men() {
 
             {/* Кнопка "Показать еще" */}
             {visibleCount < filteredItems.length && (
-                <div className="load-more">
-                    <button onClick={loadMore}>Показать еще</button>
+                <div className="load_more" onClick={loadMore}>
                 </div>
             )}
         </section>
