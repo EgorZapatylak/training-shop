@@ -230,9 +230,11 @@
 
 .filter-content {
     display: flex;
+    justify-content: space-between;
+    margin: 24px 42px;
     border-radius: 10px;
-    width: auto;
-    text-align: center;
+    width: 1110px;
+    text-align: left;
     position: relative;
 }
 
