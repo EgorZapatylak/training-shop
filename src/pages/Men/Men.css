@@ -1,88 +1,66 @@
+.men_header {
+    display: flex;
+    width: 1250px;
+    height: 32px;
+    background-color: #F8F8F8;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+}
 
-/*.men_header {*/
-/*    display: flex;*/
-/*    width: 1250px;*/
-/*    height: 32px;*/
-/*    background-color: #F8F8F8;*/
-/*    justify-content: space-between;*/
-/*    align-items: center;*/
-/*    padding: 0 15px;*/
-/*}*/
+.road {
+    display: flex;
 
-/*.road {*/
-/*    display: flex;*/
+}
 
-/*}*/
+.road p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 18px;
+    color: #121212;
+    opacity: 0.6;
+}
 
-/*.road p {*/
-/*    font-style: normal;*/
-/*    font-weight: 500;*/
-/*    font-size: 11px;*/
-/*    line-height: 18px;*/
-/*    color: #121212;*/
-/*    opacity: 0.6;*/
-/*}*/
+.ul {
+    background-image: url('../../components/nav.svg');
+    width: 9px;
+    height: 18px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 6px;
+}
 
-/*.ul {*/
-/*    background-image: url('../../components/nav.svg');*/
-/*    width: 9px;*/
-/*    height: 18px;*/
-/*    background-position: center;*/
-/*    background-repeat: no-repeat;*/
-/*    margin: 0 6px;*/
-/*}*/
+.road span {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 18px;
+    color: #121212;
+}
 
-/*.road span {*/
-/*    font-style: normal;*/
-/*    font-weight: 500;*/
-/*    font-size: 11px;*/
-/*    line-height: 18px;*/
-/*    color: #121212;*/
-/*}*/
+.share {
+    display: flex;
+    gap: 8px;
+    width: 53px;
+    height: 18px;
+    align-items: center;
+}
 
-/*.share {*/
-/*    display: flex;*/
-/*    gap: 8px;*/
-/*    width: 53px;*/
-/*    height: 18px;*/
-/*    align-items: center;*/
-/*}*/
+.share_img {
+    width: 15px;
+    height: 15px;
+    background: #F8F8F8 url('../../components/share.svg') no-repeat center;
+}
 
-/*.share_img {*/
-/*    width: 15px;*/
-/*    height: 15px;*/
-/*    background: #F8F8F8 url('../../components/share.svg') no-repeat center;*/
-/*}*/
-
-/*.share p {*/
-/*    font-style: normal;*/
-/*    font-weight: 500;*/
-/*    font-size: 11px;*/
-/*    line-height: 18px;*/
-/*    color: #121212;*/
-/*    opacity: 0.6;*/
-/*}*/
-
-/*.title {*/
-/*    display: flex;*/
-/*    width: 1280px;*/
-/*    height:70px;*/
-/*    background-color: #F8F8F8;*/
-/*    align-items: center;*/
-/*}*/
-
-/*.title h1 {*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*    width: 1280px;*/
-/*    font-style: normal;*/
-/*    font-weight: 600;*/
-/*    font-size: 26px;*/
-/*    line-height: 36px;*/
-/*    letter-spacing: 0.06em;*/
-/*    text-transform: uppercase;*/
-/*    color: #121212;*/
-/*}*/
+.share p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 18px;
+    color: #121212;
+    opacity: 0.6;
+}
 
 .edit {
     display: flex;
@@ -119,29 +97,29 @@
     opacity: 0.6;
 }
 
-/*.veia {*/
-/*    display: flex;*/
-/*    width: 72px;*/
-/*    height: 24px;*/
-/*    align-items: center;*/
-/*    justify-content: space-between;*/
-/*}*/
+.veia {
+    display: flex;
+    width: 72px;
+    height: 24px;
+    align-items: center;
+    justify-content: space-between;
+}
 
-/*.list {*/
-/*    background-image: url('../../components/viue_tabl.svg');*/
-/*    background-repeat: no-repeat;*/
-/*    background-position: center;*/
-/*    width: 24px;*/
-/*    height: 24px;*/
-/*}*/
+.plit button {
+    background-image: url('../../components/viue_tabl.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 24px;
+    height: 24px;
+}
 
-/*.grid {*/
-/*    background-image: url('../../components/veiu_plit.svg');*/
-/*    background-repeat: no-repeat;*/
-/*    background-position: center;*/
-/*    width: 24px;*/
-/*    height: 24px;*/
-/*}*/
+.tabl button{
+    background-image: url('../../components/veiu_plit.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 24px;
+    height: 24px;
+}
 
 .categor {
     display: flex;
@@ -163,13 +141,13 @@
     opacity: 0.6;
 }
 
-/*.vector {*/
-/*    background-image: url('../../components/Vector.svg');*/
-/*    background-repeat: no-repeat;*/
-/*    background-position: center;*/
-/*    width: 14px;*/
-/*    height: 14px;*/
-/*}*/
+.vector {
+    background-image: url('../../components/Vector.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 14px;
+    height: 14px;
+}
 
 /*.mid {*/
 /*    display: flex;*/
@@ -177,52 +155,27 @@
 /*    height: 318px;*/
 /*}*/
 
-/*!*.mid_1 {*!*/
-/*!*    background-image: url('./img/men_1.jpg');*!*/
-/*!*}*!*/
-/*!*.mid_2 {*!*/
-/*!*    background-image: url('./img/men_2.jpg');*!*/
-/*!*}*!*/
-/*!*.mid_3 {*!*/
-/*!*    background-image: url('./img/men_3.jpg');*!*/
-/*!*}*!*/
-/*!*.mid_4 {*!*/
-/*!*    background-image: url('./img/men_4.jpg');*!*/
-/*!*}*!*/
-/*!*.mid_5 {*!*/
-/*!*    background-image: url('./img/men_5.jpg');*!*/
-/*!*}*!*/
-/*!*.mid_6 {*!*/
-/*!*    background-image: url('./img/men_6.jpg');*!*/
-/*!*}*!*/
-/*!*.mid_7 {*!*/
-/*!*    background-image: url('./img/men_7.jpg');*!*/
-/*!*}*!*/
-/*!*.mid_8 {*!*/
-/*!*    background-image: url('./img/men_8.jpg');*!*/
-/*!*}*!*/
+.load_more {
+    display: flex;
+    width: 231px;
+    height: 50px;
+    background-image: url('../../components/loading.svg');
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
 
-/*.loading {*/
-/*    display: flex;*/
-/*    width: 231px;*/
-/*    height: 50px;*/
-/*    background-image: url('../../components/loading.svg');*/
-/*    align-items: center;*/
-/*    margin: 0 auto;*/
-/*    cursor: pointer;*/
-/*}*/
+@media (max-width: 992px) {
+    .men_header {
+        width: 962px;
+    }
+}
 
-/*@media (max-width: 992px) {*/
-/*    .men_header {*/
-/*        width: 962px;*/
-/*    }*/
-/*}*/
-
-/*@media (max-width: 360px) {*/
-/*    .men_header {*/
-/*        width: 330px;*/
-/*    }*/
-/*}*/
+@media (max-width: 360px) {
+    .men_header {
+        width: 330px;
+    }
+}
 
 .view-toggle {
     display: flex;
@@ -294,22 +247,4 @@
     right: 20px;
     font-size: 24px;
     cursor: pointer;
-}
-
-.load-more {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.load-more button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #000;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.load-more button:hover {
-    background-color: #333;
 }
