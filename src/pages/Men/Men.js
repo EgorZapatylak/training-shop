@@ -1,26 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Men.css';
 import { Link } from "react-router-dom";
 import { Products_base } from "../../Products_base";
 
 export default function Men() {
     const [filters, setFilters] = useState({
-        color: [],
         size: [],
         price: [],
-        brand: []
+        brand: [],
+        color: []
     });
 
     const [showFilter, setShowFilter] = useState(false);
     const [viewMode, setViewMode] = useState("grid"); // По умолчанию плитки
     const [visibleCount, setVisibleCount] = useState(8); // Количество отображаемых товаров
+    const [filteredItems, setFilteredItems] = useState([]); // Отфильтрованные товары
 
     const products = Products_base.men;
 
     // Доступные фильтры
     const availableSizes = [...new Set(products.flatMap(prod => prod.sizes))];
     const availableBrands = [...new Set(products.map(prod => prod.brand))];
-    const availableColors = [...new Set(products.flatMap(prod => prod.images.map(img =>img.color)))];
+
+    // Извлекаем все уникальные цвета из всех товаров
+    const availableColors = [
+        ...new Set(
+            products.flatMap(prod => prod.images ? prod.images.map(img => img.color) : [])
+        )
+    ];
 
     // Диапазоны цен
     const priceRanges = [
@@ -33,16 +40,29 @@ export default function Men() {
     ];
 
     // Фильтрация товаров
-    const filteredItems = products.filter(prod =>
-        (filters.color.length === 0 || filters.images.some(img => filters.color.includes(img.color))) &&
-        (filters.size.length === 0 || filters.size.some(size => prod.sizes.includes(size))) &&
-        (filters.brand.length === 0 || filters.brand.includes(prod.brand)) &&
-        (filters.price.length === 0 || filters.price.some(range => prod.price >= range.min && prod.price < range.max))
-    );
+    useEffect(() => {
+        const filtered = products.filter(prod =>
+            (filters.size.length === 0 || filters.size.some(size => prod.sizes.includes(size))) &&
+            (filters.brand.length === 0 || filters.brand.includes(prod.brand)) &&
+            (filters.color.length === 0 || prod.images.some(img => filters.color.includes(img.color))) &&
+            (filters.price.length === 0 || filters.price.some(range => prod.price >= range.min && prod.price < range.max))
+        );
+        setFilteredItems(filtered);
+    }, [filters]);
 
     // Функция подгрузки товаров
     const loadMore = () => {
         setVisibleCount(prev => prev + 4);
+    };
+
+    // Функция выбора фильтров (моментальное обновление)
+    const handleFilterChange = (type, value) => {
+        setFilters(prev => ({
+            ...prev,
+            [type]: prev[type].includes(value)
+                ? prev[type].filter(v => v !== value)
+                : [...prev[type], value]
+        }));
     };
 
     return (
@@ -59,10 +79,9 @@ export default function Men() {
             </div>
 
             {/* Панель управления */}
-            <div className='toolbar'>
-                <div className='filter' onClick={() => setShowFilter(true)}>
-                    <div className='filter_img'/>
-                    <p>Filter</p>
+            <div className='edit'>
+                <div className='burger-menu' onClick={() => setShowFilter(!showFilter)}>
+                    &#9776;
                 </div>
                 <div className='view-toggle'>
                     <button className={viewMode === "grid" ? "active" : ""} onClick={() => setViewMode("grid")}>
@@ -72,32 +91,27 @@ export default function Men() {
                         &#9776;
                     </button>
                 </div>
+                <div className='categor'>
+                    <p>BESTSELLERS</p>
+                    <div className='vector'/>
+                </div>
             </div>
 
-            {/* Всплывающее окно фильтрации */}
+            {/* Отображение выбранных фильтров */}
+            <div className="selected-filters">
+                {Object.entries(filters).flatMap(([key, values]) =>
+                    values.map(value => (
+                        <span key={value} className="filter-tag">
+                            {value} <button onClick={() => handleFilterChange(key, value)}>✕</button>
+                        </span>
+                    ))
+                )}
+            </div>
+            {/* Всплывающее бургер-меню фильтров */}
             {showFilter && (
                 <div className='filter-modal'>
                     <div className='filter-content'>
                         <span className='close' onClick={() => setShowFilter(false)}>&times;</span>
-                        <h2>Фильтр</h2>
-
-                        {/* Фильтр по цвету */}
-                        <label>Color:</label>
-                        {availableColors.map(color => (
-                            <label key={color}>
-                                <input
-                                    type="checkbox"
-                                    checked={filters.color.includes(color)}
-                                    onChange={() => setFilters(prev => ({
-                                        ...prev,
-                                        color: prev.color.includes(color)
-                                            ? prev.color.filter(s => s !== color)
-                                            : [...prev.color, color]
-                                    }))}
-                                />
-                                {color}
-                            </label>
-                        ))}
 
                         {/* Фильтр по размеру */}
                         <label>Размер:</label>
@@ -106,14 +120,9 @@ export default function Men() {
                                 <input
                                     type="checkbox"
                                     checked={filters.size.includes(size)}
-                                    onChange={() => setFilters(prev => ({
-                                        ...prev,
-                                        size: prev.size.includes(size)
-                                            ? prev.size.filter(s => s !== size)
-                                            : [...prev.size, size]
-                                    }))}
+                                    onChange={() => handleFilterChange("size", size)}
                                 />
-                                {size}
+                                {size.slice(0,-3)}
                             </label>
                         ))}
 
@@ -124,36 +133,37 @@ export default function Men() {
                                 <input
                                     type="checkbox"
                                     checked={filters.brand.includes(brand)}
-                                    onChange={() => setFilters(prev => ({
-                                        ...prev,
-                                        brand: prev.brand.includes(brand)
-                                            ? prev.brand.filter(b => b !== brand)
-                                            : [...prev.brand, brand]
-                                    }))}
+                                    onChange={() => handleFilterChange("brand", brand)}
                                 />
                                 {brand}
                             </label>
                         ))}
 
-                        {/* Фильтр по цене (чекбоксы) */}
+                        {/* Фильтр по цвету */}
+                        <label>Цвет:</label>
+                        {availableColors.map(color => (
+                            <label key={color}>
+                                <input
+                                    type="checkbox"
+                                    checked={filters.color.includes(color)}
+                                    onChange={() => handleFilterChange("color", color)}
+                                />
+                                {color}
+                            </label>
+                        ))}
+
+                        {/* Фильтр по цене */}
                         <label>Цена:</label>
                         {priceRanges.map(range => (
                             <label key={range.label}>
                                 <input
                                     type="checkbox"
                                     checked={filters.price.some(p => p.min === range.min && p.max === range.max)}
-                                    onChange={() => setFilters(prev => ({
-                                        ...prev,
-                                        price: prev.price.some(p => p.min === range.min && p.max === range.max)
-                                            ? prev.price.filter(p => p.min !== range.min || p.max !== range.max)
-                                            : [...prev.price, range]
-                                    }))}
+                                    onChange={() => handleFilterChange("price", range)}
                                 />
                                 {range.label}
                             </label>
                         ))}
-
-                        <button onClick={() => setShowFilter(false)}>Применить</button>
                     </div>
                 </div>
             )}
@@ -162,9 +172,9 @@ export default function Men() {
             <div className={viewMode === "grid" ? "items grid" : "items list"}>
                 {filteredItems.slice(0, visibleCount).map(prod => (
                     <div key={prod.id} className='clothes'>
-                        <Link to='/product'>
+                        <Link to={`/product/${prod.id}`}>
                             <div className={`mid_${prod.id}`}>
-                                <img className='mid' src={prod.imageURL} alt=""/>
+                                <img className='mid' src={prod.imageURL} alt={prod.name} />
                             </div>
                             <p>{prod.name}</p>
                             <p className="brand">{prod.brand}</p>
