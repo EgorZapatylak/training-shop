@@ -91,33 +91,33 @@
     padding: 32px 15px;
 }
 
-/*.filter {*/
-/*    display: flex;*/
-/*    width: 95px;*/
-/*    height: 32px;*/
-/*    margin-left: 70px;*/
-/*    align-items: center;*/
-/*    justify-content: space-between;*/
-/*}*/
+.filter {
+    display: flex;
+    width: 95px;
+    height: 32px;
+    margin-left: 70px;
+    align-items: center;
+    justify-content: space-between;
+}
 
-/*.filter_img {*/
-/*    background-image: url('../../components/filtr.svg');*/
-/*    background-repeat: no-repeat;*/
-/*    background-position: center;*/
-/*    width: 32px;*/
-/*    height: 32px;*/
-/*}*/
+.filter_img {
+    background-image: url('../../components/filtr.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 32px;
+    height: 32px;
+}
 
-/*.filter p {*/
-/*    font-style: normal;*/
-/*    font-weight: 500;*/
-/*    font-size: 13px;*/
-/*    line-height: 15px;*/
-/*    letter-spacing: 0.06em;*/
-/*    text-transform: uppercase;*/
-/*    color: #121212;*/
-/*    opacity: 0.6;*/
-/*}*/
+.filter p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+    opacity: 0.6;
+}
 
 /*.veia {*/
 /*    display: flex;*/

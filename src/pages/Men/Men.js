@@ -80,8 +80,9 @@ export default function Men() {
 
             {/* Панель управления */}
             <div className='edit'>
-                <div className='burger-menu' onClick={() => setShowFilter(!showFilter)}>
-                    &#9776;
+                <div className='filter'>
+                    <div className='filter_img' onClick={() => setShowFilter(!showFilter)}/>
+                    <p>Filter</p>
                 </div>
                 <div className='view-toggle'>
                     <button className={viewMode === "grid" ? "active" : ""} onClick={() => setViewMode("grid")}>
