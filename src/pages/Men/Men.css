@@ -112,7 +112,7 @@
     height: 24px;
 }
 
-.tabl button{
+.tabl button {
     background-image: url('../../components/veiu_plit.svg');
     background-repeat: no-repeat;
     background-position: center;
@@ -129,7 +129,7 @@
     justify-content: space-between;
 }
 
-.categor p{
+.categor p {
     font-style: normal;
     font-weight: 500;
     font-size: 13px;
@@ -251,7 +251,7 @@
 }
 
 .color-option:hover {
-    background: rgba(0,0,0,0.05);
+    background: rgba(0, 0, 0, 0.05);
 }
 
 .color-option::before {
@@ -262,26 +262,67 @@
     border-radius: 50%;
     margin-right: 10px;
 }
+
 /* Автоматическая генерация цветов */
-.color-option.Black::before {background: black;}
-.color-option.Blue::before {background: blue;}
-.color-option.White::before {background: white; border: 1px solid #ccc}
-.color-option.Brown::before {background: brown}
-.color-option.Grey::before {background: grey}
-.color-option.Green::before {background: green}
-.color-option.Orange::before {background: orange}
-.color-option.Yellow::before {background: yellow}
-.color-option.Red::before {background: red}
-.color-option.Turquoise::before {background: turquoise}
-.color-option.Vinous::before {background: #800000}
-.color-option.Beige::before {background: beige}
-.color-option.Multicolor::before {background: linear-gradient(to right, red, yellow,green, blue);}
+.color-option.Black::before {
+    background: black;
+}
+
+.color-option.Blue::before {
+    background: blue;
+}
+
+.color-option.White::before {
+    background: white;
+    border: 1px solid #ccc
+}
+
+.color-option.Brown::before {
+    background: brown
+}
+
+.color-option.Grey::before {
+    background: grey
+}
+
+.color-option.Green::before {
+    background: green
+}
+
+.color-option.Orange::before {
+    background: orange
+}
+
+.color-option.Yellow::before {
+    background: yellow
+}
+
+.color-option.Red::before {
+    background: red
+}
+
+.color-option.Turquoise::before {
+    background: turquoise
+}
+
+.color-option.Vinous::before {
+    background: #800000
+}
+
+.color-option.Beige::before {
+    background: beige
+}
+
+.color-option.Multicolor::before {
+    background: linear-gradient(to right, red, yellow, green, blue);
+}
 
 /* Выбранный цвет */
 .color-option.active {
     background: #ddd;
     font-weight: bold;
 }
+
 .close {
     position: absolute;
     top: 10px;
