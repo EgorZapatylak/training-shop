@@ -135,8 +135,8 @@ export default function Men() {
                             {uniqueColors.map(color => (
                                 <div
                                     key={color}
-                                    className={`color-option ${color.toLowerCase()} ${selectedColor === color ? 'active' : ''}`}
-                                    onClick={() => handleColorSelect(color)}>
+                                    className={`color-option ${color} ${filters.color.includes(color)? 'active': ''}`}
+                                    onClick={() => handleColorSelect('color',color)}>
                                     {color.charAt(0).toUpperCase() + color.slice(1)}
                                 </div>
                             ))}</div>
