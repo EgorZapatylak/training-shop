@@ -15,6 +15,7 @@ export default function Men() {
     const [viewMode, setViewMode] = useState("grid"); // По умолчанию плитки
     const [visibleCount, setVisibleCount] = useState(8); // Количество отображаемых товаров
     const [filteredItems, setFilteredItems] = useState([]); // Отфильтрованные товары
+    const [selectedColor, setSelectedColor] = useState(null)
 
     const products = Products_base.men;
 
@@ -64,6 +65,19 @@ export default function Men() {
                 : [...prev[type], value]
         }));
     };
+
+    // Собираем все цвета из товаров
+    const uniqueColors = [
+        ...new Set(
+            Products_base.men.flatMap(product =>
+            product.images.map(image => image.color)
+        )
+        ),
+    ]
+
+    const handleColorSelect = (color)=>{
+        setSelectedColor(color);
+    }
 
     return (
         <section>
@@ -117,15 +131,13 @@ export default function Men() {
 
                         {/* Фильтр по цвету */}
                         <div className='filter_group'><label>Цвет:</label>
-                            {availableColors.map(color => (
-                                <label key={color}>
-                                    <input
-                                        type="checkbox"
-                                        checked={filters.color.includes(color)}
-                                        onChange={() => handleFilterChange("color", color)}
-                                    />
-                                    {color}
-                                </label>
+                            {uniqueColors.map(color => (
+                                <div
+                                        key={color}
+                                        className={`color-option ${color.toLowerCase()} ${selectedColor===color? 'active':''}`}
+                                        onClick={()=> handleColorSelect(color)}>
+                                    {color.charAt(0).toUpperCase() + color.slice(1)}
+                                </div>
                             ))}</div>
 
                         {/* Фильтр по размеру */}
