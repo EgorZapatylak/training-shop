@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import './Men.css';
-import { Link } from "react-router-dom";
-import { Products_base } from "../../Products_base";
+import {Link} from "react-router-dom";
+import {Products_base} from "../../Products_base";
 
 export default function Men() {
     const [filters, setFilters] = useState({
@@ -32,12 +32,12 @@ export default function Men() {
 
     // Диапазоны цен
     const priceRanges = [
-        { min: 0, max: 50, label: "$0 - $50" },
-        { min: 50, max: 100, label: "$50 - $100" },
-        { min: 100, max: 150, label: "$100 - $150" },
-        { min: 150, max: 200, label: "$150 - $200" },
-        { min: 200, max: 300, label: "$200 - $300" },
-        { min: 300, max: 500, label: "$300 - $500" }
+        {min: 0, max: 50, label: "$0 - $50"},
+        {min: 50, max: 100, label: "$50 - $100"},
+        {min: 100, max: 150, label: "$100 - $150"},
+        {min: 150, max: 200, label: "$150 - $200"},
+        {min: 200, max: 300, label: "$200 - $300"},
+        {min: 300, max: 500, label: "$300 - $500"}
     ];
 
     // Фильтрация товаров
@@ -70,12 +70,12 @@ export default function Men() {
     const uniqueColors = [
         ...new Set(
             Products_base.men.flatMap(product =>
-            product.images.map(image => image.color)
-        )
+                product.images.map(image => image.color)
+            )
         ),
     ]
 
-    const handleColorSelect = (color)=>{
+    const handleColorSelect = (color) => {
         setSelectedColor(color);
     }
 
@@ -119,7 +119,8 @@ export default function Men() {
                 {Object.entries(filters).flatMap(([key, values]) =>
                     values.map(value => (
                         <span key={value} className="filter-tag">
-                            {value.replace('INT','')} <button onClick={() => handleFilterChange(key, value)}>✕</button>
+                            {value.replace('INT', '')}
+                            <button onClick={() => handleFilterChange(key, value)}>✕</button>
                         </span>
                     ))
                 )}
@@ -133,9 +134,9 @@ export default function Men() {
                         <div className='filter_group'><label>Цвет:</label>
                             {uniqueColors.map(color => (
                                 <div
-                                        key={color}
-                                        className={`color-option ${color.toLowerCase()} ${selectedColor===color? 'active':''}`}
-                                        onClick={()=> handleColorSelect(color)}>
+                                    key={color}
+                                    className={`color-option ${color.toLowerCase()} ${selectedColor === color ? 'active' : ''}`}
+                                    onClick={() => handleColorSelect(color)}>
                                     {color.charAt(0).toUpperCase() + color.slice(1)}
                                 </div>
                             ))}</div>
@@ -189,7 +190,7 @@ export default function Men() {
                     <div key={prod.id} className='clothes'>
                         <Link to={`/product/${prod.id}`}>
                             <div className={`mid_${prod.id}`}>
-                                <img className='mid' src={prod.imageURL} alt={prod.name} />
+                                <img className='mid' src={prod.imageURL} alt={prod.name}/>
                             </div>
                             <p>{prod.name}</p>
                             <div className='cost-rate'>
