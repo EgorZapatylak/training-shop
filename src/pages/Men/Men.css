@@ -10,7 +10,6 @@
 
 .road {
     display: flex;
-
 }
 
 .road p {
@@ -149,12 +148,6 @@
     height: 14px;
 }
 
-/*.mid {*/
-/*    display: flex;*/
-/*    width: 255px;*/
-/*    height: 318px;*/
-/*}*/
-
 .load_more {
     display: flex;
     width: 231px;
@@ -240,7 +233,11 @@
 
 .filter_group {
     display: flex;
-    flex-direction: column}
+    flex-direction: column;
+    overflow: auto;
+    height: 272px;
+    gap: 10px;
+}
 
 .close {
     position: absolute;
