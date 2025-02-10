@@ -103,7 +103,7 @@ export default function Men() {
             {/* Панель управления */}
             <div className='edit'>
                 <div className='filter'>
-                    <div className='filter_img' onClick={() => setShowFilter(!showFilter)}/>
+                    <div className={`${showFilter ? 'filter_img_close' : 'filter_img'}`} onClick={() => setShowFilter(!showFilter)}/>
                     <p>Filter</p>
                 </div>
                 <div className='veia'>
