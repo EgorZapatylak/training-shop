@@ -85,6 +85,14 @@
     height: 32px;
 }
 
+.filter_img_close {
+    background-image: url('../../components/filter_close.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 32px;
+    height: 32px;
+}
+
 .filter p {
     font-style: normal;
     font-weight: 500;
