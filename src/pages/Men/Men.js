@@ -15,7 +15,6 @@ export default function Men() {
     const [viewMode, setViewMode] = useState("grid"); // По умолчанию плитки
     const [visibleCount, setVisibleCount] = useState(8); // Количество отображаемых товаров
     const [filteredItems, setFilteredItems] = useState([]); // Отфильтрованные товары
-    const [selectedColor, setSelectedColor] = useState(null)
     const [filteredCount, setFilteredCount] = useState(0); // Количество найденых товаров
 
     const products = Products_base.men;
@@ -25,11 +24,11 @@ export default function Men() {
     const availableBrands = [...new Set(products.map(prod => prod.brand))];
 
     // Извлекаем все уникальные цвета из всех товаров
-    const availableColors = [
-        ...new Set(
-            products.flatMap(prod => prod.images ? prod.images.map(img => img.color) : [])
-        )
-    ];
+    // const availableColors = [
+    //     ...new Set(
+    //         products.flatMap(prod => prod.images ? prod.images.map(img => img.color) : [])
+    //     )
+    // ];
 
     // Проверка, есть ли активные фильтры
     const hasActiveFilters = Object.values(filters).some(filter => filter.length > 0);
@@ -65,9 +64,9 @@ export default function Men() {
     const handleFilterChange = (type, value) => {
         setFilters(prev => ({
             ...prev,
-            [type]: prev[type].includes(value)
-                ? prev[type].filter(v => v !== value)
-                : [...prev[type], value]
+            [type]: prev[type].some(v => JSON.stringify(v) === JSON.stringify(value))
+                ? prev[type].filter(v => JSON.stringify(v) !== JSON.stringify(value)) // Убираем фильтр
+                : [...prev[type], value] // Добавляем фильтр
         }));
     };
 
@@ -81,7 +80,7 @@ export default function Men() {
     ]
 
     const handleColorSelect = (color) => {
-        setSelectedColor(color);
+        handleFilterChange('color', color);
     }
 
     return (
@@ -147,7 +146,7 @@ export default function Men() {
                                 <div
                                     key={color}
                                     className={`color-option ${color} ${filters.color.includes(color)? 'active': ''}`}
-                                    onClick={() => handleColorSelect('color',color)}>
+                                    onClick={() => handleColorSelect(color)}>
                                     {color.charAt(0).toUpperCase() + color.slice(1)}
                                 </div>
                             ))}</div>
