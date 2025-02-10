@@ -131,7 +131,7 @@ export default function Men() {
                 )}
             </div>
             <div>
-                {hasActiveFilters && <p>{filteredCount} items found</p>}
+                {hasActiveFilters && <p>{filteredCount} items found</p> }
             </div>
             {/* Всплывающее бургер-меню фильтро*/}
             {showFilter && (
