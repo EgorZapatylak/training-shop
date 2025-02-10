@@ -16,6 +16,7 @@ export default function Men() {
     const [visibleCount, setVisibleCount] = useState(8); // Количество отображаемых товаров
     const [filteredItems, setFilteredItems] = useState([]); // Отфильтрованные товары
     const [selectedColor, setSelectedColor] = useState(null)
+    const [filteredCount, setFilteredCount] = useState(0); // Количество найденых товаров
 
     const products = Products_base.men;
 
@@ -48,8 +49,9 @@ export default function Men() {
             (filters.color.length === 0 || prod.images.some(img => filters.color.includes(img.color))) &&
             (filters.price.length === 0 || filters.price.some(range => prod.price >= range.min && prod.price < range.max))
         );
-        setFilteredItems(filtered);
-    }, [filters]);
+        setFilteredItems(filtered); // Обновляем список отфильтрованных товаров
+        setFilteredCount(filtered.length); // Обновляем счётчик товаров
+    }, [filters]); // Отслеживаем изменения в фильтрах
 
     // Функция подгрузки товаров
     const loadMore = () => {
@@ -124,6 +126,14 @@ export default function Men() {
                         </span>
                     ))
                 )}
+            </div>
+            <div>
+                <p>{filteredCount} items found</p>
+                <div>
+                    {filteredItems.map(item => (
+                        <div key = {item.id}>{item.name}</div>
+                    ))}
+                </div>
             </div>
             {/* Всплывающее бургер-меню фильтро*/}
             {showFilter && (
