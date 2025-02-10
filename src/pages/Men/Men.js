@@ -43,6 +43,15 @@ export default function Men() {
         {min: 300, max: 500, label: "$300 - $500"}
     ];
 
+    const categories = [
+        {key: 'all', label: 'All'},
+        ...Object.keys(products[0].particulars).map(key =>({
+            key,
+            label: key.replace(/^is/,''),
+        }))
+    ];
+
+
     // Фильтрация товаров
     useEffect(() => {
         const filtered = products.filter(prod =>
@@ -54,6 +63,7 @@ export default function Men() {
         setFilteredItems(filtered); // Обновляем список отфильтрованных товаров
         setFilteredCount(filtered.length); // Обновляем счётчик товаров
     }, [filters]); // Отслеживаем изменения в фильтрах
+
 
     // Функция подгрузки товаров
     const loadMore = () => {
@@ -103,7 +113,8 @@ export default function Men() {
             {/* Панель управления */}
             <div className='edit'>
                 <div className='filter'>
-                    <div className={`${showFilter ? 'filter_img_close' : 'filter_img'}`} onClick={() => setShowFilter(!showFilter)}/>
+                    <div className={`${showFilter ? 'filter_img_close' : 'filter_img'}`}
+                         onClick={() => setShowFilter(!showFilter)}/>
                     <p>Filter</p>
                 </div>
                 <div className='veia'>
@@ -113,8 +124,11 @@ export default function Men() {
                     </div>
                 </div>
                 <div className='categor'>
-                    <p>BESTSELLERS</p>
-                    <div className='vector'/>
+                    <select>
+                        {categories.map(({key, label})=>(
+                            <option key={key} value={key}>{label}</option>
+                        ))}
+                    </select>
                 </div>
             </div>
 
@@ -145,7 +159,7 @@ export default function Men() {
                             {uniqueColors.map(color => (
                                 <div
                                     key={color}
-                                    className={`color-option ${color} ${filters.color.includes(color)? 'active': ''}`}
+                                    className={`color-option ${color} ${filters.color.includes(color) ? 'active' : ''}`}
                                     onClick={() => handleColorSelect(color)}>
                                     {color.charAt(0).toUpperCase() + color.slice(1)}
                                 </div>
