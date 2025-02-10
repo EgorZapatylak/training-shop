@@ -130,9 +130,12 @@ export default function Men() {
                     ))
                 )}
             </div>
+
+            {/* Отображение счетчик товаров */}
             <div>
-                {hasActiveFilters && <p>{filteredCount} items found</p> }
+                {hasActiveFilters && <p>{filteredCount} items found</p>}
             </div>
+
             {/* Всплывающее бургер-меню фильтро*/}
             {showFilter && (
                 <div className='filter-modal'>
