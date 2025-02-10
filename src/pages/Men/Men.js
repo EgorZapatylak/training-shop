@@ -119,7 +119,7 @@ export default function Men() {
                 {Object.entries(filters).flatMap(([key, values]) =>
                     values.map(value => (
                         <span key={value} className="filter-tag">
-                            {typeof value === "string" ? value.replace('INT', '') : JSON.stringify(value)}
+                            {typeof value === "object" && value.label ? value.label : value}
                             <button onClick={() => handleFilterChange(key, value)}>✕</button>
                         </span>
                     ))
