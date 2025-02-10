@@ -31,6 +31,9 @@ export default function Men() {
         )
     ];
 
+    // Проверка, есть ли активные фильтры
+    const hasActiveFilters = Object.values(filters).some(filter => filter.length > 0);
+
     // Диапазоны цен
     const priceRanges = [
         {min: 0, max: 50, label: "$0 - $50"},
@@ -128,12 +131,7 @@ export default function Men() {
                 )}
             </div>
             <div>
-                <p>{filteredCount} items found</p>
-                <div>
-                    {filteredItems.map(item => (
-                        <div key = {item.id}>{item.name}</div>
-                    ))}
-                </div>
+                {hasActiveFilters && <p>{filteredCount} items found</p>}
             </div>
             {/* Всплывающее бургер-меню фильтро*/}
             {showFilter && (
