@@ -3,7 +3,7 @@ import './Men.css';
 import {Link} from "react-router-dom";
 import {Products_base} from "../../Products_base";
 
-export default function Men() {
+export default function Men(category='men') {
     const [filters, setFilters] = useState({
         size: [],
         price: [],
@@ -16,7 +16,7 @@ export default function Men() {
     const [visibleCount, setVisibleCount] = useState(8); // Количество отображаемых товаров
     const [filteredItems, setFilteredItems] = useState([]); // Отфильтрованные товары
     const [filteredCount, setFilteredCount] = useState(0); // Количество найденых товаров
-
+    const [selectedCategory, setSelectedCategory] = useState('all'); // Установка фильтра по умолчанию
     const products = Products_base.men;
 
     // Доступные фильтры
@@ -55,14 +55,16 @@ export default function Men() {
     // Фильтрация товаров
     useEffect(() => {
         const filtered = products.filter(prod =>
+            (selectedCategory === 'all' || prod.particulars[selectedCategory]) &&
             (filters.size.length === 0 || filters.size.some(size => prod.sizes.includes(size))) &&
             (filters.brand.length === 0 || filters.brand.includes(prod.brand)) &&
             (filters.color.length === 0 || prod.images.some(img => filters.color.includes(img.color))) &&
             (filters.price.length === 0 || filters.price.some(range => prod.price >= range.min && prod.price < range.max))
         );
+
         setFilteredItems(filtered); // Обновляем список отфильтрованных товаров
         setFilteredCount(filtered.length); // Обновляем счётчик товаров
-    }, [filters]); // Отслеживаем изменения в фильтрах
+    }, [filters, selectedCategory]); // Отслеживаем изменения в фильтрах
 
 
     // Функция подгрузки товаров
@@ -124,7 +126,7 @@ export default function Men() {
                     </div>
                 </div>
                 <div className='categor'>
-                    <select>
+                    <select onChange={(e) => setSelectedCategory(e.target.value)}>
                         {categories.map(({key, label})=>(
                             <option key={key} value={key}>{label}</option>
                         ))}
