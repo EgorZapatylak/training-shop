@@ -1,3 +1,8 @@
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-360deg);}
+}
+
 .men_header {
     display: flex;
     width: 1250px;
@@ -158,12 +163,18 @@
 
 .load_more {
     display: flex;
-    width: 231px;
-    height: 50px;
-    background-image: url('../../components/loading.svg');
+    width: 64px;
+    height: 64px;
+    background-image: url('../../components/loading_more.svg');
     align-items: center;
     margin: 0 auto;
     cursor: pointer;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+}
+
+.load_more:hover {
+    animation: spin 0.5s linear infinite;
 }
 
 @media (max-width: 992px) {
