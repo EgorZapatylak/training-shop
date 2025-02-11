@@ -133,16 +133,20 @@
     height: 24px;
 }
 
-.categor {
+.categor select  {
     display: flex;
     width: 120px;
     height: 15px;
     align-items: center;
     margin-right: 70px;
     justify-content: space-between;
+    border: none;
+    outline: none;
+    background: none;
+    letter-spacing: 1px;
 }
 
-.categor p {
+.categor, option p {
     font-style: normal;
     font-weight: 500;
     font-size: 13px;
