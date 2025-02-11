@@ -221,12 +221,13 @@
 
 .loading {
     display: flex;
-    width: 231px;
-    height: 50px;
-    background-image: url('../../components/loading.svg');
+    width: 64px;
+    height: 64px;
+    background-image: url('../../components/loading_more.svg');
     align-items: center;
     margin: 0 auto;
     cursor: pointer;
+    background-repeat: no-repeat;
 }
 
 @media (max-width: 992px) {
