@@ -3,7 +3,7 @@ import './Men.css';
 import {Link} from "react-router-dom";
 import {Products_base} from "../../Products_base";
 
-export default function Men(category='men') {
+export default function Men() {
     const [filters, setFilters] = useState({
         size: [],
         price: [],
