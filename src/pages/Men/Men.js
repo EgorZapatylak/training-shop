@@ -35,12 +35,12 @@ export default function Men(category='men') {
 
     // Диапазоны цен
     const priceRanges = [
-        {min: 0, max: 50, label: "$0 - $50"},
-        {min: 50, max: 100, label: "$50 - $100"},
-        {min: 100, max: 150, label: "$100 - $150"},
-        {min: 150, max: 200, label: "$150 - $200"},
-        {min: 200, max: 300, label: "$200 - $300"},
-        {min: 300, max: 500, label: "$300 - $500"}
+        {min: 0, max: 50, label: "$ 0 - 50"},
+        {min: 50, max: 100, label: "$ 50 - 100"},
+        {min: 100, max: 150, label: "$ 100 - 150"},
+        {min: 150, max: 200, label: "$ 150 - 200"},
+        {min: 200, max: 300, label: "$ 200 - 300"},
+        {min: 300, max: 500, label: "$ 300 - 500"}
     ];
 
     const categories = [
