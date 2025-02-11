@@ -64,7 +64,7 @@ export default function Men() {
 
         setFilteredItems(filtered); // Обновляем список отфильтрованных товаров
         setFilteredCount(filtered.length); // Обновляем счётчик товаров
-    }, [filters, selectedCategory]); // Отслеживаем изменения в фильтрах
+    }, [filters, products, selectedCategory]); // Отслеживаем изменения в фильтрах
 
 
     // Функция подгрузки товаров
