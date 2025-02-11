@@ -158,9 +158,9 @@ export default function Men() {
 
                         {/* Фильтр по цвету */}
                         <div className='filter_group'><label>Цвет:</label>
-                            {uniqueColors.map(color => (
+                            {uniqueColors.map((color,index) => (
                                 <div
-                                    key={color}
+                                    key={index}
                                     className={`color-option ${color} ${filters.color.includes(color) ? 'active' : ''}`}
                                     onClick={() => handleColorSelect(color)}>
                                     {color.charAt(0).toUpperCase() + color.slice(1)}
@@ -169,8 +169,8 @@ export default function Men() {
 
                         {/* Фильтр по размеру */}
                         <div className='filter_group'><label>Размер:</label>
-                            {availableSizes.map(size => (
-                                <label key={size}>
+                            {availableSizes.map((size, index) => (
+                                <label key={index}>
                                     <input
                                         type="checkbox"
                                         checked={filters.size.includes(size)}
@@ -182,8 +182,8 @@ export default function Men() {
 
                         {/* Фильтр по бренду */}
                         <div className='filter_group'><label>Бренд:</label>
-                            {availableBrands.map(brand => (
-                                <label key={brand}>
+                            {availableBrands.map((brand,index) => (
+                                <label key={index}>
                                     <input
                                         type="checkbox"
                                         checked={filters.brand.includes(brand)}
