@@ -138,12 +138,8 @@
     width: 120px;
     height: 15px;
     align-items: center;
-    margin-right: 70px;
-    justify-content: space-between;
     border: none;
     outline: none;
-    background: none;
-    letter-spacing: 1px;
 }
 
 .categor, option p {
@@ -190,6 +186,14 @@
 @media (max-width: 360px) {
     .men_header {
         width: 330px;
+    }
+
+    .veia {
+        justify-content: center !important;
+    }
+
+    .tabl {
+        display: none;
     }
 }
 
