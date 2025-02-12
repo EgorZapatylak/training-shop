@@ -34,8 +34,8 @@ export function Products({ title, category = "men" }) {
                 </div>
             </div>
             <div className='items'>
-                {items.length > 0 ? (
-                    items.map((el) => (
+                {items.slice(0,8).length > 0 ? (
+                    items.slice(0, 8).map((el) => (
                         <Link key={el.id} to={`/product/${el.id}`}>
                             <div className='clothes'>
                                 <div className='men_id'>
@@ -57,7 +57,7 @@ export function Products({ title, category = "men" }) {
                                         <div className='clothes_info_size'>
                                             {el.sizes.map((size, index) => (
                                                 <div key={index} className='size-box'>
-                                                    <p>{size}</p>
+                                                    <p>{size.slice(0,-4)}</p>
                                                 </div>
                                             ))}
                                         </div>
