@@ -38,12 +38,13 @@
 }
 
 .sort h3:hover {
-    font-weight: 500;
+    font-weight: 100;
     opacity: 1;
 }
 
 .active-filter {
-    font-weight: bold;
+    font-weight: bold !important;
+    opacity: 1 !important;
 }
 
 .items {
