@@ -51,7 +51,7 @@ export function Products({ title, category = "men" }) {
                                     <div className='clothes_event'>
                                         <div className="clothes_info_img">
                                             {el.images.slice(0, 4).map((img) => (
-                                                <img key={img.id} width={40} height={40} src={img.url} alt={img.color} />
+                                                <img key={img.id} width={40} height={40} src={el.imageURL} alt={img.color} />
                                             ))}
                                         </div>
                                         <div className='clothes_info_size'>
