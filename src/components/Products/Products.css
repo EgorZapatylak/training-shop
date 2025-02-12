@@ -94,12 +94,6 @@
     transition: 0.25s all;
 }
 
-/*.clothes_event:hover {*/
-/*    visibility: hidden;*/
-/*    opacity: 1;*/
-/*    transition: 1.8s all;*/
-/*}*/
-
 .clothes_info:hover {
     margin-top: 180px;
     height: 212px;
