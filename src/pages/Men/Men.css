@@ -247,6 +247,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    transition: line-height 0.5s, color 0.5s;
 }
 
 .filter-content {
