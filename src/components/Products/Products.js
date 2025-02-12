@@ -25,9 +25,11 @@ export function Products({ title, category = "men" }) {
                     <h2>{title}</h2>
                 </div>
                 <div className='sort'>
-                    <h3 onClick={() => setFilter(null)}>All</h3>
+                    <h3 onClick={() => setFilter(null)}
+                    className={!filter ? 'active-filter' : ''}>All</h3>
                     {availableFilters.map((key) => (
-                        <h3 key={key} onClick={() => setFilter(key)}>
+                        <h3 key={key} onClick={() => setFilter(key)}
+                        className={filter === key ? 'active-filter' : ''}>
                             {key.replace(/is/, '')} {/* Убираем "is" для читаемости */}
                         </h3>
                     ))}
