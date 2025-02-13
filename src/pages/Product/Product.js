@@ -30,12 +30,24 @@ export default function Product() {
     const nextMainRef = useRef(null);
 
     const handleColorSelect = (color) => {
-        setSelectedColor(color);
-    }
+        if (selectedColor === color) {
+            // Если пользлватель нажал на ужевыбранный цвет, сбрасываем его
+            setSelectedColor(null);
+        } else {
+            // Устанавливаем новый выбранный цвет
+            setSelectedColor(color);
+        }
+    };
 
     const handleSizeSelect = (size) => {
-        setSelectedSize(size);
-    }
+        if (selectedSize === size) {
+            // Если пользлватель нажал на ужевыбранный размер, сбрасываем его
+            setSelectedSize(null);
+        } else {
+            // Устанавливаем новый выбранный размер
+            setSelectedSize(size);
+        }
+    };
 
     const handleCartButtonClick = () => {
         if (isInCart) {
@@ -78,8 +90,8 @@ export default function Product() {
                     thumbsSwiper.navigation.update();
                     thumbsSwiper.update();
 
-                    prevBtn.classList.remove('swiper-button-disabled','swiper-button-lock');
-                    nextBtn.classList.remove('swiper-button-disabled','swiper-button-lock');
+                    prevBtn.classList.remove('swiper-button-disabled', 'swiper-button-lock');
+                    nextBtn.classList.remove('swiper-button-disabled', 'swiper-button-lock');
 
                     console.log("✅ Кнопки Swiper разблокированы и работают!");
                 } else {
@@ -176,7 +188,7 @@ export default function Product() {
                                 nextEl: nextThumbsRef.current,
                                 prevEl: prevThumbsRef.current
                             }}
-                            onSlideChange = {()=> mainSwiper?.slideTo(thumbsSwiper.activeIndex)}
+                            onSlideChange={() => mainSwiper?.slideTo(thumbsSwiper.activeIndex)}
                         >
                             <SwiperSlide><img src={Slider_1} alt='Описание изоражения 1'/></SwiperSlide>
                             <SwiperSlide><img src={Slider_2} alt='Описание изоражения 2'/></SwiperSlide>
@@ -194,7 +206,7 @@ export default function Product() {
                                 prevEl: prevMainRef.current
                             }}
                             spaceBetween={10}
-                            onSlideChange = {()=> thumbsSwiper?.slideTo(mainSwiper.activeIndex)}
+                            onSlideChange={() => thumbsSwiper?.slideTo(mainSwiper.activeIndex)}
                         >
                             <SwiperSlide><img src={Choise} alt='Описание изоражения 1'/></SwiperSlide>
                             <SwiperSlide><img src={Choise} alt='Описание изоражения 2'/></SwiperSlide>
@@ -218,7 +230,7 @@ export default function Product() {
                                 <button
                                     key={index}
                                     className={selectedColor === img.color ? 'selected' : ''}
-                                    onClick={()=> handleColorSelect(img.color)}>
+                                    onClick={() => handleColorSelect(img.color)}>
                                     <img src={product.imageURL} alt={img.color} title={img.color}/>
                                 </button>
                             ))}
@@ -230,7 +242,7 @@ export default function Product() {
                                 <button
                                     key={index}
                                     className={selectedSize === size ? 'selected' : ''}
-                                    onClick={()=> handleSizeSelect(size)}>{size}</button>
+                                    onClick={() => handleSizeSelect(size)}>{size}</button>
                             ))}
                         </div>
                         {/*<div className='size_info'>*/}
@@ -247,7 +259,7 @@ export default function Product() {
                     </div>
                     <div className='price'>
                         <p>${product.price}.00</p>
-                        <button  onClick={handleCartButtonClick}>{
+                        <button onClick={handleCartButtonClick}>{
                             isInCart ? 'REMOVE FROM CART' : 'ADD TO CART'
                         }</button>
                         <div className="heart_1"></div>
