@@ -46,7 +46,7 @@ export default function Product() {
             console.log("Товар удален из корзины");
         } else {
             // Добавление в корзину
-            if (selectedColor && setSelectedSize) {
+            if (selectedColor && selectedSize) {
                 setIsInCart(true);
                 console.log("Товар добавлен в корзину:", {
                     color: selectedColor,
@@ -221,7 +221,6 @@ export default function Product() {
                                     onClick={()=> handleColorSelect(img.color)}>
                                     <img src={product.imageURL} alt={img.color} title={img.color}/>
                                 </button>
-
                             ))}
                         </div>
                         <div className='size'>
