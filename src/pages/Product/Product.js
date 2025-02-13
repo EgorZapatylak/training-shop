@@ -37,6 +37,27 @@ export default function Product() {
         setSelectSize(size);
     }
 
+    const handleCartButtonClick = () => {
+        if (isInCart) {
+            // Удаление из корзины
+            setSelectColor(null);
+            setSelectSize(null);
+            setIsInCart(false);
+            console.log("Товар удален из корзины");
+        } else {
+            // Добавление в корзину
+            if (selectColor && setSelectSize) {
+                setIsInCart(true);
+                console.log("Товар добавлен в корзину:", {
+                    color: selectedColor,
+                    size: selectedSize,
+                });
+            } else {
+                alert("Пожалуйста,выберите цвет и размер");
+            }
+        }
+    };
+
     const updateSwiper = () => {
         if (thumbsSwiper) {
             console.log("🔄 Принудительное обновление Swiper...");
