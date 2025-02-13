@@ -209,20 +209,25 @@ export default function Product() {
                     <div className='saze_color'>
                         <div className='color'>
                             <p>Color:</p>
-                            {/*<span>{product.images[0].color}</span>*/}
+                            {/* Отображение выбранного цвета*/}
+                            <span>{selectedColor}</span>
+                        </div>
+                        <div className='color_img'>
+                            {/* Оторажение всех достуаных цветов */}
                             {product.images.map((img, index) => (
                                 <button
-                                key={index}
-                                className={selectedColor === img.color ? 'selected' : ''}
-                                onClick={()=> handleColorSelect(img.color)}>{img.color}</button>
+                                    key={index}
+                                    className={selectedColor === img.color ? 'selected' : ''}
+                                    onClick={()=> handleColorSelect(img.color)}>
+                                    <img src={product.imageURL} alt={img.color} title={img.color}/>
+                                </button>
+
                             ))}
+                            {/*<img className='color_1' alt=''/>*/}
+                            {/*<img className='color_2' alt=''/>*/}
+                            {/*<img className='color_3' alt=''/>*/}
+                            {/*<img className='color_4' alt=''/>*/}
                         </div>
-                        {/*<div className='color_img'>*/}
-                        {/*    <img className='color_1' alt=''/>*/}
-                        {/*    <img className='color_2' alt=''/>*/}
-                        {/*    <img className='color_3' alt=''/>*/}
-                        {/*    <img className='color_4' alt=''/>*/}
-                        {/*</div>*/}
                         <div className='size'>
                             <p>Size:</p>
                             {/*<span>{product.sizes[0]}</span>*/}
