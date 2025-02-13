@@ -29,6 +29,14 @@ export default function Product() {
     const prevMainRef = useRef(null);
     const nextMainRef = useRef(null);
 
+    const handleColorSelect = (color) => {
+        setSelectColor(color);
+    }
+
+    const handleSizeSelect = (size) => {
+        setSelectSize(size);
+    }
+
     const updateSwiper = () => {
         if (thumbsSwiper) {
             console.log("🔄 Принудительное обновление Swiper...");
