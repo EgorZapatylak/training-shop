@@ -1,15 +1,11 @@
 {
   "files": {
-    "main.css": "/training-shop/static/css/main.70f1ded7.css",
-    "main.js": "/training-shop/static/js/main.5642560f.js",
+    "main.css": "/training-shop/static/css/main.d18b15b1.css",
+    "main.js": "/training-shop/static/js/main.16c67e32.js",
     "static/js/787.47ca6e30.chunk.js": "/training-shop/static/js/787.47ca6e30.chunk.js",
     "static/media/men.svg": "/training-shop/static/media/men.1ba93dcdbc3f59ec1fc2.svg",
     "static/media/women.svg": "/training-shop/static/media/women.b413ac214845aa78f81e.svg",
     "static/media/item_1_992.svg": "/training-shop/static/media/item_1_992.e6238796ecfd858abd9f0ab1059718a7.svg",
-    "static/media/blue.svg": "/training-shop/static/media/blue.0652eb3417a7067e5246.svg",
-    "static/media/black.svg": "/training-shop/static/media/black.45dc33552d012b48dc7e.svg",
-    "static/media/gray.svg": "/training-shop/static/media/gray.a6ee206fe9189bcc5cbf.svg",
-    "static/media/white.svg": "/training-shop/static/media/white.ad9a2713c214d8240cf6.svg",
     "static/media/banner.jpg": "/training-shop/static/media/banner.ba5d4eb3d9420781b5f8.jpg",
     "static/media/blog_1.jpg": "/training-shop/static/media/blog_1.5cad0183f33abe4f2f35.jpg",
     "static/media/blog_2.jpg": "/training-shop/static/media/blog_2.653a844b906171bd2ee2.jpg",
@@ -95,12 +91,12 @@
     "static/media/chevron-right.svg": "/training-shop/static/media/chevron-right.2526b470f6bbce2e5857.svg",
     "static/media/veiu_tabl.svg": "/training-shop/static/media/veiu_tabl.b8171bba040eed22e80d.svg",
     "static/media/nav.svg": "/training-shop/static/media/nav.41fd86f5fa7b012fe6a0.svg",
-    "main.70f1ded7.css.map": "/training-shop/static/css/main.70f1ded7.css.map",
-    "main.5642560f.js.map": "/training-shop/static/js/main.5642560f.js.map",
+    "main.d18b15b1.css.map": "/training-shop/static/css/main.d18b15b1.css.map",
+    "main.16c67e32.js.map": "/training-shop/static/js/main.16c67e32.js.map",
     "787.47ca6e30.chunk.js.map": "/training-shop/static/js/787.47ca6e30.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.70f1ded7.css",
-    "static/js/main.5642560f.js"
+    "static/css/main.d18b15b1.css",
+    "static/js/main.16c67e32.js"
   ]
 }
