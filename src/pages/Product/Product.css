@@ -363,43 +363,28 @@ button.selected {
 .color_img {
     display: flex;
     margin-bottom: 10px;
-    width: 304px;
-    height: 66px;
-    gap: 16px;
+    gap: 10px;
 }
 
-.color_1 {
-    background-image: url('../Product/img/blue.svg');
-    width: 64px;
-    height: 64px;
+.color_img button{
+    background:none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
 }
 
-.color_2 {
-    background-image: url('../Product/img/white.svg');
-    width: 64px;
-    height: 64px;
+.color_img button img {
+    width: 62px;
+    height: 62px;
+    padding: 0;
 }
 
-.color_3 {
-    background-image: url('../Product/img/black.svg');
-    width: 64px;
-    height: 64px;
+.color_img button.selected {
+    border: 2px solid black;
 }
 
-.color_4 {
-    background-image: url('../Product/img/gray.svg');
-    width: 64px;
-    height: 64px;
-}
-
-.color_1:hover,
-.color_1:active,
-.color_2:hover,
-.color_2:active,
-.color_3:hover,
-.color_3:active,
-.color_4:hover,
-.color_4:active {
+.color_img button:hover,
+.color_img button:active {
     box-sizing: border-box;
     border: 2px solid black;
 }
