@@ -19,8 +19,8 @@ export default function Product() {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const [mainSwiper, setMainSwiper] = useState(null);
 
-    const [selectColor, setSelectColor] = useState(null);
-    const [selectSize, setSelectSize] = useState(null);
+    const [selectedColor, setSelectedColor] = useState(null);
+    const [selectedSize, setSelectedSize] = useState(null);
     const [isInCart, setIsInCart] = useState(false);
 
     // Рефы для кнопок Swiper
@@ -30,23 +30,23 @@ export default function Product() {
     const nextMainRef = useRef(null);
 
     const handleColorSelect = (color) => {
-        setSelectColor(color);
+        setSelectedColor(color);
     }
 
     const handleSizeSelect = (size) => {
-        setSelectSize(size);
+        setSelectedSize(size);
     }
 
     const handleCartButtonClick = () => {
         if (isInCart) {
             // Удаление из корзины
-            setSelectColor(null);
-            setSelectSize(null);
+            setSelectedColor(null);
+            setSelectedSize(null);
             setIsInCart(false);
             console.log("Товар удален из корзины");
         } else {
             // Добавление в корзину
-            if (selectColor && setSelectSize) {
+            if (selectedColor && setSelectedSize) {
                 setIsInCart(true);
                 console.log("Товар добавлен в корзину:", {
                     color: selectedColor,
@@ -209,24 +209,36 @@ export default function Product() {
                     <div className='saze_color'>
                         <div className='color'>
                             <p>Color:</p>
-                            <span>{product.images[0].color}</span>
+                            {/*<span>{product.images[0].color}</span>*/}
+                            {product.images.map((img, index) => (
+                                <button
+                                key={index}
+                                className={selectedColor === img.color ? 'selected' : ''}
+                                onClick={()=> handleColorSelect(img.color)}>{img.color}</button>
+                            ))}
                         </div>
-                        <div className='color_img'>
-                            <img className='color_1' alt=''/>
-                            <img className='color_2' alt=''/>
-                            <img className='color_3' alt=''/>
-                            <img className='color_4' alt=''/>
-                        </div>
+                        {/*<div className='color_img'>*/}
+                        {/*    <img className='color_1' alt=''/>*/}
+                        {/*    <img className='color_2' alt=''/>*/}
+                        {/*    <img className='color_3' alt=''/>*/}
+                        {/*    <img className='color_4' alt=''/>*/}
+                        {/*</div>*/}
                         <div className='size'>
                             <p>Size:</p>
-                            <span>{product.sizes[0]}</span>
+                            {/*<span>{product.sizes[0]}</span>*/}
+                            {product.sizes.map((size, index) => (
+                                <button
+                                    key={index}
+                                    className={selectedSize === size ? 'selected' : ''}
+                                    onClick={()=> handleSizeSelect(size)}>{size}</button>
+                            ))}
                         </div>
-                        <div className='size_info'>
-                            {product.sizes.map((el, index) => (<div className='xs' key={index}>
-                                    <p>{el.toString()}</p>
-                                </div>)
-                            )}
-                        </div>
+                        {/*<div className='size_info'>*/}
+                        {/*    {product.sizes.map((el, index) => (<div className='xs' key={index}>*/}
+                        {/*            <p>{el.toString()}</p>*/}
+                        {/*        </div>)*/}
+                        {/*    )}*/}
+                        {/*</div>*/}
                         <div className='size_guide'>
                             <div className='size_img'/>
                             <p>Size guide</p>
@@ -235,7 +247,9 @@ export default function Product() {
                     </div>
                     <div className='price'>
                         <p>${product.price}.00</p>
-                        <button>ADD TO CART</button>
+                        <button  onClick={handleCartButtonClick}>{
+                            isInCart ? 'REMOVE FROM CART' : 'ADD TO CART'
+                        }</button>
                         <div className="heart_1"></div>
                         <div className="scale_1"></div>
                     </div>
