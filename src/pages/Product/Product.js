@@ -223,10 +223,6 @@ export default function Product() {
                                 </button>
 
                             ))}
-                            {/*<img className='color_1' alt=''/>*/}
-                            {/*<img className='color_2' alt=''/>*/}
-                            {/*<img className='color_3' alt=''/>*/}
-                            {/*<img className='color_4' alt=''/>*/}
                         </div>
                         <div className='size'>
                             <p>Size:</p>
