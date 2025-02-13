@@ -93,9 +93,6 @@
 }
 
 .size-box p {
-    height: 14px;
-    width: 14px;
-    background-color: #cccccc;
     display: flex;
     align-items: center;
 }
