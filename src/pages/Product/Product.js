@@ -19,6 +19,10 @@ export default function Product() {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const [mainSwiper, setMainSwiper] = useState(null);
 
+    const [selectColor, setSelectColor] = useState(null);
+    const [selectSize, setSelectSize] = useState(null);
+    const [isInCart, setIsInCart] = useState(false);
+
     // Рефы для кнопок Swiper
     const prevThumbsRef = useRef(null);
     const nextThumbsRef = useRef(null);
