@@ -341,6 +341,12 @@
 .btn_left.swiper-button-disabled{
     opacity: 0.35;
 }
+
+button.selected {
+    border: 2px solid #000;
+    background-color: #f0f0f0;
+}
+
 .content_info {
     display: flex;
     flex-direction: column;
