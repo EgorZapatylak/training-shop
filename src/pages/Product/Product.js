@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
 import './Product.css';
 import {Products_base} from "../../Products_base";
 import Choise from './img/item_1_992.svg';
@@ -70,7 +70,7 @@ export default function Product() {
         }
     };
 
-    const updateSwiper = () => {
+    const updateSwiper = useCallback(() => {
         if (thumbsSwiper) {
             console.log("🔄 Принудительное обновление Swiper...");
 
@@ -100,7 +100,7 @@ export default function Product() {
                 }
             }, 300);
         }
-    };
+    },[thumbsSwiper]);
 //
     useEffect(() => {
         if (thumbsSwiper && mainSwiper) {
@@ -115,7 +115,7 @@ export default function Product() {
             };
         }
         updateSwiper();
-    }, [thumbsSwiper, mainSwiper]);
+    }, [thumbsSwiper, mainSwiper, updateSwiper]);
 
     // Проверяем, есть ли данные
 
