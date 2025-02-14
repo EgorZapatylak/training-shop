@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './Men.css';
 import {Link} from "react-router-dom";
 import {Products_base} from "../../Products_base";
+import {StarRating} from "../../components/StarRating/StarRating";
 
 export default function Men() {
     const [filters, setFilters] = useState({
@@ -216,12 +217,25 @@ export default function Men() {
                     <div key={prod.id} className='clothes'>
                         <Link to={`/product/${prod.id}`}>
                             <div className={`mid_${prod.id}`}>
+                                {prod.discount && (
+                                    <div className='discount_badge'>{prod.discount}</div>
+                                )}
                                 <img className='mid' src={prod.imageURL} alt={prod.name}/>
                             </div>
                             <p>{prod.name}</p>
                             <div className='cost-rate'>
-                                <p>${prod.price}</p>
-                                <div className='stars'>{prod.rating}</div>
+                                {prod.discount ? (
+                                    <div className='price_item'>
+                                        <p className='new_price'>
+                                            {Math.round(prod.price * (1 + parseFloat(prod.discount) / 100))} $
+                                            {/* Учитываем скидку */}
+                                        </p>
+                                        <p className='old_price'>{prod.price} $</p>
+                                    </div>
+                                ) : (
+                                    <p>{prod.price}$</p>
+                                )}
+                                <StarRating rating={prod.rating}/>
                             </div>
                         </Link>
                     </div>
