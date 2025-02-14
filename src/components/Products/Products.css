@@ -111,11 +111,12 @@
     transition: 0.4s all;
 }
 
-.clothes_info:hover > .clothes_event{
+.clothes_info:hover > .clothes_event {
     visibility: visible;
     opacity: 1;
     transition: 2.8s all;
 }
+
 .cost-rate {
     display: flex;
     height: 16px;
@@ -129,14 +130,6 @@
     font-size: 14px;
     line-height: 16px;
     color: #121212;
-}
-
-.stars {
-    display: flex;
-    height: 14px;
-    width:70px;
-    background-repeat: no-repeat;
-    background-image: url("../../pages/Women/img/stars.svg");
 }
 
 .women_button {
@@ -156,13 +149,13 @@
     cursor: pointer;
 }
 
-.old_price{
+.old_price {
     text-decoration: line-through;
     opacity: 0.4 !important;
     margin-right: 8px;
 }
 
-.new_price{
+.new_price {
     font-weight: bold;
     color: black;
 }
@@ -183,18 +176,34 @@
     width: 30px;
 }
 
+.star_rating {
+    display: flex;
+    width: 110px;
+    align-items: center;
+}
+
+.star_filled {
+    color: #ddd;
+    font-size: 0.9em;
+}
+
+.star {
+    opacity: 0.1;
+}
+
 @media (max-width: 992px) {
     .women_button {
         width: 962px;
     }
 }
 
-@media (max-width:360px) {
+@media (max-width: 360px) {
 
     .line {
         margin: 0 auto;
         width: 360px !important;
     }
+
     .item_hed {
         display: flex;
         margin: 20px auto;
@@ -206,12 +215,12 @@
         flex-direction: column;
     }
 
-    .items{
+    .items {
         margin: 0 auto;
         width: 360px;
     }
 
-    .clothes{
+    .clothes {
         margin-right: 0;
     }
 
@@ -220,7 +229,7 @@
         height: 60px;
     }
 
-    .clothes_event{
+    .clothes_event {
         display: none;
     }
 
