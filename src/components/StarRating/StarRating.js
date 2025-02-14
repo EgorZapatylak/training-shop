@@ -10,8 +10,8 @@ export function StarRating({rating}) {
             {[...Array(totalStars)].map((_, index) => (
                 <span
                     key={index}
-                    className={index < filledStars ? 'star filled' : 'star'}>
-                    ⭐  </span>
+                    className={index < filledStars ? 'star_filled' : 'star'}>
+                    ⭐</span>
             ))}
         </div>
     );
