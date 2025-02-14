@@ -41,6 +41,11 @@ export function Products({title, category = "men"}) {
                         <Link key={el.id} to={`/product/${el.id}`}>
                             <div className='clothes'>
                                 <div className='men_id'>
+                                    {el.discount && (
+                                        <div className='discount_badge'>
+                                            {el.discount}
+                                        </div>
+                                    )}
                                     <img src={el.imageURL} alt={el.name}/>
                                 </div>
                                 <div className='clothes_info'>
