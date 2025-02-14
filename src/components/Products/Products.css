@@ -172,6 +172,17 @@
     gap: 10px;
 }
 
+.discount_badge {
+    position: absolute;
+    background-color: #E91E63;
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 0.8em;
+    font-weight: bold;
+    z-index: 10;
+    width: 30px;
+}
+
 @media (max-width: 992px) {
     .women_button {
         width: 962px;
