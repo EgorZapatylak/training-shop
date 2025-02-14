@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 import {Products_base} from "../../Products_base";
 import './Products.css';
+import {StarRating} from "../StarRating/StarRating";
 
 export function Products({title, category = "men"}) {
     const [filter, setFilter] = useState(null); // По умолчанию без фильтра
@@ -63,7 +64,7 @@ export function Products({title, category = "men"}) {
                                         ) : (
                                             <p>{el.price}$</p>
                                         )}
-                                        <p>⭐ {el.rating}</p>
+                                        <StarRating rating={el.rating}/>
                                     </div>
                                     <div className='clothes_event'>
                                         <div className="clothes_info_img">
