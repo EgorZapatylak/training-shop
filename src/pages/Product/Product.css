@@ -100,14 +100,6 @@
     margin-left: 66px;
 }
 
-.star {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 70px;
-    margin-right: 6px;
-}
-
 .stars_i {
     display: flex;
     width: 14px;
