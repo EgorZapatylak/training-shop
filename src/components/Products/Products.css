@@ -156,6 +156,22 @@
     cursor: pointer;
 }
 
+.old_price{
+    text-decoration: line-through;
+    opacity: 0.4 !important;
+    margin-right: 8px;
+}
+
+.new_price{
+    font-weight: bold;
+    color: black;
+}
+
+.price_item {
+    display: flex;
+    gap: 10px;
+}
+
 @media (max-width: 992px) {
     .women_button {
         width: 962px;
