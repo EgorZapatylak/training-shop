@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { Link } from "react-router-dom";
-import { Products_base } from "../../Products_base";
+import React, {useState} from 'react';
+import {Link} from "react-router-dom";
+import {Products_base} from "../../Products_base";
 import './Products.css';
 
-export function Products({ title, category = "men" }) {
+export function Products({title, category = "men"}) {
     const [filter, setFilter] = useState(null); // По умолчанию без фильтра
 
     // Получаем товары по заданной категории
@@ -26,40 +26,51 @@ export function Products({ title, category = "men" }) {
                 </div>
                 <div className='sort'>
                     <h3 onClick={() => setFilter(null)}
-                    className={!filter ? 'active-filter' : ''}>All</h3>
+                        className={!filter ? 'active-filter' : ''}>All</h3>
                     {availableFilters.map((key) => (
                         <h3 key={key} onClick={() => setFilter(key)}
-                        className={filter === key ? 'active-filter' : ''}>
+                            className={filter === key ? 'active-filter' : ''}>
                             {key.replace(/is/, '')} {/* Убираем "is" для читаемости */}
                         </h3>
                     ))}
                 </div>
             </div>
             <div className='items'>
-                {items.slice(0,8).length > 0 ? (
+                {items.slice(0, 8).length > 0 ? (
                     items.slice(0, 8).map((el) => (
                         <Link key={el.id} to={`/product/${el.id}`}>
                             <div className='clothes'>
                                 <div className='men_id'>
-                                    <img src={el.imageURL} alt={el.name} />
+                                    <img src={el.imageURL} alt={el.name}/>
                                 </div>
                                 <div className='clothes_info'>
                                     <p>{el.name}</p>
                                     <p><strong>{el.brand}</strong></p>
                                     <div className='cost-rate'>
-                                        <p>{el.price}$</p>
+                                        {el.discount ? (
+                                            <div className='price_item'>
+                                                <p className='new_price'>
+                                                    {Math.round(el.price * (1 + parseFloat(el.discount) / 100))} $
+                                                    {/* Учитываем скидку */}
+                                                </p>
+                                                <p className='old_price'>{el.price} $</p>
+                                            </div>
+                                        ) : (
+                                            <p>{el.price}$</p>
+                                        )}
                                         <p>⭐ {el.rating}</p>
                                     </div>
                                     <div className='clothes_event'>
                                         <div className="clothes_info_img">
                                             {el.images.slice(0, 4).map((img) => (
-                                                <img key={img.id} width={40} height={40} src={el.imageURL} alt={img.color} />
+                                                <img key={img.id} width={40} height={40} src={el.imageURL}
+                                                     alt={img.color}/>
                                             ))}
                                         </div>
                                         <div className='clothes_info_size'>
                                             {el.sizes.map((size, index) => (
                                                 <div key={index} className='size-box'>
-                                                    <p>{size.slice(0,-4)}</p>
+                                                    <p>{size.slice(0, -4)}</p>
                                                 </div>
                                             ))}
                                         </div>
