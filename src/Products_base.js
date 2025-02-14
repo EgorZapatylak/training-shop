@@ -15,7 +15,7 @@ export const Products_base = {
             rating: 4,
             price: 108,
             sizes: ['M INT'],
-            discount: null,
+            discount: '-40%',
             reviews: [
                 {
                     name: 'Ivan Kurnov',
