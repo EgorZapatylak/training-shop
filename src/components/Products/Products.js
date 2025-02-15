@@ -27,7 +27,9 @@ export function Products({title, category = "men"}) {
                 </div>
                 <div className='sort'>
                     <h3 onClick={() => setFilter(null)}
-                        className={!filter ? 'active-filter' : ''}>All</h3>
+                        className={!filter ? 'active-filter' : ''}>
+                        All
+                    </h3>
                     {availableFilters.map((key) => (
                         <h3 key={key} onClick={() => setFilter(key)}
                             className={filter === key ? 'active-filter' : ''}>
