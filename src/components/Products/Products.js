@@ -83,7 +83,9 @@ export function Products({title, category = "men"}) {
                                             ))}
                                         </div>
                                         <div className='clothes_info_event'>
-                                            <button>ADD TO CART</button>
+                                            <button>
+                                                ADD TO CART
+                                            </button>
                                             <div className="heart_1"></div>
                                             <div className="scale_1"></div>
                                         </div>
