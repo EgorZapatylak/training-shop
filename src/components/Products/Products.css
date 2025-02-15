@@ -43,7 +43,7 @@
 }
 
 .active-filter {
-    font-weight: bold !important;
+    font-weight: bold;
     opacity: 1;
 }
 
