@@ -53,7 +53,9 @@ export function Products({title, category = "men"}) {
                                 </div>
                                 <div className='clothes_info'>
                                     <p>{el.name}</p>
-                                    <p><strong>{el.brand}</strong></p>
+                                    <p>
+                                        <strong>{el.brand}</strong>
+                                    </p>
                                     <div className='cost-rate'>
                                         {el.discount ? (
                                             <div className='price_item'>
