@@ -44,7 +44,7 @@
 
 .active-filter {
     font-weight: bold !important;
-    opacity: 1 !important;
+    opacity: 1;
 }
 
 .items {
