@@ -36,12 +36,10 @@
     color: #121212;
     opacity: 0.6;
 }
-
 .sort h3:hover {
     font-weight: 100;
     opacity: 1;
 }
-
 .active-filter {
     font-weight: bold !important;
     opacity: 1 !important;
