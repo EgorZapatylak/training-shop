@@ -1,18 +1,40 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Cart.css'
 
 export function Cart ()  {
+
+    const [cartItem, setCartItem]=useState([])
+
+    const totalPrice=0;
+
     return (
         <div className='cart'>
             <div className='cart_header'>
                 <p>SHOPPING CART</p>
                 <img className='filter_img_close'/>
             </div>
-            <div className='cart_road'>
-                <span>Item in Cart</span>
-                <span>Item in Cart</span>
-                <span>Item in Cart</span>
-            </div>
+            {cartItem.length === 0 ? (
+                <p>Sorry, your cart is empty</p>
+            ) : (
+                <>
+                    <div className='cart_road'>
+                        <span>Item in Cart</span>
+                        <span>Item in Cart</span>
+                        <span>Item in Cart</span>
+                    </div>
+                    <div className='cart_item'>
+                        <ul>
+                            <li>
+                                <p>1</p>
+                                <button>+</button>
+                                <button>-</button>
+                                <button>Удалить</button>
+                            </li>
+                        </ul>
+                    </div>
+                </>
+            )}
+            <h3>Total: ${totalPrice.toFixed(2)}</h3>
             <div className='cart_button'>
                 <button>FURTHER</button>
                 <button>VIEW CART</button>
