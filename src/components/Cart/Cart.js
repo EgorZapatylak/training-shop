@@ -9,7 +9,11 @@ export function Cart ()  {
 
     const addItem = (item) => {
         setCartItems([...cartItems, item]);
-    }
+    };
+
+    const removeItem = (id) => {
+        setCartItems(cartItems.filter(item => item.id !== id));
+    };
 
     return (
         <div className='cart'>
