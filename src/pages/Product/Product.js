@@ -245,7 +245,7 @@ export default function Product() {
                                 <button
                                     key={index}
                                     className={selectedSize === size ? 'selected' : ''}
-                                    onClick={() => handleSizeSelect(size)}>{size}</button>
+                                    onClick={() => handleSizeSelect(size)}>{size.slice(0,-3)}</button>
                             ))}
                         </div>
                         <div className='size_guide'>
