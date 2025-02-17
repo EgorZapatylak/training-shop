@@ -36,12 +36,15 @@ export function Cart ()  {
                     </div>
                     <div className='cart_item'>
                         <ul>
-                            <li>
-                                <p>1</p>
-                                <button>+</button>
-                                <button>-</button>
-                                <button>Удалить</button>
-                            </li>
+                            {cartItems.map(item => (
+                                <li key={item.id}>
+                                    <p>{item.name}</p>
+                                    <p>{item.price} x {item.quantity}</p>
+                                    <button onClick={()=>updateQuantity(item.id,item.quantity + 1)}>+</button>
+                                    <button onClick={()=>updateQuantity(item.id, item.quantity - 1)}>-</button>
+                                    <button onClick={()=> removeItem(item.id)}>Удалить</button>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </>
