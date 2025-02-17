@@ -379,6 +379,7 @@ button.selected {
     width: 89px;
     height: 18px;
     justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 .size_info {
@@ -390,6 +391,7 @@ button.selected {
     justify-content: center;
     padding: 0;
     border: 0;
+    margin-bottom: 10px;
 }
 
 .size_info button {
