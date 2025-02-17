@@ -375,42 +375,45 @@ button.selected {
     border: 2px solid black;
 }
 
-.color_img button:hover,
-.color_img button:active {
-    box-sizing: border-box;
-    border: 2px solid black;
-}
-
 .size {
     display: flex;
     width: 89px;
     height: 18px;
-    margin-bottom: 10px;
+    justify-content: space-between;
 }
 
 .size_info {
-    display: flex;
-    width: 208px;
-    height: 40px;
-    gap: 16px;
-}
-
-.xs {
     display: flex;
     width: 40px;
     height: 40px;
     background-color: #F8F8F8;
     align-items: center;
     justify-content: center;
+    padding: 0;
+    border: 0;
 }
 
-.xs p {
+.size_info button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    background:none;
+}
+
+.size_info button p {
     font-style: normal;
     font-weight: 600;
     font-size: 12px;
     line-height: 13px;
     color: #121212;
     opacity: 0.7;
+}
+
+.size_info button.selected {
+    border: 2px solid black;
+    background-color: white;
 }
 
 .s {
