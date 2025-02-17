@@ -238,6 +238,9 @@ export default function Product() {
                         <div className='size'>
                             <p>Size:</p>
                             {/*<span>{product.sizes[0]}</span>*/}
+                            <span>{selectedSize}</span>
+                        </div>
+                        <div className='size_info'>
                             {product.sizes.map((size, index) => (
                                 <button
                                     key={index}
@@ -245,12 +248,6 @@ export default function Product() {
                                     onClick={() => handleSizeSelect(size)}>{size}</button>
                             ))}
                         </div>
-                        {/*<div className='size_info'>*/}
-                        {/*    {product.sizes.map((el, index) => (<div className='xs' key={index}>*/}
-                        {/*            <p>{el.toString()}</p>*/}
-                        {/*        </div>)*/}
-                        {/*    )}*/}
-                        {/*</div>*/}
                         <div className='size_guide'>
                             <div className='size_img'/>
                             <p>Size guide</p>
