@@ -1,23 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
+import {useSelector, useDispatch} from 'react-redux';
+import {removeFromCart} from "../../cartSlice";
+
 import './Cart.css'
 
 export function Cart ()  {
 
-    const [cartItems, setCartItems]=useState([])
+    const cartItems = useSelector(state => state.cart.items);
+    const dispatch = useDispatch()
 
     const totalPrice= cartItems.reduce((total, item) => total + item.price * item.quantity,0);
-
-    const addItem = (item) => {
-        setCartItems([...cartItems, item]);
-    };
-
-    const removeItem = (id) => {
-        setCartItems(cartItems.filter(item => item.id !== id));
-    };
-
-    const updateQuantity = (id, quantity) =>{
-        setCartItems(cartItems.map(item => item.id === id ? {...item.quantity} : item));
-    };
 
     return (
         <div className='cart'>
@@ -37,12 +29,13 @@ export function Cart ()  {
                     <div className='cart_item'>
                         <ul>
                             {cartItems.map(item => (
-                                <li key={item.id}>
+                                <li key={`${item.id} - ${item.size} - ${item.color}`}>
                                     <p>{item.name}</p>
-                                    <p>{item.price} x {item.quantity}</p>
-                                    <button onClick={()=>updateQuantity(item.id,item.quantity + 1)}>+</button>
-                                    <button onClick={()=>updateQuantity(item.id, item.quantity - 1)}>-</button>
-                                    <button onClick={()=> removeItem(item.id)}>Удалить</button>
+                                    <p>Цвет: {item.color}</p>
+                                    <p>Размер: {item.size}</p>
+                                    <p>Цена: {item.price}</p>
+                                    <p>Количествр: {item.quantity}</p>
+                                    <button onClick={()=>dispatch(removeFromCart(item.id))}>Удалить</button>
                                 </li>
                             ))}
                         </ul>
