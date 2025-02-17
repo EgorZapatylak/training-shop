@@ -5,7 +5,7 @@ export function Cart ()  {
 
     const [cartItems, setCartItems]=useState([])
 
-    const totalPrice=0;
+    const totalPrice= cartItems.reduce((total, item) => total + item.price * item.quantity,0);
 
     const addItem = (item) => {
         setCartItems([...cartItems, item]);
@@ -16,7 +16,7 @@ export function Cart ()  {
     };
 
     const updateQuantity = (id, quantity) =>{
-        setCartItems(cartItems.map(item => item.id === id ? {...item quantity} : item));
+        setCartItems(cartItems.map(item => item.id === id ? {...item.quantity} : item));
     };
 
     return (
