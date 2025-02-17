@@ -3,9 +3,13 @@ import './Cart.css'
 
 export function Cart ()  {
 
-    const [cartItem, setCartItem]=useState([])
+    const [cartItems, setCartItems]=useState([])
 
     const totalPrice=0;
+
+    const addItem = (item) => {
+        setCartItems([...cartItems, item]);
+    }
 
     return (
         <div className='cart'>
@@ -13,7 +17,7 @@ export function Cart ()  {
                 <p>SHOPPING CART</p>
                 <img className='filter_img_close'/>
             </div>
-            {cartItem.length === 0 ? (
+            {cartItems.length === 0 ? (
                 <p>Sorry, your cart is empty</p>
             ) : (
                 <>
