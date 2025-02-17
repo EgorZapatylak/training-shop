@@ -7,19 +7,21 @@ import {SpecialOffer} from "../../components/SpecialOffer/SpecialOffer";
 import {Blog} from "../../components/Blog/Blog";
 import {Products} from "../../components/Products/Products";
 import {Products_base} from "../../Products_base";
+import {Cart} from "../../components/Cart/Cart";
 
 
 export default function Main() {
 
     return (
         <section className='main'>
-            <Hero/>
-            <Advantage/>
-            <Products title="Women's" item={Products_base.women}/>
-            <Products title="Men's" item={Products_base.men}/>
-            <Promise/>
-            <SpecialOffer/>
-            <Blog/>
+            <Cart/>
+            {/*<Hero/>*/}
+            {/*<Advantage/>*/}
+            {/*<Products title="Women's" item={Products_base.women}/>*/}
+            {/*<Products title="Men's" item={Products_base.men}/>*/}
+            {/*<Promise/>*/}
+            {/*<SpecialOffer/>*/}
+            {/*<Blog/>*/}
         </section>
     )
 }
