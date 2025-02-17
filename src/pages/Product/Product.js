@@ -226,12 +226,12 @@ export default function Product() {
                         </div>
                         <div className='color_img'>
                             {/* Оторажение всех достуаных цветов */}
-                            {product.images.map((img, index) => (
+                            {[...new Set(product.images.map((img) => img.color))].map((color, index) => (
                                 <button
                                     key={index}
-                                    className={selectedColor === img.color ? 'selected' : ''}
-                                    onClick={() => handleColorSelect(img.color)}>
-                                    <img src={product.imageURL} alt={img.color} title={img.color}/>
+                                    className={selectedColor === color ? 'selected' : ''}
+                                    onClick={() => handleColorSelect(color)}>
+                                    <img src={product.imageURL} alt={color} title={color}/>
                                 </button>
                             ))}
                         </div>
