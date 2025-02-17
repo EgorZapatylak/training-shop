@@ -360,15 +360,14 @@ button.selected {
 
 .color_img button{
     background:none;
-    border: none;
     cursor: pointer;
     padding: 0;
+    border: 2px solid white;
 }
 
 .color_img button img {
     width: 62px;
     height: 62px;
-    padding: 0;
 }
 
 .color_img button.selected {
