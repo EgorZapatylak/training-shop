@@ -15,6 +15,10 @@ export function Cart ()  {
         setCartItems(cartItems.filter(item => item.id !== id));
     };
 
+    const updateQuantity = (id, quantity) =>{
+        setCartItems(cartItems.map(item => item.id === id ? {...item quantity} : item));
+    };
+
     return (
         <div className='cart'>
             <div className='cart_header'>
