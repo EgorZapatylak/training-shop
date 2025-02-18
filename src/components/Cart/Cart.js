@@ -30,6 +30,7 @@ export function Cart ()  {
                         <ul>
                             {cartItems.map(item => (
                                 <li key={`${item.id} - ${item.size} - ${item.color}`}>
+                                    <img src={item.image} alt={item.name} width='50'/>
                                     <p>{item.name}</p>
                                     <p>Цвет: {item.color}</p>
                                     <p>Размер: {item.size}</p>
