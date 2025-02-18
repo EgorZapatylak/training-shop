@@ -157,7 +157,6 @@ export default function Product() {
     return (
 
         <section>
-            <Cart/>
             <div className='product_header'>
                 <div className='road'>
                     <p>Home</p>
