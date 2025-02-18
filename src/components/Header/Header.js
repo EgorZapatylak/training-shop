@@ -89,9 +89,11 @@ export function Header() {
                     <a href='https://www.google.by/'>
                         <img src={User} alt=''/>
                     </a>
-                    <a href='https://www.google.by/'>
+                    <Link to='/cart'>
+                        <a href='#cart'>
                         <img src={Shopping} alt=''/>
                     </a>
+                    </Link>
                     <nav>
                         <div className={menuActive ? 'toggle' : 'burger_btn'}
                              onClick={() => setMenuActive(!menuActive)}>
