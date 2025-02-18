@@ -13,7 +13,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 import 'swiper/css/free-mode';
 import {useDispatch} from "react-redux";
-import {addToCart} from "../../cartSlice";
+import {addToCart, removeFromCart} from "../../cartSlice";
 
 
 export default function Product() {
@@ -53,40 +53,37 @@ export default function Product() {
     };
 
     const handleCartButtonClick = () => {
-        // if (isInCart) {
-        //     // Удаление из корзины
-        //     setSelectedColor(null);
-        //     setSelectedSize(null);
-        //     setIsInCart(false);
-        //     console.log("Товар удален из корзины");
-        // } else {
-        //     // Добавление в корзину
-        //     if (selectedColor && selectedSize) {
-        //         setIsInCart(true);
-        //         console.log("Товар добавлен в корзину:", {
-        //             color: selectedColor,
-        //             size: selectedSize,
-        //         });
-        //     } else {
-        //         alert("Пожалуйста,выберите цвет и размер");
-        //     }
-        // }
-        if (!selectedColor || !selectedSize) {
-            alert("Пожалуйста,выберите цвет и размер");
-            return;
+        if (isInCart) {
+            dispatch(
+                removeFromCart({
+                    id: product.id,
+                    size: selectedSize,
+                    color: selectedColor,
+                })
+            );
+            console.log('Товар удален из корзины');
+        } else {
+            if (selectedColor && selectedSize) {
+                dispatch(
+                    addToCart({
+                        id: product.id,
+                        name: product.name,
+                        price: product.price,
+                        image: product.imageURL,
+                        color: product.color,
+                        size: product.size,
+                    })
+                );
+                console.log('Товар добавлен в корзину', {
+                    id: product.id,
+                    size: selectedSize,
+                    color: selectedColor,
+                });
+            }else {
+                alert('Пожалуйста, выберите цвет и размер');
+            }
         }
-
-        dispatch(
-            addToCart({
-                id: product.id,
-                name: product.name,
-                price: product.price,
-                image:product.imageURL,
-                color:selectedColor,
-                size:selectedSize,
-            })
-        );
-    };
+    }
 
     const updateSwiper = useCallback(() => {
         if (thumbsSwiper) {
@@ -118,7 +115,7 @@ export default function Product() {
                 }
             }, 300);
         }
-    },[thumbsSwiper]);
+    }, [thumbsSwiper]);
 //
     useEffect(() => {
         if (thumbsSwiper && mainSwiper) {
@@ -263,7 +260,7 @@ export default function Product() {
                                 <button
                                     key={index}
                                     className={selectedSize === size ? 'selected' : ''}
-                                    onClick={() => handleSizeSelect(size)}>{size.slice(0,-3)}</button>
+                                    onClick={() => handleSizeSelect(size)}>{size.slice(0, -3)}</button>
                             ))}
                         </div>
                         <div className='size_guide'>
