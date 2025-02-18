@@ -74,6 +74,8 @@ export default function Product() {
                     color: selectedColor,
                 })
             );
+            setSelectedColor(null);
+            setSelectedSize(null);
             console.log('Товар удален из корзины');
         } else {
             if (selectedColor && selectedSize) {
