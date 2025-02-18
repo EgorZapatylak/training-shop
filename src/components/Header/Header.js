@@ -12,18 +12,27 @@ import Global from '../Header/img/global.svg';
 import User from '../Header/img/user.svg';
 import Shopping from '../Header/img/shopping-bag.svg';
 import {Link} from "react-router-dom";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {Cart} from "../Cart/Cart";
+import {closeCart, openCart} from "../../cartSlice";
 
 export function Header() {
 
     const [menuActive, setMenuActive] = useState(false);
-    const [isCartOpen, setIsCartOpen]= useState(false); //Управляет отображением корзины
 
-    const cartItems = useSelector((state) => state.cart.items); //Получаем данные из корзины Redux
+    const cartItems = useSelector((state) => state.cart.items); // Получаем данные из корзины Redux
+    const isCartOpen = useSelector((state) => state.cart.isCartOpen); // Состояние открытия корзины
     const totalItems= cartItems.reduce((total, item) => total + item.quantity,0); // Считакм количество товаров
 
-    if (menuActive || isCartOpen) {
+    const dispatch = useDispatch();
+
+    const handleOverLayClick = (e) => {
+        if (e.target === e.currentTarget) { // Проверяем, что клик был по фону
+            dispatch(closeCart());
+        }
+    }
+
+    if (menuActive) {
         document.body.style.overflow = 'hidden'; //Отключаем прокрутку страницы
     } else {
         document.body.style.overflow = 'unset'; // Включаем прокрутку страницы
@@ -68,22 +77,22 @@ export function Header() {
                 <div className='nav-item'>
                     <ul className={menuActive ? 'active' : ''} onClick={() => setMenuActive(false)}>
                         <li>
-                            <a href='#about'>About Us</a>
+                            <a href='/about'>About Us</a>
                         </li>
                         <li>
-                            <Link to="/women"><a href='#women'>Women</a></Link>
+                            <Link to="/women"><a href='/women'>Women</a></Link>
                         </li>
                         <li>
-                            <Link to="/men"><a href='#men'>Men</a></Link>
+                            <Link to="/men"><a href='/men'>Men</a></Link>
                         </li>
                         <li>
-                            <a href='#beauty'>Beauty</a></li>
+                            <a href='/beauty'>Beauty</a></li>
                         <li>
-                            <a href='#accessories'>Accessories</a></li>
+                            <a href='/accessories'>Accessories</a></li>
                         <li>
-                            <a href='#blog'>Blog</a></li>
+                            <a href='/blog'>Blog</a></li>
                         <li>
-                            <a href='#contact'>Contact</a></li>
+                            <a href='/contact'>Contact</a></li>
                     </ul>
                 </div>
                 <div className='instryment'>
@@ -96,7 +105,7 @@ export function Header() {
                     <a href='https://www.google.by/'>
                         <img src={User} alt=''/>
                     </a>
-                    <div className='cart_icon' onClick={()=> setIsCartOpen(true)}>
+                    <div className='cart_icon' onClick={()=> dispatch(openCart())}>
                         <img src={Shopping} alt="Cart"/>
                         {totalItems > 0 && <span className='cart_count'>{totalItems}</span>}
                     </div>
@@ -111,9 +120,9 @@ export function Header() {
             <div className='line'></div>
             {/* Модальное окно корзины */}
             {isCartOpen && (
-                <div className='cart_modal'>
-                    <div className='cart_modal_content'>
-                        <button className='close_button' onClick={() => setIsCartOpen(false)}>X</button>
+                <div className='cart_modal' onClick={handleOverLayClick}>
+                    <div className='cart_modal_content' onClick={(e) => e.stopPropagation()}>
+                        <button className='close_button' onClick={() => dispatch(closeCart())}>X</button>
                         <Cart/>
                     </div>
                 </div>
