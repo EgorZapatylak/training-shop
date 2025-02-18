@@ -12,8 +12,9 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 import 'swiper/css/free-mode';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {addToCart, removeFromCart} from "../../cartSlice";
+import {Cart} from "../../components/Cart/Cart";
 
 
 export default function Product() {
@@ -23,8 +24,8 @@ export default function Product() {
 
     const [selectedColor, setSelectedColor] = useState(null);
     const [selectedSize, setSelectedSize] = useState(null);
-    const [isInCart, setIsInCart] = useState(false);
     const dispatch = useDispatch();
+    const cartItems = useSelector((state) => state.cart.items);
 
     // Рефы для кнопок Swiper
     const prevThumbsRef = useRef(null);
@@ -32,28 +33,40 @@ export default function Product() {
     const prevMainRef = useRef(null);
     const nextMainRef = useRef(null);
 
+    // Провряем, находится ли текущий товар в корзине
+    const product = Products_base.men[0];
+    const isInCart = cartItems.some(
+        (item) =>
+            item.id === product.id &&
+            item.size === selectedSize &&
+            item.color === selectedColor
+    );
+
     const handleColorSelect = (color) => {
-        if (selectedColor === color) {
-            // Если пользлватель нажал на ужевыбранный цвет, сбрасываем его
-            setSelectedColor(null);
-        } else {
-            // Устанавливаем новый выбранный цвет
-            setSelectedColor(color);
-        }
+        // if (selectedColor === color) {
+        //     // Если пользлватель нажал на ужевыбранный цвет, сбрасываем его
+        //     setSelectedColor(null);
+        // } else {
+        //     // Устанавливаем новый выбранный цвет
+        //     setSelectedColor(color);
+        // }
+        setSelectedColor(color === selectedColor ? null : color);
     };
 
     const handleSizeSelect = (size) => {
-        if (selectedSize === size) {
-            // Если пользлватель нажал на ужевыбранный размер, сбрасываем его
-            setSelectedSize(null);
-        } else {
-            // Устанавливаем новый выбранный размер
-            setSelectedSize(size);
-        }
+        // if (selectedSize === size) {
+        //     // Если пользлватель нажал на ужевыбранный размер, сбрасываем его
+        //     setSelectedSize(null);
+        // } else {
+        //     // Устанавливаем новый выбранный размер
+        //     setSelectedSize(size);
+        // }
+        setSelectedSize(size === selectedSize ? null : size);
     };
 
     const handleCartButtonClick = () => {
         if (isInCart) {
+            // Удаление из корзины
             dispatch(
                 removeFromCart({
                     id: product.id,
@@ -64,14 +77,15 @@ export default function Product() {
             console.log('Товар удален из корзины');
         } else {
             if (selectedColor && selectedSize) {
+                // Добавление в корзину
                 dispatch(
                     addToCart({
                         id: product.id,
                         name: product.name,
                         price: product.price,
                         image: product.imageURL,
-                        color: product.color,
-                        size: product.size,
+                        color: selectedColor,
+                        size: selectedSize,
                     })
                 );
                 console.log('Товар добавлен в корзину', {
@@ -138,10 +152,10 @@ export default function Product() {
         return <p>Product not found</p>;
     }
 
-    const product = Products_base.men[0];
-
     return (
+
         <section>
+            <Cart/>
             <div className='product_header'>
                 <div className='road'>
                     <p>Home</p>
