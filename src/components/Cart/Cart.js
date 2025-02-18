@@ -15,7 +15,7 @@ export function Cart ()  {
         <div className='cart'>
             <div className='cart_header'>
                 <p>SHOPPING CART</p>
-                <img className='filter_img_close' alt='close cart'/>
+                <img className='filter_img_close' alt=''/>
             </div>
             {cartItems.length === 0 ? (
                 <p>Sorry, your cart is empty</p>
