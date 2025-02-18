@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {removeFromCart} from "../../cartSlice";
+import {decreaseQuantity, increaseQuantity, removeFromCart} from "../../cartSlice";
 
 import './Cart.css'
 
@@ -35,6 +35,10 @@ export function Cart ()  {
                                     <p>Размер: {item.size}</p>
                                     <p>Цена: {item.price}</p>
                                     <p>Количествр: {item.quantity}</p>
+                                    <div>
+                                        <button onClick={()=>dispatch(decreaseQuantity(item.id))}>-</button>
+                                        <button onClick={()=>dispatch(increaseQuantity(item.id))}>+</button>
+                                    </div>
                                     <button onClick={()=>dispatch(removeFromCart(item.id))}>Удалить</button>
                                 </li>
                             ))}
