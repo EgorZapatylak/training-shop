@@ -81,7 +81,7 @@ export default function Product() {
                 id: product.id,
                 name: product.name,
                 price: product.price,
-                image:product.image,
+                image:product.imageURL,
                 color:selectedColor,
                 size:selectedSize,
             })
