@@ -12,14 +12,21 @@ import Global from '../Header/img/global.svg';
 import User from '../Header/img/user.svg';
 import Shopping from '../Header/img/shopping-bag.svg';
 import {Link} from "react-router-dom";
+import {useSelector} from "react-redux";
+import {Cart} from "../Cart/Cart";
 
 export function Header() {
 
-    const [menuActive, setMenuActive] = useState(false)
-    if (menuActive) {
-        document.body.style.overflow = 'hidden';
+    const [menuActive, setMenuActive] = useState(false);
+    const [isCartOpen, setIsCartOpen]= useState(false); //Управляет отображением корзины
+
+    const cartItems = useSelector((state) => state.cart.items); //Получаем данные из корзины Redux
+    const totalItems= cartItems.reduce((total, item) => total + item.quantity,0); // Считакм количество товаров
+
+    if (menuActive || isCartOpen) {
+        document.body.style.overflow = 'hidden'; //Отключаем прокрутку страницы
     } else {
-        document.body.style.overflow = 'unset';
+        document.body.style.overflow = 'unset'; // Включаем прокрутку страницы
     }
 
     return (
@@ -89,11 +96,10 @@ export function Header() {
                     <a href='https://www.google.by/'>
                         <img src={User} alt=''/>
                     </a>
-                    <Link to='/cart'>
-                        <a href='#cart'>
-                        <img src={Shopping} alt=''/>
-                    </a>
-                    </Link>
+                    <div className='cart_icon' onClick={()=> setIsCartOpen(true)}>
+                        <img src={Shopping} alt="Cart"/>
+                        {totalItems > 0 && <span className='cart_count'>{totalItems}</span>}
+                    </div>
                     <nav>
                         <div className={menuActive ? 'toggle' : 'burger_btn'}
                              onClick={() => setMenuActive(!menuActive)}>
@@ -101,9 +107,17 @@ export function Header() {
                         </div>
                     </nav>
                 </div>
-
             </div>
             <div className='line'></div>
+            {/* Модальное окно корзины */}
+            {isCartOpen && (
+                <div className='cart_modal'>
+                    <div className='cart_modal_content'>
+                        <button className='close_button' onClick={() => setIsCartOpen(false)}>X</button>
+                        <Cart/>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
