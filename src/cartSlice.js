@@ -5,6 +5,7 @@ const cartSlice = createSlice({
     name: 'cart',
     initialState: {
         items: [], // Список товаров
+        isCartOpen: false, // Состояние открытия корзины
     },
     reducers: {
         addToCart: (state, action) => {
@@ -40,9 +41,15 @@ const cartSlice = createSlice({
                 }
             }
         },
+        openCart: (state) => {
+            state.isCartOpen = true;
+        },
+        closeCart: (state) => {
+            state.isCartOpen = false
+        }
     },
 });
 
-export const {addToCart, removeFromCart, increaseQuantity, decreaseQuantity} = cartSlice.actions;
-export const {action} = cartSlice;
+export const {addToCart, removeFromCart, increaseQuantity, decreaseQuantity, closeCart, openCart} = cartSlice.actions;
+// export const {action} = cartSlice;
 export default cartSlice.reducer;
