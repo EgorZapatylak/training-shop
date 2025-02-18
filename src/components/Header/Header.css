@@ -1,3 +1,12 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .header_container {
     width: 1280px;
 }
@@ -147,7 +156,7 @@ h1 {
 /* Знчек корзины */
 
 .cart_icon {
-    position:relative;
+    position: relative;
     cursor: pointer;
 }
 
@@ -180,15 +189,17 @@ h1 {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
 }
 
 .cart_modal_content {
     background-color: white;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     width: 400px;
     max-height: 80%;
     overflow-y: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     position: relative;
 }
 
