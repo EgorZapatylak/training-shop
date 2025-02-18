@@ -1,20 +1,20 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {decreaseQuantity, increaseQuantity, removeFromCart} from "../../cartSlice";
+import {closeCart, decreaseQuantity, increaseQuantity, removeFromCart} from "../../cartSlice";
 import './Cart.css'
 import {useNavigate} from "react-router-dom";
 
 export function Cart ()  {
 
     const cartItems = useSelector(state => state.cart.items);
-    const dispatch = useDispatch()
-
+    const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const totalPrice= cartItems.reduce((total, item) => total + item.price * item.quantity,0);
 
-    const handleViewCart = () => {
-        navigate('/#');  // Возврат на страницу товара
+    const handleBackToShopping = () => {
+        dispatch(closeCart())
+        navigate('/');  // Возврат на страницу товара
     }
 
     return (
@@ -24,7 +24,10 @@ export function Cart ()  {
                 <img className='filter_img_close' alt=''/>
             </div>
             {cartItems.length === 0 ? (
+                <div className='empty_cart'>
                 <p>Sorry, your cart is empty</p>
+                    <button className='back_to_shopping' onClick={handleBackToShopping}>BACK TO SHOPPING</button>
+                </div>
             ) : (
                 <>
                     <div className='cart_road'>
@@ -51,13 +54,13 @@ export function Cart ()  {
                             ))}
                         </ul>
                     </div>
+                    <h3>Total: ${totalPrice.toFixed(2)}</h3>
+                    <div className='cart_button'>
+                        <button>FURTHER</button>
+                        <button>VIEW CART</button>
+                    </div>
                 </>
             )}
-            <h3>Total: ${totalPrice.toFixed(2)}</h3>
-            <div className='cart_button'>
-                <button>FURTHER</button>
-                <button onClick={handleViewCart}>VIEW CART</button>
-            </div>
         </div>
     );
 }
