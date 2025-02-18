@@ -12,6 +12,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 import 'swiper/css/free-mode';
+import {useDispatch} from "react-redux";
+import {addToCart} from "../../cartSlice";
 
 
 export default function Product() {
@@ -22,6 +24,7 @@ export default function Product() {
     const [selectedColor, setSelectedColor] = useState(null);
     const [selectedSize, setSelectedSize] = useState(null);
     const [isInCart, setIsInCart] = useState(false);
+    const dispatch = useDispatch();
 
     // Рефы для кнопок Swiper
     const prevThumbsRef = useRef(null);
@@ -50,24 +53,39 @@ export default function Product() {
     };
 
     const handleCartButtonClick = () => {
-        if (isInCart) {
-            // Удаление из корзины
-            setSelectedColor(null);
-            setSelectedSize(null);
-            setIsInCart(false);
-            console.log("Товар удален из корзины");
-        } else {
-            // Добавление в корзину
-            if (selectedColor && selectedSize) {
-                setIsInCart(true);
-                console.log("Товар добавлен в корзину:", {
-                    color: selectedColor,
-                    size: selectedSize,
-                });
-            } else {
-                alert("Пожалуйста,выберите цвет и размер");
-            }
+        // if (isInCart) {
+        //     // Удаление из корзины
+        //     setSelectedColor(null);
+        //     setSelectedSize(null);
+        //     setIsInCart(false);
+        //     console.log("Товар удален из корзины");
+        // } else {
+        //     // Добавление в корзину
+        //     if (selectedColor && selectedSize) {
+        //         setIsInCart(true);
+        //         console.log("Товар добавлен в корзину:", {
+        //             color: selectedColor,
+        //             size: selectedSize,
+        //         });
+        //     } else {
+        //         alert("Пожалуйста,выберите цвет и размер");
+        //     }
+        // }
+        if (!selectedColor || !selectedSize) {
+            alert("Пожалуйста,выберите цвет и размер");
+            return;
         }
+
+        dispatch(
+            addToCart({
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                image:product.image,
+                color:selectedColor,
+                size:selectedSize,
+            })
+        );
     };
 
     const updateSwiper = useCallback(() => {
