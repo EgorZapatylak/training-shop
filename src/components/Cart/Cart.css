@@ -44,3 +44,14 @@
     border: none;
     cursor: pointer;
 }
+
+.empty_cart p {
+    margin: 20px;
+}
+
+.back_to_shopping {
+    width: 260px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+}
