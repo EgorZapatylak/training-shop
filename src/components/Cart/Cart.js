@@ -1,15 +1,21 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {decreaseQuantity, increaseQuantity, removeFromCart} from "../../cartSlice";
-
 import './Cart.css'
+import {useNavigate} from "react-router-dom";
 
 export function Cart ()  {
 
     const cartItems = useSelector(state => state.cart.items);
     const dispatch = useDispatch()
 
+    const navigate = useNavigate();
+
     const totalPrice= cartItems.reduce((total, item) => total + item.price * item.quantity,0);
+
+    const handleViewCart = () => {
+        navigate('/#');  // Возврат на страницу товара
+    }
 
     return (
         <div className='cart'>
@@ -50,7 +56,7 @@ export function Cart ()  {
             <h3>Total: ${totalPrice.toFixed(2)}</h3>
             <div className='cart_button'>
                 <button>FURTHER</button>
-                <button>VIEW CART</button>
+                <button onClick={handleViewCart}>VIEW CART</button>
             </div>
         </div>
     );
