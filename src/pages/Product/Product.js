@@ -14,7 +14,6 @@ import 'swiper/css/thumbs';
 import 'swiper/css/free-mode';
 import {useDispatch, useSelector} from "react-redux";
 import {addToCart, removeFromCart} from "../../cartSlice";
-import {Cart} from "../../components/Cart/Cart";
 
 
 export default function Product() {
