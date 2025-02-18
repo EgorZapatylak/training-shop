@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {createSlice} from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
@@ -10,7 +10,7 @@ const cartSlice = createSlice({
         addToCart: (state, action) => {
             const item = action.payload;
             const existingItem = state.items.find(
-                i => i.id === item.id && i.size === item.size && i.color === i.color
+                i => i.id === item.id && i.size === item.size && item.color === i.color
             );
 
             if (existingItem) {
