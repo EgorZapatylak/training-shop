@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {closeCart, decreaseQuantity, increaseQuantity, removeFromCart} from "../../cartSlice";
+import {decreaseQuantity, increaseQuantity, removeFromCart} from "../../cartSlice";
 import './Cart.css'
 import {useNavigate} from "react-router-dom";
 
@@ -13,7 +13,6 @@ export function Cart ()  {
     const totalPrice= cartItems.reduce((total, item) => total + item.price * item.quantity,0);
 
     const handleBackToShopping = () => {
-        dispatch(closeCart())
         navigate('/');  // Возврат на страницу товара
     }
 
