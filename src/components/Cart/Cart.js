@@ -40,7 +40,7 @@ export function Cart ()  {
                                         <button onClick={()=>dispatch(decreaseQuantity(item.id))}>-</button>
                                         <button onClick={()=>dispatch(increaseQuantity(item.id))}>+</button>
                                     </div>
-                                    <button onClick={()=>dispatch(removeFromCart(item.id))}>Удалить</button>
+                                    <button onClick={()=>dispatch(removeFromCart({id:item.id, color:item.color, size:item.size}))}>Удалить</button>
                                 </li>
                             ))}
                         </ul>
