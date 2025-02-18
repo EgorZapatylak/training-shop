@@ -15,13 +15,13 @@ export default function Main() {
     return (
         <section className='main'>
             <Cart/>
-            {/*<Hero/>*/}
-            {/*<Advantage/>*/}
-            {/*<Products title="Women's" item={Products_base.women}/>*/}
-            {/*<Products title="Men's" item={Products_base.men}/>*/}
-            {/*<Promise/>*/}
-            {/*<SpecialOffer/>*/}
-            {/*<Blog/>*/}
+            <Hero/>
+            <Advantage/>
+            <Products title="Women's" item={Products_base.women}/>
+            <Products title="Men's" item={Products_base.men}/>
+            <Promise/>
+            <SpecialOffer/>
+            <Blog/>
         </section>
     )
 }
