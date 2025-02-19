@@ -14,6 +14,11 @@ export function Cart() {
 
     const handleBackToShopping = () => {
         dispatch(closeCart()); // Закрываем корзину
+        navigate('/');  // Возврат на главную страницу
+    }
+
+    const handleViewCart = () => {
+        dispatch(closeCart()); // Закрываем корзину
         navigate('/');  // Возврат на страницу товара
     }
 
@@ -64,7 +69,7 @@ export function Cart() {
                     </div>
                     <div className='cart_button'>
                         <button>FURTHER</button>
-                        <button onClick={() => navigate('/')}>VIEW CART</button>
+                        <button onClick={handleViewCart}>VIEW CART</button>
                     </div>
                 </>
             )}
