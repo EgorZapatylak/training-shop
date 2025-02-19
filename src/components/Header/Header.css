@@ -201,6 +201,10 @@ h1 {
     position: relative;
 }
 
+.cart_modal_content h3 {
+    margin: 20px;
+}
+
 @media (max-width: 992px) {
     .header_container {
         width: 992px;
