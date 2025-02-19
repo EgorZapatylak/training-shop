@@ -37,13 +37,38 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    margin-bottom: 20px;
+}
+
+.cart_item {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.cart_item ul {
+    list-style-type: none;
+}
+
+.cart_item li {
+    display: flex;
+    flex-direction:column;
+    width: 348px;
+}
+
+.cart_item_price {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .cart_button button {
-    width: 260px;
+    width: 348px;
     height: 40px;
     border: none;
     cursor: pointer;
+    padding: 0;
 }
 
 .empty_cart {
