@@ -4,13 +4,13 @@ import {closeCart, decreaseQuantity, increaseQuantity, removeFromCart} from "../
 import './Cart.css'
 import {useNavigate} from "react-router-dom";
 
-export function Cart ()  {
+export function Cart() {
 
     const cartItems = useSelector(state => state.cart.items);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const totalPrice= cartItems.reduce((total, item) => total + item.price * item.quantity,0);
+    const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
     const handleBackToShopping = () => {
         dispatch(closeCart()); // Закрываем корзину
@@ -21,11 +21,11 @@ export function Cart ()  {
         <div className='cart'>
             <div className='cart_header'>
                 <p>SHOPPING CART</p>
-                <img className='filter_img_close' alt=''/>
+                <img className='filter_img_close' alt='' onClick={() => dispatch(closeCart())}/>
             </div>
             {cartItems.length === 0 ? (
                 <div className='empty_cart'>
-                <p>Sorry, your cart is empty</p>
+                    <p>Sorry, your cart is empty</p>
                     <button className='back_to_shopping' onClick={handleBackToShopping}>BACK TO SHOPPING</button>
                 </div>
             ) : (
@@ -46,10 +46,15 @@ export function Cart ()  {
                                     <p>Цена: {item.price}</p>
                                     <p>Количествр: {item.quantity}</p>
                                     <div>
-                                        <button onClick={()=>dispatch(decreaseQuantity(item.id))}>-</button>
-                                        <button onClick={()=>dispatch(increaseQuantity(item.id))}>+</button>
+                                        <button onClick={() => dispatch(decreaseQuantity(item.id))}>-</button>
+                                        <button onClick={() => dispatch(increaseQuantity(item.id))}>+</button>
                                     </div>
-                                    <button onClick={()=>dispatch(removeFromCart({id:item.id, color:item.color, size:item.size}))}>Удалить</button>
+                                    <button onClick={() => dispatch(removeFromCart({
+                                        id: item.id,
+                                        color: item.color,
+                                        size: item.size
+                                    }))}>Удалить
+                                    </button>
                                 </li>
                             ))}
                         </ul>
@@ -57,7 +62,7 @@ export function Cart ()  {
                     <h3>Total: ${totalPrice.toFixed(2)}</h3>
                     <div className='cart_button'>
                         <button>FURTHER</button>
-                        <button>VIEW CART</button>
+                        <button onClick={() => navigate('/')}>VIEW CART</button>
                     </div>
                 </>
             )}
