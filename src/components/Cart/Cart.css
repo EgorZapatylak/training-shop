@@ -63,6 +63,10 @@
     justify-content: space-between;
 }
 
+.cart_total_price {
+    margin-bottom: 10px;
+}
+
 .cart_button button {
     width: 348px;
     height: 40px;
