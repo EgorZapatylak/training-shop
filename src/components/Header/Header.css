@@ -194,7 +194,7 @@ h1 {
 
 .cart_modal_content {
     background-color: white;
-    width: 388px;
+    width: auto;
     max-height: 80%;
     overflow-y: auto;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
