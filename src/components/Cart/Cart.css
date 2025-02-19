@@ -3,6 +3,7 @@
     width: 388px;
     height: auto;
     flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .cart_header{
