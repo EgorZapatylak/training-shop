@@ -39,27 +39,29 @@ export function Cart() {
                         <ul>
                             {cartItems.map(item => (
                                 <li key={`${item.id} - ${item.size} - ${item.color}`}>
-                                    <img src={item.image} alt={item.name} width='50'/>
+                                    <img src={item.image} alt={item.name} width='100'/>
                                     <p>{item.name}</p>
-                                    <p>Цвет: {item.color}</p>
-                                    <p>Размер: {item.size}</p>
-                                    <p>Цена: {item.price}</p>
-                                    <p>Количествр: {item.quantity}</p>
                                     <div>
-                                        <button onClick={() => dispatch(decreaseQuantity(item.id))}>-</button>
-                                        <button onClick={() => dispatch(increaseQuantity(item.id))}>+</button>
+                                        <p>{item.color}</p>
+                                        <p>{item.size}</p>
                                     </div>
-                                    <button onClick={() => dispatch(removeFromCart({
-                                        id: item.id,
-                                        color: item.color,
-                                        size: item.size
-                                    }))}>Удалить
-                                    </button>
+                                    <div className='cart_item_price'>
+                                        <button onClick={() => dispatch(decreaseQuantity(item.id))}>-</button>
+                                        <p>{item.quantity}</p>
+                                        <button onClick={() => dispatch(increaseQuantity(item.id))}>+</button>
+                                        <h3>${totalPrice.toFixed(2)}</h3>
+                                        <button onClick={() => dispatch(removeFromCart({
+                                            id: item.id,
+                                            color: item.color,
+                                            size: item.size
+                                        }))}>Удалить
+                                        </button>
+                                    </div>
+                                    <div className='line'></div>
                                 </li>
                             ))}
                         </ul>
                     </div>
-                    <h3>Total: ${totalPrice.toFixed(2)}</h3>
                     <div className='cart_button'>
                         <button>FURTHER</button>
                         <button onClick={() => navigate('/')}>VIEW CART</button>
