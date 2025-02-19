@@ -10,7 +10,7 @@ export function Cart() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    const totalCartPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
     const handleBackToShopping = () => {
         dispatch(closeCart()); // Закрываем корзину
@@ -54,7 +54,7 @@ export function Cart() {
                                         <button onClick={() => dispatch(decreaseQuantity(item.id))}>-</button>
                                         <p>{item.quantity}</p>
                                         <button onClick={() => dispatch(increaseQuantity(item.id))}>+</button>
-                                        <h3>${totalPrice.toFixed(2)}</h3>
+                                        <h3>${(item.price * item.quantity).toFixed(2)}</h3>
                                         <button onClick={() => dispatch(removeFromCart({
                                             id: item.id,
                                             color: item.color,
@@ -66,6 +66,9 @@ export function Cart() {
                                 </li>
                             ))}
                         </ul>
+                    </div>
+                    <div className='cart_total_price'>
+                        <h2>Total: ${totalCartPrice.toFixed(2)}</h2>
                     </div>
                     <div className='cart_button'>
                         <button>FURTHER</button>
