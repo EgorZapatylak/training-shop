@@ -32,7 +32,7 @@ export function Header() {
         }
     }
 
-    if (menuActive) {
+    if (menuActive || isCartOpen) {
         document.body.style.overflow = 'hidden'; //Отключаем прокрутку страницы
     } else {
         document.body.style.overflow = 'unset'; // Включаем прокрутку страницы
@@ -122,7 +122,6 @@ export function Header() {
             {isCartOpen && (
                 <div className='cart_modal' onClick={handleOverLayClick}>
                     <div className='cart_modal_content' onClick={(e) => e.stopPropagation()}>
-                        <button className='close_button' onClick={() => dispatch(closeCart())}>X</button>
                         <Cart/>
                     </div>
                 </div>
