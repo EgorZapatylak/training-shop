@@ -44,25 +44,28 @@ export function Cart() {
                         <ul>
                             {cartItems.map(item => (
                                 <li key={`${item.id} - ${item.size} - ${item.color}`}>
-                                    <img src={item.image} alt={item.name} width='100'/>
-                                    <p>{item.name}</p>
+                                    <div className='cart_item_img'>
+                                        <img src={item.image} alt={item.name} width='100'/>
+                                    </div>
                                     <div>
-                                        <p>{item.color}</p>
-                                        <p>{item.size}</p>
+                                        <div className='cart_item_info'>
+                                            <p>{item.name}</p>
+                                            <p>{item.color}</p>
+                                            <p>{item.size}</p>
+                                        </div>
+                                        <div className='cart_item_price'>
+                                            <button onClick={() => dispatch(decreaseQuantity(item.id))}>-</button>
+                                            <p>{item.quantity}</p>
+                                            <button onClick={() => dispatch(increaseQuantity(item.id))}>+</button>
+                                            <h3>${(item.price * item.quantity).toFixed(2)}</h3>
+                                            <button onClick={() => dispatch(removeFromCart({
+                                                id: item.id,
+                                                color: item.color,
+                                                size: item.size
+                                            }))}>Удалить
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div className='cart_item_price'>
-                                        <button onClick={() => dispatch(decreaseQuantity(item.id))}>-</button>
-                                        <p>{item.quantity}</p>
-                                        <button onClick={() => dispatch(increaseQuantity(item.id))}>+</button>
-                                        <h3>${(item.price * item.quantity).toFixed(2)}</h3>
-                                        <button onClick={() => dispatch(removeFromCart({
-                                            id: item.id,
-                                            color: item.color,
-                                            size: item.size
-                                        }))}>Удалить
-                                        </button>
-                                    </div>
-                                    <div className='line'></div>
                                 </li>
                             ))}
                         </ul>
