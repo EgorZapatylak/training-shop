@@ -1,6 +1,6 @@
 .cart {
     display: flex;
-    width: 300px;
+    width: 388px;
     height: auto;
     flex-direction: column;
 }
@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     background-color: black;
-    width: 300px;
+    width: 388px;
     height: 50px;
     justify-content: space-between;
 }
@@ -17,6 +17,7 @@
 .filter_img_close {
     display: flex;
     margin-right: 20px;
+    cursor: pointer;
 }
 
 .cart_header p{
@@ -45,13 +46,26 @@
     cursor: pointer;
 }
 
+.empty_cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .empty_cart p {
     margin: 20px;
+    width: 70px;
 }
 
 .back_to_shopping {
-    width: 260px;
+    width: 348px;
     height: 40px;
     border: none;
     cursor: pointer;
+    background-color: black;
+    margin-bottom: 20px;
+    padding: 0;
+    color: white;
 }
+
+
