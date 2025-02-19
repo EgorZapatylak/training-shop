@@ -114,6 +114,17 @@
     color: white;
 }
 
+@media (max-width: 992px) {
 
+    .cart_item ul{
+        
+    }
+
+
+}
+
+@media (max-width: 360px) {
+
+}
 
 
