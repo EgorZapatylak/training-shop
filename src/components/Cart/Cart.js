@@ -19,7 +19,7 @@ export function Cart() {
 
     const handleViewCart = () => {
         dispatch(closeCart()); // Закрываем корзину
-        navigate('/');  // Возврат на страницу товара
+        navigate('/product/1');  // Возврат на страницу товара
     }
 
     return (
