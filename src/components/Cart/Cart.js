@@ -1,7 +1,7 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {closeCart, decreaseQuantity, increaseQuantity, removeFromCart} from "../../cartSlice";
-import './Cart.css'
+import  styles from "./Cart.module.css"
 import {useNavigate} from "react-router-dom";
 
 export function Cart() {
@@ -23,37 +23,37 @@ export function Cart() {
     }
 
     return (
-        <div className='cart'>
-            <div className='cart_header'>
+        <div className={styles.cart}>
+            <div className={styles.cart_header}>
                 <p>SHOPPING CART</p>
                 <img className='filter_img_close' alt='' onClick={() => dispatch(closeCart())}/>
             </div>
             {cartItems.length === 0 ? (
-                <div className='empty_cart'>
+                <div className={styles.empty_cart}>
                     <p>Sorry, your cart is empty</p>
-                    <button className='back_to_shopping' onClick={handleBackToShopping}>BACK TO SHOPPING</button>
+                    <button className={styles.back_to_shopping} onClick={handleBackToShopping}>BACK TO SHOPPING</button>
                 </div>
             ) : (
                 <>
-                    <div className='cart_road'>
+                    <div className={styles.cart_road}>
                         <span>Item in Cart</span>
                         <span>Item in Cart</span>
                         <span>Item in Cart</span>
                     </div>
-                    <div className='cart_item'>
+                    <div className={styles.cart_item}>
                         <ul>
                             {cartItems.map(item => (
                                 <li key={`${item.id} - ${item.size} - ${item.color}`}>
-                                    <div className='cart_item_img'>
+                                    <div className={styles.cart_item_img}>
                                         <img src={item.image} alt={item.name} width='100'/>
                                     </div>
                                     <div>
-                                        <div className='cart_item_info'>
+                                        <div className={styles.cart_item_info}>
                                             <p>{item.name}</p>
                                             <p>{item.color}</p>
                                             <p>{item.size}</p>
                                         </div>
-                                        <div className='cart_item_price'>
+                                        <div className={styles.cart_item_price}>
                                             <button onClick={() => dispatch(decreaseQuantity(item.id))}>-</button>
                                             <p>{item.quantity}</p>
                                             <button onClick={() => dispatch(increaseQuantity(item.id))}>+</button>
@@ -70,10 +70,10 @@ export function Cart() {
                             ))}
                         </ul>
                     </div>
-                    <div className='cart_total_price'>
+                    <div className={styles.cart_total_price}>
                         <h2>Total: ${totalCartPrice.toFixed(2)}</h2>
                     </div>
-                    <div className='cart_button'>
+                    <div className={styles.cart_button}>
                         <button>FURTHER</button>
                         <button onClick={handleViewCart}>VIEW CART</button>
                     </div>
