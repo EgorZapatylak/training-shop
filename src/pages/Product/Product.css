@@ -1122,7 +1122,12 @@ button.selected {
         width: 330px;
     }
 
-    .reviews_d {
+    .reviews {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .reviews_section {
         width: 330px;
     }
 
