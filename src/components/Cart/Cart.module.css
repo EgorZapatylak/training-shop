@@ -63,6 +63,7 @@
 .cart_item ul {
     list-style-type: none;
     margin: 20px;
+    flex-direction: column;
 }
 
 .cart_item li {
