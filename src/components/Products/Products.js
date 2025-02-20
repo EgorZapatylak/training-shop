@@ -60,7 +60,7 @@ export function Products({title, category = "men"}) {
                                         {el.discount ? (
                                             <div className='price_item'>
                                                 <p className='new_price'>
-                                                    {Math.round(el.price * (1 + parseFloat(el.discount) / 100))} $
+                                                    {(el.price * (1 + parseFloat(el.discount) / 100))} $
                                                     {/* Учитываем скидку */}
                                                 </p>
                                                 <p className='old_price'>{el.price} $</p>
