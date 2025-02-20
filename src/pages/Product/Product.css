@@ -1119,6 +1119,15 @@ button.selected {
         flex-wrap: wrap;
     }
 
+    .price {
+        justify-content: space-between;
+    }
+
+    .price button {
+    width: 132px;
+        margin:0 0 0 24px;
+    }
+
     .add_inf {
         width: 330px;
     }
@@ -1151,6 +1160,10 @@ button.selected {
         width: auto;
         height: auto;
         justify-content: center;
+    }
+
+    .scale_1 {
+        margin: 0;
     }
 
 }
