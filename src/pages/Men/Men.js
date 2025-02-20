@@ -220,7 +220,7 @@ export default function Men() {
                                 {prod.discount ? (
                                     <div className='price_item'>
                                         <p className='new_price'>
-                                            {(prod.price * (1 + parseFloat(prod.discount) / 100))} $
+                                            {(prod.price * (1 + parseFloat(prod.discount) / 100)).toFixed(2)} $
                                             {/* Учитываем скидку */}
                                         </p>
                                         <p className='old_price'>{prod.price} $</p>
