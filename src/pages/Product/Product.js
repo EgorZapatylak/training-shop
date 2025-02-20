@@ -34,6 +34,9 @@ export default function Product() {
 
     // Провряем, находится ли текущий товар в корзине
     const product = Products_base.men[0];
+
+    const reviewCount = product.reviews.length;
+
     const isInCart = cartItems.some(
         (item) =>
             item.id === product.id &&
