@@ -14,6 +14,7 @@ import 'swiper/css/thumbs';
 import 'swiper/css/free-mode';
 import {useDispatch, useSelector} from "react-redux";
 import {addToCart, removeFromCart} from "../../cartSlice";
+import {StarRating} from "../../components/StarRating/StarRating";
 
 
 export default function Product() {
@@ -347,6 +348,7 @@ export default function Product() {
                         </div>
                         <div className='reviews_header'>
                             <div className='reviews_header_reviews'>
+                                <StarRating rating={product.rating}/>
                                 <p>{reviewCount} Reviews</p>
                             </div>
                             <div className="reviews_header_write">
@@ -359,7 +361,7 @@ export default function Product() {
                                     <div key={index} className='review_item'>
                                         <div className='review_header'>
                                             <h5>{review.name}</h5>
-                                            <p>{review.rating}</p>
+                                            <StarRating rating={review.rating}/>
                                         </div>
                                         <p className='review_text'>{review.text}</p>
                                     </div>
