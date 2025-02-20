@@ -24,13 +24,6 @@ export default function Men() {
     const availableSizes = [...new Set(products.flatMap(prod => prod.sizes))];
     const availableBrands = [...new Set(products.map(prod => prod.brand))];
 
-    // Извлекаем все уникальные цвета из всех товаров
-    // const availableColors = [
-    //     ...new Set(
-    //         products.flatMap(prod => prod.images ? prod.images.map(img => img.color) : [])
-    //     )
-    // ];
-
     // Проверка, есть ли активные фильтры
     const hasActiveFilters = Object.values(filters).some(filter => filter.length > 0);
 
