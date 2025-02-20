@@ -768,7 +768,7 @@ button.selected {
     opacity: 0.6;
 }
 
-.reviews_d {
+.reviews_section {
     display: flex;
     width: 522px;
     margin: 32px 0;
@@ -776,7 +776,7 @@ button.selected {
     justify-items: left;
 }
 
-.reviews_d_title {
+.reviews_section_title {
     display: flex;
     margin-bottom: 34px;
     font-style: normal;
@@ -793,19 +793,18 @@ button.selected {
     color: #121212;
 }
 
-.reviews_d_status {
+.reviews_header{
     display: flex;
     justify-content: space-between;
 }
 
-.reviews_d_status_info p {
+.reviews_header_reviews {
     width: 60px;
     font-style: normal;
     font-weight: 500;
     font-size: 11px;
     line-height: 18px;
     /* identical to box height, or 164% */
-
 
     /* dark */
 
@@ -814,7 +813,7 @@ button.selected {
     opacity: 0.6;
 }
 
-.reviews_d_status_write {
+.reviews_header_write{
     display: flex;
     font-style: normal;
     font-weight: 500;
@@ -831,19 +830,18 @@ button.selected {
     opacity: 0.6;
 }
 
-.reviews_d_feedback {
+.reviews_list {
     display: flex;
     flex-direction: column;
     text-align: left;
 }
 
-.reviews_d_feedback p {
+.reviews_list p{
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 22px;
     /* or 157% */
-
 
     /* dark */
 
@@ -852,13 +850,13 @@ button.selected {
     opacity: 0.8;
 }
 
-.reviews_d_feedback_info {
+.review_header {
     margin: 26px 0 12px 0;
     display: flex;
     justify-content: space-between;
 }
 
-.reviews_d_feedback_info h5 {
+.review_header h5{
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
