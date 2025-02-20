@@ -176,22 +176,22 @@ export default function Product() {
             <div className='title'>
                 <h1>{product.name}</h1>
             </div>
-            {/*<div className='rate_info'>*/}
-            {/*    <div className='reviews'>*/}
-            {/*        <StarRating rating={product.rating}/>*/}
-            {/*        <p>{reviewCount} Reviews</p>*/}
-            {/*    </div>*/}
-            {/*    <div className='sa'>*/}
-            {/*        <div className='sku'>*/}
-            {/*            <p>SKU:</p>*/}
-            {/*            <span>777</span>*/}
-            {/*        </div>*/}
-            {/*        <div className='availability'>*/}
-            {/*            <p>Availability:</p>*/}
-            {/*            <span>In Stock</span>*/}
-            {/*        </div>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
+            <div className='rate'>
+                <div className='reviews'>
+                    <StarRating rating={product.rating}/>
+                    <p>{reviewCount} Reviews</p>
+                </div>
+                <div className='rate_rate'>
+                    <div className='sku'>
+                        <p>SKU:</p>
+                        <span>777</span>
+                    </div>
+                    <div className='availability'>
+                        <p>Availability:</p>
+                        <span>In Stock</span>
+                    </div>
+                </div>
+            </div>
             <div className='content'>
                 <div className='content_img'>
                     <div className='content_row'>
