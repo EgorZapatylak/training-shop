@@ -945,7 +945,7 @@ button.selected {
         width: 962px;
     }
 
-    .rate_info {
+    .rate {
         width: 962px;
     }
 
@@ -953,7 +953,7 @@ button.selected {
         margin-left: 0;
     }
 
-    .sa {
+    .rate_rate {
         margin-right: 0;
         justify-content: flex-end;
         gap: 10px;
@@ -1047,7 +1047,7 @@ button.selected {
         width: 330px;
     }
 
-    .rate_info {
+    .rate {
         width: 330px;
     }
 
@@ -1055,7 +1055,7 @@ button.selected {
         margin-left: 0;
     }
 
-    .sa {
+    .rate_rate {
         margin-right: 0;
         justify-content: flex-end;
         gap: 10px;
