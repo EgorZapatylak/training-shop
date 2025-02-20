@@ -85,28 +85,20 @@
     color: #121212;
 }
 
-.rate_info {
+.rate {
     display: flex;
     width: 1250px;
     height: 18px;
     align-items: center;
     justify-content: space-between;
-    padding: 0 15px;
+    padding: 10px 15px;
     background-color: #F8F8F8;
 }
 
 .reviews {
     display: flex;
     margin-left: 66px;
-}
-
-.stars_i {
-    display: flex;
-    width: 14px;
-    height: 14px;
-    background-image: url('../Product/img/stars.svg');
-    background-position: center;
-    background-repeat: no-repeat;
+    align-items: baseline;
 }
 
 .reviews p {
@@ -118,7 +110,7 @@
     opacity: 0.6;
 }
 
-.sa {
+.rate_rate {
     display: flex;
     width: 200px;
     height: 18px;
