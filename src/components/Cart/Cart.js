@@ -23,6 +23,7 @@ export function Cart() {
 
     // Функция для расчета цены за еденицу товара с учетом скидки
     const calculatePriceDiscount = (item) => {
+
         // Находим товары в Product_base
         const product = Products_base.men.find((p) => p.id === item.id) || {};
         const discount = product.discount ? parseFloat(product.discount.toString().replace('%','').replace('-','')) : 0;
@@ -31,8 +32,11 @@ export function Cart() {
         const discountAmount = (item.price * discount) / 100;  //Считаем скидку
         return item.price - discountAmount;
     }
-
-    const totalCartPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+        // Итоговая стоимость корзины
+    const totalCartPrice = cartItems.reduce((total, item) => {
+        const discountedPrice = calculatePriceDiscount(item) * item.quantity;
+        return total + discountedPrice;
+            }, 0);
 
     return (
         <div className={styles.cart}>
@@ -69,7 +73,7 @@ export function Cart() {
                                             <button onClick={() => dispatch(decreaseQuantity(item.id))}>-</button>
                                             <p>{item.quantity}</p>
                                             <button onClick={() => dispatch(increaseQuantity(item.id))}>+</button>
-                                            <h3>$ {calculatePriceDiscount(item).toFixed(2) * item.quantity}</h3>
+                                            <h3>$ {(calculatePriceDiscount(item) * item.quantity).toFixed(2)}</h3>
                                             <button onClick={() => dispatch(removeFromCart({
                                                 id: item.id,
                                                 color: item.color,
