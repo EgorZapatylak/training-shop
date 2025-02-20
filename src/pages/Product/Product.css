@@ -988,6 +988,7 @@ button.selected {
 
     .content_info {
         padding: 0;
+        margin-top: 20px;
         width: 962px;
     }
 
@@ -1012,11 +1013,15 @@ button.selected {
         flex-wrap: wrap;
     }
 
+    .price {
+        justify-content: space-between;
+    }
+
     .add_inf {
         width: 962px;
     }
 
-    .reviews_d {
+    .reviews_section {
         width: 962px;
     }
 
