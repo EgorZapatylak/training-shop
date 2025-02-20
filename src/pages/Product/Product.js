@@ -328,7 +328,7 @@ export default function Product() {
                             ADDITIONAL INFORMATION
                         </div>
                         <div className="add_inf_color">Color:
-                            <p>Blue, White, Black, Grey</p>
+                            <p>{[...new Set(product.images.map((img) => img.color))]}</p>
                         </div>
                         <div className="add_inf_color">Size:
                             <p>XS, S, M, L</p>
