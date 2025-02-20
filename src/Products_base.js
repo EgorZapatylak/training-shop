@@ -46,7 +46,7 @@ export const Products_base = {
                 },
                 {
                     color: 'Black',
-                    url: '/media/6200e42d1c08840bc803ad24/RTLAAL003701_15010466_1_v1_2x.webp',
+                    url: '../img/men_1.jpg',
                     id: '62012eef7d2312f4e7932f12',
                 },
             ],
@@ -73,47 +73,47 @@ export const Products_base = {
             images: [
                 {
                     color: 'Blue',
-                    url: '/media/6200e4b61c08840bc803ad27/RTLAAT977701_15404370_1_v1_2x.jpg',
+                    url: '../img/men_2.jpg',
                     id: '62012fb27d2312f4e7932f1e',
                 },
                 {
                     color: 'Blue',
-                    url: '/media/6200e4b61c08840bc803ad27/RTLAAT977701_15404371_2_v1_2x.webp',
+                    url: '../img/men_2.jpg',
                     id: '62012fb67d2312f4e7932f21',
                 },
                 {
                     color: 'Blue',
-                    url: '/media/6200e4b61c08840bc803ad27/RTLAAT977701_15404372_3_v1_2x.webp',
+                    url: '../img/men_2.jpg',
                     id: '62012fba7d2312f4e7932f24',
                 },
                 {
                     color: 'White',
-                    url: '/media/6200e4b61c08840bc803ad27/RTLAAQ292301_15088108_3_v1_2x.jpg',
+                    url: '../img/men_2.jpg',
                     id: '620130687d2312f4e7932f2d',
                 },
                 {
                     color: 'White',
-                    url: '/media/6200e4b61c08840bc803ad27/RTLAAQ292301_15088106_1_v1_2x.jpg',
+                    url: '../img/men_2.jpg',
                     id: '6201306c7d2312f4e7932f30',
                 },
                 {
                     color: 'White',
-                    url: '/media/6200e4b61c08840bc803ad27/RTLAAQ292301_15088107_2_v1_2x.webp',
+                    url: '../img/men_2.jpg',
                     id: '6201306f7d2312f4e7932f33',
                 },
                 {
                     color: 'Brown',
-                    url: '/media/6200e4b61c08840bc803ad27/RTLAAQ292401_15088112_3_v1_2x.webp',
+                    url: '../img/men_2.jpg',
                     id: '620130a57d2312f4e7932f36',
                 },
                 {
                     color: 'Brown',
-                    url: '/media/6200e4b61c08840bc803ad27/RTLAAQ292401_15088111_2_v1_2x.webp',
+                    url: '../img/men_2.jpg',
                     id: '620130a97d2312f4e7932f39',
                 },
                 {
                     color: 'Brown',
-                    url: '/media/6200e4b61c08840bc803ad27/RTLAAQ292401_15088110_1_v1_2x.jpg',
+                    url: '../img/men_2.jpg',
                     id: '620130ae7d2312f4e7932f3c',
                 },
             ],
@@ -140,17 +140,17 @@ export const Products_base = {
             images: [
                 {
                     color: 'Green',
-                    url: '/media/6200e5031c08840bc803ad2a/RTLAAQ293601_15017278_2_v1.webp',
+                    url: '../img/men_3.jpg',
                     id: '6201311e7d2312f4e7932f3f',
                 },
                 {
                     color: 'Orange',
-                    url: '/media/6200e5031c08840bc803ad2a/RTLAAQ292501_15088980_3_v1_2x.webp',
+                    url: '../img/men_3.jpg',
                     id: '6201314b7d2312f4e7932f4f',
                 },
                 {
                     color: 'Orange',
-                    url: '/media/6200e5031c08840bc803ad2a/RTLAAQ292501_15088979_2_v1_2x.webp',
+                    url: '../img/men_3.jpg',
                     id: '6201314f7d2312f4e7932f52',
                 },
             ],
@@ -178,27 +178,27 @@ export const Products_base = {
             images: [
                 {
                     color: 'White',
-                    url: '/media/6200e55e1c08840bc803ad2d/RTLAAV537501_15738022_3_v1_2x.webp',
+                    url: '../img/men_4.jpg',
                     id: '620131f67d2312f4e7932f55',
                 },
                 {
                     color: 'White',
-                    url: '/media/6200e55e1c08840bc803ad2d/RTLAAV537501_15738021_2_v1_2x.webp',
+                    url: '../img/men_4.jpg',
                     id: '620131fb7d2312f4e7932f58',
                 },
                 {
                     color: 'Black',
-                    url: '/media/6200e55e1c08840bc803ad2d/RTLAAV537401_15738018_3_v1_2x.webp',
+                    url: '../img/men_4.jpg',
                     id: '620132187d2312f4e7932f5b',
                 },
                 {
                     color: 'Black',
-                    url: '/media/6200e55e1c08840bc803ad2d/RTLAAV537401_15738017_2_v1_2x.webp',
+                    url: '../img/men_4.jpg',
                     id: '6201321c7d2312f4e7932f5e',
                 },
                 {
                     color: 'Black',
-                    url: '/media/6200e55e1c08840bc803ad2d/RTLAAV537401_15738016_1_v1_2x.webp',
+                    url: '../img/men_4.jpg',
                     id: '620132207d2312f4e7932f61',
                 },
             ],
@@ -225,17 +225,17 @@ export const Products_base = {
             images: [
                 {
                     color: 'Multicolor',
-                    url: '/media/6200e65a1c08840bc803ad30/RTLABB930801_16256628_3_v1.webp',
+                    url: '../img/men_5.jpg',
                     id: '6203641877fffe0cd128c037',
                 },
                 {
                     color: 'Multicolor',
-                    url: '/media/6200e65a1c08840bc803ad30/RTLABB930801_16256627_2_v1.webp',
+                    url: '../img/men_5.jpg',
                     id: '6203641c77fffe0cd128c03a',
                 },
                 {
                     color: 'Multicolor',
-                    url: '/media/6200e65a1c08840bc803ad30/RTLABB930801_16256626_1_v1.webp',
+                    url: '../img/men_5.jpg',
                     id: '6203642177fffe0cd128c03d',
                 },
             ],
@@ -281,32 +281,32 @@ export const Products_base = {
             images: [
                 {
                     color: 'Blue',
-                    url: '/media/6200e6bd1c08840bc803ad33/RTLAAT849301_15345587_3_v1.jpg',
+                    url: '../img/men_6.jpg',
                     id: '620364e677fffe0cd128c040',
                 },
                 {
                     color: 'Blue',
-                    url: '/media/6200e6bd1c08840bc803ad33/RTLAAT849301_15345586_2_v1.jpg',
+                    url: '../img/men_6.jpg',
                     id: '620364ea77fffe0cd128c043',
                 },
                 {
                     color: 'Blue',
-                    url: '/media/6200e6bd1c08840bc803ad33/RTLAAT849301_15345585_1_v1.jpg',
+                    url: '../img/men_6.jpg',
                     id: '620364ee77fffe0cd128c046',
                 },
                 {
                     color: 'Beige',
-                    url: '/media/6200e6bd1c08840bc803ad33/RTLAAT849401_15514296_3_v1_2x.webp',
+                    url: '../img/men_6.jpg',
                     id: '6203652e77fffe0cd128c049',
                 },
                 {
                     color: 'Beige',
-                    url: '/media/6200e6bd1c08840bc803ad33/RTLAAT849401_15514295_2_v1_2x.webp',
+                    url: '../img/men_6.jpg',
                     id: '6203653277fffe0cd128c04c',
                 },
                 {
                     color: 'Beige',
-                    url: '/media/6200e6bd1c08840bc803ad33/RTLAAT849401_15514294_1_v1_2x.webp',
+                    url: '../img/men_6.jpg',
                     id: '6203653677fffe0cd128c04f',
                 },
             ],
@@ -340,47 +340,47 @@ export const Products_base = {
             images: [
                 {
                     color: 'Black',
-                    url: '/media/6200e74c1c08840bc803ad39/RTLAAX817901_15996787_3_v1_2x.webp',
+                    url: '../img/men_7.jpg',
                     id: '62039ad177fffe0cd128c18b',
                 },
                 {
                     color: 'Black',
-                    url: '/media/6200e74c1c08840bc803ad39/RTLAAX817901_15996786_2_v1_2x.webp',
+                    url: '../img/men_7.jpg',
                     id: '62039ad577fffe0cd128c18e',
                 },
                 {
                     color: 'Black',
-                    url: '/media/6200e74c1c08840bc803ad39/RTLAAX817901_15996785_1_v1_2x.webp',
+                    url: '../img/men_7.jpg',
                     id: '62039ad977fffe0cd128c191',
                 },
                 {
                     color: 'Grey',
-                    url: '/media/6200e74c1c08840bc803ad39/RTLAAX818301_15996799_3_v1_2x.webp',
+                    url: '../img/men_7.jpg',
                     id: '62039af077fffe0cd128c194',
                 },
                 {
                     color: 'Grey',
-                    url: '/media/6200e74c1c08840bc803ad39/RTLAAX818301_15996798_2_v1_2x.webp',
+                    url: '../img/men_7.jpg',
                     id: '62039af377fffe0cd128c197',
                 },
                 {
                     color: 'Grey',
-                    url: '/media/6200e74c1c08840bc803ad39/RTLAAX818301_15996797_1_v1_2x.webp',
+                    url: '../img/men_7.jpg',
                     id: '62039af677fffe0cd128c19a',
                 },
                 {
                     color: 'Blue',
-                    url: '/media/6200e74c1c08840bc803ad39/RTLAAX818401_15996803_3_v1_2x.webp',
+                    url: '../img/men_7.jpg',
                     id: '62039b1377fffe0cd128c19d',
                 },
                 {
                     color: 'Blue',
-                    url: '/media/6200e74c1c08840bc803ad39/RTLAAX818401_15996802_2_v1_2x.webp',
+                    url: '../img/men_7.jpg',
                     id: '62039b1777fffe0cd128c1a0',
                 },
                 {
                     color: 'Blue',
-                    url: '/media/6200e74c1c08840bc803ad39/RTLAAX818401_15996801_1_v1_2x.webp',
+                    url: '../img/men_7.jpg',
                     id: '62039b1b77fffe0cd128c1a3',
                 },
             ],
@@ -417,12 +417,12 @@ export const Products_base = {
             images: [
                 {
                     color: 'White',
-                    url: '/media/6200e7bf1c08840bc803ad3c/RTLAAQ292301_15088106_1_v1_2x.webp',
+                    url: '../img/men_8.jpg',
                     id: '6203ad5877fffe0cd128c1bc',
                 },
                 {
                     color: 'Brown',
-                    url: '/media/6200e7bf1c08840bc803ad3c/RTLAAQ292401_15088110_1_v1_2x.webp',
+                    url: '../img/men_8.jpg',
                     id: '6203ad6e77fffe0cd128c1bf',
                 },
             ],
@@ -462,11 +462,11 @@ export const Products_base = {
             images: [
                 {
                     color: 'White',
-                    url: '/media/6200ec21c110271da7220ffe/RTLAAM769101_14809275_1_v1_2x.webp',
+                    url: '../img/men_1.jpg',
                     id: '6203af0c77fffe0cd128c1ee',
                 },
             ],
-            id: '6200ec21c110271da7220ffe',
+            id: 9,
         },
         {
             particulars: {
@@ -497,11 +497,11 @@ export const Products_base = {
             images: [
                 {
                     color: 'Turquoise',
-                    url: '/media/6200ec21c110271da7221000/RTLAAQ293101_15088134_1_v1_2x.webp',
+                    url: '../img/men_2.jpg',
                     id: '6203afd477fffe0cd128c1ff',
                 },
             ],
-            id: '6200ec21c110271da7221000',
+            id: 10,
         },
         {
             particulars: {
@@ -532,16 +532,16 @@ export const Products_base = {
             images: [
                 {
                     color: 'White',
-                    url: '/media/6200f157c110271da7221004/RTLAAV307501_15757686_1_v1_2x.webp',
+                    url: '../img/men_3.jpg',
                     id: '6204f68d77fffe0cd128c5fb',
                 },
                 {
                     color: 'Blue',
-                    url: '/media/6200f157c110271da7221004/RTLAAV307701_15757690_1_v1_2x.webp',
+                    url: '../img/men_3.jpg',
                     id: '6204f6a777fffe0cd128c5fe',
                 },
             ],
-            id: '6200f157c110271da7221004',
+            id: 11,
         },
         {
             particulars: {
@@ -567,16 +567,16 @@ export const Products_base = {
             images: [
                 {
                     color: 'Blue',
-                    url: '/media/6200f157c110271da7221006/RTLAAW434201_15635048_3_v1.webp',
+                    url: '../img/men_4.jpg',
                     id: '6204f78577fffe0cd128c613',
                 },
                 {
                     color: 'Black',
-                    url: '/media/6200f157c110271da7221006/RTLAAW434001_15635038_1_v1.webp',
+                    url: '../img/men_4.jpg',
                     id: '6204f7a177fffe0cd128c616',
                 },
             ],
-            id: '6200f157c110271da7221006',
+            id: 12,
         },
         {
             particulars: {
@@ -606,11 +606,11 @@ export const Products_base = {
             images: [
                 {
                     color: 'Black',
-                    url: '/media/6200f157c110271da7221008/RTLAAZ198101_16123200_3_v1_2x.webp',
+                    url: '../img/men_5.jpg',
                     id: '6204f8ea77fffe0cd128c62b',
                 },
             ],
-            id: '6200f157c110271da7221008',
+            id: 13,
         },
         {
             particulars: {
@@ -641,16 +641,16 @@ export const Products_base = {
             images: [
                 {
                     color: 'White',
-                    url: '/media/6200f157c110271da722100a/RTLAAS623701_15457068_1_v1_2x.webp',
+                    url: '../img/men_6.jpg',
                     id: '6204f95a77fffe0cd128c634',
                 },
                 {
                     color: 'Blue',
-                    url: '/media/6200f157c110271da722100a/RTLAAS643401_15394541_2_v1_2x.webp',
+                    url: '../img/men_6.jpg',
                     id: '6204f97277fffe0cd128c637',
                 },
             ],
-            id: '6200f157c110271da722100a',
+            id: 14,
         },
         {
             particulars: {
@@ -673,11 +673,11 @@ export const Products_base = {
             images: [
                 {
                     color: 'White',
-                    url: '/media/6200f157c110271da722100c/RTLAAX972501_16094775_1_v1_2x.webp',
+                    url: '../img/men_7.jpg',
                     id: '62050b0e77fffe0cd128c7b9',
                 },
             ],
-            id: '6200f157c110271da722100c',
+            id: 15,
         },
         {
             particulars: {
@@ -708,16 +708,16 @@ export const Products_base = {
             images: [
                 {
                     color: 'Grey',
-                    url: '/media/6200f157c110271da7221014/RTLAAV537301_15738012_1_v1_2x.jpg',
+                    url: '../img/men_8.jpg',
                     id: '62050bab77fffe0cd128c7c2',
                 },
                 {
                     color: 'Black',
-                    url: '/media/6200f157c110271da7221014/RTLAAV537401_15738016_1_v1_2x.webp',
+                    url: '../img/men_8.jpg',
                     id: '62050bc077fffe0cd128c7c5',
                 },
             ],
-            id: '6200f157c110271da7221014',
+            id: 16,
         },
         {
             particulars: {
@@ -760,16 +760,16 @@ export const Products_base = {
             images: [
                 {
                     color: 'Vinous',
-                    url: '/media/6200f157c110271da7221012/RTLAAQ285501_15017256_1_v1.jpg',
+                    url: '../img/men_1.jpg',
                     id: '62050c8b77fffe0cd128c7da',
                 },
                 {
                     color: 'Beige',
-                    url: '/media/6200f157c110271da7221012/RTLAAQ285401_15017253_1_v1.jpg',
+                    url: '../img/men_1.jpg',
                     id: '62050cab77fffe0cd128c7dd',
                 },
             ],
-            id: '6200f157c110271da7221012',
+            id: 17,
         },
         {
             particulars: {
@@ -795,16 +795,16 @@ export const Products_base = {
             images: [
                 {
                     color: 'Yellow',
-                    url: '/media/6200f157c110271da722100e/RTLABA110601_16071291_1_v1.jpg',
+                    url: '../img/men_2.jpg',
                     id: '6205107577fffe0cd128c80c',
                 },
                 {
                     color: 'Blue',
-                    url: '/media/6200f157c110271da722100e/RTLAAQ293301_15017273_1_v1.webp',
+                    url: '../img/men_2.jpg',
                     id: '6205109877fffe0cd128c80f',
                 },
             ],
-            id: '6200f157c110271da722100e',
+            id: 18,
         },
         {
             particulars: {
@@ -834,11 +834,11 @@ export const Products_base = {
             images: [
                 {
                     color: 'Green',
-                    url: '/media/6200f157c110271da7221010/RTLAAX966901_16091402_1_v1_2x.webp',
+                    url: '../img/men_3.jpg',
                     id: '6205117c77fffe0cd128c824',
                 },
             ],
-            id: '6200f157c110271da7221010',
+            id: 19,
         },
         {
             particulars: {
@@ -870,16 +870,16 @@ export const Products_base = {
             images: [
                 {
                     color: 'Blue',
-                    url: '/media/6200f157c110271da7221016/RTLAAU294001_15685608_1_v1_2x.webp',
+                    url: '../img/men_4.jpg',
                     id: '6205121577fffe0cd128c888',
                 },
                 {
                     color: 'Black',
-                    url: '/media/6200f157c110271da7221016/RTLAAU293501_15685601_2_v1_2x.webp',
+                    url: '../img/men_4.jpg',
                     id: '6205123177fffe0cd128c88b',
                 },
             ],
-            id: '6200f157c110271da7221016',
+            id: 20,
         },
     ],
     women: [
