@@ -331,7 +331,7 @@ export default function Product() {
                             <p>{[...new Set(product.images.map((img) => img.color))]}</p>
                         </div>
                         <div className="add_inf_color">Size:
-                            <p>XS, S, M, L</p>
+                            <p>{[...new Set(product.sizes.join(', ').slice(0, -3))]}</p>
                         </div>
                         <div className="add_inf_color">Material:
                             <p>{product.material}</p>
