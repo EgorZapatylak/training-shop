@@ -51,7 +51,7 @@ export function Cart() {
                                         <div className={styles.cart_item_info}>
                                             <p>{item.name}</p>
                                             <p>{item.color}</p>
-                                            <p>{item.size}</p>
+                                            <p>{(item.size).slice(0, -3)}</p>
                                         </div>
                                         <div className={styles.cart_item_price}>
                                             <button onClick={() => dispatch(decreaseQuantity(item.id))}>-</button>
