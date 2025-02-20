@@ -98,7 +98,7 @@ export default function Product() {
                     size: selectedSize,
                     color: selectedColor,
                 });
-            }else {
+            } else {
                 alert('Пожалуйста, выберите цвет и размер');
             }
         }
@@ -178,14 +178,8 @@ export default function Product() {
             </div>
             {/*<div className='rate_info'>*/}
             {/*    <div className='reviews'>*/}
-            {/*        <div className='star'>*/}
-            {/*            <div className='stars_i'/>*/}
-            {/*            <div className='stars_i'/>*/}
-            {/*            <div className='stars_i'/>*/}
-            {/*            <div className='stars_i'/>*/}
-            {/*            <div className='stars_i'/>*/}
-            {/*        </div>*/}
-            {/*        <p>2 Reviews</p>*/}
+            {/*        <StarRating rating={product.rating}/>*/}
+            {/*        <p>{reviewCount} Reviews</p>*/}
             {/*    </div>*/}
             {/*    <div className='sa'>*/}
             {/*        <div className='sku'>*/}
@@ -357,7 +351,7 @@ export default function Product() {
                         </div>
                         {reviewCount > 0 ? (
                             <div className='reviews_list'>
-                                {product.reviews.map((review, index) =>(
+                                {product.reviews.map((review, index) => (
                                     <div key={index} className='review_item'>
                                         <div className='review_header'>
                                             <h5>{review.name}</h5>
@@ -367,7 +361,7 @@ export default function Product() {
                                     </div>
                                 ))}
                             </div>
-                        ):(
+                        ) : (
                             <p>No reviews yet. Be the first to write one!</p>
                         )}
                     </div>
