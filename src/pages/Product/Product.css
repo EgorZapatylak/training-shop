@@ -1095,6 +1095,7 @@ button.selected {
     .content_info {
         padding: 0;
         width: 330px;
+        margin-top: 20px;
     }
 
     .color_img {
@@ -1151,4 +1152,5 @@ button.selected {
         height: auto;
         justify-content: center;
     }
+
 }
