@@ -338,17 +338,15 @@ export default function Product() {
                         </div>
                     </div>
                     <div className="line"></div>
-                    <div className='reviews_d'>
-                        <div className="reviews_d_title">
+                    <div className='reviews_section'>
+                        <div className="reviews_section_title">
                             REVIEWS
                         </div>
-                        <div className="reviews_d_status">
-                            <div className="reviews_d_status_info">
-                                <div className="stars"></div>
-                                <p>2 Reviews</p>
+                        <div className='reviews_header'>
+                            <div className='reviews_header_reviews'>
+                                <p>{reviewCount} Reviews</p>
                             </div>
-                            <div className="reviews_d_status_write">
-                                <div className="write"></div>
+                            <div className="reviews_header_write">
                                 <p>Write a review</p>
                             </div>
                         </div>
