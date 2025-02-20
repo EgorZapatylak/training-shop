@@ -62,7 +62,7 @@
 
 .cart_item ul {
     list-style-type: none;
-    padding-left: 0;
+    margin: 20px;
 }
 
 .cart_item li {
