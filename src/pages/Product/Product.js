@@ -334,7 +334,7 @@ export default function Product() {
                             <p>XS, S, M, L</p>
                         </div>
                         <div className="add_inf_color">Material:
-                            <p> 100% Polyester</p>
+                            <p>{product.material}</p>
                         </div>
                     </div>
                     <div className="line"></div>
