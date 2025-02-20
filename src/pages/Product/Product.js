@@ -288,7 +288,7 @@ export default function Product() {
                         <div className='line'></div>
                     </div>
                     <div className='price'>
-                        <p>${product.price}.00</p>
+                        <p>$ {Math.round(product.price * (1 + parseFloat(product.discount) / 100))}.00</p>
                         <button onClick={handleCartButtonClick}>{
                             isInCart ? 'REMOVE FROM CART' : 'ADD TO CART'
                         }</button>
