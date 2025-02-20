@@ -78,7 +78,6 @@ export function Cart() {
                                                 id: item.id,
                                                 color: item.color,
                                                 size: item.size
-
                                             }))}>X
                                             </button>
                                         </div>
