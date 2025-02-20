@@ -350,17 +350,21 @@ export default function Product() {
                                 <p>Write a review</p>
                             </div>
                         </div>
-                        <div className="reviews_d_feedback">
-                            {product.reviews.map((rev, index) => (
-                                <div key={index}>
-                                    <div className="reviews_d_feedback_info">
-                                        <h5>{rev.name}</h5>
-                                        <div className="stars"> {rev.rating} </div>
+                        {reviewCount > 0 ? (
+                            <div className='reviews_list'>
+                                {product.reviews.map((review, index) =>(
+                                    <div key={index} className='review_item'>
+                                        <div className='review_header'>
+                                            <h5>{review.name}</h5>
+                                            <p>{review.rating}</p>
+                                        </div>
+                                        <p className='review_text'>{review.text}</p>
                                     </div>
-                                    <p>{rev.text}</p>
-                                </div>
-                            ))}
-                        </div>
+                                ))}
+                            </div>
+                        ):(
+                            <p>No reviews yet. Be the first to write one!</p>
+                        )}
                     </div>
                     <div className="line"></div>
                 </div>
