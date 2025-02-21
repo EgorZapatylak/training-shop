@@ -54,8 +54,8 @@ export function Cart() {
                 <>
                     <div className={styles.cart_road}>
                         <span>Item in Cart</span>
-                        <span>Item in Cart</span>
-                        <span>Item in Cart</span>
+                        <span>Delivery info</span>
+                        <span>Payment</span>
                     </div>
                     <div className={styles.cart_item}>
                         <ul>
