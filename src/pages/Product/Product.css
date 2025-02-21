@@ -254,32 +254,6 @@
 .slider-top .swiper-slide-thumb-active {
     opacity: 1;
 }
-.slider_1 {
-    display: flex;
-    width: 94px;
-    height: 114px;
-}
-
-.slider_2 {
-    display: flex;
-    width: 94px;
-    height: 114px;
-    background-image: url('./img/smol_2.png');
-}
-
-.slider_3 {
-    display: flex;
-    width: 94px;
-    height: 114px;
-    background-image: url('./img/smol_3.png');
-}
-
-.slider_4 {
-    display: flex;
-    width: 94px;
-    height: 114px;
-    background-image: url('./img/smol_4.png');
-}
 
 .choise {
     display: flex;
