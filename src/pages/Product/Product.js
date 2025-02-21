@@ -1,11 +1,6 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
 import './Product.css';
 import {Products_base} from "../../Products_base";
-import Choise from './img/item_1_992.svg';
-import Slider_1 from './img/smol_1.png';
-import Slider_2 from './img/smol_1.png';
-import Slider_3 from './img/smol_1.png';
-import Slider_4 from './img/smol_1.png';
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation, FreeMode, Thumbs} from 'swiper';
 import 'swiper/css';
@@ -133,22 +128,24 @@ export default function Product() {
                     nextBtn.classList.remove('swiper-button-disabled', 'swiper-button-lock');
 
                     console.log("✅ Кнопки Swiper разблокированы и работают!");
+                    console.log(product.imageURL)
                 } else {
                     console.log("⏳ Кнопки ещё не появились, пробуем снова...");
                     setTimeout(updateSwiper, 300); // Пробуем ещё раз через 300 мс
+
                 }
             }, 300);
         }
     }, [thumbsSwiper]);
 
-    useEffect(()=> {
+    useEffect(() => {
         // Прокрутка страницы к началу
-        window.scrollTo(0,0);
+        window.scrollTo(0, 0);
     }, []); // Пустой массив зависимостей, чтобы эффект срабатывал только при монтировани компонента
 
     useEffect(() => {
         if (thumbsSwiper && mainSwiper) {
-    // Синхронизируем кнопки
+            // Синхронизируем кнопки
             nextThumbsRef.current.onclick = () => {
                 thumbsSwiper.slideNext();
                 mainSwiper.slideNext();
@@ -168,7 +165,6 @@ export default function Product() {
     }
 
     return (
-
         <section>
             <div className='product_header'>
                 <div className='road'>
@@ -231,10 +227,11 @@ export default function Product() {
                             }}
                             onSlideChange={() => mainSwiper?.slideTo(thumbsSwiper.activeIndex)}
                         >
-                            <SwiperSlide><img src={Slider_1} alt='Описание изоражения 1'/></SwiperSlide>
-                            <SwiperSlide><img src={Slider_2} alt='Описание изоражения 2'/></SwiperSlide>
-                            <SwiperSlide><img src={Slider_3} alt='Описание изоражения 3'/></SwiperSlide>
-                            <SwiperSlide><img src={Slider_4} alt='Описание изоражения 4'/></SwiperSlide>
+                            {product.images.map((img, index) => (
+                                <SwiperSlide key={index}>
+                                    <img src={product.imageURL} alt={product.name} height='113'/>
+                                </SwiperSlide>
+                            ))}
                         </Swiper>
                     </div>
                     <div className='choise'>
@@ -249,10 +246,11 @@ export default function Product() {
                             spaceBetween={10}
                             onSlideChange={() => thumbsSwiper?.slideTo(mainSwiper.activeIndex)}
                         >
-                            <SwiperSlide><img src={Choise} alt='Описание изоражения 1'/></SwiperSlide>
-                            <SwiperSlide><img src={Choise} alt='Описание изоражения 2'/></SwiperSlide>
-                            <SwiperSlide><img src={Choise} alt='Описание изоражения 3'/></SwiperSlide>
-                            <SwiperSlide><img src={Choise} alt='Описание изоражения 4'/></SwiperSlide>
+                            {product.images.map((img, index) => (
+                                <SwiperSlide key={index}>
+                                    <img src={product.imageURL} alt={product.name}/>
+                                </SwiperSlide>
+                            ))}
                         </Swiper>
                         <div className='btn_left' ref={prevMainRef}></div>
                         <div className='btn_right' ref={nextMainRef}></div>
@@ -279,7 +277,7 @@ export default function Product() {
                         <div className='size'>
                             <p>Size:</p>
                             {/*<span>{product.sizes[0]}</span>*/}
-                            <span>{selectedSize ? selectedSize.replace('INT',''):''}</span>
+                            <span>{selectedSize ? selectedSize.replace('INT', '') : ''}</span>
                         </div>
                         <div className='size_info'>
                             {product.sizes.map((size, index) => (
