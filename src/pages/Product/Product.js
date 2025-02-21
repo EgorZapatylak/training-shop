@@ -15,9 +15,13 @@ import 'swiper/css/free-mode';
 import {useDispatch, useSelector} from "react-redux";
 import {addToCart, removeFromCart} from "../../cartSlice";
 import {StarRating} from "../../components/StarRating/StarRating";
+import {useParams} from "react-router";
 
 
 export default function Product() {
+
+    const { id } = useParams(); // Извлекаем id из URL
+    const product = Products_base.men.find((item) => item.id === parseInt(id)); // Ищем товар по id
 
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const [mainSwiper, setMainSwiper] = useState(null);
@@ -32,9 +36,6 @@ export default function Product() {
     const nextThumbsRef = useRef(null);
     const prevMainRef = useRef(null);
     const nextMainRef = useRef(null);
-
-    // Провряем, находится ли текущий товар в корзине
-    const product = Products_base.men[0];
 
     const reviewCount = product.reviews.length;
 
@@ -153,8 +154,8 @@ export default function Product() {
 
     // Проверяем, есть ли данные
 
-    if (!Products_base?.men?.length) {
-        return <p>Product not found</p>;
+    if (!product) {
+        return <p>Товар не найден</p>;
     }
 
     return (
