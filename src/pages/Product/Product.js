@@ -294,8 +294,8 @@ export default function Product() {
                     </div>
                     <div className='price'>
                         <p>$ {product.discount
-                            ? `$ ${(product.price * (1 + parseFloat(product.discount) / 100))}`
-                            : `$ ${product.price.toFixed(2)}`
+                            ? `${(product.price * (1 + parseFloat(product.discount) / 100))}`
+                            : `${product.price.toFixed(2)}`
                         }
                         </p>
                         <button onClick={handleCartButtonClick}>{
