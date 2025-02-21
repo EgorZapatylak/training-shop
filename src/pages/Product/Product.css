@@ -341,6 +341,7 @@ button.selected {
     display: flex;
     width: 89px;
     height: 18px;
+    gap: 10px;
     margin-bottom: 10px;
 }
 
