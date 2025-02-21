@@ -14,7 +14,6 @@ export function Cart() {
 
     const handleBackToShopping = () => {
         dispatch(closeCart()); // Закрываем корзину
-        navigate('/');  // Возврат на главную страницу
     }
 
     const handleViewCart = () => {
