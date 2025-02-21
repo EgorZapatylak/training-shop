@@ -19,7 +19,12 @@ export function Cart() {
 
     const handleViewCart = () => {
         dispatch(closeCart()); // Закрываем корзину
-        navigate('/product/1');  // Возврат на страницу товара
+        const lastProductId = localStorage.getItem('lastViewedProduct');
+        if (lastProductId) {
+            navigate(`/product/${lastProductId}`); // Возврат на страницу товара
+        }else {
+         alert('Нет последнего добавленного товара!');
+        }
     }
 
     // Функция для расчета цены за еденицу товара с учетом скидки
