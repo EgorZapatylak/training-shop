@@ -82,6 +82,21 @@
     gap: 5px;
 }
 
+.cart_item_price_block {
+    display: flex;
+    align-items: baseline;
+    width: auto;
+    background-color: #f0f0f0;
+}
+
+.cart_item_price_block button {
+    border: none;
+    height: 25px;
+    width: 30px;
+    font-size: 20px;
+    opacity: 0.6;
+}
+
 .cart_total_price {
     margin-bottom: 10px;
 }
