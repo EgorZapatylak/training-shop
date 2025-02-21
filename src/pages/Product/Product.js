@@ -276,7 +276,7 @@ export default function Product() {
                         <div className='size'>
                             <p>Size:</p>
                             {/*<span>{product.sizes[0]}</span>*/}
-                            <span>{selectedSize}</span>
+                            <span>{(selectedSize).slice(0,-3)}</span>
                         </div>
                         <div className='size_info'>
                             {product.sizes.map((size, index) => (
