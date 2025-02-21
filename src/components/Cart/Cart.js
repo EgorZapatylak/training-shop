@@ -1,9 +1,10 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {closeCart, decreaseQuantity, increaseQuantity, removeFromCart} from "../../cartSlice";
-import  styles from "./Cart.module.css"
+import styles from "./Cart.module.css"
 import {useNavigate} from "react-router-dom";
 import {Products_base} from "../../Products_base";
+import Bin from './img/trash_bin.svg';
 
 export function Cart() {
 
@@ -26,17 +27,17 @@ export function Cart() {
 
         // Находим товары в Product_base
         const product = Products_base.men.find((p) => p.id === item.id) || {};
-        const discount = product.discount ? parseFloat(product.discount.toString().replace('%','').replace('-','')) : 0;
+        const discount = product.discount ? parseFloat(product.discount.toString().replace('%', '').replace('-', '')) : 0;
 
         // Вычисляем цену за еденицу с учетом скидки
         const discountAmount = (item.price * discount) / 100;  //Считаем скидку
         return item.price - discountAmount;
     }
-        // Итоговая стоимость корзины
+    // Итоговая стоимость корзины
     const totalCartPrice = cartItems.reduce((total, item) => {
         const discountedPrice = calculatePriceDiscount(item) * item.quantity;
         return total + discountedPrice;
-            }, 0);
+    }, 0);
 
     return (
         <div className={styles.cart}>
@@ -70,16 +71,18 @@ export function Cart() {
                                             <p>{(item.size).slice(0, -3)}</p>
                                         </div>
                                         <div className={styles.cart_item_price}>
-                                            <button onClick={() => dispatch(decreaseQuantity(item.id))}>-</button>
-                                            <p>{item.quantity}</p>
-                                            <button onClick={() => dispatch(increaseQuantity(item.id))}>+</button>
+                                            <div className={styles.cart_item_price_block}>
+                                                <button onClick={() => dispatch(decreaseQuantity(item.id))}>-</button>
+                                                <p>{item.quantity}</p>
+                                                <button onClick={() => dispatch(increaseQuantity(item.id))}>+</button>
+                                            </div>
                                             <h3>$ {(calculatePriceDiscount(item) * item.quantity).toFixed(2)}</h3>
-                                            <button onClick={() => dispatch(removeFromCart({
-                                                id: item.id,
-                                                color: item.color,
-                                                size: item.size
-                                            }))}>X
-                                            </button>
+                                            <img src={Bin} alt='trash_bin' width='25'
+                                                 onClick={() => dispatch(removeFromCart({
+                                                     id: item.id,
+                                                     color: item.color,
+                                                     size: item.size
+                                                 }))}/>
                                         </div>
                                     </div>
                                 </li>
