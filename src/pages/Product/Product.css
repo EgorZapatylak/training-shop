@@ -368,10 +368,9 @@ button.selected {
 
 .size {
     display: flex;
-    width: 89px;
     height: 18px;
-    justify-content: space-between;
     margin-bottom: 10px;
+    gap: 10px;
 }
 
 .size_info {
