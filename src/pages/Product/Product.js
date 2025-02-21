@@ -16,6 +16,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {addToCart, removeFromCart} from "../../cartSlice";
 import {StarRating} from "../../components/StarRating/StarRating";
 import {useParams} from "react-router";
+import {Link} from "react-router-dom";
 
 
 export default function Product() {
@@ -163,9 +164,13 @@ export default function Product() {
         <section>
             <div className='product_header'>
                 <div className='road'>
-                    <p>Home</p>
+                    <Link to='/'>
+                        <p>Home</p>
+                    </Link>
                     <div className='ul'/>
-                    <p>Men</p>
+                    <Link to='/men'>
+                        <p>Men</p>
+                    </Link>
                     <div className='ul'/>
                     <span>{product.name}</span>
                 </div>
