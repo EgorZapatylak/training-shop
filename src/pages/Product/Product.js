@@ -283,7 +283,11 @@ export default function Product() {
                         <div className='line'></div>
                     </div>
                     <div className='price'>
-                        <p>$ {(product.price * (1 + parseFloat(product.discount) / 100))}</p>
+                        <p>$ {product.discount
+                            ? `$ ${(product.price * (1 + parseFloat(product.discount) / 100))}`
+                            : `$ ${product.price.toFixed(2)}`
+                        }
+                        </p>
                         <button onClick={handleCartButtonClick}>{
                             isInCart ? 'REMOVE FROM CART' : 'ADD TO CART'
                         }</button>
