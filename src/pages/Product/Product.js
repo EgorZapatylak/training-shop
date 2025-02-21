@@ -137,10 +137,15 @@ export default function Product() {
             }, 300);
         }
     }, [thumbsSwiper]);
-//
+
+    useEffect(()=> {
+        // Прокрутка страницы к началу
+        window.scrollTo(0,0);
+    }, []); // Пустой массив зависимостей, чтобы эффект срабатывал только при монтировани компонента
+
     useEffect(() => {
         if (thumbsSwiper && mainSwiper) {
-// Синхронизируем кнопки
+    // Синхронизируем кнопки
             nextThumbsRef.current.onclick = () => {
                 thumbsSwiper.slideNext();
                 mainSwiper.slideNext();
