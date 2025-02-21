@@ -20,7 +20,7 @@ import {useParams} from "react-router";
 
 export default function Product() {
 
-    const { id } = useParams(); // Извлекаем id из URL
+    const {id} = useParams(); // Извлекаем id из URL
     const product = Products_base.men.find((item) => item.id === parseInt(id)); // Ищем товар по id
 
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
