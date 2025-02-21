@@ -100,6 +100,9 @@ export default function Product() {
                     size: selectedSize,
                     color: selectedColor,
                 });
+
+                //Cохраняем id последнего добавленного товара в localStorage
+                localStorage.setItem('lastViewedProduct', product.id);
             } else {
                 alert('Пожалуйста, выберите цвет и размер');
             }
