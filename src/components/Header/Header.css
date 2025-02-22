@@ -334,7 +334,7 @@ h1 {
 
 }
 
-@media (max-width: 360px) {
+@media (max-width: 425px) {
 
     .header_container {
         width: 360px;
