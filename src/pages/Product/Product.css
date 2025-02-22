@@ -988,7 +988,7 @@ button.selected {
     }
 
     .price {
-        justify-content: left;
+        justify-content: space-between;
     }
 
     .add_inf {
