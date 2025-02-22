@@ -972,7 +972,7 @@ button.selected {
     }
 
     .line {
-        width: 962px !important;
+        width: 962px;
     }
 
     .shipping_prod_img {
@@ -992,7 +992,7 @@ button.selected {
     }
 
     .add_inf {
-        width: 962px;
+        width: 952px;
     }
 
     .reviews_section {
@@ -1021,7 +1021,7 @@ button.selected {
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 425px) {
     .product_header {
         width: 330px;
     }
