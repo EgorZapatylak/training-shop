@@ -178,6 +178,11 @@
     animation: spin 0.5s linear infinite;
 }
 
+.mid {
+    width: 255px;
+    height: 322px;
+}
+
 @media (max-width: 992px) {
     .men_header {
         width: 962px;
