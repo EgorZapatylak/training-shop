@@ -213,7 +213,7 @@ export default function Men() {
                                 {prod.discount && (
                                     <div className='discount_badge'>{prod.discount}</div>
                                 )}
-                                <img className='mid' src={prod.imageURL  } alt={prod.name}/>
+                                <img className='mid' src={prod.imageURL} alt={prod.name}/>
                             </div>
                             <p>{prod.name}</p>
                             <div className='cost-rate'>
