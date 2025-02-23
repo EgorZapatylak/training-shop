@@ -217,7 +217,7 @@ export default function Product() {
                                 setTimeout(updateSwiper, 500)// Вызываем после инициализации
                             }}
                             className="slider-top"
-                            slidesPerView={4}
+                            slidesPerView='auto'
                             direction="vertical"
                             spaceBetween={16}
                             loop={false}
