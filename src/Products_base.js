@@ -25,17 +25,17 @@ export const Products_base = {
                 },
                 {
                     name: 'Aliaskei Jurdan',
-                    text: 'Отличная водолазка, но мой рост 192 и для меня он короткий. рекомендую для невысоких',
+                    text: 'Отличная Футболка, но мой рост 192 и для меня он короткий. рекомендую для невысоких',
                     rating: 5,
                     id: '620135c87d2312f4e7932fce',
                 },
                 {
                     name: 'Aliaskei Jurdan',
-                    text: 'Отличная водолазка, но мой рост 192 и для меня он короткий. рекомендую для невысоких',
+                    text: 'Отличная Футболка, но мой рост 192 и для меня он короткий. рекомендую для невысоких',
                     rating: 4,
                     id: '620136e17d2312f4e7933007',
                 },
-                {name: 'Ivan Vorobeynikov', text: 'Норм водолазка', rating: 3, id: '620137a577fffe0cd128be85'},
+                {name: 'Ivan Vorobeynikov', text: 'Норм Футболка', rating: 3, id: '620137a577fffe0cd128be85'},
             ],
             imageURL: require("../src/pages/Men/img/Vodolazka_1.avif"),
             images: [
