@@ -229,7 +229,7 @@ export default function Product() {
                         >
                             {product.images.map((img, index) => (
                                 <SwiperSlide key={index}>
-                                    <img src={product.imageURL} alt={product.name} height='113'/>
+                                    <img src={product.images[index].url} alt={product.name} height='113'/>
                                 </SwiperSlide>
                             ))}
                         </Swiper>
@@ -248,7 +248,7 @@ export default function Product() {
                         >
                             {product.images.map((img, index) => (
                                 <SwiperSlide key={index}>
-                                    <img src={product.imageURL} alt={product.name}/>
+                                    <img src={product.images[index].url} alt={product.name}/>
                                 </SwiperSlide>
                             ))}
                         </Swiper>
