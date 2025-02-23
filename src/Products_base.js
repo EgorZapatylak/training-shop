@@ -8,7 +8,7 @@ export const Products_base = {
                 isMostViewed: false,
                 isFeatured: false,
             },
-            name: 'Водолазка',
+            name: 'Футболка поло',
             category: 'men',
             brand: 'Casual Friday by Blend',
             material: 'Шерсть - 50%, Акрил - 50%',
@@ -37,16 +37,16 @@ export const Products_base = {
                 },
                 {name: 'Ivan Vorobeynikov', text: 'Норм водолазка', rating: 3, id: '620137a577fffe0cd128be85'},
             ],
-            imageURL: require("../src/pages/Men/img/men_1.jpg"),
+            imageURL: require("../src/pages/Men/img/Vodolazka_1.avif"),
             images: [
                 {
                     color: 'Black',
-                    url: '../img/men_1.jpg',
+                    url: require("../src/pages/Men/img/Vodolazka_2.jpg"),
                     id: '62012eeb7d2312f4e7932f0e',
                 },
                 {
                     color: 'Black',
-                    url: '../img/men_1.jpg',
+                    url: require("../src/pages/Men/img/Vodolazka_3.jpg"),
                     id: '62012eef7d2312f4e7932f12',
                 },
             ],
