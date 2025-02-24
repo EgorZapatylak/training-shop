@@ -194,16 +194,16 @@
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 425px) {
     .line {
         margin: 0 auto;
-        width: 360px !important;
+        width: 425px !important;
     }
 
     .item_hed {
         display: flex;
         margin: 20px auto;
-        width: 330px;
+        width: 395px;
     }
 
     .sort {
@@ -213,7 +213,7 @@
 
     .items {
         margin: 0 auto;
-        width: 360px;
+        width: 425px;
     }
 
     .clothes {
@@ -230,6 +230,6 @@
     }
 
     .women_button {
-        width: 360px;
+        width: 425px;
     }
 }
