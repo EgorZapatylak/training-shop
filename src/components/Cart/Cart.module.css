@@ -165,4 +165,21 @@
 
 }
 
+@media (max-width: 360px) {
+    .cart_item ul {
+        height: auto;
+        width: 328px;
+        gap: 20px;
+    }
+
+    .cart_item_price {
+        width: 205px;
+    }
+
+    .cart_button button{
+        width: 328px;
+    }
+
+}
+
 
