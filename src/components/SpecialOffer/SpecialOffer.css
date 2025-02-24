@@ -115,16 +115,16 @@
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 425px) {
     .offer {
-        width: 360px;
+        width: 425px;
         height: 210px;
         margin: 0 auto;
     }
 
     .women_img {
         position: absolute;
-        left: 7px;
+        left: 68px;
         top: 39px;
         width: 97px;
         height: 183px;
@@ -133,7 +133,7 @@
 
     .men_img {
         position: absolute;
-        left: 265px;
+        left: 270px;
         top: 36px;
         width: 69px;
         height: 164px;
