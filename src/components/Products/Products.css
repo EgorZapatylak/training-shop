@@ -194,16 +194,16 @@
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 480px) {
     .line {
         margin: 0 auto;
-        width: 425px !important;
+        width: 480px !important;
     }
 
     .item_hed {
         display: flex;
         margin: 20px auto;
-        width: 395px;
+        width: 450px;
     }
 
     .sort {
@@ -213,7 +213,7 @@
 
     .items {
         margin: 0 auto;
-        width: 425px;
+        width: 480px;
     }
 
     .clothes {
@@ -230,6 +230,46 @@
     }
 
     .women_button {
-        width: 425px;
+        width: 480px;
+    }
+}
+
+@media (max-width: 360px) {
+    .line {
+        margin: 0 auto;
+        width: 360px !important;
+    }
+
+    .item_hed {
+        display: flex;
+        margin: 20px auto;
+        width: 330px;
+    }
+
+    .sort {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .items {
+        margin: 0 auto;
+        width: 360px;
+    }
+
+    .clothes {
+        margin-right: 0;
+    }
+
+    .clothes_info:hover {
+        margin-top: 320px;
+        height: 60px;
+    }
+
+    .clothes_event {
+        display: none;
+    }
+
+    .women_button {
+        width: 360px;
     }
 }
