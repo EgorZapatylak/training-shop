@@ -1026,7 +1026,7 @@ button.selected {
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 360px) {
     .product_header {
         width: 330px;
     }
