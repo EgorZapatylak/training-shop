@@ -226,7 +226,7 @@
     .mySwiper {
         display: flex;
         width: 330px;
-        height: auto;
+        height: 320px;
         margin-top: 15px;
     }
 
