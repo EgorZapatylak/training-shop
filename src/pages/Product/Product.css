@@ -255,6 +255,10 @@
     opacity: 1;
 }
 
+.swiper-slide {
+    height: 113px;
+}
+
 .choise {
     display: flex;
     position: relative;
