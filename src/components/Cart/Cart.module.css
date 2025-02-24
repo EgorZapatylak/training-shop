@@ -148,7 +148,7 @@
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 480px) {
     .cart_item ul {
         height: auto;
         width: 328px;
