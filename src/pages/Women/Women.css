@@ -1,4 +1,6 @@
-
+* {
+    border: 1px solid red;
+}
 .women_header {
     display: flex;
     width: 1250px;
@@ -281,7 +283,7 @@
     }
 
     .title {
-        width: 330px !important;
+        width: 360px !important;
     }
 
     .edit {
