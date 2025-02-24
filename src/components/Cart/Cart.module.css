@@ -130,10 +130,11 @@
     border: none;
     cursor: pointer;
     background-color: black;
-    margin-bottom: 20px;
+    margin: 20px;
     padding: 0;
     color: white;
 }
+
 
 @media (max-width: 992px) {
     .cart_item ul {
