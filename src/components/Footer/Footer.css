@@ -291,15 +291,15 @@
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 425px) {
     .footer {
-        width: 360px;
+        width: 425px;
         padding-top: 20px;
         margin: 0 auto;
     }
 
     .footer_top {
-        width: 330px;
+        width: 395px;
         margin-top: 20px;
     }
 
@@ -324,7 +324,7 @@
     }
 
     .footer_main {
-        width: 330px;
+        width: 395px;
         margin: 10px auto;
         flex-wrap: wrap;
         gap: 10px;
@@ -360,7 +360,7 @@
     }
 
     .footer_bot {
-        width: 330px;
+        width: 395px;
         margin: 0 auto;
     }
     .prava {
