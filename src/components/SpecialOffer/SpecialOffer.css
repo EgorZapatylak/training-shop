@@ -115,9 +115,68 @@
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 480px) {
     .offer {
-        width: 425px;
+        width: 480px;
+        height: 210px;
+        margin: 0 auto;
+    }
+
+    .women_img {
+        position: absolute;
+        left: 68px;
+        top: 39px;
+        width: 97px;
+        height: 183px;
+        background-size: cover;
+    }
+
+    .men_img {
+        position: absolute;
+        left: 270px;
+        top: 36px;
+        width: 69px;
+        height: 164px;
+        background-size: cover;
+    }
+
+    .offer_container {
+        width: 180px;
+        height: 160px;
+    }
+
+    .offer_container p {
+        margin-top: 20px;
+        font-size: 4px;
+    }
+
+    .offer_container span{
+        line-height: 12px;
+        width: 80px;
+        font-size: 8px;
+        margin-top: 4px;
+        height: 40px;
+    }
+
+    .offer_container input {
+        width: 106px;
+        height: 18px;
+        margin-top: 6px;
+        font-size: 8px;
+    }
+
+    .offer_container button {
+        width: 106px;
+        height: 18px;
+        margin-top: 6px;
+        font-size: 8px;
+        line-height: normal;
+    }
+}
+
+@media (max-width: 360px) {
+    .offer {
+        width: 360px;
         height: 210px;
         margin: 0 auto;
     }
