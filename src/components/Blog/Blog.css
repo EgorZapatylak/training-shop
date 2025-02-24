@@ -177,9 +177,9 @@
 
 }
 
-@media (max-width: 360px) {
+@media (max-width: 425px) {
     .blog_header {
-        width: 330px;
+        width: 395px;
         margin: 15px auto;
     }
     .blog_header p {
@@ -201,7 +201,7 @@
     }
 
     .blog_post {
-        width: 330px;
+        width: 395px;
         margin: 0 auto;
         flex-direction: column;
         gap: 10px;
@@ -210,11 +210,11 @@
     .box_1,
     .box_2,
     .box_3 {
-        width: 330px;
+        width: 395px;
         position: unset;
         justify-content: center;
         align-items: center;
-        background-size: 330px;
+        background-size: 395px;
     }
 
     .data {
