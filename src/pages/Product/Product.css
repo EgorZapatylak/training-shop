@@ -1026,13 +1026,13 @@ button.selected {
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 480px) {
     .product_header {
-        width: 395px;
+        width: 450px;
     }
 
     .rate {
-        width: 395px;
+        width: 450px;
     }
 
     .reviews {
@@ -1046,21 +1046,21 @@ button.selected {
     }
 
     .content {
-        width: 395px;
+        width: 450px;
         margin: 15px 0 0 0;
         padding: 0 15px;
         flex-direction: column;
     }
 
     .choise {
-        width: 395px;
+        width: 450px;
         background-size: contain;
         background-repeat: no-repeat;
         height: 412px;
     }
 
     .choise img {
-        width: 395px;
+        width: 450px;
         height: 412px;
     }
 
@@ -1069,7 +1069,7 @@ button.selected {
     }
 
     .content {
-        width: 395px;
+        width: 450px;
     }
 
     .content_row {
@@ -1078,17 +1078,17 @@ button.selected {
 
     .content_info {
         padding: 0;
-        width: 395px;
+        width: 450px;
         margin-top: 20px;
     }
 
     .color_img {
-        width: 395px;
+        width: 450px;
         justify-content: space-between;
     }
 
     .line {
-        width: 395px !important;
+        width: 480px !important;
     }
 
     .shipping_prod_img {
@@ -1096,7 +1096,7 @@ button.selected {
     }
 
     .pay {
-        width: 395px;
+        width: 450px;
         height: 54px;
         justify-content: center;
         gap: 10px;
@@ -1113,7 +1113,7 @@ button.selected {
     }
 
     .add_inf {
-        width: 395px;
+        width: 450px;
     }
 
     .reviews {
@@ -1122,17 +1122,143 @@ button.selected {
     }
 
     .reviews_section {
-        width: 395px;
+        width: 450px;
     }
 
     .related {
-        width: 395px;
+        width: 450px;
         margin: 15px;
         padding: 0;
     }
 
     .related_status {
-        width: 395px;
+        width: 450px;
+        margin-bottom: 15px;
+    }
+
+    .related_status p {
+        font-size: 18px;
+    }
+
+    .related_img .swiper-slide{
+        width: auto;
+        height: auto;
+        justify-content: center;
+    }
+
+    .scale_1 {
+        margin: 0;
+    }
+
+}
+
+@media (max-width: 360px) {
+    .product_header {
+        width: 330px;
+    }
+
+    .rate {
+        width: 330px;
+    }
+
+    .reviews {
+        margin-left: 0;
+    }
+
+    .rate_rate {
+        margin-right: 0;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    .content {
+        width: 330px;
+        margin: 15px 0 0 0;
+        padding: 0 15px;
+        flex-direction: column;
+    }
+
+    .choise {
+        width: 330px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 412px;
+    }
+
+    .choise img {
+        width: 330px;
+        height: 412px;
+    }
+
+    .btn_right {
+        left: calc(92% - 40px / 2);
+    }
+
+    .content {
+        width: 330px;
+    }
+
+    .content_row {
+        display: none;
+    }
+
+    .content_info {
+        padding: 0;
+        width: 330px;
+        margin-top: 20px;
+    }
+
+    .color_img {
+        width: 330px;
+        justify-content: space-between;
+    }
+
+    .line {
+        width: 360px !important;
+    }
+
+    .shipping_prod_img {
+        width: 30px;
+    }
+
+    .pay {
+        width: 330px;
+        height: 54px;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .price {
+        justify-content: space-between;
+    }
+
+    .price button {
+        width: 132px;
+        margin:0 0 0 24px;
+    }
+
+    .add_inf {
+        width: 330px;
+    }
+
+    .reviews {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .reviews_section {
+        width: 330px;
+    }
+
+    .related {
+        width: 330px;
+        margin: 15px;
+        padding: 0;
+    }
+
+    .related_status {
+        width: 330px;
         margin-bottom: 15px;
     }
 
