@@ -19,10 +19,17 @@ h5 {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 480px) {
   .main {
     margin: 0 auto;
-    width: 425px;
+    width: 480px;
+  }
+}
+
+@media (max-width: 360px) {
+  .main {
+    margin: 0 auto;
+    width: 360px;
   }
 }
 /*------FOOTER-------*/
