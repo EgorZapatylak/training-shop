@@ -189,7 +189,7 @@
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 360px) {
     .men_header {
         width: 330px;
     }
