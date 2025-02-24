@@ -76,9 +76,16 @@ export function Cart() {
                                         </div>
                                         <div className={styles.cart_item_price}>
                                             <div className={styles.cart_item_price_block}>
-                                                <button onClick={() => dispatch(decreaseQuantity(item.id))}>-</button>
+                                                <button onClick={() => dispatch(decreaseQuantity({
+                                                    id:item.id,
+                                                    color:item.color,
+                                                    size:item.size
+                                                    }))}>-</button>
                                                 <p>{item.quantity}</p>
-                                                <button onClick={() => dispatch(increaseQuantity(item.id))}>+</button>
+                                                <button onClick={() => dispatch(increaseQuantity({
+                                                    id:item.id,
+                                                    color:item.color,
+                                                    size:item.size}))}>+</button>
                                             </div>
                                             <h3>$ {(calculatePriceDiscount(item) * item.quantity).toFixed(2)}</h3>
                                             <img src={Bin} alt='trash_bin' width='25'
