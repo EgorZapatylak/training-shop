@@ -346,7 +346,7 @@ export default function Product() {
                             ADDITIONAL INFORMATION
                         </div>
                         <div className="add_inf_color">Color:
-                            <p>{[...new Set(product.images.map((img) => img.color))]}</p>
+                            <p>{[...new Set(product.images.map((img) => img.color))].join(', ')}</p>
                         </div>
                         <div className="add_inf_color">Size:
                             <p>{[...new Set(product.sizes.join(', ').slice(0, -3))]}</p>
