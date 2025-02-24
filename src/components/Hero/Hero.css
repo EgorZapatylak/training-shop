@@ -210,22 +210,22 @@
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 480px) {
     .hero {
         margin: 0 auto;
         display: flex;
-        width: 395px;
+        width: 450px;
         flex-direction: column;
     }
 
     .mySwiper img {
-        width: 395px;
+        width: 450px;
         height: 320px;
     }
 
     .mySwiper {
         display: flex;
-        width: 395px;
+        width: 450px;
         height: 320px;
         margin-top: 15px;
     }
@@ -238,7 +238,7 @@
     }
 
     .red {
-        width: 395px;
+        width: 450px;
     }
 
     .red > .green {
@@ -265,25 +265,104 @@
     .women,
     .men {
         display: flex;
-        width: 395px;
+        width: 450px;
         justify-content: center;
     }
 
     .women img,
     .men img {
         height: auto;
-        width: 395px;
+        width: 450px;
     }
 
     .accessories {
         display: flex;
-        width: 395px;
+        width: 450px;
         height: auto;
         margin-top: 15px;
     }
 
     .accessories img {
-        width: 395px;
+        width: 450px;
+        height: 200px;
+    }
+
+}
+
+@media (max-width: 360px) {
+    .hero {
+        margin: 0 auto;
+        display: flex;
+        width: 330px;
+        flex-direction: column;
+    }
+
+    .mySwiper img {
+        width: 330px;
+        height: 320px;
+    }
+
+    .mySwiper {
+        display: flex;
+        width: 330px;
+        height: 320px;
+        margin-top: 15px;
+    }
+
+    .banner_content {
+        width: 220px;
+        height: 65px;
+        top: calc(50% - 70px / 2);
+        left: calc(50% - 220px / 2);
+    }
+
+    .red {
+        width: 330px;
+    }
+
+    .red > .green {
+        display: flex;
+        height: auto;
+        gap: 15px;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 15px;
+        width: 330px;
+    }
+
+    .green_button:hover {
+        left: calc(50% - 118px / 2);
+        top: calc(50% - 48px / 2);
+        width: 118px;
+    }
+
+    .accessories_button:hover {
+        left: calc(50% - 166px / 2);
+        width: 166px;
+    }
+
+    .women,
+    .men {
+        display: flex;
+        width: 330px;
+        justify-content: center;
+    }
+
+    .women img,
+    .men img {
+        height: auto;
+        width: 330px;
+    }
+
+    .accessories {
+        display: flex;
+        width: 330px;
+        height: auto;
+        margin-top: 15px;
+    }
+
+    .accessories img {
+        width: 330px;
         height: 200px;
     }
 
