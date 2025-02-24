@@ -229,7 +229,7 @@ export default function Product() {
                         >
                             {product.images.map((img, index) => (
                                 <SwiperSlide key={index}>
-                                    <img src={product.images[index].url} alt={product.name} height='113'/>
+                                    <img src={product.images[index].url} alt={product.name} height='113' width='90'/>
                                 </SwiperSlide>
                             ))}
                         </Swiper>
@@ -248,7 +248,7 @@ export default function Product() {
                         >
                             {product.images.map((img, index) => (
                                 <SwiperSlide key={index}>
-                                    <img src={product.images[index].url} alt={product.name}/>
+                                    <img src={product.images[index].url} alt={product.name} height='560' width='448'/>
                                 </SwiperSlide>
                             ))}
                         </Swiper>
@@ -265,14 +265,18 @@ export default function Product() {
                         </div>
                         <div className='color_img'>
                             {/* Оторажение всех достуаных цветов */}
-                            {[...new Set(product.images.map((img) => img.color))].map((color, index) => (
-                                <button
-                                    key={index}
-                                    className={selectedColor === color ? 'selected' : ''}
-                                    onClick={() => handleColorSelect(color)}>
-                                    <img src={product.imageURL} alt={color} title={color}/>
-                                </button>
-                            ))}
+                            {[...new Set(product.images.map((img) => img.color))].map((color, index) => {
+                                const imageForColor = product.images.find((img) => img.color === color);
+
+                                return (
+                                    <button
+                                        key={index}
+                                        className={selectedColor === color ? 'selected' : ''}
+                                        onClick={() => handleColorSelect(color)}>
+                                        {imageForColor && <img src={imageForColor.url} alt={color} title={color}/>}
+                                    </button>
+                                );
+                            })}
                         </div>
                         <div className='size'>
                             <p>Size:</p>
