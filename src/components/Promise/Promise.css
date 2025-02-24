@@ -105,18 +105,44 @@
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 480px) {
     .promise {
         display: flex;
         margin: 25px auto;
-        width: 395px;
+        width: 480px;
         flex-direction: column;
         gap: 10px;
     }
 
     .new_collection,
     .sale{
-        width: 395px;
+        width: 450px;
+        height: 210px;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .coll_item{
+        width: calc(65% + 90px/2);
+    }
+
+    .sale_item {
+        width: calc(50% + 90px/2);
+    }
+}
+
+@media (max-width: 360px) {
+    .promise {
+        display: flex;
+        margin: 25px auto;
+        width: 360px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .new_collection,
+    .sale{
+        width: 330px;
         height: 210px;
         background-position: center;
         background-size: cover;
