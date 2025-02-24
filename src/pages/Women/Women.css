@@ -244,9 +244,9 @@
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 480px) {
     .women_header {
-        width: 395px;
+        width: 450px;
     }
 
     .road,
@@ -258,11 +258,34 @@
     }
 
     .title {
-        width: 425px !important;
+        width: 450px !important;
     }
 
     .edit {
-        width: 395px;
+        width: 450px;
+        align-items: center;
+    }
+}
+
+@media (max-width: 360px) {
+    .women_header {
+        width: 330px;
+    }
+
+    .road,
+    .share,
+    .filter,
+    .veia,
+    .categor {
+        margin: 0 !important;
+    }
+
+    .title {
+        width: 330px !important;
+    }
+
+    .edit {
+        width: 330px;
         align-items: center;
     }
 }
