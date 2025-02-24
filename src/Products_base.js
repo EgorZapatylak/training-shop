@@ -69,52 +69,47 @@ export const Products_base = {
             sizes: ['M INT'],
             discount: null,
             reviews: [],
-            imageURL: require("../src/pages/Men/img/men_2.jpg"),
+            imageURL: require("../src/pages/Men/img/Djemper_1_hacks.jpg"),
             images: [
                 {
-                    color: 'Blue',
-                    url: '../img/men_2.jpg',
+                    color: 'Hacks',
+                    url: require("../src/pages/Men/img/Djemper_1_hacks.jpg"),
                     id: '62012fb27d2312f4e7932f1e',
                 },
                 {
-                    color: 'Blue',
-                    url: '../img/men_2.jpg',
+                    color: 'Hacks',
+                    url: require("../src/pages/Men/img/Djemper_2_hacks.jpg"),
                     id: '62012fb67d2312f4e7932f21',
                 },
                 {
-                    color: 'Blue',
-                    url: '../img/men_2.jpg',
+                    color: 'Hacks',
+                    url: require("../src/pages/Men/img/Djemper_3_hacks.jpg"),
                     id: '62012fba7d2312f4e7932f24',
                 },
                 {
-                    color: 'White',
-                    url: '../img/men_2.jpg',
+                    color: 'Hacks',
+                    url: require("../src/pages/Men/img/Djemper_4_hacks.jpg"),
                     id: '620130687d2312f4e7932f2d',
                 },
                 {
-                    color: 'White',
-                    url: '../img/men_2.jpg',
+                    color: 'Brown',
+                    url: require("../src/pages/Men/img/Djemper_1_brown.jpg"),
                     id: '6201306c7d2312f4e7932f30',
                 },
                 {
-                    color: 'White',
-                    url: '../img/men_2.jpg',
+                    color: 'Brown',
+                    url: require("../src/pages/Men/img/Djemper_2_brown.jpg"),
                     id: '6201306f7d2312f4e7932f33',
                 },
                 {
                     color: 'Brown',
-                    url: '../img/men_2.jpg',
+                    url: require("../src/pages/Men/img/Djemper_3_brown.jpg"),
                     id: '620130a57d2312f4e7932f36',
                 },
                 {
                     color: 'Brown',
-                    url: '../img/men_2.jpg',
+                    url: require("../src/pages/Men/img/Djemper_4_brown.jpg"),
                     id: '620130a97d2312f4e7932f39',
-                },
-                {
-                    color: 'Brown',
-                    url: '../img/men_2.jpg',
-                    id: '620130ae7d2312f4e7932f3c',
                 },
             ],
             id: 2
@@ -127,7 +122,7 @@ export const Products_base = {
                 isMostViewed: false,
                 isFeatured: false,
             },
-            name: 'Полувер',
+            name: 'Поло',
             category: 'men',
             brand: 'Auden Cavill',
             material: 'Хлопок - 50%, Полиэстер - 50%',
@@ -136,23 +131,69 @@ export const Products_base = {
             sizes: ['M INT'],
             discount: null,
             reviews: [],
-            imageURL: require("../src/pages/Men/img/men_3.jpg"),
+            imageURL: require("../src/pages/Men/img/Polo_1_hacks.jpg"),
             images: [
                 {
-                    color: 'Green',
-                    url: '../img/men_3.jpg',
+                    color: 'Blue',
+                    url: require("../src/pages/Men/img/Polo_1_blue.jpg"),
                     id: '6201311e7d2312f4e7932f3f',
                 },
                 {
-                    color: 'Orange',
-                    url: '../img/men_3.jpg',
+                    color: 'Blue',
+                    url: require("../src/pages/Men/img/Polo_2_blue.jpg"),
+                    id: '6201311e7d2312f4e7932f3f',
+                },
+                {
+                    color: 'Blue',
+                    url: require("../src/pages/Men/img/Polo_3_blue.jpg"),
+                    id: '6201311e7d2312f4e7932f3f',
+                },
+                {
+                    color: 'Blue',
+                    url: require("../src/pages/Men/img/Polo_4_blue.jpg"),
+                    id: '6201311e7d2312f4e7932f3f',
+                },
+                {
+                    color: 'White',
+                    url: require("../src/pages/Men/img/Polo_1_white.jpg"),
                     id: '6201314b7d2312f4e7932f4f',
                 },
                 {
-                    color: 'Orange',
-                    url: '../img/men_3.jpg',
+                    color: 'White',
+                    url: require("../src/pages/Men/img/Polo_2_white.jpg"),
+                    id: '6201314b7d2312f4e7932f4f',
+                },
+                {
+                    color: 'White',
+                    url: require("../src/pages/Men/img/Polo_3_white.jpg"),
+                    id: '6201314b7d2312f4e7932f4f',
+                },
+                {
+                    color: 'White',
+                    url: require("../src/pages/Men/img/Polo_4_white.jpg"),
+                    id: '6201314b7d2312f4e7932f4f',
+                },
+                {
+                    color: 'Hacks',
+                    url: require("../src/pages/Men/img/Polo_1_hacks.jpg"),
                     id: '6201314f7d2312f4e7932f52',
                 },
+                {
+                    color: 'Hacks',
+                    url: require("../src/pages/Men/img/Polo_2_hacks.jpg"),
+                    id: '6201314f7d2312f4e7932f52',
+                },
+                {
+                    color: 'Hacks',
+                    url: require("../src/pages/Men/img/Polo_3_hacks.jpg"),
+                    id: '6201314f7d2312f4e7932f52',
+                },
+                {
+                    color: 'Hacks',
+                    url: require("../src/pages/Men/img/Polo_4_hacks.jpg"),
+                    id: '6201314f7d2312f4e7932f52',
+                },
+
             ],
             id: 3,
         },
@@ -164,7 +205,7 @@ export const Products_base = {
                 isMostViewed: true,
                 isFeatured: false,
             },
-            name: 'Свитер',
+            name: 'Кардиган',
             category: 'men',
             brand: 'Primo Emporio',
             material: 'Акрил - 85%, Шерсть - 15%',
@@ -174,31 +215,36 @@ export const Products_base = {
             discount: null,
             reviews: [
                 {name: 'Alesha Popovich', text: 'Хороший товар!', rating: 1, id: '620134b07d2312f4e7932fa5'}],
-            imageURL: require("../src/pages/Men/img/men_4.jpg"),
+            imageURL: require("../src/pages/Men/img/Cardigan_1_black.jpg"),
             images: [
                 {
-                    color: 'White',
-                    url: '../img/men_4.jpg',
+                    color: 'Blue',
+                    url: require("../src/pages/Men/img/Cardigan_1_blue.jpg"),
                     id: '620131f67d2312f4e7932f55',
                 },
                 {
-                    color: 'White',
-                    url: '../img/men_4.jpg',
+                    color: 'Blue',
+                    url: require("../src/pages/Men/img/Cardigan_2_blue.jpg"),
+                    id: '620131fb7d2312f4e7932f58',
+                },
+                {
+                    color: 'Blue',
+                    url: require("../src/pages/Men/img/Cardigan_3_blue.jpg"),
                     id: '620131fb7d2312f4e7932f58',
                 },
                 {
                     color: 'Black',
-                    url: '../img/men_4.jpg',
+                    url: require("../src/pages/Men/img/Cardigan_1_black.jpg"),
                     id: '620132187d2312f4e7932f5b',
                 },
                 {
                     color: 'Black',
-                    url: '../img/men_4.jpg',
+                    url: require("../src/pages/Men/img/Cardigan_2_black.jpg"),
                     id: '6201321c7d2312f4e7932f5e',
                 },
                 {
                     color: 'Black',
-                    url: '../img/men_4.jpg',
+                    url: require("../src/pages/Men/img/Cardigan_3_black.jpg"),
                     id: '620132207d2312f4e7932f61',
                 },
             ],
@@ -225,17 +271,17 @@ export const Products_base = {
             images: [
                 {
                     color: 'Multicolor',
-                    url: '../img/men_5.jpg',
+                    url: require("../src/pages/Men/img/men_5.jpg"),
                     id: '6203641877fffe0cd128c037',
                 },
                 {
                     color: 'Multicolor',
-                    url: '../img/men_5.jpg',
+                    url: require("../src/pages/Men/img/men_5.jpg"),
                     id: '6203641c77fffe0cd128c03a',
                 },
                 {
                     color: 'Multicolor',
-                    url: '../img/men_5.jpg',
+                    url: require("../src/pages/Men/img/men_5.jpg"),
                     id: '6203642177fffe0cd128c03d',
                 },
             ],
@@ -281,32 +327,32 @@ export const Products_base = {
             images: [
                 {
                     color: 'Blue',
-                    url: '../img/men_6.jpg',
+                    url: require("../src/pages/Men/img/men_6.jpg"),
                     id: '620364e677fffe0cd128c040',
                 },
                 {
                     color: 'Blue',
-                    url: '../img/men_6.jpg',
+                    url: require("../src/pages/Men/img/men_6.jpg"),
                     id: '620364ea77fffe0cd128c043',
                 },
                 {
                     color: 'Blue',
-                    url: '../img/men_6.jpg',
+                    url: require("../src/pages/Men/img/men_6.jpg"),
                     id: '620364ee77fffe0cd128c046',
                 },
                 {
                     color: 'Beige',
-                    url: '../img/men_6.jpg',
+                    url: require("../src/pages/Men/img/men_6.jpg"),
                     id: '6203652e77fffe0cd128c049',
                 },
                 {
                     color: 'Beige',
-                    url: '../img/men_6.jpg',
+                    url: require("../src/pages/Men/img/men_6.jpg"),
                     id: '6203653277fffe0cd128c04c',
                 },
                 {
                     color: 'Beige',
-                    url: '../img/men_6.jpg',
+                    url: require("../src/pages/Men/img/men_6.jpg"),
                     id: '6203653677fffe0cd128c04f',
                 },
             ],
@@ -340,47 +386,47 @@ export const Products_base = {
             images: [
                 {
                     color: 'Black',
-                    url: '../img/men_7.jpg',
+                    url: require("../src/pages/Men/img/men_7.jpg"),
                     id: '62039ad177fffe0cd128c18b',
                 },
                 {
                     color: 'Black',
-                    url: '../img/men_7.jpg',
+                    url: require("../src/pages/Men/img/men_7.jpg"),
                     id: '62039ad577fffe0cd128c18e',
                 },
                 {
                     color: 'Black',
-                    url: '../img/men_7.jpg',
+                    url: require("../src/pages/Men/img/men_7.jpg"),
                     id: '62039ad977fffe0cd128c191',
                 },
                 {
                     color: 'Grey',
-                    url: '../img/men_7.jpg',
+                    url: require("../src/pages/Men/img/men_7.jpg"),
                     id: '62039af077fffe0cd128c194',
                 },
                 {
                     color: 'Grey',
-                    url: '../img/men_7.jpg',
+                    url: require("../src/pages/Men/img/men_7.jpg"),
                     id: '62039af377fffe0cd128c197',
                 },
                 {
                     color: 'Grey',
-                    url: '../img/men_7.jpg',
+                    url: require("../src/pages/Men/img/men_7.jpg"),
                     id: '62039af677fffe0cd128c19a',
                 },
                 {
                     color: 'Blue',
-                    url: '../img/men_7.jpg',
+                    url: require("../src/pages/Men/img/men_7.jpg"),
                     id: '62039b1377fffe0cd128c19d',
                 },
                 {
                     color: 'Blue',
-                    url: '../img/men_7.jpg',
+                    url: require("../src/pages/Men/img/men_7.jpg"),
                     id: '62039b1777fffe0cd128c1a0',
                 },
                 {
                     color: 'Blue',
-                    url: '../img/men_7.jpg',
+                    url: require("../src/pages/Men/img/men_7.jpg"),
                     id: '62039b1b77fffe0cd128c1a3',
                 },
             ],
@@ -417,12 +463,12 @@ export const Products_base = {
             images: [
                 {
                     color: 'White',
-                    url: '../img/men_8.jpg',
+                    url: require("../src/pages/Men/img/men_8.jpg"),
                     id: '6203ad5877fffe0cd128c1bc',
                 },
                 {
                     color: 'Brown',
-                    url: '../img/men_8.jpg',
+                    url: require("../src/pages/Men/img/men_8.jpg"),
                     id: '6203ad6e77fffe0cd128c1bf',
                 },
             ],
@@ -462,7 +508,7 @@ export const Products_base = {
             images: [
                 {
                     color: 'White',
-                    url: '../img/men_1.jpg',
+                    url: require("../src/pages/Men/img/men_1.jpg"),
                     id: '6203af0c77fffe0cd128c1ee',
                 },
             ],
@@ -497,7 +543,7 @@ export const Products_base = {
             images: [
                 {
                     color: 'Turquoise',
-                    url: '../img/men_2.jpg',
+                    url: require("../src/pages/Men/img/men_2.jpg"),
                     id: '6203afd477fffe0cd128c1ff',
                 },
             ],
@@ -532,12 +578,12 @@ export const Products_base = {
             images: [
                 {
                     color: 'White',
-                    url: '../img/men_3.jpg',
+                    url: require("../src/pages/Men/img/men_3.jpg"),
                     id: '6204f68d77fffe0cd128c5fb',
                 },
                 {
                     color: 'Blue',
-                    url: '../img/men_3.jpg',
+                    url: require("../src/pages/Men/img/men_3.jpg"),
                     id: '6204f6a777fffe0cd128c5fe',
                 },
             ],
@@ -567,12 +613,12 @@ export const Products_base = {
             images: [
                 {
                     color: 'Blue',
-                    url: '../img/men_4.jpg',
+                    url: require("../src/pages/Men/img/men_4.jpg"),
                     id: '6204f78577fffe0cd128c613',
                 },
                 {
                     color: 'Black',
-                    url: '../img/men_4.jpg',
+                    url: require("../src/pages/Men/img/men_4.jpg"),
                     id: '6204f7a177fffe0cd128c616',
                 },
             ],
@@ -606,7 +652,7 @@ export const Products_base = {
             images: [
                 {
                     color: 'Black',
-                    url: '../img/men_5.jpg',
+                    url: require("../src/pages/Men/img/men_5.jpg"),
                     id: '6204f8ea77fffe0cd128c62b',
                 },
             ],
@@ -641,12 +687,12 @@ export const Products_base = {
             images: [
                 {
                     color: 'White',
-                    url: '../img/men_6.jpg',
+                    url: require("../src/pages/Men/img/men_6.jpg"),
                     id: '6204f95a77fffe0cd128c634',
                 },
                 {
                     color: 'Blue',
-                    url: '../img/men_6.jpg',
+                    url: require("../src/pages/Men/img/men_6.jpg"),
                     id: '6204f97277fffe0cd128c637',
                 },
             ],
@@ -673,7 +719,7 @@ export const Products_base = {
             images: [
                 {
                     color: 'White',
-                    url: '../img/men_7.jpg',
+                    url: require("../src/pages/Men/img/men_7.jpg"),
                     id: '62050b0e77fffe0cd128c7b9',
                 },
             ],
@@ -708,12 +754,12 @@ export const Products_base = {
             images: [
                 {
                     color: 'Grey',
-                    url: '../img/men_8.jpg',
+                    url: require("../src/pages/Men/img/men_8.jpg"),
                     id: '62050bab77fffe0cd128c7c2',
                 },
                 {
                     color: 'Black',
-                    url: '../img/men_8.jpg',
+                    url: require("../src/pages/Men/img/men_8.jpg"),
                     id: '62050bc077fffe0cd128c7c5',
                 },
             ],
@@ -760,12 +806,12 @@ export const Products_base = {
             images: [
                 {
                     color: 'Vinous',
-                    url: '../img/men_1.jpg',
+                    url: require("../src/pages/Men/img/men_1.jpg"),
                     id: '62050c8b77fffe0cd128c7da',
                 },
                 {
                     color: 'Beige',
-                    url: '../img/men_1.jpg',
+                    url: require("../src/pages/Men/img/men_1.jpg"),
                     id: '62050cab77fffe0cd128c7dd',
                 },
             ],
@@ -795,12 +841,12 @@ export const Products_base = {
             images: [
                 {
                     color: 'Yellow',
-                    url: '../img/men_2.jpg',
+                    url: require("../src/pages/Men/img/men_2.jpg"),
                     id: '6205107577fffe0cd128c80c',
                 },
                 {
                     color: 'Blue',
-                    url: '../img/men_2.jpg',
+                    url: require("../src/pages/Men/img/men_2.jpg"),
                     id: '6205109877fffe0cd128c80f',
                 },
             ],
@@ -834,7 +880,7 @@ export const Products_base = {
             images: [
                 {
                     color: 'Green',
-                    url: '../img/men_3.jpg',
+                    url: require("../src/pages/Men/img/men_3.jpg"),
                     id: '6205117c77fffe0cd128c824',
                 },
             ],
@@ -870,12 +916,12 @@ export const Products_base = {
             images: [
                 {
                     color: 'Blue',
-                    url: '../img/men_4.jpg',
+                    url: require("../src/pages/Men/img/men_4.jpg"),
                     id: '6205121577fffe0cd128c888',
                 },
                 {
                     color: 'Black',
-                    url: '../img/men_4.jpg',
+                    url: require("../src/pages/Men/img/men_4.jpg"),
                     id: '6205123177fffe0cd128c88b',
                 },
             ],
