@@ -329,6 +329,7 @@
         flex-wrap: wrap;
         gap: 10px;
         height: auto;
+        justify-content: space-around;
     }
 
     .categories {
@@ -408,7 +409,7 @@
     }
 
     .footer_main {
-        width: 370px;
+        width: 330px;
         margin: 10px auto;
         flex-wrap: wrap;
         gap: 10px;
@@ -417,7 +418,7 @@
 
     .categories {
         height: auto;
-        width: 160px;
+        width: 150px;
     }
 
     .categories h3 {
