@@ -210,22 +210,22 @@
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 425px) {
     .hero {
         margin: 0 auto;
         display: flex;
-        width: 330px;
+        width: 395px;
         flex-direction: column;
     }
 
     .mySwiper img {
-        width: 330px;
+        width: 395px;
         height: 320px;
     }
 
     .mySwiper {
         display: flex;
-        width: 330px;
+        width: 395px;
         height: 320px;
         margin-top: 15px;
     }
@@ -238,7 +238,7 @@
     }
 
     .red {
-        width: 330px;
+        width: 395px;
     }
 
     .red > .green {
@@ -265,25 +265,25 @@
     .women,
     .men {
         display: flex;
-        width: 330px;
+        width: 395px;
         justify-content: center;
     }
 
     .women img,
     .men img {
         height: auto;
-        width: 330px;
+        width: 395px;
     }
 
     .accessories {
         display: flex;
-        width: 330px;
+        width: 395px;
         height: auto;
         margin-top: 15px;
     }
 
     .accessories img {
-        width: 330px;
+        width: 395px;
         height: 200px;
     }
 
