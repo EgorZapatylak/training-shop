@@ -19,10 +19,10 @@ h5 {
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 425px) {
   .main {
     margin: 0 auto;
-    width: 360px;
+    width: 425px;
   }
 }
 /*------FOOTER-------*/
