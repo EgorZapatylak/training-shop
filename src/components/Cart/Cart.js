@@ -20,9 +20,15 @@ export function Cart() {
         dispatch(closeCart()); // Закрываем корзину
         const lastProductId = localStorage.getItem('lastViewedProduct');
         if (lastProductId) {
-            navigate(`/product/${lastProductId}`); // Возврат на страницу товара
-        }else {
-         alert('Нет последнего добавленного товара!');
+            const product = [...Products_base.men, ...Products_base.women].find(p => String(p.id) === lastProductId);
+
+            if (product) {
+                navigate(`/${product.category}/${lastProductId}`); // Возврат на страницу товара
+            } else {
+                alert('Товар не найден!')
+            }
+        } else {
+            alert('Нет последнего добавленного товара!');
         }
     }
 
@@ -30,12 +36,13 @@ export function Cart() {
     const calculatePriceDiscount = (item) => {
 
         // Находим товары в Product_base
-        const product = Products_base.men.find((p) => p.id === item.id) || {};
+        const product = [...Products_base.men,...Products_base.women].find((p) => p.id === item.id) || {};
+
+        if (!product) return item.price //
         const discount = product.discount ? parseFloat(product.discount.toString().replace('%', '').replace('-', '')) : 0;
 
         // Вычисляем цену за еденицу с учетом скидки
-        const discountAmount = (item.price * discount) / 100;  //Считаем скидку
-        return item.price - discountAmount;
+        return item.price * (1 - discount/100)
     }
     // Итоговая стоимость корзины
     const totalCartPrice = cartItems.reduce((total, item) => {
@@ -77,15 +84,18 @@ export function Cart() {
                                         <div className={styles.cart_item_price}>
                                             <div className={styles.cart_item_price_block}>
                                                 <button onClick={() => dispatch(decreaseQuantity({
-                                                    id:item.id,
-                                                    color:item.color,
-                                                    size:item.size
-                                                    }))}>-</button>
+                                                    id: item.id,
+                                                    color: item.color,
+                                                    size: item.size
+                                                }))}>-
+                                                </button>
                                                 <p>{item.quantity}</p>
                                                 <button onClick={() => dispatch(increaseQuantity({
-                                                    id:item.id,
-                                                    color:item.color,
-                                                    size:item.size}))}>+</button>
+                                                    id: item.id,
+                                                    color: item.color,
+                                                    size: item.size
+                                                }))}>+
+                                                </button>
                                             </div>
                                             <h3>$ {(calculatePriceDiscount(item) * item.quantity).toFixed(2)}</h3>
                                             <img src={Bin} alt='trash_bin' width='25'
