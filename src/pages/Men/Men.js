@@ -130,6 +130,10 @@ export default function Men() {
 
             {/* Отображение выбранных фильтров */}
             <div className="selected-filters">
+                {/* Отображение счетчик товаров */}
+                <div>
+                    <b>{hasActiveFilters && <p>{filteredCount} items found</p>}</b>
+                </div>
                 {Object.entries(filters).flatMap(([key, values]) =>
                     values.map(value => (
                         <span key={value} className="filter-tag">
@@ -140,10 +144,7 @@ export default function Men() {
                 )}
             </div>
 
-            {/* Отображение счетчик товаров */}
-            <div>
-                {hasActiveFilters && <p>{filteredCount} items found</p>}
-            </div>
+
 
             {/* Всплывающее бургер-меню фильтро*/}
             {showFilter && (
