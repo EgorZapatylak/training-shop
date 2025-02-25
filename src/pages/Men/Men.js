@@ -214,7 +214,7 @@ export default function Men() {
             <div className={viewMode === "grid" ? "items grid" : "items list"}>
                 {filteredItems.slice(0, visibleCount).map(prod => (
                     <div key={prod.id} className='clothes'>
-                        <Link to={`/product/${prod.id}`}>
+                        <Link to={`/men/${prod.id}`}>
                             <div className={`mid_${prod.id}`}>
                                 {prod.discount && (
                                     <div className='discount_badge'>{prod.discount}</div>
