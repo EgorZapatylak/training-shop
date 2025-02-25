@@ -992,10 +992,6 @@ button.selected {
         flex-wrap: wrap;
     }
 
-    .price {
-        justify-content: space-between;
-    }
-
     .add_inf {
         width: 962px;
     }
