@@ -968,11 +968,11 @@ export const Products_base = {
             images: [
                 {
                     color: 'Multicolor',
-                    url: '/media/620126dda5293589353a9c74/RTLAAO978301_14935848_1_v1_2x.jpg',
+                    url: require("../src/pages/Women/img/women_1.jpg"),
                     id: '620512e977fffe0cd128c8ac',
                 },
             ],
-            id: '620126dda5293589353a9c74',
+            id: 1,
         },
         {
             particulars: {
@@ -1013,12 +1013,12 @@ export const Products_base = {
             images: [
                 {
                     color: 'Black',
-                    url: '/media/620126dda5293589353a9c75/RTLAAT332301_15495271_1_v1_2x.webp',
+                    url: require("../src/pages/Women/img/women_2.jpg"),
                     id: '620513c677fffe0cd128c98f',
                 },
                 {
                     color: 'Grey',
-                    url: '/media/620126dda5293589353a9c75/RTLABB210301_16189560_1_v1.webp',
+                    url: require("../src/pages/Women/img/women_2.jpg"),
                     id: '620513dd77fffe0cd128c992',
                 },
             ],
@@ -1044,7 +1044,7 @@ export const Products_base = {
             images: [
                 {
                     color: 'Multicolor',
-                    url: '/media/620126dda5293589353a9c76/RTLABD360301_16384317_1_v1_2x.webp',
+                    url: require("../src/pages/Women/img/women_3.jpg"),
                     id: '6205147877fffe0cd128c9b3',
                 },
             ],
@@ -1083,12 +1083,12 @@ export const Products_base = {
             images: [
                 {
                     color: 'Red',
-                    url: '/media/620126dda5293589353a9c77/RTLAAO630301_14895077_1_v1_2x.webp',
+                    url: require("../src/pages/Women/img/women_4.jpg"),
                     id: '6205155b77fffe0cd128c9b6',
                 },
                 {
                     color: 'Black',
-                    url: '/media/620126dda5293589353a9c77/RTLAAO630501_14895083_1_v1_2x.webp',
+                    url: require("../src/pages/Women/img/women_4.jpg"),
                     id: '6205157277fffe0cd128c9b9',
                 },
             ],
@@ -1175,12 +1175,12 @@ export const Products_base = {
             images: [
                 {
                     color: 'Black',
-                    url: '/media/620126dda5293589353a9c79/AD002EWLUHD0_12895739_1_v1_2x.webp',
+                    url: require("../src/pages/Women/img/women_5.jpg"),
                     id: '620515f177fffe0cd128c9ce',
                 },
                 {
                     color: 'Blue',
-                    url: '/media/620126dda5293589353a9c79/RTLAAT886601_15407757_1_v1_2x.webp',
+                    url: require("../src/pages/Women/img/women_5.jpg"),
                     id: '6205160177fffe0cd128c9d1',
                 },
             ],
@@ -1243,7 +1243,7 @@ export const Products_base = {
             images: [
                 {
                     color: 'Black',
-                    url: '/media/620126dda5293589353a9c78/RTLAAP963301_15028593_1_v1_2x.webp',
+                    url: require("../src/pages/Women/img/women_6.jpg"),
                     id: '6205176b77fffe0cd128caf1',
                 },
             ],
@@ -1288,17 +1288,17 @@ export const Products_base = {
             images: [
                 {
                     color: 'Black',
-                    url: '/media/620126dda5293589353a9c7d/RTLAAX520301_15791304_1_v1.webp',
+                    url: require("../src/pages/Women/img/women_7.jpg"),
                     id: '6205188a77fffe0cd128cb3e',
                 },
                 {
                     color: 'Green',
-                    url: '/media/620126dda5293589353a9c7d/RTLAAX520301_15791304_1_v1 (1).webp',
+                    url: require("../src/pages/Women/img/women_7.jpg"),
                     id: '620518b077fffe0cd128cb42',
                 },
                 {
                     color: 'White',
-                    url: '/media/620126dda5293589353a9c7d/RTLAAX660101_15809707_1_gggv1.webp',
+                    url: require("../src/pages/Women/img/women_7.jpg"),
                     id: '620518c277fffe0cd128cb45',
                 },
             ],
@@ -1337,12 +1337,12 @@ export const Products_base = {
             images: [
                 {
                     color: 'Black',
-                    url: '/media/620126dda5293589353a9c7b/RTLAAQ793701_15078412_1_v1.webp',
+                    url: require("../src/pages/Women/img/women_8.jpg"),
                     id: '6205198977fffe0cd128cb6c',
                 },
                 {
                     color: 'Black',
-                    url: '/media/620126dda5293589353a9c7b/RTLAAQ793701_15078413_2_v1.webp',
+                    url: require("../src/pages/Women/img/women_8.jpg"),
                     id: '6205199e77fffe0cd128cb6f',
                 },
             ],
