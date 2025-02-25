@@ -400,8 +400,8 @@ export default function Product() {
                     <Swiper
                         modules={[Navigation]}
                         breakpoints={{
-                            320: {slidesPerView: 1},
-                            375: {slidesPerView: 2},
+                            360: {slidesPerView: 1},
+                            480: {slidesPerView: 2},
                             745: {slidesPerView: 3},
                             1024: {slidesPerView: 4}
                         }}
