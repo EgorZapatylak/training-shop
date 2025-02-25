@@ -180,44 +180,6 @@
     height: 14px;
 }
 
-.id_1,
-.id_2,
-.id_3,
-.id_4,
-.id_5,
-.id_6,
-.id_7,
-.id_8 {
-    display: flex;
-    width: 255px;
-    height: 318px;
-}
-
-.id_1 {
-    background-image: url('./img/women_1.jpg');
-}
-.id_2 {
-    background-image: url('./img/women_2.jpg');
-}
-.id_3 {
-    background-image: url('./img/women_3.jpg');
-}
-.id_4 {
-    background-image: url('./img/women_4.jpg');
-}
-.id_5 {
-    background-image: url('./img/women_5.jpg');
-}
-.id_6 {
-    background-image: url('./img/women_6.jpg');
-}
-.id_7 {
-    background-image: url('./img/women_7.jpg');
-}
-.id_8 {
-    background-image: url('./img/women_8.jpg');
-}
-
 .loading {
     display: flex;
     width: 64px;
