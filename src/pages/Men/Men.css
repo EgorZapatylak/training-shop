@@ -233,7 +233,6 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    transition: line-height 0.5s, color 0.5s;
 }
 
 .filter-content {
@@ -364,11 +363,19 @@
     .tabl {
         display: none;
     }
+    .filter-modal {
+        margin: 0;
+    }
+
+    .filter-content {
+        margin: 20px;
+    }
+
 }
 
 @media (max-width: 360px) {
     .men_header {
-        width: 360px;
+        width: 330px;
     }
 
     .veia {
