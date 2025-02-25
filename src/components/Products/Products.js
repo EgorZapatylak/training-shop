@@ -1,14 +1,13 @@
 import React, {useState} from 'react';
 import {Link} from "react-router-dom";
-import {Products_base} from "../../Products_base";
 import './Products.css';
 import {StarRating} from "../StarRating/StarRating";
 
-export function Products({title, category = "men"}) {
+export function Products({title, item}) {
     const [filter, setFilter] = useState(null); // По умолчанию без фильтра
 
     // Получаем товары по заданной категории
-    let items = Products_base[category] || [];
+    let items = item || [];
 
     // Фильтрация по particulars
     if (filter) {
@@ -49,7 +48,7 @@ export function Products({title, category = "men"}) {
                                             {el.discount}
                                         </div>
                                     )}
-                                    <img src={el.imageURL} alt={el.name}/>
+                                    <img src={el.imageURL ? el.imageURL : el.images[0].url} alt={el.name}/>
                                 </div>
                                 <div className='clothes_info'>
                                     <p>{el.name}</p>
@@ -73,7 +72,7 @@ export function Products({title, category = "men"}) {
                                     <div className='clothes_event'>
                                         <div className="clothes_info_img">
                                             {el.images.slice(0, 4).map((img) => (
-                                                <img key={img.id} width={40} height={40} src={el.imageURL}
+                                                <img key={img.id} width={40} height={40} src={el.imageURL ? el.imageURL : el.images[0].url}
                                                      alt={img.color}/>
                                             ))}
                                         </div>
