@@ -917,6 +917,12 @@ button.selected {
     justify-content: center;
 }
 
+.related_img_info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 
 
 @media (max-width: 992px) {
