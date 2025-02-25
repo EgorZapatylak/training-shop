@@ -256,7 +256,8 @@
 
 .selected-filters {
     display: flex;
-    margin: 20px;
+    margin-left: 85px;
+    margin-right: 85px;
     gap: 10px;
     align-items: center;
 }
