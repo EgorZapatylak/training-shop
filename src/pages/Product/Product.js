@@ -401,7 +401,6 @@ export default function Product() {
                         modules={[Navigation]}
                         breakpoints={{
                             360: {slidesPerView: 1},
-                            480: {slidesPerView: 2},
                             745: {slidesPerView: 3},
                             1024: {slidesPerView: 4}
                         }}
