@@ -50,7 +50,7 @@ export const Products_base = {
                     id: '62012eef7d2312f4e7932f12',
                 },
             ],
-            id: 1,
+            id: '1',
         },
         {
             particulars: {
@@ -112,7 +112,7 @@ export const Products_base = {
                     id: '620130a97d2312f4e7932f39',
                 },
             ],
-            id: 2
+            id: '2'
         },
         {
             particulars: {
@@ -195,7 +195,7 @@ export const Products_base = {
                 },
 
             ],
-            id: 3,
+            id: '3',
         },
         {
             particulars: {
@@ -248,7 +248,7 @@ export const Products_base = {
                     id: '620132207d2312f4e7932f61',
                 },
             ],
-            id: 4,
+            id: '4',
         },
         {
             particulars: {
@@ -850,7 +850,7 @@ export const Products_base = {
                     id: '6205109877fffe0cd128c80f',
                 },
             ],
-            id: 18,
+            id: '18',
         },
         {
             particulars: {
@@ -884,7 +884,7 @@ export const Products_base = {
                     id: '6205117c77fffe0cd128c824',
                 },
             ],
-            id: 19,
+            id: '19',
         },
         {
             particulars: {
@@ -925,7 +925,7 @@ export const Products_base = {
                     id: '6205123177fffe0cd128c88b',
                 },
             ],
-            id: 20,
+            id: '20',
         },
     ],
     women: [
@@ -972,7 +972,7 @@ export const Products_base = {
                     id: '620512e977fffe0cd128c8ac',
                 },
             ],
-            id: 1,
+            id: '11214',
         },
         {
             particulars: {
