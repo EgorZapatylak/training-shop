@@ -136,7 +136,7 @@ export default function Product() {
                 }
             }, 300);
         }
-    }, [thumbsSwiper]);
+    }, [product.imageURL, thumbsSwiper]);
 
     useEffect(() => {
         // Прокрутка страницы к началу
