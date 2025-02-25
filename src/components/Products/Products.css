@@ -175,7 +175,6 @@
 
 .star_rating {
     display: flex;
-    width: 110px;
     align-items: center;
 }
 
