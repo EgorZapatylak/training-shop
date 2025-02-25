@@ -17,7 +17,8 @@ import {Link} from "react-router-dom";
 export default function Product() {
 
     const {id} = useParams(); // Извлекаем id из URL
-    const product = Products_base.men.find((item) => item.id === parseInt(id)); // Ищем товар по id
+    console.log(id)
+    const product = Products_base.men.find((item) => String(item.id) === id); // Ищем товар по id
 
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const [mainSwiper, setMainSwiper] = useState(null);
@@ -33,7 +34,7 @@ export default function Product() {
     const prevMainRef = useRef(null);
     const nextMainRef = useRef(null);
 
-    const reviewCount = product.reviews.length;
+    const reviewCount = product ? product.reviews.length : 0;
 
     const isInCart = cartItems.some(
         (item) =>
@@ -128,7 +129,6 @@ export default function Product() {
                     nextBtn.classList.remove('swiper-button-disabled', 'swiper-button-lock');
 
                     console.log("✅ Кнопки Swiper разблокированы и работают!");
-                    console.log(product.imageURL)
                 } else {
                     console.log("⏳ Кнопки ещё не появились, пробуем снова...");
                     setTimeout(updateSwiper, 300); // Пробуем ещё раз через 300 мс
@@ -136,7 +136,7 @@ export default function Product() {
                 }
             }, 300);
         }
-    }, [product.imageURL, thumbsSwiper]);
+    }, [thumbsSwiper]);
 
     useEffect(() => {
         // Прокрутка страницы к началу
