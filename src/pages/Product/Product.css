@@ -1052,15 +1052,20 @@ button.selected {
         flex-direction: column;
     }
 
+    .content_img {
+        justify-content: center;
+        background-color: #eaeaeae3;
+    }
+
     .choise {
-        width: 450px;
+        width: 480px;
         background-size: contain;
         background-repeat: no-repeat;
         height: 412px;
     }
 
     .choise img {
-        width: 450px;
+        width: 330px;
         height: 412px;
     }
 
