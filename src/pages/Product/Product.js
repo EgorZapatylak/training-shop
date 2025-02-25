@@ -43,6 +43,22 @@ export default function Product() {
             item.color === selectedColor
     );
 
+    const getRandomImages = (count = 5) => {
+        const allProducts = [...Products_base[category]];
+        const shuffledProducts = allProducts.sort(() => 0.5 - Math.random());
+
+        return shuffledProducts.flatMap(product =>
+            product.images.map(img => ({
+                images: img.url,
+                name: product.name,
+                brand: product.brand,
+                price: product.price,
+                id: product.id,
+                category: product.category,
+                rating: product.rating
+            }))).sort(() => 0.5 - Math.random()).slice(0, count);
+    }
+
     const handleColorSelect = (color) => {
         // if (selectedColor === color) {
         //     // Если пользлватель нажал на ужевыбранный цвет, сбрасываем его
@@ -141,7 +157,7 @@ export default function Product() {
     useEffect(() => {
         // Прокрутка страницы к началу
         window.scrollTo(0, 0);
-    }, []); // Пустой массив зависимостей, чтобы эффект срабатывал только при монтировани компонента
+    }, [id]); // Пустой массив зависимостей, чтобы эффект срабатывал только при монтировани компонента
 
     useEffect(() => {
         if (thumbsSwiper && mainSwiper) {
@@ -280,7 +296,6 @@ export default function Product() {
                         </div>
                         <div className='size'>
                             <p>Size:</p>
-                            {/*<span>{product.sizes[0]}</span>*/}
                             <span>{selectedSize ? selectedSize.replace('INT', '') : ''}</span>
                         </div>
                         <div className='size_info'>
@@ -409,86 +424,19 @@ export default function Product() {
                             prevEl: '.related_left'
                         }}
                     >
-                        <SwiperSlide>
-                            <div className='clothes'>
-                                <div className='id_1'></div>
-                                <p>Women's tracksuit Q109</p>
-                                <div className='cost-rate'>
-                                    <p>$30.00</p>
-                                    <div className='stars'></div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className='clothes'>
-                                <div className='id_2'></div>
-                                <p>Women's tracksuit Q109</p>
-                                <div className='cost-rate'>
-                                    <p>$30.00</p>
-                                    <div className='stars'></div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className='clothes id3'>
-                                <div className='id_3'></div>
-                                <p>Women's tracksuit Q109</p>
-                                <div className='cost-rate'>
-                                    <p>$30.00</p>
-                                    <div className='stars'></div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className='clothes'>
-                                <div className='id_4'></div>
-                                <p>Women's tracksuit Q109</p>
-                                <div className='cost-rate'>
-                                    <p>$30.00</p>
-                                    <div className='stars'></div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className='clothes'>
-                                <div className='id_1'></div>
-                                <p>Women's tracksuit Q109</p>
-                                <div className='cost-rate'>
-                                    <p>$30.00</p>
-                                    <div className='stars'></div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className='clothes'>
-                                <div className='id_2'></div>
-                                <p>Women's tracksuit Q109</p>
-                                <div className='cost-rate'>
-                                    <p>$30.00</p>
-                                    <div className='stars'></div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className='clothes'>
-                                <div className='id_3'></div>
-                                <p>Women's tracksuit Q109</p>
-                                <div className='cost-rate'>
-                                    <p>$30.00</p>
-                                    <div className='stars'></div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className='clothes'>
-                                <div className='id_4'></div>
-                                <p>Women's tracksuit Q109</p>
-                                <div className='cost-rate'>
-                                    <p>$30.00</p>
-                                    <div className='stars'></div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
+                        {getRandomImages(8).map((product, index) => (
+                            <SwiperSlide key={index}>
+                                <Link to={`/${product.category}/${product.id}`}>
+                                    <img src={product.images} alt={product.name} height='318' width='255'/>
+                                    <div className='related_img_info'>
+                                        <p>{product.name}</p>
+                                        <p>{product.brand}</p>
+                                        <p>$ {product.price}</p>
+                                        <StarRating rating={product.rating}/>
+                                    </div>
+                                </Link>
+                            </SwiperSlide>
+                        ))}
                     </Swiper>
                 </div>
             </div>
