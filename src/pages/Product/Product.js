@@ -16,7 +16,7 @@ import {Link} from "react-router-dom";
 
 export default function Product() {
 
-    const {id} = useParams(); // Извлекаем id из URL
+    const {id} = useParams(); // Получаем категорию и id товаров
     console.log(id)
     const product = Products_base.men.find((item) => String(item.id) === id); // Ищем товар по id
 
@@ -299,7 +299,7 @@ export default function Product() {
                     </div>
                     <div className='price'>
                         <p>$ {product.discount
-                            ? `${(product.price * (1 + parseFloat(product.discount) / 100))}`
+                            ? `${(product.price * (1 + parseFloat(product.discount) / 100)).toFixed(2)}`
                             : `${product.price.toFixed(2)}`
                         }
                         </p>
