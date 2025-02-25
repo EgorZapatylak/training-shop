@@ -40,7 +40,7 @@ export function Products({title, item}) {
             <div className='items'>
                 {items.slice(0, 8).length > 0 ? (
                     items.slice(0, 8).map((el) => (
-                        <Link key={el.id} to={`/product/${String(el.id)}`}>
+                        <Link key={el.id} to={`/${el.category}/${String(el.id)}`}>
                             <div className='clothes'>
                                 <div className='men_id'>
                                     {el.discount && (
