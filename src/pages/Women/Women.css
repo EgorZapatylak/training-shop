@@ -196,10 +196,6 @@
         width: 962px;
     }
 
-    .title {
-        width: 992px !important;
-    }
-
     .edit {
         width: 962px;
     }
@@ -218,12 +214,8 @@
         margin: 0 !important;
     }
 
-    .title {
-        width: 480px !important;
-    }
-
     .edit {
-        width: 450px;
+        width: auto;
         align-items: center;
     }
 }
@@ -241,12 +233,8 @@
         margin: 0 !important;
     }
 
-    .title {
-        width: 360px !important;
-    }
-
     .edit {
-        width: 330px;
+        width: auto;
         align-items: center;
     }
 }
