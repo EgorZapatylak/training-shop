@@ -210,22 +210,22 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (min-width:381px) and (max-width: 576px) {
     .hero {
         margin: 0 auto;
         display: flex;
-        width: 450px;
+        width: auto;
         flex-direction: column;
     }
 
     .mySwiper img {
-        width: 450px;
+        max-width: 100%;
         height: auto;
     }
 
     .mySwiper {
         display: flex;
-        width: 450px;
+        width: auto;
         height: 320px;
         margin-top: 15px;
     }
@@ -238,7 +238,7 @@
     }
 
     .red {
-        width: 450px;
+        max-width: 100%;
     }
 
     .red > .green {
@@ -248,7 +248,7 @@
         justify-content: center;
         flex-direction: column;
         margin-top: 15px;
-        width: 330px;
+        max-width: 100%;
     }
 
     .green_button:hover {
@@ -265,31 +265,32 @@
     .women,
     .men {
         display: flex;
-        width: 450px;
+        width: auto;
         justify-content: center;
+        background-color: #eeeeeede;
     }
 
     .women img,
     .men img {
         height: auto;
-        width: 450px;
+        width: auto;
     }
 
     .accessories {
         display: flex;
-        width: 450px;
+        width: auto;
         height: auto;
         margin-top: 15px;
     }
 
     .accessories img {
-        width: 450px;
+        width: auto;
         height: 200px;
     }
 
 }
 
-@media (max-width: 360px) {
+@media (max-width: 380px) {
     .hero {
         margin: 0 auto;
         display: flex;
