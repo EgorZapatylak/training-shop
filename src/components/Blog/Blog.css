@@ -179,7 +179,7 @@
 
 @media (min-width:381px) and (max-width: 576px) {
     .blog_header {
-        max-width: 100% !important;
+        max-width: 100%;
         width: auto;
         margin: 15px auto;
     }
