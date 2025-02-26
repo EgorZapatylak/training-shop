@@ -1052,7 +1052,7 @@ button.selected {
     }
 
     .content {
-        width: auto;
+        width: 345px;
         margin: 15px 0 0 0;
         padding: 0 15px;
         flex-direction: column;
@@ -1064,7 +1064,7 @@ button.selected {
     }
 
     .choise {
-        width: auto;
+        max-width: 100%;
         background-size: contain;
         background-repeat: no-repeat;
         height: 412px;
@@ -1169,11 +1169,11 @@ button.selected {
 
 @media (max-width: 380px) {
     .product_header {
-        width: auto;
+        width: 345px;
     }
 
     .rate {
-        width: auto;
+        width: 345px;
     }
 
     .reviews {
@@ -1210,7 +1210,7 @@ button.selected {
     }
 
     .content {
-        width: 330px;
+        width: 345px;
     }
 
     .content_row {
@@ -1219,7 +1219,7 @@ button.selected {
 
     .content_info {
         padding: 0;
-        width: 330px;
+        width: 345px;
         margin-top: 20px;
     }
 
@@ -1271,13 +1271,13 @@ button.selected {
     }
 
     .related {
-        width: 330px;
+        width: 345px;
         margin: 15px;
         padding: 0;
     }
 
     .related_status {
-        width: 330px;
+        width: 345px;
         margin-bottom: 15px;
     }
 
