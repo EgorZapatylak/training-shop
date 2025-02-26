@@ -1233,7 +1233,7 @@ button.selected {
     }
 
     .title {
-        width: auto;
+        width: 375px;
     }
 
     .shipping_prod_img {
