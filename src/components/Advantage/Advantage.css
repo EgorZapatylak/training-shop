@@ -40,11 +40,11 @@
     opacity: 0.9;
 }
 
-@media (max-width: 480px) {
+@media (min-width:381px) and (max-width: 576px) {
     .advantage {
         display: flex;
         margin: 0 auto;
-        width: 450px;
+        width: auto;
         flex-direction: column;
     }
     .truck > .inform{
@@ -52,7 +52,7 @@
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 380px) {
     .advantage {
         display: flex;
         margin: 0 auto;
