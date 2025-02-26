@@ -212,6 +212,7 @@
     .box_2,
     .box_3 {
         max-width: 100%;
+        width: 395px;
         position: unset;
         justify-content: center;
         align-items: center;
@@ -243,7 +244,7 @@
 @media (max-width: 380px) {
     .blog_header {
         max-width: 100%;
-        width: 330px;
+        width: auto;
         margin: 15px auto;
     }
     .blog_header p {
@@ -275,7 +276,7 @@
     .box_2,
     .box_3 {
         max-width: 100%;
-        width: 330px;
+        width: 350px;
         height: 312px;
         position: unset;
         justify-content: center;
