@@ -294,18 +294,18 @@
     .hero {
         margin: 0 auto;
         display: flex;
-        width: 330px;
+        width: auto;
         flex-direction: column;
     }
 
     .mySwiper img {
-        width: 330px;
+        width: auto;
         height: 320px;
     }
 
     .mySwiper {
         display: flex;
-        width: 330px;
+        width: auto;
         height: 320px;
         margin-top: 15px;
     }
@@ -318,7 +318,7 @@
     }
 
     .red {
-        width: 330px;
+        width: auto;
     }
 
     .red > .green {
@@ -328,7 +328,7 @@
         justify-content: center;
         flex-direction: column;
         margin-top: 15px;
-        width: 330px;
+        width: auto;
     }
 
     .green_button:hover {
@@ -345,19 +345,19 @@
     .women,
     .men {
         display: flex;
-        width: 330px;
+        width: auto;
         justify-content: center;
     }
 
     .women img,
     .men img {
         height: auto;
-        width: 330px;
+        width: 345px;
     }
 
     .accessories {
         display: flex;
-        width: 330px;
+        width: auto;
         height: auto;
         margin-top: 15px;
     }
