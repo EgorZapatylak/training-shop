@@ -176,7 +176,7 @@
 
 @media (max-width: 380px) {
     .offer {
-        width: 360px;
+        width: auto;
         height: 210px;
         margin: 0 auto;
     }
