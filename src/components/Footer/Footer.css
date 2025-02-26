@@ -329,7 +329,7 @@
         flex-wrap: wrap;
         gap: 10px;
         height: auto;
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
     .categories {
@@ -411,6 +411,7 @@
         width: 330px;
         margin: 10px auto;
         flex-wrap: wrap;
+        justify-content: space-between;
         gap: 10px;
         height: auto;
     }
