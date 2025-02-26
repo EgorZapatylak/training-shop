@@ -360,9 +360,9 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (min-width:381px) and (max-width: 576px) {
     .men_header {
-        width: 450px;
+        max-width: 100%;
     }
 
     .veia {
