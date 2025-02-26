@@ -410,13 +410,13 @@ h1 {
 @media (max-width: 380px) {
 
     .header_container {
-        width: 360px;
+        width: 375px;
         margin: 0 auto;
     }
 
     .top_bar {
         display: flex;
-        width: 360px;
+        width: 375px;
         height: auto;
     }
 
@@ -443,7 +443,7 @@ h1 {
 
     .nav {
         display: flex;
-        width: 360px;
+        width: 375px;
 
     }
 
@@ -476,6 +476,6 @@ h1 {
     }
 
     .line {
-        width: 330px;
+        width: auto !important;
     }
 }
