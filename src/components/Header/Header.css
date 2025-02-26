@@ -334,16 +334,16 @@ h1 {
 
 }
 
-@media (max-width: 480px) {
+@media (min-width: 380px) and (max-width: 576px) {
 
     .header_container {
-        width: 480px;
+        width: auto;
         margin: 0 auto;
     }
 
     .top_bar {
         display: flex;
-        width: 480px;
+        width: auto;
         height: auto;
     }
 
@@ -370,7 +370,7 @@ h1 {
 
     .nav {
         display: flex;
-        width: 480px;
+        width: auto;
 
     }
 
