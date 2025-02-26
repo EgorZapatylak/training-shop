@@ -220,7 +220,7 @@
 
     .mySwiper img {
         width: 450px;
-        height: 320px;
+        height: auto;
     }
 
     .mySwiper {
