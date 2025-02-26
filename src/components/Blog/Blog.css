@@ -242,6 +242,7 @@
 
 @media (max-width: 380px) {
     .blog_header {
+        max-width: 100%;
         width: 330px;
         margin: 15px auto;
     }
@@ -264,7 +265,7 @@
     }
 
     .blog_post {
-        width: 360px;
+        max-width: 100%;
         margin: 0 auto;
         flex-direction: column;
         gap: 10px;
@@ -273,7 +274,7 @@
     .box_1,
     .box_2,
     .box_3 {
-        width: 330px;
+        max-width: 100%;
         position: unset;
         justify-content: center;
         align-items: center;
