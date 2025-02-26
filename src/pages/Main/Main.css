@@ -19,14 +19,14 @@ h5 {
   }
 }
 
-@media (max-width: 480px) {
+@media (min-width:381px) and (max-width: 576px) {
   .main {
     margin: 0 auto;
-    width: 480px;
+    width: auto;
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 380px) {
   .main {
     margin: 0 auto;
     width: 360px;
