@@ -986,6 +986,10 @@ button.selected {
         width: 962px;
     }
 
+    .title {
+        width: auto;
+    }
+
     .shipping_prod_img {
         width: 30px;
     }
@@ -1098,6 +1102,10 @@ button.selected {
         width: auto;
     }
 
+    .title {
+        width: auto;
+    }
+
     .shipping_prod_img {
         width: 30px;
     }
@@ -1161,11 +1169,11 @@ button.selected {
 
 @media (max-width: 380px) {
     .product_header {
-        width: 330px;
+        width: auto;
     }
 
     .rate {
-        width: 330px;
+        width: auto;
     }
 
     .reviews {
@@ -1179,7 +1187,7 @@ button.selected {
     }
 
     .content {
-        width: 330px;
+        width: auto;
         margin: 15px 0 0 0;
         padding: 0 15px;
         flex-direction: column;
@@ -1222,6 +1230,10 @@ button.selected {
 
     .line {
         width: 330px !important;
+    }
+
+    .title {
+        width: auto;
     }
 
     .shipping_prod_img {
