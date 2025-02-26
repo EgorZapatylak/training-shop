@@ -177,9 +177,10 @@
 
 }
 
-@media (max-width: 480px) {
+@media (min-width:381px) and (max-width: 576px) {
     .blog_header {
-        width: 450px;
+        max-width: 100% !important;
+        width: auto;
         margin: 15px auto;
     }
     .blog_header p {
@@ -201,7 +202,7 @@
     }
 
     .blog_post {
-        width: 450px;
+        width: auto;
         margin: 0 auto;
         flex-direction: column;
         gap: 10px;
@@ -210,7 +211,7 @@
     .box_1,
     .box_2,
     .box_3 {
-        width: 450px;
+        max-width: 100%;
         position: unset;
         justify-content: center;
         align-items: center;
@@ -239,7 +240,7 @@
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 380px) {
     .blog_header {
         width: 330px;
         margin: 15px auto;
