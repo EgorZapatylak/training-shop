@@ -193,16 +193,16 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (min-width:381px) and (max-width: 576px) {
     .line {
         margin: 0 auto;
-        width: 480px !important;
+        width: auto;
     }
 
     .item_hed {
         display: flex;
         margin: 20px auto;
-        width: 450px;
+        width: auto;
     }
 
     .sort {
@@ -212,7 +212,11 @@
 
     .items {
         margin: 0 auto;
-        width: 480px;
+        max-width: 100%;
+    }
+
+    .items a {
+        max-width: 100%;
     }
 
     .clothes {
@@ -229,11 +233,11 @@
     }
 
     .women_button {
-        width: 480px;
+        max-width: 100%;
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 380px) {
     .line {
         margin: 0 auto;
         width: 360px !important;
