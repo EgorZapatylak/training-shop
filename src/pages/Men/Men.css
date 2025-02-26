@@ -362,7 +362,7 @@
 
 @media (min-width:381px) and (max-width: 576px) {
     .men_header {
-        max-width: 100%;
+        width: auto;
     }
 
     .veia {
@@ -392,7 +392,7 @@
 
 @media (max-width: 380px) {
     .men_header {
-        width: 330px;
+        width: 345px;
     }
 
     .veia {
@@ -401,6 +401,18 @@
 
     .tabl {
         display: none;
+    }
+    .road,
+    .share,
+    .filter,
+    .veia,
+    .categor {
+        margin: 0 !important;
+    }
+
+    .edit {
+        width: auto;
+        align-items: center;
     }
 }
 
