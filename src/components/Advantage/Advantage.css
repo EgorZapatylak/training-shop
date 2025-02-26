@@ -56,7 +56,7 @@
     .advantage {
         display: flex;
         margin: 0 auto;
-        width: 330px;
+        max-width: 100%;
         flex-direction: column;
     }
     .truck > .inform{
