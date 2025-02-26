@@ -1028,13 +1028,13 @@ button.selected {
     }
 }
 
-@media (max-width: 480px) {
+@media (min-width:381px) and (max-width: 576px) {
     .product_header {
-        width: 450px;
+        width: auto;
     }
 
     .rate {
-        width: 450px;
+        width: auto;
     }
 
     .reviews {
@@ -1048,7 +1048,7 @@ button.selected {
     }
 
     .content {
-        width: 450px;
+        width: auto;
         margin: 15px 0 0 0;
         padding: 0 15px;
         flex-direction: column;
@@ -1060,7 +1060,7 @@ button.selected {
     }
 
     .choise {
-        width: 480px;
+        width: auto;
         background-size: contain;
         background-repeat: no-repeat;
         height: 412px;
@@ -1076,7 +1076,7 @@ button.selected {
     }
 
     .content {
-        width: 450px;
+        width: auto;
     }
 
     .content_row {
@@ -1085,17 +1085,17 @@ button.selected {
 
     .content_info {
         padding: 0;
-        width: 450px;
+        width: auto;
         margin-top: 20px;
     }
 
     .color_img {
-        width: 450px;
+        width: auto;
         justify-content: space-between;
     }
 
     .line {
-        width: 450px !important;
+        width: auto;
     }
 
     .shipping_prod_img {
@@ -1103,7 +1103,7 @@ button.selected {
     }
 
     .pay {
-        width: 450px;
+        width: auto;
         height: 54px;
         justify-content: center;
         gap: 10px;
@@ -1120,7 +1120,7 @@ button.selected {
     }
 
     .add_inf {
-        width: 450px;
+        width: auto;
     }
 
     .reviews {
@@ -1129,17 +1129,17 @@ button.selected {
     }
 
     .reviews_section {
-        width: 450px;
+        width: auto;
     }
 
     .related {
-        width: 450px;
+        width: auto;
         margin: 15px;
         padding: 0;
     }
 
     .related_status {
-        width: 450px;
+        width: auto;
         margin-bottom: 15px;
     }
 
@@ -1159,7 +1159,7 @@ button.selected {
 
 }
 
-@media (max-width: 360px) {
+@media (max-width: 380px) {
     .product_header {
         width: 330px;
     }
