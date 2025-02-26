@@ -158,6 +158,7 @@ h1 {
 .cart_icon {
     position: relative;
     cursor: pointer;
+    height: 20px;
 }
 
 .cart_count {
