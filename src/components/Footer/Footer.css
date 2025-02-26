@@ -291,15 +291,15 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (min-width:381px) and (max-width: 576px) {
     .footer {
-        width: 480px;
+        width: auto;
         padding-top: 20px;
         margin: 0 auto;
     }
 
     .footer_top {
-        width: 450px;
+        width: auto;
         margin-top: 20px;
     }
 
@@ -324,7 +324,7 @@
     }
 
     .footer_main {
-        width: 450px;
+        width: auto;
         margin: 10px auto;
         flex-wrap: wrap;
         gap: 10px;
@@ -361,8 +361,7 @@
     }
 
     .footer_bot {
-        width: 450px;
-        margin: 0 auto;
+        width: auto;
     }
     .prava {
         margin: 0;
@@ -376,7 +375,7 @@
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 380px) {
     .footer {
         width: 360px;
         padding-top: 20px;
