@@ -238,15 +238,11 @@
 }
 
 @media (max-width: 380px) {
-    .line {
-        margin: 0 auto;
-        width: 360px !important;
-    }
 
     .item_hed {
         display: flex;
         margin: 20px auto;
-        width: 330px;
+        width: auto;
     }
 
     .sort {
@@ -255,7 +251,7 @@
     }
 
     .items {
-        margin: 0 auto;
+        margin: 20px auto;
         width: 360px;
     }
 
