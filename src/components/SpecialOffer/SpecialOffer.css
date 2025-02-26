@@ -115,9 +115,9 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (min-width:381px) and (max-width: 576px) {
     .offer {
-        width: 480px;
+        width: auto;
         height: 210px;
         margin: 0 auto;
     }
@@ -133,7 +133,7 @@
 
     .men_img {
         position: absolute;
-        left: 270px;
+        left: 66%;
         top: 36px;
         width: 69px;
         height: 164px;
@@ -174,7 +174,7 @@
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 380px) {
     .offer {
         width: 360px;
         height: 210px;
@@ -183,7 +183,7 @@
 
     .women_img {
         position: absolute;
-        left: 68px;
+        left: 25px;
         top: 39px;
         width: 97px;
         height: 183px;
@@ -192,7 +192,7 @@
 
     .men_img {
         position: absolute;
-        left: 270px;
+        left: 245px;
         top: 36px;
         width: 69px;
         height: 164px;
