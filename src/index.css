@@ -20,10 +20,10 @@ code {
   }
 }
 
-@media (max-width: 480px) {
+@media (min-width:381px) and (max-width: 576px) {
   body {
     margin: 0 auto;
-    width: 480px;
+    max-width: 100%;
     transition: 0.5s all;
   }
 }
