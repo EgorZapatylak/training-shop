@@ -294,7 +294,6 @@
 @media (min-width:381px) and (max-width: 576px) {
     .footer {
         width: auto;
-        padding-top: 20px;
         margin: 0 auto;
     }
 
@@ -377,13 +376,12 @@
 
 @media (max-width: 380px) {
     .footer {
-        width: 360px;
-        padding-top: 20px;
+        width: 375px;
         margin: 0 auto;
     }
 
     .footer_top {
-        width: 330px;
+        width: 345px;
         margin-top: 20px;
     }
 
@@ -408,7 +406,7 @@
     }
 
     .footer_main {
-        width: 330px;
+        width: 345px;
         margin: 10px auto;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -445,7 +443,7 @@
     }
 
     .footer_bot {
-        width: 330px;
+        width: 345px;
         margin: 0 auto;
     }
     .prava {
