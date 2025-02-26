@@ -333,8 +333,10 @@ h1 {
     }
 
 }
-
-@media (min-width: 380px) and (max-width: 576px) {
+* {
+    border: 1px solid red;
+}
+@media (min-width:381px) and (max-width: 576px) {
 
     .header_container {
         width: auto;
@@ -403,11 +405,11 @@ h1 {
     }
 
     .line {
-        width: 450px;
+        width: auto;
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 380px) {
 
     .header_container {
         width: 360px;
