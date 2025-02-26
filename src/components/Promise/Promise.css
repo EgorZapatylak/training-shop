@@ -108,7 +108,7 @@
 @media (min-width:381px) and (max-width: 576px) {
     .promise {
         display: flex;
-        margin: 25px auto;
+        margin: 25px 15px;
         width: auto;
         flex-direction: column;
         gap: 10px;
