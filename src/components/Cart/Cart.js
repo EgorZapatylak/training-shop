@@ -13,6 +13,8 @@ export function Cart() {
     const navigate = useNavigate();
     const [step, setStep] = useState(1); // Шаги в корзине -> 1- товары, 2 - доставка, 3 - оплата
 
+    const [deliveryMethod, setDeliveryMethod] = useState('pickup');
+
     const handleBackToShopping = () => {
         dispatch(closeCart()); // Закрываем корзину
     }
@@ -65,8 +67,10 @@ export function Cart() {
             ) : (
                 <>
                     <div className={styles.cart_road}>
-                        <span className={step === 1 ? styles.active : ''} onClick={() => setStep(1)}>Item in Cart </span>
-                        <span className={step === 2 ? styles.active : ''} onClick={() => setStep(2)}>Delivery info</span>
+                        <span className={step === 1 ? styles.active : ''}
+                              onClick={() => setStep(1)}>Item in Cart </span>
+                        <span className={step === 2 ? styles.active : ''}
+                              onClick={() => setStep(2)}>Delivery info</span>
                         <span className={step === 3 ? styles.active : ''} onClick={() => setStep(3)}>Payment</span>
                     </div>
                     {step === 1 && (
@@ -123,11 +127,77 @@ export function Cart() {
                         </>
                     )}
                     {step === 2 && (
-                        <div>
-                            <h2>Delivery Information</h2>
-                            <p>Enter your address and choose a delivery method</p>
-                            <input type='text' placeholder='Enter address'/>
-                        </div>
+                        <>
+                            <h3>Choose the method of delivery of the items</h3>
+                            <div className={styles.deliveryOptions}>
+                                {/* Выбор метода доставки */}
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name='delivery'
+                                        value='pickup'
+                                        checked={deliveryMethod === 'pickup'}
+                                        onChange={() => setDeliveryMethod('pickup')}
+                                    />
+                                    Pickup from post offices
+                                </label>
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name='delivery'
+                                        value='express'
+                                        checked={deliveryMethod === 'express'}
+                                        onChange={() => setDeliveryMethod('express')}
+                                    />
+                                    Express delivery
+                                </label>
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name='delivery'
+                                        value='store'
+                                        checked={deliveryMethod === 'store'}
+                                        onChange={() => setDeliveryMethod('store')}
+                                    />
+                                    Store pickup
+                                </label>
+                            </div>
+
+                            {/* Форма для ввода данных */}
+                            <form className={styles.form}>
+                                <label>Phone</label>
+                                <input type="text" placeholder='+375 (__) _______ '/>
+
+                                <label>E-MAIL</label>
+                                <input type="text" placeholder='e-mail'/>
+
+                                <label>ADDRESS</label>
+                                <input type="text" placeholder='Country'/>
+                                <input type="text" placeholder='City'/>
+                                <input type="text" placeholder='Street'/>
+
+                                <div className={styles.addressRow}>
+                                    <input type="text" placeholder='House'/>
+                                    <input type="text" placeholder='Apartment'/>
+                                </div>
+
+                                <label>POSTCODE</label>
+                                <input type="text" placeholder='BY ______'/>
+
+                                {/* Согласие на обработку данных */}
+                                <label className={styles.checkbox}>
+                                    <input type="checkbox"/>
+                                    I agree to the processing of me personal information
+                                </label>
+                                <div className={styles.cart_total_price}>
+                                    <h2>Total: ${totalCartPrice.toFixed(2)}</h2>
+                                </div>
+                                <div className={styles.cart_button}>
+                                    <button>FURTHER</button>
+                                    <button onClick={handleViewCart}>VIEW CART</button>
+                                </div>
+                            </form>
+                        </>
                     )}
                     {step === 3 && (
                         <div>
