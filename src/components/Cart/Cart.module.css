@@ -1,9 +1,8 @@
 .cart {
     display: flex;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     flex-direction: column;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .cart_header{
@@ -52,6 +51,7 @@
     justify-content: center;
     margin-bottom: 10px;
     gap: 20px;
+    height: 100vh;
 }
 
 .cart_item_info {
@@ -70,7 +70,6 @@
     display: flex;
     flex-direction:row;
     width: 325px;
-    margin-bottom: 10px;
     gap: 10px;
     border-bottom: 1px solid #ddd;
 }
@@ -83,6 +82,7 @@
     justify-content: space-between;
     gap: 5px;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .cart_item_price_block {
@@ -98,6 +98,7 @@
     width: 30px;
     font-size: 20px;
     opacity: 0.6;
+    cursor: pointer;
 }
 
 .cart_total_price {
@@ -123,7 +124,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 
 .empty_cart p {
@@ -150,7 +151,6 @@
         position: unset;
         transform: none;
         opacity: 1;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         background: none;
         margin: 0 20px;
         padding: 0;
