@@ -53,6 +53,10 @@ export function Cart() {
         return total + discountedPrice;
     }, 0);
 
+    const handleNextStep = () => {
+        if (step < 3) setStep(step+1);
+    };
+
     //* Форма для самовывоза с почты *//
 
     const PickupForm = () => (
@@ -88,7 +92,7 @@ export function Cart() {
                 <h2>Total: ${totalCartPrice.toFixed(2)}</h2>
             </div>
             <div className={styles.cart_button}>
-                <button>FURTHER</button>
+                <button onClick={handleNextStep}>FURTHER</button>
                 <button onClick={handleViewCart}>VIEW CART</button>
             </div>
         </>
@@ -126,7 +130,7 @@ export function Cart() {
                 <h2>Total: ${totalCartPrice.toFixed(2)}</h2>
             </div>
             <div className={styles.cart_button}>
-                <button>FURTHER</button>
+                <button onClick={handleNextStep}>FURTHER</button>
                 <button onClick={handleViewCart}>VIEW CART</button>
             </div>
         </>
@@ -158,7 +162,7 @@ export function Cart() {
                 <h2>Total: ${totalCartPrice.toFixed(2)}</h2>
             </div>
             <div className={styles.cart_button}>
-                <button>FURTHER</button>
+                <button onClick={handleNextStep}>FURTHER</button>
                 <button onClick={handleViewCart}>VIEW CART</button>
             </div>
         </>
@@ -232,7 +236,7 @@ export function Cart() {
                                 <h2>Total: ${totalCartPrice.toFixed(2)}</h2>
                             </div>
                             <div className={styles.cart_button}>
-                                <button>CHECK OUT</button>
+                                <button onClick={handleNextStep}>CHECK OUT</button>
                                 <button onClick={handleViewCart}>VIEW CART</button>
                             </div>
                         </>
