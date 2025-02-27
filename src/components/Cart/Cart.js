@@ -94,6 +94,44 @@ export function Cart() {
         </>
     )
 
+    {/* Форма для экспресс-доставки */}
+
+    const ExpressForm = () => (
+        // Форма для ввода данных
+        <>
+            <form className={styles.form}>
+                <label>PHONE</label>
+                <input type="text" placeholder='+375 (__) _______ '/>
+
+                <label>E-MAIL</label>
+                <input type="text" placeholder='e-mail'/>
+
+                <label>ADDRESS</label>
+                <input type="text" placeholder='Country'/>
+                <input type="text" placeholder='City'/>
+                <input type="text" placeholder='Street'/>
+
+                <div className={styles.addressRow}>
+                    <input type="text" placeholder='House'/>
+                    <input type="text" placeholder='Apartment'/>
+                </div>
+
+                {/* Согласие на обработку данных */}
+                <label className={styles.checkbox}>
+                    <input type="checkbox"/>
+                    I agree to the processing of me personal information
+                </label>
+            </form>
+            <div className={styles.cart_total_price}>
+                <h2>Total: ${totalCartPrice.toFixed(2)}</h2>
+            </div>
+            <div className={styles.cart_button}>
+                <button>FURTHER</button>
+                <button onClick={handleViewCart}>VIEW CART</button>
+            </div>
+        </>
+    )
+
     return (
         <div className={styles.cart}>
             <div className={styles.cart_header}>
