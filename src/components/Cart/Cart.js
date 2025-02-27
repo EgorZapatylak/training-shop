@@ -65,8 +65,8 @@ export function Cart() {
             ) : (
                 <>
                     <div className={styles.cart_road}>
-                        <span className={step === 1 ? styles.active : ''} onClick={() => setStep(1)}>Item in Cart </span> //
-                        <span className={step === 2 ? styles.active : ''} onClick={() => setStep(2)}>Delivery info</span> //
+                        <span className={step === 1 ? styles.active : ''} onClick={() => setStep(1)}>Item in Cart </span>
+                        <span className={step === 2 ? styles.active : ''} onClick={() => setStep(2)}>Delivery info</span>
                         <span className={step === 3 ? styles.active : ''} onClick={() => setStep(3)}>Payment</span>
                     </div>
                     {step === 1 && (
