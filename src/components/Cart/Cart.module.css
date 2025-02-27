@@ -47,6 +47,7 @@
 }
 
 .cart_item {
+    overflow-y: auto;
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
@@ -62,21 +63,20 @@
 
 .cart_item ul {
     list-style-type: none;
-    margin: 20px;
     flex-direction: column;
 }
 
 .cart_item li {
     display: flex;
     flex-direction:row;
-    width: 348px;
+    width: 325px;
     gap: 10px;
 }
 
 .cart_item_price {
     display: flex;
     height: 30px;
-    width: 235px;
+    width: 220px;
     align-items: center;
     justify-content: space-between;
     gap: 5px;
