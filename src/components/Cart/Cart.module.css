@@ -37,6 +37,7 @@
     height: 50px;
     margin: 20px;
     font-size: 20px;
+    flex-shrink: 0;
 }
 
 .cart_road span {
