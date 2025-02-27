@@ -10,8 +10,9 @@
     align-items: center;
     background-color: black;
     width: auto;
-    height: 50px;
+    height: 50px !important;
     justify-content: space-between;
+    flex-shrink: 0;
 }
 
 .cart_header img{
@@ -32,6 +33,7 @@
 .cart_road {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 50px;
     margin: 20px;
     font-size: 14px;
