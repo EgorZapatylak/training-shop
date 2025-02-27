@@ -66,6 +66,7 @@
 .cart_item ul {
     list-style-type: none;
     flex-direction: column;
+    justify-content: flex-start;
 }
 
 .cart_item li {
@@ -74,6 +75,7 @@
     width: 325px;
     gap: 10px;
     border-bottom: 1px solid #ddd;
+    margin-top: 10px;
 }
 
 .cart_item_price {
