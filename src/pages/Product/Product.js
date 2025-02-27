@@ -17,7 +17,6 @@ import {Link} from "react-router-dom";
 export default function Product() {
 
     const {category, id} = useParams(); // Получаем категорию и id товаров
-    console.log(id)
     const product = Products_base[category]?.find((item) => String(item.id) === id); // Ищем товар по id
 
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
