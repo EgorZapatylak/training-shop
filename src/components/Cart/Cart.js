@@ -92,7 +92,7 @@ export function Cart() {
                 <h2>Total: ${totalCartPrice.toFixed(2)}</h2>
             </div>
             <div className={styles.cart_button}>
-                <button onClick={handleNextStep}>FURTHER</button>
+                <button className={styles.cart_button_black} onClick={handleNextStep}>FURTHER</button>
                 <button onClick={handleViewCart}>VIEW CART</button>
             </div>
         </>
@@ -130,7 +130,7 @@ export function Cart() {
                 <h2>Total: ${totalCartPrice.toFixed(2)}</h2>
             </div>
             <div className={styles.cart_button}>
-                <button onClick={handleNextStep}>FURTHER</button>
+                <button className={styles.cart_button_black} onClick={handleNextStep}>FURTHER</button>
                 <button onClick={handleViewCart}>VIEW CART</button>
             </div>
         </>
@@ -162,7 +162,7 @@ export function Cart() {
                 <h2>Total: ${totalCartPrice.toFixed(2)}</h2>
             </div>
             <div className={styles.cart_button}>
-                <button onClick={handleNextStep}>FURTHER</button>
+                <button className={styles.cart_button_black} onClick={handleNextStep}>FURTHER</button>
                 <button onClick={handleViewCart}>VIEW CART</button>
             </div>
         </>
@@ -236,7 +236,7 @@ export function Cart() {
                                 <h2>Total: ${totalCartPrice.toFixed(2)}</h2>
                             </div>
                             <div className={styles.cart_button}>
-                                <button onClick={handleNextStep}>CHECK OUT</button>
+                                <button className={styles.cart_button_black} onClick={handleNextStep} >CHECK OUT</button>
                                 <button onClick={handleViewCart}>VIEW CART</button>
                             </div>
                         </>
