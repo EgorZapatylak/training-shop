@@ -73,7 +73,7 @@ export function Cart() {
                             {cartItems.map(item => (
                                 <li key={`${item.id} - ${item.size} - ${item.color}`}>
                                     <div className={styles.cart_item_img}>
-                                        <img src={item.image} alt={item.name} width='100'/>
+                                        <img src={item.image} alt={item.name} width='100' height='125'/>
                                     </div>
                                     <div>
                                         <div className={styles.cart_item_info}>
