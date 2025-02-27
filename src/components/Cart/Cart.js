@@ -121,14 +121,14 @@ export function Cart() {
                                 <h2>Total: ${totalCartPrice.toFixed(2)}</h2>
                             </div>
                             <div className={styles.cart_button}>
-                                <button>FURTHER</button>
+                                <button>CHECK OUT</button>
                                 <button onClick={handleViewCart}>VIEW CART</button>
                             </div>
                         </>
                     )}
                     {step === 2 && (
                         <>
-                            <h3>Choose the method of delivery of the items</h3>
+                            <h4>Choose the method of delivery of the items</h4>
                             <div className={styles.deliveryOptions}>
                                 {/* Выбор метода доставки */}
                                 <label>
@@ -189,14 +189,14 @@ export function Cart() {
                                     <input type="checkbox"/>
                                     I agree to the processing of me personal information
                                 </label>
-                                <div className={styles.cart_total_price}>
-                                    <h2>Total: ${totalCartPrice.toFixed(2)}</h2>
-                                </div>
-                                <div className={styles.cart_button}>
-                                    <button>FURTHER</button>
-                                    <button onClick={handleViewCart}>VIEW CART</button>
-                                </div>
                             </form>
+                            <div className={styles.cart_total_price}>
+                                <h2>Total: ${totalCartPrice.toFixed(2)}</h2>
+                            </div>
+                            <div className={styles.cart_button}>
+                                <button>FURTHER</button>
+                                <button onClick={handleViewCart}>VIEW CART</button>
+                            </div>
                         </>
                     )}
                     {step === 3 && (
