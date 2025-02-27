@@ -191,6 +191,7 @@ h1 {
     flex-direction: column;
     z-index: 1000;
     animation: fadeIn 0.3s ease-in-out;
+    overflow-y: auto;
 }
 
 .cart_modal_content {
