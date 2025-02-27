@@ -61,6 +61,11 @@
     margin-bottom: 20px;
 }
 
+.cart_button_black {
+    background-color: black;
+    color: white;
+}
+
 .cart_item {
     overflow-y: auto;
     display: flex;
