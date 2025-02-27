@@ -119,8 +119,10 @@ export function Header() {
             </div>
             <div className='line'></div>
             {/* Модальное окно корзины */}
+            {isCartOpen && <div className='cart_overlay' onClick={handleOverLayClick}></div>}
+
             {isCartOpen && (
-                <div className='cart_modal' onClick={handleOverLayClick}>
+                <div className='cart_modal'>
                     <div className='cart_modal_content' onClick={(e) => e.stopPropagation()}>
                         <Cart/>
                     </div>
