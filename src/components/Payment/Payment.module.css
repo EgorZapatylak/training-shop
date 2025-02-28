@@ -1,7 +1,9 @@
 .paymentMethod {
     display: flex;
+    width: 360px;
     flex-direction: column;
     gap: 10px;
+    margin-left: 15px;
 }
 
 .paymentOption {
@@ -21,7 +23,7 @@
 }
 
 .cardInput {
-    width: 100%;
+    width: 86%;
     padding: 10px;
     border: 1px solid lightgray;
     margin-bottom: 10px;
@@ -29,16 +31,19 @@
 
 .cardInfo {
     display: flex;
+    width: 92%;
     gap: 10px;
+    margin: 0 15px;
 }
 
 .smallInput {
     flex: 1;
     padding: 10px;
+    width: inherit;
     border: 1px solid lightgray;
 }
 
 .emailInput {
-    width: 100%;
+    width: 85%;
     padding: 10px;
 }
