@@ -1,0 +1,44 @@
+.paymentMethod {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.paymentOption {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.paymentOption img {
+    width: 80px;
+    height: auto;
+}
+
+.cardDetails {
+    margin-top: 15px;
+}
+
+.cardInput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid lightgray;
+    margin-bottom: 10px;
+}
+
+.cardInfo {
+    display: flex;
+    gap: 10px;
+}
+
+.smallInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid lightgray;
+}
+
+.emailInput {
+    width: 100%;
+    padding: 10px;
+}
