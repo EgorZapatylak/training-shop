@@ -20,6 +20,12 @@ export function Cart() {
         dispatch(closeCart()); // Закрываем корзину
     }
 
+    const [isOrderConfirmed, setIsOrderConfirmed] = useState(false);
+
+    const handleOrder = () => {
+        setIsOrderConfirmed(true);
+    }
+
     const handleViewCart = () => {
         dispatch(closeCart()); // Закрываем корзину
         const lastProductId = localStorage.getItem('lastViewedProduct');
@@ -55,7 +61,7 @@ export function Cart() {
     }, 0);
 
     const handleNextStep = () => {
-        if (step < 3) setStep(step+1);
+        if (step < 3) setStep(step + 1);
     };
 
     //* Форма для самовывоза с почты *//
@@ -181,124 +187,137 @@ export function Cart() {
                     <button className={styles.back_to_shopping} onClick={handleBackToShopping}>BACK TO SHOPPING</button>
                 </div>
             ) : (
-                <>
-                    <div className={styles.cart_road}>
+                !isOrderConfirmed ? (
+                    <>
+                        <div className={styles.cart_road}>
                         <span className={step === 1 ? styles.active : ''}
                               onClick={() => setStep(1)}>Item in Cart </span>
-                        <span className={step === 2 ? styles.active : ''}
-                              onClick={() => setStep(2)}>Delivery info</span>
-                        <span className={step === 3 ? styles.active : ''} onClick={() => setStep(3)}>Payment</span>
-                    </div>
-                    {step === 1 && (
-                        <>
-                            <div className={styles.cart_item}>
-                                <ul>
-                                    {cartItems.map(item => (
-                                        <li key={`${item.id} - ${item.size} - ${item.color}`}>
-                                            <div className={styles.cart_item_img}>
-                                                <img src={item.image} alt={item.name} width='100' height='125'/>
-                                            </div>
-                                            <div>
-                                                <div className={styles.cart_item_info}>
-                                                    <p>{item.name}</p>
-                                                    <p>{item.color}</p>
-                                                    <p>{(item.size).slice(0, -3)}</p>
+                            <span className={step === 2 ? styles.active : ''}
+                                  onClick={() => setStep(2)}>Delivery info</span>
+                            <span className={step === 3 ? styles.active : ''} onClick={() => setStep(3)}>Payment</span>
+                        </div>
+                        {step === 1 && (
+                            <>
+                                <div className={styles.cart_item}>
+                                    <ul>
+                                        {cartItems.map(item => (
+                                            <li key={`${item.id} - ${item.size} - ${item.color}`}>
+                                                <div className={styles.cart_item_img}>
+                                                    <img src={item.image} alt={item.name} width='100' height='125'/>
                                                 </div>
-                                                <div className={styles.cart_item_price}>
-                                                    <div className={styles.cart_item_price_block}>
-                                                        <button onClick={() => dispatch(decreaseQuantity({
-                                                            id: item.id,
-                                                            color: item.color,
-                                                            size: item.size
-                                                        }))}>-
-                                                        </button>
-                                                        <p>{item.quantity}</p>
-                                                        <button onClick={() => dispatch(increaseQuantity({
-                                                            id: item.id,
-                                                            color: item.color,
-                                                            size: item.size
-                                                        }))}>+
-                                                        </button>
+                                                <div>
+                                                    <div className={styles.cart_item_info}>
+                                                        <p>{item.name}</p>
+                                                        <p>{item.color}</p>
+                                                        <p>{(item.size).slice(0, -3)}</p>
                                                     </div>
-                                                    <h3>$ {(calculatePriceDiscount(item) * item.quantity).toFixed(2)}</h3>
-                                                    <img src={Bin} alt='trash_bin' width='25'
-                                                         onClick={() => dispatch(removeFromCart({
-                                                             id: item.id,
-                                                             color: item.color,
-                                                             size: item.size
-                                                         }))}/>
+                                                    <div className={styles.cart_item_price}>
+                                                        <div className={styles.cart_item_price_block}>
+                                                            <button onClick={() => dispatch(decreaseQuantity({
+                                                                id: item.id,
+                                                                color: item.color,
+                                                                size: item.size
+                                                            }))}>-
+                                                            </button>
+                                                            <p>{item.quantity}</p>
+                                                            <button onClick={() => dispatch(increaseQuantity({
+                                                                id: item.id,
+                                                                color: item.color,
+                                                                size: item.size
+                                                            }))}>+
+                                                            </button>
+                                                        </div>
+                                                        <h3>$ {(calculatePriceDiscount(item) * item.quantity).toFixed(2)}</h3>
+                                                        <img src={Bin} alt='trash_bin' width='25'
+                                                             onClick={() => dispatch(removeFromCart({
+                                                                 id: item.id,
+                                                                 color: item.color,
+                                                                 size: item.size
+                                                             }))}/>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div className={styles.cart_total_price}>
-                                <h2>Total: ${totalCartPrice.toFixed(2)}</h2>
-                            </div>
-                            <div className={styles.cart_button}>
-                                <button className={styles.cart_button_black} onClick={handleNextStep} >CHECK OUT</button>
-                                <button onClick={handleViewCart}>VIEW CART</button>
-                            </div>
-                        </>
-                    )}
-                    {step === 2 && (
-                        <>
-                            <h4>Choose the method of delivery of the items</h4>
-                            <div className={styles.deliveryOptions}>
-                                {/* Выбор метода доставки */}
-                                <label>
-                                    <input
-                                        type="radio"
-                                        name='delivery'
-                                        value='pickup'
-                                        checked={deliveryMethod === 'pickup'}
-                                        onChange={() => setDeliveryMethod('pickup')}
-                                    />
-                                    Pickup from post offices
-                                </label>
-                                <label>
-                                    <input
-                                        type="radio"
-                                        name='delivery'
-                                        value='express'
-                                        checked={deliveryMethod === 'express'}
-                                        onChange={() => setDeliveryMethod('express')}
-                                    />
-                                    Express delivery
-                                </label>
-                                <label>
-                                    <input
-                                        type="radio"
-                                        name='delivery'
-                                        value='store'
-                                        checked={deliveryMethod === 'store'}
-                                        onChange={() => setDeliveryMethod('store')}
-                                    />
-                                    Store pickup
-                                </label>
-                            </div>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <div className={styles.cart_total_price}>
+                                    <h2>Total: ${totalCartPrice.toFixed(2)}</h2>
+                                </div>
+                                <div className={styles.cart_button}>
+                                    <button className={styles.cart_button_black} onClick={handleNextStep}>CHECK OUT
+                                    </button>
+                                    <button onClick={handleViewCart}>VIEW CART</button>
+                                </div>
+                            </>
+                        )}
+                        {step === 2 && (
+                            <>
+                                <h4>Choose the method of delivery of the items</h4>
+                                <div className={styles.deliveryOptions}>
+                                    {/* Выбор метода доставки */}
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name='delivery'
+                                            value='pickup'
+                                            checked={deliveryMethod === 'pickup'}
+                                            onChange={() => setDeliveryMethod('pickup')}
+                                        />
+                                        Pickup from post offices
+                                    </label>
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name='delivery'
+                                            value='express'
+                                            checked={deliveryMethod === 'express'}
+                                            onChange={() => setDeliveryMethod('express')}
+                                        />
+                                        Express delivery
+                                    </label>
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name='delivery'
+                                            value='store'
+                                            checked={deliveryMethod === 'store'}
+                                            onChange={() => setDeliveryMethod('store')}
+                                        />
+                                        Store pickup
+                                    </label>
+                                </div>
 
-                            {/* Отображение формы в зависимости от выборанного метода*/}
+                                {/* Отображение формы в зависимости от выборанного метода*/}
 
-                            {deliveryMethod === 'pickup' && <PickupForm/>}
-                            {deliveryMethod === 'express' && <ExpressForm/>}
-                            {deliveryMethod === 'store' && <StoreForm/>}
-                        </>
-                    )}
-                    {step === 3 && (
-                        <>
-                            <Payment/>
-                            <div className={styles.cart_total_price}>
-                                <h2>Total: ${totalCartPrice.toFixed(2)}</h2>
-                            </div>
-                            <div className={styles.cart_button}>
-                                <button className={styles.cart_button_black} onClick={handleNextStep} >READY</button>
-                                <button onClick={handleViewCart}>VIEW CART</button>
-                            </div>
-                        </>
-                    )}
-                </>
+                                {deliveryMethod === 'pickup' && <PickupForm/>}
+                                {deliveryMethod === 'express' && <ExpressForm/>}
+                                {deliveryMethod === 'store' && <StoreForm/>}
+                            </>
+                        )}
+                        {step === 3 && (
+                            <>
+                                <Payment/>
+                                <div className={styles.cart_total_price}>
+                                    <h2>Total: ${totalCartPrice.toFixed(2)}</h2>
+                                </div>
+                                <div className={styles.cart_button}>
+                                    <button className={styles.cart_button_black} onClick={handleOrder}>READY</button>
+                                    <button onClick={handleViewCart}>VIEW CART</button>
+                                </div>
+                            </>
+                        )}
+                    </>
+                ) : (
+                    <div className={styles.modal}>
+                        <div className={styles.modalContent}>
+                            <h2>Thank you for your order</h2>
+                            <p>Information about your order will appear in your e-mail.</p>
+                            <p>Our manager will call you back.</p>
+                            <button className={styles.back_to_shopping} onClick={handleBackToShopping}>BACK TO
+                                SHOPPING
+                            </button>
+                        </div>
+                    </div>)
             )}
         </div>
     );
