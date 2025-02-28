@@ -5,6 +5,7 @@ import styles from "./Cart.module.css"
 import {useNavigate} from "react-router-dom";
 import {Products_base} from "../../Products_base";
 import Bin from './img/trash_bin.svg';
+import {Payment} from "../Payment/Payment";
 
 export function Cart() {
 
@@ -286,11 +287,16 @@ export function Cart() {
                         </>
                     )}
                     {step === 3 && (
-                        <div>
-                            <h2>Payment</h2>
-                            <p>Choose a payment method and confirm your order</p>
-                            <button>Pay Now</button>
-                        </div>
+                        <>
+                            <Payment/>
+                            <div className={styles.cart_total_price}>
+                                <h2>Total: ${totalCartPrice.toFixed(2)}</h2>
+                            </div>
+                            <div className={styles.cart_button}>
+                                <button className={styles.cart_button_black} onClick={handleNextStep} >READY</button>
+                                <button onClick={handleViewCart}>VIEW CART</button>
+                            </div>
+                        </>
                     )}
                 </>
             )}
