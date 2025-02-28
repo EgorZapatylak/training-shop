@@ -4,6 +4,7 @@ import styles from './Payment.module.css'
 export const Payment = () => {
 
     const [selectedMethod, setSelectedMethod] = useState('visa');
+
     return (
         <>
             <h3>Method of payments</h3>
