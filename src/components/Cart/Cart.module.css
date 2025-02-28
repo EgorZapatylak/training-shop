@@ -254,6 +254,18 @@ input {
     height: 100%;
 }
 
+.modalContent h2 {
+    margin-top: 45%;
+    width: 220px;
+    font-size: 36px;
+}
+
+.modalContent p {
+    margin-top: 15%;
+    width: 280px;
+    font-size: 18px;
+}
+
 
 @media (max-width: 992px) {
     .cart_item ul {
