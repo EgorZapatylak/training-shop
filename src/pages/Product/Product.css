@@ -940,7 +940,7 @@ button.selected {
 
     .rate_rate {
         margin-right: 0;
-        justify-content: flex-e Лnd;
+        justify-content: flex-end;
         gap: 10px;
     }
 
