@@ -109,6 +109,7 @@ export function Cart() {
     console.log('Current step', step );
 
     const phoneInputRef = useRef(null);
+    const emailInputRef = useRef(null);
 
     const handlePhoneChange = (e) => {
         let input = e.target.value.replace(/\D/g, ''); // Оставляем только цифры
@@ -146,6 +147,19 @@ export function Cart() {
         setTimeout(()=>phoneInputRef.current?.focus(),0)
     };
 
+    const handleEmailChange = (e) => {
+        let input = e.target.value.replace(/\s/g, ''); // Убираем пробелы
+
+        // Разрешаем только буквы, цифры и специальные символы для email
+        if (!/^[a-zA-Z0-9@._-]*$/.test(input)) {
+            return;
+        }
+        setFormData((prevState) => ({
+            ...prevState,
+            email: input
+        }));
+    };
+
     //* Форма для самовывоза с почты *//
 
     const PickupForm = () => (
@@ -169,9 +183,10 @@ export function Cart() {
                 <input
                     type="text"
                     name='email'
-                    placeholder='e-mail'
+                    placeholder='example@mail.com'
+                    ref={emailInputRef}
                     value={formData.email}
-                    onChange={handleInputChange}
+                    onChange={handleEmailChange}
                     className={errors.email ? styles.inputError : ''}
                 />
                 {errors.email && <p className={styles.errorMessage}>{errors.email}</p>}
