@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {closeCart, decreaseQuantity, increaseQuantity, removeFromCart} from "../../cartSlice";
+import {clearCart, closeCart, decreaseQuantity, increaseQuantity, removeFromCart} from "../../cartSlice";
 import styles from "./Cart.module.css"
 import {useNavigate} from "react-router-dom";
 import {Products_base} from "../../Products_base";
@@ -24,6 +24,7 @@ export function Cart() {
 
     const handleOrder = () => {
         setIsOrderConfirmed(true);
+        dispatch(clearCart()); // Очищаем корзину
     }
 
     const handleViewCart = () => {
