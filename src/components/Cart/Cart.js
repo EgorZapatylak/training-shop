@@ -190,6 +190,37 @@ export function Cart() {
         </>
     )
 
+    // Функция валидации полей
+
+    const validateForm = () => {
+        let newErrors = {};
+
+        if (!name.match(/^[A-Za-zA-Яа-я\s]{2,}$/)) {
+            newErrors.name = 'Invalid name. Only letters are allowed.';
+        }
+        if (!address.match(/^\d{5,6}$/)){
+            newErrors.address = 'Invalid address. Enter a correct postal code.';
+        }
+
+        if (paymentMethod === 'card') {
+            if (!cardNummber.match(/^\d{16}$/)) {
+                newErrors.cardNumber = 'Card number must be 16 digits.';
+            }
+            if (!expiry.match(/^(0[1-9]|1[0-2])\/\d{2}$/)) {
+                newErrors.expiry = 'Expiry must be in MM/YY format.';
+            }
+            if (!cvv.match(/^\d{3}/)) {
+                newErrors.cvv = 'Cvv must be 3 digits.';
+            }
+        }
+        if (!isAgreed) {
+            newErrors.agreement = 'You must agree to the processing of personal data.';
+        }
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    }
+
     return (
         <div className={styles.cart}>
             <div className={styles.cart_header}>
