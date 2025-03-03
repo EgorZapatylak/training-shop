@@ -95,14 +95,6 @@ export function Cart() {
                 return;
             }
         }
-        // // Получаем все input из форм
-        // const formInputs = document.querySelectorAll(`.${styles.form} input:not([type = 'checkbox'])`);
-        // const isFormValid = Array.from(formInputs).every(input => input.value.trim() !== '');
-        //
-        // if (!isFormValid) {
-        //     alert('Please fill all fields before proceeding.');
-        //     return;
-        // }
         console.log('Procceding to next step')
         setStep(prevStep => prevStep + 1);
     };
