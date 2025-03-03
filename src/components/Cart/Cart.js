@@ -115,15 +115,32 @@ export function Cart() {
 
         if (input.startsWith('375')) {
             input = input.slice(3);
+        } else if (input.startsWith('7')){
+            input = input.slice(1);
         }
 
         if (input.length > 9) {
             input = input.slice(0,9); // Ограничиваем до 9 цифр
         }
 
-        setFormData(prevState => ({
+        // Формируем номер телефона
+        let formattedPhone = '+375 ';
+        if (input.length > 0) {
+            formattedPhone += `(${input.slice(0, 2)}`
+        }
+        if (input.length >= 2) {
+            formattedPhone  += `) ${input.slice(2, 5)}`;
+        }
+        if (input.length >= 5) {
+            formattedPhone += `-${input.slice(5, 7)}`;
+        }
+        if (input.length >= 7) {
+            formattedPhone += `-${input.slice(7, 9)}`;
+        }
+
+        setFormData((prevState) => ({
             ...prevState,
-            phone: '+375 ' +input // Всегда добавляем "+375 "
+            phone: formattedPhone
         }))
 
         setTimeout(()=>phoneInputRef.current?.focus(),0)
@@ -141,7 +158,7 @@ export function Cart() {
                     name='phone'
                     placeholder='+375 (__) _______ '
                     ref={phoneInputRef}
-                    maxLength='16'
+                    maxLength='19'
                     value={formData.phone}
                     onChange={handlePhoneChange}
                     className={errors.phone ? styles.inputError : ''}
