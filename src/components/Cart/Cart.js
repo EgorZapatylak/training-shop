@@ -101,7 +101,14 @@ export function Cart() {
                 {errors.phone && <p className={styles.errorMessage}>{errors.phone}</p>}
 
                 <label>E-MAIL</label>
-                <input type="text" placeholder='e-mail'/>
+                <input
+                    type="text"
+                    placeholder='e-mail'
+                    value={email}
+                    onChange={(e)=>setEmail(e.target.value)}
+                    className={errors.email ? styles.errorMessage : ''}
+                />
+                {errors.email && <p className={styles.errorMessage}>{errors.email}</p>}
 
                 <label>ADDRESS</label>
                 <input type="text" placeholder='Country'/>
@@ -114,7 +121,12 @@ export function Cart() {
                 </div>
 
                 <label>POSTCODE</label>
-                <input type="text" placeholder='BY ______'/>
+                <input
+                    type="text"
+                    placeholder='BY ______'
+                    value={postcode}
+                    onChange={}
+                />
 
                 {/* Согласие на обработку данных */}
                 <label className={styles.checkbox}>
