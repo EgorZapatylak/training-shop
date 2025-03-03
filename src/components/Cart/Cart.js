@@ -16,6 +16,9 @@ export function Cart() {
 
     const [deliveryMethod, setDeliveryMethod] = useState('pickup');
 
+    const [errors, setErrors] = useState({});
+    const [isAgreed, setIsAgreed] = useState(false);
+
     const handleBackToShopping = () => {
         dispatch(closeCart()); // Закрываем корзину
     }
