@@ -105,9 +105,14 @@ export function Cart() {
 
                 {/* Согласие на обработку данных */}
                 <label className={styles.checkbox}>
-                    <input type="checkbox"/>
+                    <input
+                        type="checkbox"
+                        checked={isAgreed}
+                        onChange={()=>setIsAgreed(!isAgreed)}
+                    />
                     I agree to the processing of me personal information
                 </label>
+                {errors.agreement && <p className={styles.errorMessage}>{errors.agreement}</p> }
             </form>
             <div className={styles.cart_total_price}>
                 <h2>Total: ${totalCartPrice.toFixed(2)}</h2>
@@ -194,11 +199,17 @@ export function Cart() {
     const validateForm = () => {
         let newErrors = {};
 
-        if (!name.match(/^[A-Za-zA-Яа-я\s]{2,}$/)) {
-            newErrors.name = 'Invalid name. Only letters are allowed.';
+        if (!phone.match(/^\+375\s?\(\d{2}\)\s?\d{3}-\d{2}-\d{2}$/)) {
+            newErrors.phone = 'Invalid phone format. Use +375 (XX) XXX-XX-XX';
         }
-        if (!address.match(/^\d{5,6}$/)){
-            newErrors.address = 'Invalid address. Enter a correct postal code.';
+        if(!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)){
+            newErrors.email = 'Invalid email format';
+        }
+        if(!postcode.match(/^\d{6}$/)) {
+            newErrors.postcode = 'Postcode must be 6 digits';
+        }
+        if (!address.trim()){
+            newErrors.address = 'Address cannot be empty';
         }
 
         if (paymentMethod === 'card') {
