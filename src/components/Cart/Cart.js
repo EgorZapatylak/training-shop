@@ -6,6 +6,7 @@ import {useNavigate} from "react-router-dom";
 import {Products_base} from "../../Products_base";
 import Bin from './img/trash_bin.svg';
 import {Payment} from "../Payment/Payment";
+import {phone} from "yarn/lib/cli";
 
 export function Cart() {
 
@@ -13,6 +14,11 @@ export function Cart() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [step, setStep] = useState(1); // Шаги в корзине -> 1- товары, 2 - доставка, 3 - оплата
+
+    const [phone, setPhone] = useState('');
+    const [email, setEmail] = useState('');
+    const [postcode, setPostcode] = useState('');
+    const [address, setAddress] = useState('');
 
     const [deliveryMethod, setDeliveryMethod] = useState('pickup');
 
@@ -85,7 +91,14 @@ export function Cart() {
         <>
             <form className={styles.form}>
                 <label>PHONE</label>
-                <input type="text" placeholder='+375 (__) _______ '/>
+                <input
+                    type="text"
+                    placeholder='+375 (__) _______ '
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    className={errors.phone ? styles.inputError : ''}
+                />
+                {errors.phone && <p className={styles.errorMessage}>{errors.phone}</p>}
 
                 <label>E-MAIL</label>
                 <input type="text" placeholder='e-mail'/>
