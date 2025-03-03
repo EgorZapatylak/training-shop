@@ -227,7 +227,14 @@ export function Cart() {
 
 
                 <label>E-MAIL</label>
-                <input type="text" placeholder='e-mail'/>
+                <input
+                    type="text"
+                    placeholder='e-mail'
+                    value={email}
+                    onChange={(e)=>setEmail(e.target.value)}
+                    className={errors.email ? styles.errorMessage : ''}
+                />
+                {errors.email && <p className={styles.errorMessage}>{errors.email}</p>}
 
                 <label>ADDRESS OF STORE</label>
                 <input type="text" placeholder='Country'/>
