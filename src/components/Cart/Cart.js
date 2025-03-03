@@ -111,6 +111,7 @@ export function Cart() {
     const phoneInputRef = useRef(null);
     const emailInputRef = useRef(null);
 
+
     const handlePhoneChange = (e) => {
         let input = e.target.value.replace(/\D/g, ''); // Оставляем только цифры
 
@@ -158,6 +159,23 @@ export function Cart() {
             ...prevState,
             email: input
         }));
+
+        setTimeout(()=>emailInputRef.current?.focus(),0)
+    };
+
+    const handlePostcodeChange = (e) => {
+        let input = e.target.value.replace(/\D/g, '');
+
+        if(input.length > 6) {
+            input = `${input.slice(0, 6)}`;
+        }
+
+        setFormData((prevState) => ({
+            ...prevState,
+            postcode: input,
+        }));
+
+        setTimeout(()=>postcodeInputRef.current?.focus(),0)
     };
 
     //* Форма для самовывоза с почты *//
