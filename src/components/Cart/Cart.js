@@ -65,16 +65,15 @@ export function Cart() {
     }, 0);
 
     const handleNextStep = () => {
-        if (step === 2) {
-            // Получаем все input из форм
-            const formInputs = document.querySelectorAll(`.${styles.form} input:not([type = 'checkbox'])`);
-            const isFormValid = Array.from(formInputs).every(input => input.value.trim() !== '');
-
-            if (!isFormValid) {
-                alert('Please fill all fields before proceeding.');
-                return;
-            }
-        }
+        if (step === 2 && !validateForm()) return ;
+            // // Получаем все input из форм
+            // const formInputs = document.querySelectorAll(`.${styles.form} input:not([type = 'checkbox'])`);
+            // const isFormValid = Array.from(formInputs).every(input => input.value.trim() !== '');
+            //
+            // if (!isFormValid) {
+            //     alert('Please fill all fields before proceeding.');
+            //     return;
+            // }
 
         if (step < 3) setStep(step + 1);
     };
