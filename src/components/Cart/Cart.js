@@ -190,8 +190,13 @@ export function Cart() {
 
                 {/* Согласие на обработку данных */}
                 <label className={styles.checkbox}>
-                    <input type="checkbox"/>
+                    <input
+                        type="checkbox"
+                        checked={isAgreed}
+                        onChange={()=>setIsAgreed(!isAgreed)}
+                    />
                     I agree to the processing of me personal information
+                {errors.agreement && <p className={styles.errorMessage}>{errors.agreement}</p> }
                 </label>
             </form>
             <div className={styles.cart_total_price}>
