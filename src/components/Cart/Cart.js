@@ -125,8 +125,11 @@ export function Cart() {
                     type="text"
                     placeholder='BY ______'
                     value={postcode}
-                    onChange={}
+                    onChange={(e)=>setPostcode(e.target.value)}
+                    className={errors.postcode ? styles.errorMessage : ''}
                 />
+
+                {errors.postcode && <p className={styles.errorMessage}>{errors.postcode}</p>}
 
                 {/* Согласие на обработку данных */}
                 <label className={styles.checkbox}>
