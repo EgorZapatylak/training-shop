@@ -109,6 +109,7 @@ export function Cart() {
     console.log('Current step', step );
 
     const phoneInputRef = useRef(null);
+    const postcodeInputRef = useRef(null);
     const emailInputRef = useRef(null);
 
 
@@ -142,7 +143,7 @@ export function Cart() {
 
         setFormData((prevState) => ({
             ...prevState,
-            phone: formattedPhone
+            phone: formattedPhone,
         }))
 
         setTimeout(()=>phoneInputRef.current?.focus(),0)
@@ -157,7 +158,7 @@ export function Cart() {
         }
         setFormData((prevState) => ({
             ...prevState,
-            email: input
+            email: input,
         }));
 
         setTimeout(()=>emailInputRef.current?.focus(),0)
@@ -199,7 +200,7 @@ export function Cart() {
 
                 <label>E-MAIL</label>
                 <input
-                    type="text"
+                    type="email"
                     name='email'
                     placeholder='example@mail.com'
                     ref={emailInputRef}
@@ -247,9 +248,11 @@ export function Cart() {
                 <input
                     type="text"
                     name='postcode'
-                    placeholder='BY ______'
+                    placeholder='BY 123456'
+                    maxLength='6'
+                    ref={postcodeInputRef}
                     value={formData.postcode}
-                    onChange={handleInputChange}
+                    onChange={handlePostcodeChange}
                     className={errors.postcode ? styles.inputError : ''}
                 />
 
