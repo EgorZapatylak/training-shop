@@ -14,10 +14,25 @@ export function Cart() {
     const navigate = useNavigate();
     const [step, setStep] = useState(1); // Шаги в корзине -> 1- товары, 2 - доставка, 3 - оплата
 
-    const [phone, setPhone] = useState('');
-    const [email, setEmail] = useState('');
-    const [postcode, setPostcode] = useState('');
-    const [address, setAddress] = useState('');
+    // const [phone, setPhone] = useState('');
+    // const [email, setEmail] = useState('');
+    // const [postcode, setPostcode] = useState('');
+    // const [address, setAddress] = useState('');
+
+    const [formData, setFormData] = useState({
+        phone:'',
+        email: '',
+        postcode: '',
+        address: '',
+    })
+
+    const handleInputChange = (e) => {
+        const {name, value, type, checked} = e.target;
+        setFormData( (prevState) => ({
+            ...prevState, // Сохраняем все предыдущие значения
+            [name]: type === 'checkbox' ? checked : value, // Оновляем толко одно поле
+        }))
+    }
 
     const [deliveryMethod, setDeliveryMethod] = useState('pickup');
 
@@ -70,7 +85,16 @@ export function Cart() {
     }, 0);
 
     const handleNextStep = () => {
-        if (step === 2 && !validateForm()) return ;
+        console.log('HandlenextStep called')
+        if (step === 2){
+            const isValid = validateForm();
+            console.log('validation result:',isValid);
+
+            if(!isValid) {
+                console.log('Validation failed', errors);
+                return;
+            }
+        }
             // // Получаем все input из форм
             // const formInputs = document.querySelectorAll(`.${styles.form} input:not([type = 'checkbox'])`);
             // const isFormValid = Array.from(formInputs).every(input => input.value.trim() !== '');
@@ -79,9 +103,10 @@ export function Cart() {
             //     alert('Please fill all fields before proceeding.');
             //     return;
             // }
-
-        if (step < 3) setStep(step + 1);
+        console.log('Procceding to next step')
+        setStep(prevStep => prevStep + 1);
     };
+    console.log('Current step', step );
 
     //* Форма для самовывоза с почты *//
 
@@ -93,8 +118,8 @@ export function Cart() {
                 <input
                     type="text"
                     placeholder='+375 (__) _______ '
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
+                    value={formData.phone}
+                    onChange={(e) => handleInputChange('phone', e.target.value)}
                     className={errors.phone ? styles.inputError : ''}
                 />
                 {errors.phone && <p className={styles.errorMessage}>{errors.phone}</p>}
@@ -103,8 +128,8 @@ export function Cart() {
                 <input
                     type="text"
                     placeholder='e-mail'
-                    value={email}
-                    onChange={(e)=>setEmail(e.target.value)}
+                    value={formData.email}
+                    onChange={(e)=>handleInputChange('email',e.target.value)}
                     className={errors.email ? styles.errorMessage : ''}
                 />
                 {errors.email && <p className={styles.errorMessage}>{errors.email}</p>}
@@ -123,8 +148,8 @@ export function Cart() {
                 <input
                     type="text"
                     placeholder='BY ______'
-                    value={postcode}
-                    onChange={(e)=>setPostcode(e.target.value)}
+                    value={formData.postcode}
+                    onChange={(e)=>handleInputChange('postcode',e.target.value)}
                     className={errors.postcode ? styles.errorMessage : ''}
                 />
 
@@ -161,8 +186,8 @@ export function Cart() {
                 <input
                     type="text"
                     placeholder='+375 (__) _______ '
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
+                    value={formData.phone}
+                    onChange={(e) => handleInputChange('phone', e.target.value)}
                     className={errors.phone ? styles.inputError : ''}
                 />
                 {errors.phone && <p className={styles.errorMessage}>{errors.phone}</p>}
@@ -171,8 +196,8 @@ export function Cart() {
                 <input
                     type="text"
                     placeholder='e-mail'
-                    value={email}
-                    onChange={(e)=>setEmail(e.target.value)}
+                    value={formData.email}
+                    onChange={(e)=>handleInputChange('email',e.target.value)}
                     className={errors.email ? styles.errorMessage : ''}
                 />
                 {errors.email && <p className={styles.errorMessage}>{errors.email}</p>}
@@ -218,8 +243,8 @@ export function Cart() {
                 <input
                     type="text"
                     placeholder='+375 (__) _______ '
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
+                    value={formData.phone}
+                    onChange={(e) => handleInputChange('phone', e.target.value)}
                     className={errors.phone ? styles.inputError : ''}
                 />
                 {errors.phone && <p className={styles.errorMessage}>{errors.phone}</p>}
@@ -229,8 +254,8 @@ export function Cart() {
                 <input
                     type="text"
                     placeholder='e-mail'
-                    value={email}
-                    onChange={(e)=>setEmail(e.target.value)}
+                    value={formData.email}
+                    onChange={(e)=>handleInputChange('email',e.target.value)}
                     className={errors.email ? styles.errorMessage : ''}
                 />
                 {errors.email && <p className={styles.errorMessage}>{errors.email}</p>}
@@ -263,18 +288,18 @@ export function Cart() {
     // Функция валидации полей
 
     const validateForm = () => {
+        console.log('Current formData:', formData);
         let newErrors = {};
-
-        if (!phone.match(/^\+375\s?\(\d{2}\)\s?\d{3}-\d{2}-\d{2}$/)) {
+        if (!formData.phone.match(/^\+375\s?\(\d{2}\)\s?\d{3}-\d{2}-\d{2}$/)) {
             newErrors.phone = 'Invalid phone format. Use +375 (XX) XXX-XX-XX';
         }
-        if(!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)){
+        if(!formData.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)){
             newErrors.email = 'Invalid email format';
         }
-        if(!postcode.match(/^\d{6}$/)) {
+        if(!formData.postcode.match(/^\d{6}$/)) {
             newErrors.postcode = 'Postcode must be 6 digits';
         }
-        if (!address.trim()){
+        if (!formData.address.trim()){
             newErrors.address = 'Address cannot be empty';
         }
         //
@@ -294,6 +319,7 @@ export function Cart() {
         }
 
         setErrors(newErrors);
+        console.log('Validation errors:', newErrors)
         return Object.keys(newErrors).length === 0;
     }
 
