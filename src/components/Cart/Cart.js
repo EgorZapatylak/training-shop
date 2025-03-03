@@ -85,7 +85,7 @@ export function Cart() {
     }, 0);
 
     const handleNextStep = () => {
-        console.log('HandlenextStep called')
+        console.log('HandleNextStep called')
         if (step === 2){
             const isValid = validateForm();
             console.log('validation result:',isValid);
@@ -117,9 +117,10 @@ export function Cart() {
                 <label>PHONE</label>
                 <input
                     type="text"
+                    name='phone'
                     placeholder='+375 (__) _______ '
                     value={formData.phone}
-                    onChange={(e) => handleInputChange('phone', e.target.value)}
+                    onChange={handleInputChange}
                     className={errors.phone ? styles.inputError : ''}
                 />
                 {errors.phone && <p className={styles.errorMessage}>{errors.phone}</p>}
@@ -127,17 +128,42 @@ export function Cart() {
                 <label>E-MAIL</label>
                 <input
                     type="text"
+                    name='email'
                     placeholder='e-mail'
                     value={formData.email}
-                    onChange={(e)=>handleInputChange('email',e.target.value)}
-                    className={errors.email ? styles.errorMessage : ''}
+                    onChange={handleInputChange}
+                    className={errors.email ? styles.inputError : ''}
                 />
                 {errors.email && <p className={styles.errorMessage}>{errors.email}</p>}
 
                 <label>ADDRESS</label>
-                <input type="text" placeholder='Country'/>
-                <input type="text" placeholder='City'/>
-                <input type="text" placeholder='Street'/>
+                <input
+                    type="text"
+                    name='address'
+                    placeholder='Country'
+                    value={formData.address}
+                    onChange={handleInputChange}
+                    className={errors.address ? styles.inputError : ''}
+                />
+                {errors.address && <p className={styles.errorMessage}>{errors.address}</p>}
+                <input
+                    type="text"
+                    name='address'
+                    placeholder='City'
+                    value={formData.address}
+                    onChange={handleInputChange}
+                    className={errors.address ? styles.inputError : ''}
+                />
+                {errors.address && <p className={styles.errorMessage}>{errors.address}</p>}
+                <input
+                    type="text"
+                    name='address'
+                    placeholder='Street'
+                    value={formData.address}
+                    onChange={handleInputChange}
+                    className={errors.address ? styles.inputError : ''}
+                />
+                {errors.address && <p className={styles.errorMessage}>{errors.address}</p>}
 
                 <div className={styles.addressRow}>
                     <input type="text" placeholder='House'/>
@@ -147,10 +173,11 @@ export function Cart() {
                 <label>POSTCODE</label>
                 <input
                     type="text"
+                    name='postcode'
                     placeholder='BY ______'
                     value={formData.postcode}
-                    onChange={(e)=>handleInputChange('postcode',e.target.value)}
-                    className={errors.postcode ? styles.errorMessage : ''}
+                    onChange={handleInputChange}
+                    className={errors.postcode ? styles.inputError : ''}
                 />
 
                 {errors.postcode && <p className={styles.errorMessage}>{errors.postcode}</p>}
