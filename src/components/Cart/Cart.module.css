@@ -266,6 +266,22 @@ input {
     font-size: 18px;
 }
 
+.inputError {
+    border: 2px solid red;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.checkboxContainer {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
 
 @media (max-width: 992px) {
     .cart_item ul {
