@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {clearCart, closeCart, decreaseQuantity, increaseQuantity, removeFromCart} from "../../cartSlice";
 import styles from "./Cart.module.css"
@@ -15,7 +15,7 @@ export function Cart() {
     const [step, setStep] = useState(1); // Шаги в корзине -> 1- товары, 2 - доставка, 3 - оплата
 
     const [formData, setFormData] = useState({
-        phone:'',
+        phone: '',
         email: '',
         postcode: '',
         country: '',
@@ -27,7 +27,7 @@ export function Cart() {
 
     const handleInputChange = (e) => {
         const {name, value, type, checked} = e.target;
-        setFormData( (prevState) => ({
+        setFormData((prevState) => ({
             ...prevState, // Сохраняем все предыдущие значения
             [name]: type === 'checkbox' ? checked : value, // Оновляем толко одно поле
         }))
@@ -35,6 +35,7 @@ export function Cart() {
 
     const [deliveryMethod, setDeliveryMethod] = useState('pickup');
 
+    const [activeField, setActiveField] = useState('')
     const [errors, setErrors] = useState({});
     const [isAgreed, setIsAgreed] = useState(false);
 
@@ -85,32 +86,36 @@ export function Cart() {
 
     const handleNextStep = () => {
         console.log('HandleNextStep called')
-        if (step === 2){
+        if (step === 2) {
             const isValid = validateForm();
-            console.log('validation result:',isValid);
+            console.log('validation result:', isValid);
 
-            if(!isValid) {
+            if (!isValid) {
                 console.log('Validation failed', errors);
                 return;
             }
         }
-            // // Получаем все input из форм
-            // const formInputs = document.querySelectorAll(`.${styles.form} input:not([type = 'checkbox'])`);
-            // const isFormValid = Array.from(formInputs).every(input => input.value.trim() !== '');
-            //
-            // if (!isFormValid) {
-            //     alert('Please fill all fields before proceeding.');
-            //     return;
-            // }
+        // // Получаем все input из форм
+        // const formInputs = document.querySelectorAll(`.${styles.form} input:not([type = 'checkbox'])`);
+        // const isFormValid = Array.from(formInputs).every(input => input.value.trim() !== '');
+        //
+        // if (!isFormValid) {
+        //     alert('Please fill all fields before proceeding.');
+        //     return;
+        // }
         console.log('Procceding to next step')
         setStep(prevStep => prevStep + 1);
     };
-    console.log('Current step', step );
+    console.log('Current step', step);
 
     const phoneInputRef = useRef(null);
     const postcodeInputRef = useRef(null);
     const emailInputRef = useRef(null);
-    const addressInputRef = useRef(null);
+    const countryInputRef = useRef(null);
+    const cityInputRef = useRef(null);
+    const streetInputRef = useRef(null);
+    const houseInputRef = useRef(null);
+    const apartmentInputRef = useRef(null);
 
 
     const handlePhoneChange = (e) => {
@@ -118,12 +123,12 @@ export function Cart() {
 
         if (input.startsWith('375')) {
             input = input.slice(3);
-        } else if (input.startsWith('7')){
+        } else if (input.startsWith('7')) {
             input = input.slice(1);
         }
 
         if (input.length > 9) {
-            input = input.slice(0,9); // Ограничиваем до 9 цифр
+            input = input.slice(0, 9); // Ограничиваем до 9 цифр
         }
 
         // Формируем номер телефона
@@ -132,7 +137,7 @@ export function Cart() {
             formattedPhone += `(${input.slice(0, 2)}`
         }
         if (input.length >= 2) {
-            formattedPhone  += `) ${input.slice(2, 5)}`;
+            formattedPhone += `) ${input.slice(2, 5)}`;
         }
         if (input.length >= 5) {
             formattedPhone += `-${input.slice(5, 7)}`;
@@ -146,7 +151,7 @@ export function Cart() {
             phone: formattedPhone,
         }))
 
-        setTimeout(()=>phoneInputRef.current?.focus(),0)
+        setTimeout(() => phoneInputRef.current?.focus(), 0)
     };
 
     const handleEmailChange = (e) => {
@@ -161,22 +166,32 @@ export function Cart() {
             email: input,
         }));
 
-        setTimeout(()=>emailInputRef.current?.focus(),0)
+        setTimeout(() => emailInputRef.current?.focus(), 0)
     };
 
     const handleAddressChange = (e) => {
         const {name, value} = e.target;
-        setFormData((prevState)=>({
+
+        setActiveField(name);
+
+        setFormData((prevState) => ({
             ...prevState,
             [name]: value,
         }));
-        setTimeout(()=>addressInputRef.current?.focus(),0)
     };
+
+    useEffect(() => {
+        if (activeField === 'country') countryInputRef.current?.focus();
+        if (activeField === 'city') cityInputRef.current?.focus();
+        if (activeField === 'street') streetInputRef.current?.focus();
+        if (activeField === 'house') houseInputRef.current?.focus();
+        if (activeField === 'apartment') apartmentInputRef.current?.focus();
+    }, [activeField, formData]);
 
     const handlePostcodeChange = (e) => {
         let input = e.target.value.replace(/\D/g, '');
 
-        if(input.length > 6) {
+        if (input.length > 6) {
             input = `${input.slice(0, 6)}`;
         }
 
@@ -185,7 +200,7 @@ export function Cart() {
             postcode: input,
         }));
 
-        setTimeout(()=>postcodeInputRef.current?.focus(),0)
+        setTimeout(() => postcodeInputRef.current?.focus(), 0)
     };
 
     //* Форма для самовывоза с почты *//
@@ -224,8 +239,8 @@ export function Cart() {
                     type="text"
                     name='country'
                     placeholder='Country'
+                    ref={countryInputRef}
                     value={formData.country}
-                    ref={addressInputRef}
                     onChange={handleAddressChange}
                     className={errors.country ? styles.inputError : ''}
                 />
@@ -234,8 +249,8 @@ export function Cart() {
                     type="text"
                     name='city'
                     placeholder='City'
+                    ref={cityInputRef}
                     value={formData.city}
-                    ref={addressInputRef}
                     onChange={handleAddressChange}
                     className={errors.city ? styles.inputError : ''}
                 />
@@ -244,8 +259,8 @@ export function Cart() {
                     type="text"
                     name='street'
                     placeholder='Street'
+                    ref={streetInputRef}
                     value={formData.street}
-                    ref={addressInputRef}
                     onChange={handleAddressChange}
                     className={errors.street ? styles.inputError : ''}
                 />
@@ -256,8 +271,8 @@ export function Cart() {
                         type="text"
                         name='house'
                         placeholder='House number'
+                        ref={houseInputRef}
                         value={formData.house}
-                        ref={addressInputRef}
                         onChange={handleAddressChange}
                         className={errors.house ? styles.inputError : ''}
                     />
@@ -267,7 +282,7 @@ export function Cart() {
                         name='apartment'
                         placeholder='Apartment number'
                         value={formData.apartment}
-                        ref={addressInputRef}
+                        ref={apartmentInputRef}
                         onChange={handleAddressChange}
                         className={errors.apartment ? styles.inputError : ''}
                     />
@@ -293,11 +308,11 @@ export function Cart() {
                     <input
                         type="checkbox"
                         checked={isAgreed}
-                        onChange={()=>setIsAgreed(!isAgreed)}
+                        onChange={() => setIsAgreed(!isAgreed)}
                     />
                     I agree to the processing of me personal information
                 </label>
-                {errors.agreement && <p className={styles.errorMessage}>{errors.agreement}</p> }
+                {errors.agreement && <p className={styles.errorMessage}>{errors.agreement}</p>}
             </form>
             <div className={styles.cart_total_price}>
                 <h2>Total: ${totalCartPrice.toFixed(2)}</h2>
@@ -330,7 +345,7 @@ export function Cart() {
                     type="text"
                     placeholder='e-mail'
                     value={formData.email}
-                    onChange={(e)=>handleInputChange('email',e.target.value)}
+                    onChange={(e) => handleInputChange('email', e.target.value)}
                     className={errors.email ? styles.errorMessage : ''}
                 />
                 {errors.email && <p className={styles.errorMessage}>{errors.email}</p>}
@@ -350,10 +365,10 @@ export function Cart() {
                     <input
                         type="checkbox"
                         checked={isAgreed}
-                        onChange={()=>setIsAgreed(!isAgreed)}
+                        onChange={() => setIsAgreed(!isAgreed)}
                     />
                     I agree to the processing of me personal information
-                {errors.agreement && <p className={styles.errorMessage}>{errors.agreement}</p> }
+                    {errors.agreement && <p className={styles.errorMessage}>{errors.agreement}</p>}
                 </label>
             </form>
             <div className={styles.cart_total_price}>
@@ -388,7 +403,7 @@ export function Cart() {
                     type="text"
                     placeholder='e-mail'
                     value={formData.email}
-                    onChange={(e)=>handleInputChange('email',e.target.value)}
+                    onChange={(e) => handleInputChange('email', e.target.value)}
                     className={errors.email ? styles.errorMessage : ''}
                 />
                 {errors.email && <p className={styles.errorMessage}>{errors.email}</p>}
@@ -402,10 +417,10 @@ export function Cart() {
                     <input
                         type="checkbox"
                         checked={isAgreed}
-                        onChange={()=>setIsAgreed(!isAgreed)}
+                        onChange={() => setIsAgreed(!isAgreed)}
                     />
                     I agree to the processing of me personal information
-                {errors.agreement && <p className={styles.errorMessage}>{errors.agreement}</p> }
+                    {errors.agreement && <p className={styles.errorMessage}>{errors.agreement}</p>}
                 </label>
             </form>
             <div className={styles.cart_total_price}>
@@ -426,35 +441,33 @@ export function Cart() {
         if (!formData.phone.match(/^\+375\s?\(\d{2}\)\s?\d{3}-\d{2}-\d{2}$/)) {
             newErrors.phone = 'Invalid phone format. Use +375 (XX) XXX-XX-XX';
         }
-        if(!formData.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)){
+        if (!formData.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
             newErrors.email = 'Invalid email format';
         }
-        if(!formData.postcode.match(/^\d{6}$/)) {
+        if (!formData.postcode.match(/^\d{6}$/)) {
             newErrors.postcode = 'Postcode must be 6 digits';
         }
 
-        if (!formData.country.trim()){
+        if (!formData.country.trim()) {
             newErrors.country = 'Country cannot be empty';
         }
 
-        if (!formData.city.trim()){
+        if (!formData.city.trim()) {
             newErrors.city = 'City cannot be empty';
         }
 
-        if (!formData.street.trim()){
+        if (!formData.street.trim()) {
             newErrors.street = 'Street cannot be empty';
         }
 
-        if (!formData.house.trim()){
+        if (!formData.house.trim()) {
             newErrors.house = 'House number cannot be empty';
         }
 
-        if (!formData.apartment.trim()){
+        if (!formData.apartment.trim()) {
             newErrors.apartment = 'Apartment number cannot be empty';
         }
 
-
-        //
         // if (paymentMethod === 'card') {
         //     if (!cardNummber.match(/^\d{16}$/)) {
         //         newErrors.cardNumber = 'Card number must be 16 digits.';
@@ -466,6 +479,7 @@ export function Cart() {
         //         newErrors.cvv = 'Cvv must be 3 digits.';
         //     }
         // }
+
         if (!isAgreed) {
             newErrors.agreement = 'You must agree to the processing of personal data.';
         }
