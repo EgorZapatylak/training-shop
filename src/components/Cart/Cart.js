@@ -165,8 +165,13 @@ export function Cart() {
     };
 
     const handleAddressChange = (e) => {
-
-    }
+        const {name, value} = e.target;
+        setFormData((prevState)=>({
+            ...prevState,
+            [name]: value,
+        }));
+        setTimeout(()=>addressInputRef.current?.focus(),0)
+    };
 
     const handlePostcodeChange = (e) => {
         let input = e.target.value.replace(/\D/g, '');
@@ -217,39 +222,56 @@ export function Cart() {
                 <label>ADDRESS</label>
                 <input
                     type="text"
-                    name='address'
+                    name='country'
                     placeholder='Country'
-                    value={formData.address}
-                    onChange={handleInputChange}
-                    className={errors.address ? styles.inputError : ''}
+                    value={formData.country}
+                    ref={addressInputRef}
+                    onChange={handleAddressChange}
+                    className={errors.country ? styles.inputError : ''}
                 />
-                {errors.address && <p className={styles.errorMessage}>{errors.address}</p>}
+                {errors.country && <p className={styles.errorMessage}>{errors.country}</p>}
                 <input
                     type="text"
-                    name='address'
+                    name='city'
                     placeholder='City'
-                    value={formData.address}
-                    onChange={handleInputChange}
-                    className={errors.address ? styles.inputError : ''}
+                    value={formData.city}
+                    ref={addressInputRef}
+                    onChange={handleAddressChange}
+                    className={errors.city ? styles.inputError : ''}
                 />
-                {errors.address && <p className={styles.errorMessage}>{errors.address}</p>}
+                {errors.city && <p className={styles.errorMessage}>{errors.city}</p>}
                 <input
                     type="text"
-                    name='address'
+                    name='street'
                     placeholder='Street'
-                    value={formData.address}
-                    onChange={handleInputChange}
-                    className={errors.address ? styles.inputError : ''}
+                    value={formData.street}
+                    ref={addressInputRef}
+                    onChange={handleAddressChange}
+                    className={errors.street ? styles.inputError : ''}
                 />
-                {errors.address && <p className={styles.errorMessage}>{errors.address}</p>}
+                {errors.street && <p className={styles.errorMessage}>{errors.street}</p>}
 
                 <div className={styles.addressRow}>
                     <input
                         type="text"
-                        placeholder='House'/>
+                        name='house'
+                        placeholder='House number'
+                        value={formData.house}
+                        ref={addressInputRef}
+                        onChange={handleAddressChange}
+                        className={errors.house ? styles.inputError : ''}
+                    />
+                    {errors.house && <p className={styles.errorMessage}>{errors.house}</p>}
                     <input
                         type="text"
-                        placeholder='Apartment'/>
+                        name='apartment'
+                        placeholder='Apartment number'
+                        value={formData.apartment}
+                        ref={addressInputRef}
+                        onChange={handleAddressChange}
+                        className={errors.apartment ? styles.inputError : ''}
+                    />
+                    {errors.apartment && <p className={styles.errorMessage}>{errors.apartment}</p>}
                 </div>
 
                 <label>POSTCODE</label>
@@ -410,9 +432,28 @@ export function Cart() {
         if(!formData.postcode.match(/^\d{6}$/)) {
             newErrors.postcode = 'Postcode must be 6 digits';
         }
-        if (!formData.address.trim()){
-            newErrors.address = 'Address cannot be empty';
+
+        if (!formData.country.trim()){
+            newErrors.country = 'Country cannot be empty';
         }
+
+        if (!formData.city.trim()){
+            newErrors.city = 'City cannot be empty';
+        }
+
+        if (!formData.street.trim()){
+            newErrors.street = 'Street cannot be empty';
+        }
+
+        if (!formData.house.trim()){
+            newErrors.house = 'House number cannot be empty';
+        }
+
+        if (!formData.apartment.trim()){
+            newErrors.apartment = 'Apartment number cannot be empty';
+        }
+
+
         //
         // if (paymentMethod === 'card') {
         //     if (!cardNummber.match(/^\d{16}$/)) {
