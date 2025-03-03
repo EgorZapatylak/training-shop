@@ -14,16 +14,15 @@ export function Cart() {
     const navigate = useNavigate();
     const [step, setStep] = useState(1); // Шаги в корзине -> 1- товары, 2 - доставка, 3 - оплата
 
-    // const [phone, setPhone] = useState('');
-    // const [email, setEmail] = useState('');
-    // const [postcode, setPostcode] = useState('');
-    // const [address, setAddress] = useState('');
-
     const [formData, setFormData] = useState({
         phone:'',
         email: '',
         postcode: '',
-        address: '',
+        country: '',
+        city: '',
+        street: '',
+        house: '',
+        apartment: '',
     })
 
     const handleInputChange = (e) => {
@@ -111,6 +110,7 @@ export function Cart() {
     const phoneInputRef = useRef(null);
     const postcodeInputRef = useRef(null);
     const emailInputRef = useRef(null);
+    const addressInputRef = useRef(null);
 
 
     const handlePhoneChange = (e) => {
@@ -163,6 +163,10 @@ export function Cart() {
 
         setTimeout(()=>emailInputRef.current?.focus(),0)
     };
+
+    const handleAddressChange = (e) => {
+
+    }
 
     const handlePostcodeChange = (e) => {
         let input = e.target.value.replace(/\D/g, '');
@@ -240,8 +244,12 @@ export function Cart() {
                 {errors.address && <p className={styles.errorMessage}>{errors.address}</p>}
 
                 <div className={styles.addressRow}>
-                    <input type="text" placeholder='House'/>
-                    <input type="text" placeholder='Apartment'/>
+                    <input
+                        type="text"
+                        placeholder='House'/>
+                    <input
+                        type="text"
+                        placeholder='Apartment'/>
                 </div>
 
                 <label>POSTCODE</label>
