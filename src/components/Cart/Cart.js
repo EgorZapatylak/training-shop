@@ -159,7 +159,14 @@ export function Cart() {
         <>
             <form className={styles.form}>
                 <label>PHONE</label>
-                <input type="text" placeholder='+375 (__) _______ '/>
+                <input
+                    type="text"
+                    placeholder='+375 (__) _______ '
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    className={errors.phone ? styles.inputError : ''}
+                />
+                {errors.phone && <p className={styles.errorMessage}>{errors.phone}</p>}
 
                 <label>E-MAIL</label>
                 <input type="text" placeholder='e-mail'/>
