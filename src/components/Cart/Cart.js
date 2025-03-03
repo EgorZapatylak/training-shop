@@ -6,7 +6,6 @@ import {useNavigate} from "react-router-dom";
 import {Products_base} from "../../Products_base";
 import Bin from './img/trash_bin.svg';
 import {Payment} from "../Payment/Payment";
-import {phone} from "yarn/lib/cli";
 
 export function Cart() {
 
