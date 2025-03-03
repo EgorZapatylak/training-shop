@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {clearCart, closeCart, decreaseQuantity, increaseQuantity, removeFromCart} from "../../cartSlice";
 import styles from "./Cart.module.css"
@@ -108,6 +108,27 @@ export function Cart() {
     };
     console.log('Current step', step );
 
+    const phoneInputRef = useRef(null);
+
+    const handlePhoneChange = (e) => {
+        let input = e.target.value.replace(/\D/g, ''); // Оставляем только цифры
+
+        if (input.startsWith('375')) {
+            input = input.slice(3);
+        }
+
+        if (input.length > 9) {
+            input = input.slice(0,9); // Ограничиваем до 9 цифр
+        }
+
+        setFormData(prevState => ({
+            ...prevState,
+            phone: '+375 ' +input // Всегда добавляем "+375 "
+        }))
+
+        setTimeout(()=>phoneInputRef.current?.focus(),0)
+    };
+
     //* Форма для самовывоза с почты *//
 
     const PickupForm = () => (
@@ -119,8 +140,10 @@ export function Cart() {
                     type="text"
                     name='phone'
                     placeholder='+375 (__) _______ '
+                    ref={phoneInputRef}
+                    maxLength='16'
                     value={formData.phone}
-                    onChange={handleInputChange}
+                    onChange={handlePhoneChange}
                     className={errors.phone ? styles.inputError : ''}
                 />
                 {errors.phone && <p className={styles.errorMessage}>{errors.phone}</p>}
