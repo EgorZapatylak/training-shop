@@ -35,6 +35,12 @@ export const Payment = () => {
         return Object.keys(newErrors).length === 0;
     }
 
+    const handleSubmit =(e) => {
+        e.preventDefault();
+        if (! validateForm()) return;
+        console.log('Оплата отправлена', {cardNumber, expiryDate, cvv});
+    };
+
     return (
         <>
             <h3>Method of payments</h3>
