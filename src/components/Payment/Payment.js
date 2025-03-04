@@ -19,6 +19,12 @@ export const Payment = () => {
         setExpiryDate(value);
     }
 
+    const handleCvvChange = (e) => {
+        let value = e.target.value.replace(/\D/g, '');
+        if (value.length > 3) value = value.slice(0, 3);
+        setCvv(value);
+    }
+
     return (
         <>
             <h3>Method of payments</h3>
