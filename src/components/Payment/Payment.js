@@ -25,6 +25,16 @@ export const Payment = () => {
         setCvv(value);
     }
 
+    const validateForm = () => {
+        let newErrors={};
+        if (!cardNumber.trim()) newErrors.cardNumber = 'Введите номер карты';
+        if (!expiryDate.trim()) newErrors.expiryDate = 'Введите срок действия';
+        if (!cvv.trim()) newErrors.cvv = 'Введите cvv';
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    }
+
     return (
         <>
             <h3>Method of payments</h3>
