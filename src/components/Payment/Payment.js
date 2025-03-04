@@ -90,6 +90,7 @@ export const Payment = () => {
                             onChange={handleCvvChange}
                             maxLength='3'
                         />
+                        {errors.cvv && <p className={styles.error}>{errors.cvv}</p>}
                     </div>
                 </div>
             )}
