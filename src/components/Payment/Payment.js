@@ -19,7 +19,7 @@ export const Payment = () => {
                             checked={selectedMethod === method}
                             onChange={()=>setSelectedMethod(method)}
                         />
-                        <img src={`./images/${method}.svg`} alt={method}/>
+                        <img src={`./src/components/${method}.svg`} alt={method}/>
                     </label>
                 ))}
             </div>
