@@ -63,10 +63,33 @@ export const Payment = () => {
             {selectedMethod !== 'cash' && selectedMethod !== 'paypal' && (
                 <div className={styles.cardDetails}>
                     <h3>CARD</h3>
-                    <input type="text" placeholder='____ ____ ____ ____' className={styles.cardInput}/>
+                    <input
+                        type="text"
+                        placeholder='____ ____ ____ ____'
+                        className={styles.cardInput}
+                        value={cardNumber}
+                        onChange={(e) => setCardNumber(e.target.value)}
+                    />
+                    {errors.cardNumber && <p className={styles.error}>{errors.cardNumber}</p>}
+
                     <div className={styles.cardInfo}>
-                        <input type="text" placeholder='MM/YY' className={styles.smallInput}/>
-                        <input type="text" placeholder='CVV' className={styles.smallInput}/>
+                        <input
+                            type="text"
+                            placeholder='MM/YY'
+                            className={styles.smallInput}
+                            value={expiryDate}
+                            onChange={handleExpiryChange}
+                            maxLength='5'
+                        />
+                        {errors.expiryDate && <p className={styles.error}>{errors.expiryDate}</p>}
+                        <input
+                            type="text"
+                            placeholder='CVV'
+                            className={styles.smallInput}
+                            value={cvv}
+                            onChange={handleCvvChange}
+                            maxLength='3'
+                        />
                     </div>
                 </div>
             )}
