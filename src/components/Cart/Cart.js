@@ -27,9 +27,20 @@ export function Cart() {
 
     const handleInputChange = (e) => {
         const {name, value, type, checked} = e.target;
+
+        if (['phone', 'email', 'postcode', 'city'].includes(name)){
+            setActiveField('');
+        } else {
+            setActiveField(name);
+        }
+        // setFormData((prevState) => ({
+        //     ...prevState, // Сохраняем все предыдущие значения
+        //     [name]: type === 'checkbox' ? checked : value, // Оновляем толко одно поле
+        // }))
+
         setFormData((prevState) => ({
-            ...prevState, // Сохраняем все предыдущие значения
-            [name]: type === 'checkbox' ? checked : value, // Оновляем толко одно поле
+            ...prevState,
+            [name]: value,
         }))
     }
 
@@ -172,13 +183,19 @@ export function Cart() {
         }));
     };
 
-    useEffect(() => {
-        if (activeField === 'country') countryInputRef.current?.focus();
-        if (activeField === 'city') cityInputRef.current?.focus();
-        if (activeField === 'street') streetInputRef.current?.focus();
-        if (activeField === 'house') houseInputRef.current?.focus();
-        if (activeField === 'apartment') apartmentInputRef.current?.focus();
-    }, [activeField, formData]);
+    // useEffect(() => {
+    //     if (activeField === 'country') countryInputRef.current?.focus();
+    //     if (activeField === 'city') cityInputRef.current?.focus();
+    //     if (activeField === 'street') streetInputRef.current?.focus();
+    //     if (activeField === 'house') houseInputRef.current?.focus();
+    //     if (activeField === 'apartment') apartmentInputRef.current?.focus();
+    // }, [activeField, formData]);
+
+    useEffect(()=> {
+        if (activeField) {
+            document.querySelector(`[name = ${activeField}]`)?.focus();
+        }
+    }, [activeField]);
 
     const handlePostcodeChange = (e) => {
         let input = e.target.value.replace(/\D/g, '');
