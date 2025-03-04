@@ -4,6 +4,20 @@ import styles from './Payment.module.css'
 export const Payment = () => {
 
     const [selectedMethod, setSelectedMethod] = useState('visa');
+    const [cardNumber, setCardNumber] = useState('');
+    const [expiryDate, setExpiryDate] = useState('');
+    const [cvv, setCvv] = useState('');
+    const [errors, setErrors] = useState({});
+
+    const handleExpiryChange = (e) => {
+        let value = e.target.value.replace(/\D/g, '');
+        if (value.length > 4) value = value.slice(0,4)
+        if (value.length >= 2) {
+            value = `${value.slice(0,2)}/${value.slice(2)}`;
+        }
+
+        setExpiryDate(value);
+    }
 
     return (
         <>
