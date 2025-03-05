@@ -14,6 +14,8 @@ export function Cart() {
     const navigate = useNavigate();
     const [step, setStep] = useState(1); // Шаги в корзине -> 1- товары, 2 - доставка, 3 - оплата
 
+    const [isPaymentValid, setIsPaymentValid] = useState(false)
+
     const [formData, setFormData] = useState({
         phone: '',
         email: '',
@@ -619,12 +621,16 @@ export function Cart() {
                         )}
                         {step === 3 && (
                             <>
-                                <Payment/>
+                                <Payment setIsPaymentValid={setIsPaymentValid}/>
                                 <div className={styles.cart_total_price}>
                                     <h2>Total: ${totalCartPrice.toFixed(2)}</h2>
                                 </div>
                                 <div className={styles.cart_button}>
-                                    <button className={styles.cart_button_black} onClick={handleOrder}>READY</button>
+                                    <button
+                                        className={styles.cart_button_black}
+                                        onClick={handleOrder}
+                                        disabled={!isPaymentValid}
+                                    >READY</button>
                                     <button onClick={handleViewCart}>VIEW CART</button>
                                 </div>
                             </>
