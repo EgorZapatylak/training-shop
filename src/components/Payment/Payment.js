@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './Payment.module.css'
 
 export const Payment = ({setIsPaymentValid}) => {
@@ -6,6 +6,7 @@ export const Payment = ({setIsPaymentValid}) => {
     const [selectedMethod, setSelectedMethod] = useState('visa');
     const [cardNumber, setCardNumber] = useState('');
     const [expiryDate, setExpiryDate] = useState('');
+    const [email, setEmail] = useState('');
     const [cvv, setCvv] = useState('');
     const [errors, setErrors] = useState({});
 
@@ -42,19 +43,31 @@ export const Payment = ({setIsPaymentValid}) => {
         if (!expiryDate.trim()) newErrors.expiryDate = 'Введите срок действия';
         if (!cvv.trim()) newErrors.cvv = 'Введите cvv';
 
+        if (selectedMethod === 'paypal') {
+            if (!email.trim() || !email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                newErrors.email = 'Введите корректный email';
+            }
+        }
+
         setErrors(newErrors);
         const valid = Object.keys(newErrors).length === 0;
         setIsValid(valid);
+        setIsPaymentValid(valid);
         return valid;
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-    const valid = validateForm();
-    setIsValid(valid);
-    setIsPaymentValid(valid);
-        console.log("Payment validation result:", valid);
+        validateForm();
     };
+
+    useEffect(()=> {
+        if (selectedMethod === 'cash') {
+            setIsPaymentValid(true);
+        } else  {
+            validateForm();
+        }
+    }, [selectedMethod]);
 
 
     return (
@@ -115,7 +128,14 @@ export const Payment = ({setIsPaymentValid}) => {
             {selectedMethod === 'paypal' && (
                 <div className={styles.cardDetails}>
                     <h3>E-MAIL</h3>
-                    <input type="text" placeholder='e-mail' className={styles.emailInput}/>
+                    <input
+                        type="text"
+                        placeholder='e-mail'
+                        className={styles.emailInput}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                    {errors.email && <p className={styles.error}>{errors.email}</p>}
                 </div>
             )}
         </>
