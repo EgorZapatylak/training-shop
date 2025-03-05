@@ -488,18 +488,6 @@ export function Cart() {
             newErrors.apartment = 'Apartment number cannot be empty';
         }
 
-        // if (paymentMethod === 'card') {
-        //     if (!cardNummber.match(/^\d{16}$/)) {
-        //         newErrors.cardNumber = 'Card number must be 16 digits.';
-        //     }
-        //     if (!expiry.match(/^(0[1-9]|1[0-2])\/\d{2}$/)) {
-        //         newErrors.expiry = 'Expiry must be in MM/YY format.';
-        //     }
-        //     if (!cvv.match(/^\d{3}/)) {
-        //         newErrors.cvv = 'Cvv must be 3 digits.';
-        //     }
-        // }
-
         if (!isAgreed) {
             newErrors.agreement = 'You must agree to the processing of personal data.';
         }
