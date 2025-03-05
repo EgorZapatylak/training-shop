@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './Payment.module.css'
 
-export const Payment = () => {
+export const Payment = ({setIsPaymentValid}) => {
 
     const [selectedMethod, setSelectedMethod] = useState('visa');
     const [cardNumber, setCardNumber] = useState('');
@@ -9,11 +9,13 @@ export const Payment = () => {
     const [cvv, setCvv] = useState('');
     const [errors, setErrors] = useState({});
 
+    const [isValid, setIsValid] = useState(false);
+
     const handleExpiryChange = (e) => {
         let value = e.target.value.replace(/\D/g, '');
-        if (value.length > 4) value = value.slice(0,4)
+        if (value.length > 4) value = value.slice(0, 4)
         if (value.length >= 2) {
-            value = `${value.slice(0,2)}/${value.slice(2)}`;
+            value = `${value.slice(0, 2)}/${value.slice(2)}`;
         }
 
         setExpiryDate(value);
@@ -26,20 +28,26 @@ export const Payment = () => {
     }
 
     const validateForm = () => {
-        let newErrors={};
+        let newErrors = {};
         if (!cardNumber.trim()) newErrors.cardNumber = 'Введите номер карты';
         if (!expiryDate.trim()) newErrors.expiryDate = 'Введите срок действия';
         if (!cvv.trim()) newErrors.cvv = 'Введите cvv';
 
         setErrors(newErrors);
-        return Object.keys(newErrors).length === 0;
-    }
+        const valid = Object.keys(newErrors).length === 0;
+        setIsValid(valid);
+        return valid;
+    };
 
-    const handleSubmit =(e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        if (! validateForm()) return;
+        if (!validateForm()) return;
         console.log('Оплата отправлена', {cardNumber, expiryDate, cvv});
     };
+
+    useEffect(()=> {
+        setIsPaymentValid(isValid);
+    }, [isValid,setIsPaymentValid]);
 
     return (
         <>
@@ -53,7 +61,7 @@ export const Payment = () => {
                             name='payment'
                             value={method}
                             checked={selectedMethod === method}
-                            onChange={()=>setSelectedMethod(method)}
+                            onChange={() => setSelectedMethod(method)}
                         />
                         <img src={`./src/components/${method}.svg`} alt={method}/>
                     </label>
