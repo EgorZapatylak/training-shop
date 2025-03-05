@@ -53,6 +53,7 @@ export const Payment = ({setIsPaymentValid}) => {
     const valid = validateForm();
     setIsValid(valid);
     setIsPaymentValid(valid);
+        console.log("Payment validation result:", valid);
     };
 
     useEffect(()=> {
@@ -79,7 +80,7 @@ export const Payment = ({setIsPaymentValid}) => {
             </div>
 
             {selectedMethod !== 'cash' && selectedMethod !== 'paypal' && (
-                <form onSubmit={handleSubmit}>
+                <form id='payment-form' onSubmit={handleSubmit}>
                     <div className={styles.cardDetails}>
                         <h3>CARD</h3>
                         <input
