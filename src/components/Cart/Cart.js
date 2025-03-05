@@ -59,6 +59,11 @@ export function Cart() {
     const [isOrderConfirmed, setIsOrderConfirmed] = useState(false);
 
     const handleOrder = () => {
+        if (!isPaymentValid) {
+            console.log("Order not allowed: payment is invalid");
+            return
+        }
+        console.log("Order confirmed!")
         setIsOrderConfirmed(true);
         dispatch(clearCart()); // Очищаем корзину
     }
@@ -198,6 +203,10 @@ export function Cart() {
             document.querySelector(`[name = ${activeField}]`)?.focus();
         }
     }, [activeField]);
+
+    useEffect(()=> {
+        console.log('isPaymentValid change', isPaymentValid);
+    }, [isPaymentValid])
 
     const handlePostcodeChange = (e) => {
         let input = e.target.value.replace(/\D/g, '');
@@ -629,7 +638,7 @@ export function Cart() {
                                     <button
                                         className={styles.cart_button_black}
                                         onClick={handleOrder}
-                                        disabled={!isPaymentValid}
+                                        // disabled={!isPaymentValid}
                                     >READY</button>
                                     <button onClick={handleViewCart}>VIEW CART</button>
                                 </div>
