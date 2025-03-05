@@ -10,9 +10,9 @@ export const Payment = ({setIsPaymentValid}) => {
     const [cvv, setCvv] = useState('');
     const [errors, setErrors] = useState({});
 
-    const [isValid, setIsValid] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
-    const  handleCardNumberChange = (e) => {
+    const handleCardNumberChange = (e) => {
         let value = e.target.value.replace(/\D/g, '').slice(0, 16); // Оставляем только цифры, максимум 16 символов
 
         // Форматируем в виде "#### #### #### ####"
@@ -39,34 +39,34 @@ export const Payment = ({setIsPaymentValid}) => {
 
     const validateForm = () => {
         let newErrors = {};
-        if (!cardNumber.trim()) newErrors.cardNumber = 'Введите номер карты';
-        if (!expiryDate.trim()) newErrors.expiryDate = 'Введите срок действия';
-        if (!cvv.trim()) newErrors.cvv = 'Введите cvv';
 
+        if (selectedMethod === 'visa' || selectedMethod === 'mastercard') {
+
+            if (isSubmitted && !cardNumber.trim()) newErrors.cardNumber = 'Введите номер карты';
+            if (isSubmitted && !expiryDate.trim()) newErrors.expiryDate = 'Введите срок действия';
+            if (isSubmitted && !cvv.trim()) newErrors.cvv = 'Введите cvv';
+        }
         if (selectedMethod === 'paypal') {
-            if (!email.trim() || !email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+            if (isSubmitted && !email.trim() && !email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
                 newErrors.email = 'Введите корректный email';
             }
         }
 
         setErrors(newErrors);
-        const valid = Object.keys(newErrors).length === 0;
-        setIsValid(valid);
-        setIsPaymentValid(valid);
-        return valid;
+        return Object.keys(newErrors).length === 0;
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        validateForm();
+        setIsSubmitted(true);
+        const isValid = validateForm();
+        setIsPaymentValid(isValid);
     };
 
-    useEffect(()=> {
-        if (selectedMethod === 'cash') {
-            setIsPaymentValid(true);
-        } else  {
-            validateForm();
-        }
+    useEffect(() => {
+        setIsSubmitted(false);
+        setErrors({});
+        setIsPaymentValid(selectedMethod === 'cash');
     }, [selectedMethod]);
 
 
@@ -100,7 +100,7 @@ export const Payment = ({setIsPaymentValid}) => {
                             value={cardNumber}
                             onChange={handleCardNumberChange}
                         />
-                        {errors.cardNumber && <p className={styles.error}>{errors.cardNumber}</p>}
+                        {isSubmitted && errors.cardNumber && <p className={styles.error}>{errors.cardNumber}</p>}
 
                         <div className={styles.cardInfo}>
                             <input
@@ -111,7 +111,7 @@ export const Payment = ({setIsPaymentValid}) => {
                                 onChange={handleExpiryChange}
                                 maxLength='5'
                             />
-                            {errors.expiryDate && <p className={styles.error}>{errors.expiryDate}</p>}
+                            {isSubmitted && errors.expiryDate && <p className={styles.error}>{errors.expiryDate}</p>}
                             <input
                                 type="text"
                                 placeholder='CVV'
@@ -120,7 +120,7 @@ export const Payment = ({setIsPaymentValid}) => {
                                 onChange={handleCvvChange}
                                 maxLength='3'
                             />
-                            {errors.cvv && <p className={styles.error}>{errors.cvv}</p>}
+                            {isSubmitted && errors.cvv && <p className={styles.error}>{errors.cvv}</p>}
                         </div>
                     </div>
                 </form>
@@ -135,7 +135,7 @@ export const Payment = ({setIsPaymentValid}) => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
-                    {errors.email && <p className={styles.error}>{errors.email}</p>}
+                    {isSubmitted && errors.email && <p className={styles.error}>{errors.email}</p>}
                 </div>
             )}
         </>
