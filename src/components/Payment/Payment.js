@@ -47,7 +47,7 @@ export const Payment = ({setIsPaymentValid}) => {
             if (isSubmitted && !cvv.trim()) newErrors.cvv = 'Введите cvv';
         }
         if (selectedMethod === 'paypal') {
-            if (isSubmitted && !email.trim() && !email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+            if (isSubmitted && (!email.trim() || !email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/))) {
                 newErrors.email = 'Введите корректный email';
             }
         }
