@@ -121,7 +121,6 @@ export function Cart() {
     const houseInputRef = useRef(null);
     const apartmentInputRef = useRef(null);
 
-
     const handlePhoneChange = (e) => {
         let input = e.target.value.replace(/\D/g, ''); // Оставляем только цифры
 
@@ -356,22 +355,69 @@ export function Cart() {
 
                 <label>E-MAIL</label>
                 <input
-                    type="text"
-                    placeholder='e-mail'
+                    type="email"
+                    name='email'
+                    placeholder='example@mail.com'
+                    ref={emailInputRef}
                     value={formData.email}
-                    onChange={(e) => handleInputChange('email', e.target.value)}
-                    className={errors.email ? styles.errorMessage : ''}
+                    onChange={handleEmailChange}
+                    className={errors.email ? styles.inputError : ''}
                 />
                 {errors.email && <p className={styles.errorMessage}>{errors.email}</p>}
 
                 <label>ADDRESS</label>
-                <input type="text" placeholder='Country'/>
-                <input type="text" placeholder='City'/>
-                <input type="text" placeholder='Street'/>
+                <input
+                    type="text"
+                    name='country'
+                    placeholder='Country'
+                    ref={countryInputRef}
+                    value={formData.country}
+                    onChange={handleAddressChange}
+                    className={errors.country ? styles.inputError : ''}
+                />
+                {errors.country && <p className={styles.errorMessage}>{errors.country}</p>}
+                <input
+                    type="text"
+                    name='city'
+                    placeholder='City'
+                    ref={cityInputRef}
+                    value={formData.city}
+                    onChange={handleAddressChange}
+                    className={errors.city ? styles.inputError : ''}
+                />
+                {errors.city && <p className={styles.errorMessage}>{errors.city}</p>}
+                <input
+                    type="text"
+                    name='street'
+                    placeholder='Street'
+                    ref={streetInputRef}
+                    value={formData.street}
+                    onChange={handleAddressChange}
+                    className={errors.street ? styles.inputError : ''}
+                />
+                {errors.street && <p className={styles.errorMessage}>{errors.street}</p>}
 
                 <div className={styles.addressRow}>
-                    <input type="text" placeholder='House'/>
-                    <input type="text" placeholder='Apartment'/>
+                    <input
+                        type="text"
+                        name='house'
+                        placeholder='House number'
+                        ref={houseInputRef}
+                        value={formData.house}
+                        onChange={handleAddressChange}
+                        className={errors.house ? styles.inputError : ''}
+                    />
+                    {errors.house && <p className={styles.errorMessage}>{errors.house}</p>}
+                    <input
+                        type="text"
+                        name='apartment'
+                        placeholder='Apartment number'
+                        value={formData.apartment}
+                        ref={apartmentInputRef}
+                        onChange={handleAddressChange}
+                        className={errors.apartment ? styles.inputError : ''}
+                    />
+                    {errors.apartment && <p className={styles.errorMessage}>{errors.apartment}</p>}
                 </div>
 
                 {/* Согласие на обработку данных */}
@@ -414,17 +460,37 @@ export function Cart() {
 
                 <label>E-MAIL</label>
                 <input
-                    type="text"
-                    placeholder='e-mail'
+                    type="email"
+                    name='email'
+                    placeholder='example@mail.com'
+                    ref={emailInputRef}
                     value={formData.email}
-                    onChange={(e) => handleInputChange('email', e.target.value)}
-                    className={errors.email ? styles.errorMessage : ''}
+                    onChange={handleEmailChange}
+                    className={errors.email ? styles.inputError : ''}
                 />
                 {errors.email && <p className={styles.errorMessage}>{errors.email}</p>}
 
                 <label>ADDRESS OF STORE</label>
-                <input type="text" placeholder='Country'/>
-                <input type="text" placeholder='Store adress'/>
+                <input
+                    type="text"
+                    name='country'
+                    placeholder='Country'
+                    ref={countryInputRef}
+                    value={formData.country}
+                    onChange={handleAddressChange}
+                    className={errors.country ? styles.inputError : ''}
+                />
+                {errors.country && <p className={styles.errorMessage}>{errors.country}</p>}
+                <input
+                    type="text"
+                    name='city'
+                    placeholder='City'
+                    ref={cityInputRef}
+                    value={formData.city}
+                    onChange={handleAddressChange}
+                    className={errors.city ? styles.inputError : ''}
+                />
+                {errors.city && <p className={styles.errorMessage}>{errors.city}</p>}
 
                 {/* Согласие на обработку данных */}
                 <label className={styles.checkbox}>
