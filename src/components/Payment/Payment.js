@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import styles from './Payment.module.css'
 
 export const Payment = ({setIsPaymentValid}) => {
@@ -56,9 +56,6 @@ export const Payment = ({setIsPaymentValid}) => {
         console.log("Payment validation result:", valid);
     };
 
-    useEffect(()=> {
-        setIsPaymentValid(isValid);
-    }, [isValid,setIsPaymentValid]);
 
     return (
         <>
