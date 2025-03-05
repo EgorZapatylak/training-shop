@@ -49,6 +49,7 @@ export function Cart() {
     const [isAgreed, setIsAgreed] = useState(false);
 
     const handleBackToShopping = () => {
+        dispatch(clearCart()); // Очищаем корзину
         dispatch(closeCart()); // Закрываем корзину
     }
 
@@ -56,15 +57,9 @@ export function Cart() {
 
     const handleOrder = () => {
         if (!isPaymentValid) {
-            console.log("Order not allowed: payment is invalid");
-            alert(
-                "Payment details sre invalid. Please check the form"
-            )
             return
         }
-        console.log("Order confirmed!")
         setIsOrderConfirmed(true);
-        dispatch(clearCart()); // Очищаем корзину
     }
 
     const handleViewCart = () => {
@@ -637,8 +632,15 @@ export function Cart() {
                                         onClick={() =>{
                                         document.getElementById('payment-form')?.dispatchEvent(new Event('submit', {cancelable: true, bubbles:true}));
                                         handleOrder();
+                                        setTimeout(() => {
+                                            if (isPaymentValid) {
+                                            } else {
+                                                console.log("Payment is still")
+                                                alert("payment details sre invalid")
+                                            }
+                                        }, 50)
+
                                         }}
-                                        // disabled={!isPaymentValid}
                                     >READY</button>
                                     <button onClick={handleViewCart}>VIEW CART</button>
                                 </div>
