@@ -48,3 +48,13 @@
     width: 85%;
     padding: 10px;
 }
+.inputError {
+    border: 2px solid red;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
