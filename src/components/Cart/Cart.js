@@ -35,10 +35,6 @@ export function Cart() {
         } else {
             setActiveField(name);
         }
-        // setFormData((prevState) => ({
-        //     ...prevState, // Сохраняем все предыдущие значения
-        //     [name]: type === 'checkbox' ? checked : value, // Оновляем толко одно поле
-        // }))
 
         setFormData((prevState) => ({
             ...prevState,
@@ -61,6 +57,9 @@ export function Cart() {
     const handleOrder = () => {
         if (!isPaymentValid) {
             console.log("Order not allowed: payment is invalid");
+            alert(
+                "Payment details sre invalid. Please check the form"
+            )
             return
         }
         console.log("Order confirmed!")
@@ -497,6 +496,16 @@ export function Cart() {
         return Object.keys(newErrors).length === 0;
     }
 
+    useEffect(()=> {
+        if (Object.keys(errors).length > 0) {
+            console.log('Errors updated:', errors);
+        }
+    }, [errors]);
+
+    useEffect(()=> {
+        console.log('isPaymentValid updated:', isPaymentValid);
+    }, [isPaymentValid]);
+
     return (
         <div className={styles.cart}>
             <div className={styles.cart_header}>
@@ -625,7 +634,10 @@ export function Cart() {
                                 <div className={styles.cart_button}>
                                     <button
                                         className={styles.cart_button_black}
-                                        onClick={handleOrder}
+                                        onClick={() =>{
+                                        document.getElementById('payment-form')?.dispatchEvent(new Event('submit', {cancelable: true, bubbles:true}));
+                                        handleOrder();
+                                        }}
                                         // disabled={!isPaymentValid}
                                     >READY</button>
                                     <button onClick={handleViewCart}>VIEW CART</button>
