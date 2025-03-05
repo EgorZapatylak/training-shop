@@ -11,6 +11,15 @@ export const Payment = ({setIsPaymentValid}) => {
 
     const [isValid, setIsValid] = useState(false);
 
+    const  handleCardNumberChange = (e) => {
+        let value = e.target.value.replace(/\D/g, '').slice(0, 16); // Оставляем только цифры, максимум 16 символов
+
+        // Форматируем в виде "#### #### #### ####"
+        value = value.replace(/(\d{4})/g, '$1 ').trim();
+
+        setCardNumber(value);
+    }
+
     const handleExpiryChange = (e) => {
         let value = e.target.value.replace(/\D/g, '');
         if (value.length > 4) value = value.slice(0, 4)
@@ -41,8 +50,9 @@ export const Payment = ({setIsPaymentValid}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!validateForm()) return;
-        console.log('Оплата отправлена', {cardNumber, expiryDate, cvv});
+    const valid = validateForm();
+    setIsValid(valid);
+    setIsPaymentValid(valid);
     };
 
     useEffect(()=> {
@@ -77,7 +87,7 @@ export const Payment = ({setIsPaymentValid}) => {
                             placeholder='____ ____ ____ ____'
                             className={styles.cardInput}
                             value={cardNumber}
-                            onChange={(e) => setCardNumber(e.target.value)}
+                            onChange={handleCardNumberChange}
                         />
                         {errors.cardNumber && <p className={styles.error}>{errors.cardNumber}</p>}
 
