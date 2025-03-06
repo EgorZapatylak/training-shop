@@ -445,6 +445,8 @@
     .selected-filters {
         margin-left: 20px;
         margin-bottom: 10px;
+        overflow-x: auto;
+        width: 105%;
     }
 }
 
