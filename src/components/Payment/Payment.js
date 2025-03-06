@@ -47,7 +47,7 @@ export const Payment = ({setIsPaymentValid}) => {
             if (isSubmitted && !cvv.trim()) newErrors.cvv = 'Введите cvv';
         }
         if (selectedMethod === 'paypal') {
-            if (isSubmitted && (!email.trim() || !email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/))) {
+            if (!email.trim() || !email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
                 newErrors.email = 'Введите корректный email';
             }
         }
@@ -59,8 +59,11 @@ export const Payment = ({setIsPaymentValid}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsSubmitted(true);
-        const isValid = validateForm();
-        setIsPaymentValid(isValid);
+
+        setTimeout(() => {
+            const isValid = validateForm();
+            setIsPaymentValid(isValid);
+        }, 0);
     };
 
     useEffect(() => {
