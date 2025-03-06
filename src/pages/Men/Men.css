@@ -421,6 +421,7 @@
     .filter-modal {
         width: 117vw;
         margin: 0;
+        height: 260px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -430,15 +431,20 @@
         width: 90%;
         max-height: 80vh;
         overflow-y: auto;
-        padding: 20px;
+        padding: 0 20px;
         margin: 0;
         flex-direction: column;
+        border-radius: 0px;
     }
 
     .filter_group {
         height: auto;
-        margin-top: 15px;
+        margin-bottom: 15px;
     }
 
+    .selected-filters {
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
 }
 
