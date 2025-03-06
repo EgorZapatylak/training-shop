@@ -164,15 +164,24 @@ export default function Men() {
                     <div className='filter-content'>
 
                         {/* Фильтр по цвету */}
-                        <div className='filter_group'><label>Цвет:</label>
-                            {uniqueColors.map((color, index) => (
+                        <div className='filter_group'>
+                            <label>Цвет:</label>
+                            {isMobile ? (
+                                <select onChange={(e) => handleFilterChange('color', e.target.value)}>
+                                    <option value="">Выберите цвет</option>
+                                    {uniqueColors.map((color, index) => (
+                                        <option key={index} value={color}>{color}</option>
+                                    ))}
+                                </select>
+                            ) : (uniqueColors.map((color, index) => (
                                 <div
                                     key={index}
                                     className={`color-option ${color} ${filters.color.includes(color) ? 'active' : ''}`}
                                     onClick={() => handleColorSelect(color)}>
                                     {color.charAt(0).toUpperCase() + color.slice(1)}
                                 </div>
-                            ))}</div>
+                            )))}
+                        </div>
 
                         {/* Фильтр по размеру */}
                         <div className='filter_group'>
