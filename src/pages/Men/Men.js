@@ -165,7 +165,7 @@ export default function Men() {
 
                         {/* Фильтр по цвету */}
                         <div className='filter_group'><label>Цвет:</label>
-                            {uniqueColors.map((color,index) => (
+                            {uniqueColors.map((color, index) => (
                                 <div
                                     key={index}
                                     className={`color-option ${color} ${filters.color.includes(color) ? 'active' : ''}`}
@@ -185,31 +185,41 @@ export default function Men() {
                                     ))}
                                 </select>
                             ) : (availableSizes.map((size, index) => (
-                                        <label key={index}>
-                                            <input
-                                                type="checkbox"
-                                                checked={filters.size.includes(size)}
-                                                onChange={() => handleFilterChange("size", size)}
-                                            />
-                                            {size.slice(0, -3)}
-                                        </label>
-                                    ))
+                                    <label key={index}>
+                                        <input
+                                            type="checkbox"
+                                            checked={filters.size.includes(size)}
+                                            onChange={() => handleFilterChange("size", size)}
+                                        />
+                                        {size.slice(0, -3)}
+                                    </label>
+                                ))
                             )}
                         </div>
 
-
                         {/* Фильтр по бренду */}
-                        <div className='filter_group'><label>Бренд:</label>
-                            {availableBrands.map((brand, index) => (
-                                <label key={index}>
-                                    <input
-                                        type="checkbox"
-                                        checked={filters.brand.includes(brand)}
-                                        onChange={() => handleFilterChange("brand", brand)}
-                                    />
-                                    {brand}
-                                </label>
-                            ))}</div>
+                        <div className='filter_group'>
+                            <label>Бренд:</label>
+                            {isMobile ? (
+                                <select onChange={(e) => handleFilterChange('brand', e.target.value)}>
+                                    <option value="">Выберите бренд</option>
+                                    {availableBrands.map((brand, index) => (
+                                        <option key={index} value={brand}>{brand}</option>
+                                    ))}
+                                </select>
+                            ) : (
+                                availableBrands.map((brand, index) => (
+                                    <label key={index}>
+                                        <input
+                                            type="checkbox"
+                                            checked={filters.brand.includes(brand)}
+                                            onChange={() => handleFilterChange("brand", brand)}
+                                        />
+                                        {brand}
+                                    </label>
+                                ))
+                            )}
+                        </div>
 
 
                         {/* Фильтр по цене */}
