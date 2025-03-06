@@ -27,20 +27,20 @@ export function Cart() {
         apartment: '',
     })
 
-    const handleInputChange = (e) => {
-        const {name, value} = e.target;
-
-        if (['phone', 'email', 'postcode'].includes(name)){
-            setActiveField('');
-        } else {
-            setActiveField(name);
-        }
-
-        setFormData((prevState) => ({
-            ...prevState,
-            [name]: value,
-        }))
-    }
+    // const handleInputChange = (e) => {
+    //     const {name, value} = e.target;
+    //
+    //     if (['phone', 'email', 'postcode'].includes(name)){
+    //         setActiveField('');
+    //     } else {
+    //         setActiveField(name);
+    //     }
+    //
+    //     setFormData((prevState) => ({
+    //         ...prevState,
+    //         [name]: value,
+    //     }))
+    // }
 
     const [deliveryMethod, setDeliveryMethod] = useState('pickup');
 
@@ -458,9 +458,12 @@ export function Cart() {
                 <label>PHONE</label>
                 <input
                     type="text"
+                    name='phone'
                     placeholder='+375 (__) _______ '
+                    ref={phoneInputRef}
+                    maxLength='19'
                     value={formData.phone}
-                    onChange={(e) => handleInputChange('phone', e.target.value)}
+                    onChange={handlePhoneChange}
                     className={errors.phone ? styles.inputError : ''}
                 />
                 {errors.phone && <p className={styles.errorMessage}>{errors.phone}</p>}
