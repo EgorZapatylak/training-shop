@@ -27,21 +27,6 @@ export function Cart() {
         apartment: '',
     })
 
-    // const handleInputChange = (e) => {
-    //     const {name, value} = e.target;
-    //
-    //     if (['phone', 'email', 'postcode'].includes(name)){
-    //         setActiveField('');
-    //     } else {
-    //         setActiveField(name);
-    //     }
-    //
-    //     setFormData((prevState) => ({
-    //         ...prevState,
-    //         [name]: value,
-    //     }))
-    // }
-
     const [deliveryMethod, setDeliveryMethod] = useState('pickup');
 
     const [activeField, setActiveField] = useState('')
