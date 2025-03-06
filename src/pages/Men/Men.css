@@ -432,6 +432,13 @@
         overflow-y: auto;
         padding: 20px;
         margin: 0;
+        flex-direction: column;
     }
+
+    .filter_group {
+        height: auto;
+        margin-top: 15px;
+    }
+
 }
 
