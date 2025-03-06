@@ -70,7 +70,7 @@ export const Payment = ({setIsPaymentValid}) => {
         setIsSubmitted(false);
         setErrors({});
         setIsPaymentValid(selectedMethod === 'cash');
-    }, [selectedMethod]);
+    }, [selectedMethod, setIsPaymentValid]);
 
 
     return (
