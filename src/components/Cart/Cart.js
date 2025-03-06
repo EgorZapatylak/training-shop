@@ -351,9 +351,12 @@ export function Cart() {
                 <label>PHONE</label>
                 <input
                     type="text"
+                    name='phone'
                     placeholder='+375 (__) _______ '
+                    ref={phoneInputRef}
+                    maxLength='19'
                     value={formData.phone}
-                    onChange={(e) => handleInputChange('phone', e.target.value)}
+                    onChange={handlePhoneChange}
                     className={errors.phone ? styles.inputError : ''}
                 />
                 {errors.phone && <p className={styles.errorMessage}>{errors.phone}</p>}
@@ -588,7 +591,7 @@ export function Cart() {
                     <>
                         <div className={styles.cart_road}>
                         <span className={step === 1 ? styles.active : ''}
-                              onClick={() => setStep(1)}>Item in Cart </span>
+                              onClick={() => setStep(1)}>Item in Cart</span>
                             <span className={step === 2 ? styles.active : ''}
                                   onClick={() => setStep(2)}>Delivery info</span>
                             <span className={step === 3 ? styles.active : ''} onClick={() => setStep(3)}>Payment</span>
