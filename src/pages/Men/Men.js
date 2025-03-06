@@ -5,6 +5,9 @@ import {Products_base} from "../../Products_base";
 import {StarRating} from "../../components/StarRating/StarRating";
 
 export default function Men() {
+
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 475);
+
     const [filters, setFilters] = useState({
         size: [],
         price: [],
@@ -65,6 +68,11 @@ export default function Men() {
         setFilteredCount(filtered.length); // Обновляем счётчик товаров
     }, [filters, products, selectedCategory]); // Отслеживаем изменения в фильтрах
 
+    useEffect(()=> {
+        const handleResize = () =>setIsMobile(window.innerWidth <= 475);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, [])
 
     // Функция подгрузки товаров
     const loadMore = () => {
