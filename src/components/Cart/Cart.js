@@ -130,6 +130,8 @@ export function Cart() {
             input = input.slice(1);
         }
 
+        setActiveField(input);
+
         if (input.length > 9) {
             input = input.slice(0, 9); // Ограничиваем до 9 цифр
         }
@@ -160,6 +162,7 @@ export function Cart() {
     const handleEmailChange = (e) => {
         let input = e.target.value.replace(/\s/g, ''); // Убираем пробелы
 
+        setActiveField(input);
         // Разрешаем только буквы, цифры и специальные символы для email
         if (!/^[a-zA-Z0-9@._-]*$/.test(input)) {
             return;
@@ -193,7 +196,7 @@ export function Cart() {
 
     useEffect(()=> {
         if (activeField) {
-            document.querySelector(`[name = ${activeField}]`)?.focus();
+            document.querySelector(`[name = ${CSS.escape(activeField)}]`)?.focus();
         }
     }, [activeField]);
 
@@ -203,6 +206,8 @@ export function Cart() {
 
     const handlePostcodeChange = (e) => {
         let input = e.target.value.replace(/\D/g, '');
+
+        setActiveField(input);
 
         if (input.length > 6) {
             input = `${input.slice(0, 6)}`;
