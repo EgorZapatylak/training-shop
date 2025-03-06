@@ -157,15 +157,25 @@ export default function Men() {
                     <div className='filter-content'>
 
                         {/* Фильтр по цвету */}
-                        <div className='filter_group'><label>Цвет:</label>
-                            {uniqueColors.map((color,index) => (
-                                <div
-                                    key={index}
-                                    className={`color-option ${color} ${filters.color.includes(color) ? 'active' : ''}`}
-                                    onClick={() => handleColorSelect(color)}>
-                                    {color.charAt(0).toUpperCase() + color.slice(1)}
-                                </div>
-                            ))}</div>
+                        {/*<div className='filter_group'><label>Цвет:</label>*/}
+                        {/*    {uniqueColors.map((color,index) => (*/}
+                        {/*        <div*/}
+                        {/*            key={index}*/}
+                        {/*            className={`color-option ${color} ${filters.color.includes(color) ? 'active' : ''}`}*/}
+                        {/*            onClick={() => handleColorSelect(color)}>*/}
+                        {/*            {color.charAt(0).toUpperCase() + color.slice(1)}*/}
+                        {/*        </div>*/}
+                        {/*    ))}</div>*/}
+
+                        <div className='filter_group'>
+                            <label>Размер:</label>
+                            <select onChange={(e) => handleFilterChange('size', e.target.value)}>
+                                <option value="">Выберите размер</option>
+                                {availableSizes.map((size, index) => (
+                                    <option key={index} value={size}>{size.slice(0,-3)}</option>
+                                ))}
+                            </select>
+                        </div>
 
                         {/* Фильтр по размеру */}
                         <div className='filter_group'><label>Размер:</label>
