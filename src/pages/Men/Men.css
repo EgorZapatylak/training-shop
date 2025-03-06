@@ -377,15 +377,43 @@
         overflow-y: auto;
     }
 
-    .filter-content {
-        margin: 20px;
-        flex-direction: column;
-        height: 330px;
+    .filter-modal {
+        width: 100vw;
+        margin: 0;
+        height: 260px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .filter_group{
-        margin-top: 20px;
-        height: 200px;
+    .filter-content {
+        width: 90%;
+        max-height: 80vh;
+        overflow-y: auto;
+        padding: 0 20px;
+        margin: 0;
+        flex-direction: column;
+        border-radius: 0;
+    }
+
+    .filter_group {
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    .selected-filters {
+        margin-left: 20px;
+        padding-bottom: 20px;
+        overflow-x: auto;
+        width: 90%;
+    }
+
+    .filter-tag {
+        display: flex;
+        width: max-content;
+        height: 40px;
+        align-items: center;
+        gap: 10px;
     }
 
 }
@@ -417,6 +445,48 @@
     .load_more {
        margin-left: 150px;
     }
+
+    .filter-modal {
+        width: 100vw;
+        margin: 0;
+        height: 260px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .filter-content {
+        width: 90%;
+        max-height: 80vh;
+        overflow-y: auto;
+        padding: 0 20px;
+        margin: 0;
+        flex-direction: column;
+        border-radius: 0;
+    }
+
+    .filter_group {
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    .selected-filters {
+        margin-left: 20px;
+        margin-bottom: 10px;
+        overflow-x: auto;
+        width: 90%;
+    }
+
+    .filter-tag {
+        display: flex;
+        width: max-content;
+        height: 40px;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 320px) {
 
     .filter-modal {
         width: 117vw;
