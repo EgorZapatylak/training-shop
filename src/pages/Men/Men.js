@@ -223,8 +223,16 @@ export default function Men() {
 
 
                         {/* Фильтр по цене */}
-                        <div className='filter_group'><label>Цена:</label>
-                            {priceRanges.map(range => (
+                        <div className='filter_group'>
+                            <label>Цена:</label>
+                            {isMobile ? (
+                                <select onChange={(e) => handleFilterChange('price', e.target.value)}>
+                                    <option value="">Выберите диапазон</option>
+                                    {priceRanges.map((range) => (
+                                        <option key={range.label} value={range.label}>{range.label}</option>
+                                    ))}
+                                </select>
+                            ) : (priceRanges.map(range => (
                                 <label key={range.label}>
                                     <input
                                         type="checkbox"
@@ -233,7 +241,8 @@ export default function Men() {
                                     />
                                     {range.label}
                                 </label>
-                            ))}</div>
+                            )))}
+                        </div>
                     </div>
                 </div>
             )}
