@@ -448,5 +448,13 @@
         overflow-x: auto;
         width: 105%;
     }
+
+    .filter-tag {
+        display: flex;
+        width: max-content;
+        height: 40px;
+        align-items: center;
+        gap: 10px;
+    }
 }
 
