@@ -6,7 +6,7 @@ import {StarRating} from "../../components/StarRating/StarRating";
 
 export default function Men() {
 
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 475);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 785);
 
     const [filters, setFilters] = useState({
         size: [],
@@ -69,7 +69,7 @@ export default function Men() {
     }, [filters, products, selectedCategory]); // Отслеживаем изменения в фильтрах
 
     useEffect(() => {
-        const handleResize = () => setIsMobile(window.innerWidth <= 475);
+        const handleResize = () => setIsMobile(window.innerWidth <= 785);
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, [])
