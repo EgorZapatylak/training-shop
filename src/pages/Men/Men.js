@@ -42,9 +42,9 @@ export default function Men() {
 
     const categories = [
         {key: 'all', label: 'All'},
-        ...Object.keys(products[0].particulars).map(key =>({
+        ...Object.keys(products[0].particulars).map(key => ({
             key,
-            label: key.replace(/^is/,''),
+            label: key.replace(/^is/, ''),
         }))
     ];
 
@@ -68,8 +68,8 @@ export default function Men() {
         setFilteredCount(filtered.length); // Обновляем счётчик товаров
     }, [filters, products, selectedCategory]); // Отслеживаем изменения в фильтрах
 
-    useEffect(()=> {
-        const handleResize = () =>setIsMobile(window.innerWidth <= 475);
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 475);
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, [])
@@ -134,7 +134,7 @@ export default function Men() {
                 </div>
                 <div className='categor'>
                     <select onChange={(e) => setSelectedCategory(e.target.value)}>
-                        {categories.map(({key, label})=>(
+                        {categories.map(({key, label}) => (
                             <option key={key} value={key}>{label}</option>
                         ))}
                     </select>
@@ -158,49 +158,49 @@ export default function Men() {
             </div>
 
 
-
             {/* Всплывающее бургер-меню фильтро*/}
             {showFilter && (
                 <div className='filter-modal'>
                     <div className='filter-content'>
 
                         {/* Фильтр по цвету */}
-                        {/*<div className='filter_group'><label>Цвет:</label>*/}
-                        {/*    {uniqueColors.map((color,index) => (*/}
-                        {/*        <div*/}
-                        {/*            key={index}*/}
-                        {/*            className={`color-option ${color} ${filters.color.includes(color) ? 'active' : ''}`}*/}
-                        {/*            onClick={() => handleColorSelect(color)}>*/}
-                        {/*            {color.charAt(0).toUpperCase() + color.slice(1)}*/}
-                        {/*        </div>*/}
-                        {/*    ))}</div>*/}
-
-                        <div className='filter_group'>
-                            <label>Размер:</label>
-                            <select onChange={(e) => handleFilterChange('size', e.target.value)}>
-                                <option value="">Выберите размер</option>
-                                {availableSizes.map((size, index) => (
-                                    <option key={index} value={size}>{size.slice(0,-3)}</option>
-                                ))}
-                            </select>
-                        </div>
+                        <div className='filter_group'><label>Цвет:</label>
+                            {uniqueColors.map((color,index) => (
+                                <div
+                                    key={index}
+                                    className={`color-option ${color} ${filters.color.includes(color) ? 'active' : ''}`}
+                                    onClick={() => handleColorSelect(color)}>
+                                    {color.charAt(0).toUpperCase() + color.slice(1)}
+                                </div>
+                            ))}</div>
 
                         {/* Фильтр по размеру */}
-                        <div className='filter_group'><label>Размер:</label>
-                            {availableSizes.map((size, index) => (
-                                <label key={index}>
-                                    <input
-                                        type="checkbox"
-                                        checked={filters.size.includes(size)}
-                                        onChange={() => handleFilterChange("size", size)}
-                                    />
-                                    {size.slice(0, -3)}
-                                </label>
-                            ))}</div>
+                        <div className='filter_group'>
+                            <label>Размер:</label>
+                            {isMobile ? (
+                                <select onChange={(e) => handleFilterChange('size', e.target.value)}>
+                                    <option value="">Выберите размер</option>
+                                    {availableSizes.map((size, index) => (
+                                        <option key={index} value={size}>{size.slice(0, -3)}</option>
+                                    ))}
+                                </select>
+                            ) : (availableSizes.map((size, index) => (
+                                        <label key={index}>
+                                            <input
+                                                type="checkbox"
+                                                checked={filters.size.includes(size)}
+                                                onChange={() => handleFilterChange("size", size)}
+                                            />
+                                            {size.slice(0, -3)}
+                                        </label>
+                                    ))
+                            )}
+                        </div>
+
 
                         {/* Фильтр по бренду */}
                         <div className='filter_group'><label>Бренд:</label>
-                            {availableBrands.map((brand,index) => (
+                            {availableBrands.map((brand, index) => (
                                 <label key={index}>
                                     <input
                                         type="checkbox"
