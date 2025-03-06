@@ -488,8 +488,8 @@
 
 @media (min-width:321px) and (max-width: 379px){
     .filter-modal {
-        width: 100vw;
-        margin: 0;
+        width: 335px;
+        margin: 20px;
         height: 260px;
         display: flex;
         align-items: center;
@@ -530,8 +530,8 @@
 @media (max-width: 320px) {
 
     .filter-modal {
-        width: 117vw;
-        margin: 0;
+        width: 340px;
+        margin: 20px;
         height: 260px;
         display: flex;
         align-items: center;
