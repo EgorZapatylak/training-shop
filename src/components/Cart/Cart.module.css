@@ -219,16 +219,27 @@ input {
     width: 338px;
 }
 
+.addressRow_house {
+    display: flex;
+}
+
 .addressRow input {
     display: flex;
-    width: 100%;
+    width: 144px;
 }
 
 .checkbox {
     display: flex;
     align-items: center;
+    flex-direction: column;
     gap: 5px;
 }
+
+.checkbox_info {
+    display: flex;
+    align-items: center;
+}
+
 
 .checkbox input {
     width: 12px;
