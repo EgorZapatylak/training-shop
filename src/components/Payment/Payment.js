@@ -1,8 +1,7 @@
 import React, {forwardRef, useEffect, useImperativeHandle, useState} from 'react';
-import styles from './Payment.module.css'
+import styles from './Payment.module.css';
 
 export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
-
     const [selectedMethod, setSelectedMethod] = useState('visa');
     const [cardNumber, setCardNumber] = useState('');
     const [expiryDate, setExpiryDate] = useState('');
@@ -87,7 +86,6 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
         setIsPaymentValid(selectedMethod === 'cash');
     }, [selectedMethod, setIsPaymentValid]);
 
-
     return (
         <>
             <h3>Method of payments</h3>
@@ -97,23 +95,23 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
                     <label key={method} className={styles.paymentOption}>
                         <input
                             type="radio"
-                            name='payment'
+                            name="payment"
                             value={method}
                             checked={selectedMethod === method}
                             onChange={() => setSelectedMethod(method)}
                         />
-                        <img src={`../Payment/images/${method}.svg`} alt={method}/>
+                        <img src={`./src/components/${method}.svg`} alt={method} />
                     </label>
                 ))}
             </div>
 
             {selectedMethod !== 'cash' && selectedMethod !== 'paypal' && (
-                <form id='payment-form' onSubmit={handleSubmit}>
+                <form id="payment-form" onSubmit={handleSubmit}>
                     <div className={styles.cardDetails}>
                         <h3>CARD</h3>
                         <input
                             type="text"
-                            placeholder='____ ____ ____ ____'
+                            placeholder="____ ____ ____ ____"
                             className={styles.cardInput}
                             value={cardNumber}
                             onChange={handleCardNumberChange}
@@ -123,26 +121,27 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
                         <div className={styles.cardInfo}>
                             <input
                                 type="text"
-                                placeholder='MM/YY'
+                                placeholder="MM/YY"
                                 className={styles.smallInput}
                                 value={expiryDate}
                                 onChange={handleExpiryChange}
-                                maxLength='5'
+                                maxLength="5"
                             />
                             {isSubmitted && errors.expiryDate && <p className={styles.error}>{errors.expiryDate}</p>}
                             <input
                                 type="text"
-                                placeholder='CVV'
+                                placeholder="CVV"
                                 className={styles.smallInput}
                                 value={cvv}
                                 onChange={handleCvvChange}
-                                maxLength='3'
+                                maxLength="3"
                             />
                             {isSubmitted && errors.cvv && <p className={styles.error}>{errors.cvv}</p>}
                         </div>
                     </div>
                 </form>
             )}
+
             {selectedMethod === 'paypal' && (
                 <form id="payment-form" onSubmit={handleSubmit}>
                     <div className={styles.cardDetails}>
