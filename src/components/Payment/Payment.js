@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, {forwardRef, useEffect, useImperativeHandle, useState} from 'react';
 import styles from './Payment.module.css'
 
-export const Payment = ({setIsPaymentValid}) => {
+export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
 
     const [selectedMethod, setSelectedMethod] = useState('visa');
     const [cardNumber, setCardNumber] = useState('');
@@ -9,7 +9,6 @@ export const Payment = ({setIsPaymentValid}) => {
     const [email, setEmail] = useState('');
     const [cvv, setCvv] = useState('');
     const [errors, setErrors] = useState({});
-
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     const handleCardNumberChange = (e) => {
@@ -17,7 +16,6 @@ export const Payment = ({setIsPaymentValid}) => {
 
         // Форматируем в виде "#### #### #### ####"
         value = value.replace(/(\d{4})/g, '$1 ').trim();
-
         setCardNumber(value);
     }
 
@@ -27,7 +25,6 @@ export const Payment = ({setIsPaymentValid}) => {
         if (value.length >= 2) {
             value = `${value.slice(0, 2)}/${value.slice(2)}`;
         }
-
         setExpiryDate(value);
     }
 
@@ -65,6 +62,10 @@ export const Payment = ({setIsPaymentValid}) => {
             setIsPaymentValid(isValid);
         }, 0);
     };
+
+    useImperativeHandle(ref, () => ({
+        validateForm
+    }));
 
     useEffect(() => {
         setIsSubmitted(false);
@@ -143,4 +144,4 @@ export const Payment = ({setIsPaymentValid}) => {
             )}
         </>
     );
-};
+});
