@@ -525,12 +525,14 @@ export function Cart() {
 
                 {/* Согласие на обработку данных */}
                 <label className={styles.checkbox}>
-                    <input
-                        type="checkbox"
-                        checked={isAgreed}
-                        onChange={() => setIsAgreed(!isAgreed)}
-                    />
-                    I agree to the processing of me personal information
+                    <div className={styles.checkbox_info}>
+                        <input
+                            type="checkbox"
+                            checked={isAgreed}
+                            onChange={() => setIsAgreed(!isAgreed)}
+                        />
+                        I agree to the processing of me personal information
+                    </div>
                     {errors.agreement && <p className={styles.errorMessage}>{errors.agreement}</p>}
                 </label>
             </form>
@@ -588,13 +590,13 @@ export function Cart() {
         return Object.keys(newErrors).length === 0;
     }
 
-    useEffect(()=> {
+    useEffect(() => {
         if (Object.keys(errors).length > 0) {
             console.log('Errors updated:', errors);
         }
     }, [errors]);
 
-    useEffect(()=> {
+    useEffect(() => {
         console.log('isPaymentValid updated:', isPaymentValid);
     }, [isPaymentValid]);
 
@@ -727,7 +729,8 @@ export function Cart() {
                                     <button
                                         className={styles.cart_button_black}
                                         onClick={handleReadyClick}
-                                    >READY</button>
+                                    >READY
+                                    </button>
                                     <button onClick={handleViewCart}>VIEW CART</button>
                                 </div>
                             </>
