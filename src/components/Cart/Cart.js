@@ -107,33 +107,34 @@ export function Cart() {
     const apartmentInputRef = useRef(null);
 
     const handlePhoneChange = (e) => {
-        let input = e.target.value.replace(/\D/g, ''); // Оставляем только цифры
+        const {name, value} = e.target;
+        let sanitizedPhoneValue = value.replace(/\D/g, ''); // Оставляем только цифры
 
-        if (input.startsWith('375')) {
-            input = input.slice(3);
-        } else if (input.startsWith('7')) {
-            input = input.slice(1);
+        if (sanitizedPhoneValue.startsWith('375')) {
+            sanitizedPhoneValue = sanitizedPhoneValue.slice(3);
+        } else if (sanitizedPhoneValue.startsWith('7')) {
+            sanitizedPhoneValue = sanitizedPhoneValue.slice(1);
         }
 
-        setActiveField(input);
+        setActiveField(name);
 
-        if (input.length > 9) {
-            input = input.slice(0, 9); // Ограничиваем до 9 цифр
+        if (sanitizedPhoneValue.length > 9) {
+            sanitizedPhoneValue = sanitizedPhoneValue.slice(0, 9); // Ограничиваем до 9 цифр
         }
 
         // Формируем номер телефона
         let formattedPhone = '+375 ';
-        if (input.length > 0) {
-            formattedPhone += `(${input.slice(0, 2)}`
+        if (sanitizedPhoneValue.length > 0) {
+            formattedPhone += `(${sanitizedPhoneValue.slice(0, 2)}`
         }
-        if (input.length >= 2) {
-            formattedPhone += `) ${input.slice(2, 5)}`;
+        if (sanitizedPhoneValue.length >= 2) {
+            formattedPhone += `) ${sanitizedPhoneValue.slice(2, 5)}`;
         }
-        if (input.length >= 5) {
-            formattedPhone += `-${input.slice(5, 7)}`;
+        if (sanitizedPhoneValue.length >= 5) {
+            formattedPhone += `-${sanitizedPhoneValue.slice(5, 7)}`;
         }
-        if (input.length >= 7) {
-            formattedPhone += `-${input.slice(7, 9)}`;
+        if (sanitizedPhoneValue.length >= 7) {
+            formattedPhone += `-${sanitizedPhoneValue.slice(7, 9)}`;
         }
 
         setFormData((prevState) => ({
