@@ -196,17 +196,18 @@ export function Cart() {
     }, [isPaymentValid])
 
     const handlePostcodeChange = (e) => {
-        let input = e.target.value.replace(/\D/g, '');
+        const {name, value} = e.target;
+        let stillPost = value.replace(/\D/g, '');
 
-        setActiveField(input);
+        setActiveField(name);
 
-        if (input.length > 6) {
-            input = `${input.slice(0, 6)}`;
+        if (stillPost.length > 6) {
+            stillPost = `${stillPost.slice(0, 6)}`;
         }
 
         setFormData((prevState) => ({
             ...prevState,
-            postcode: input,
+            postcode: stillPost,
         }));
 
         setTimeout(() => postcodeInputRef.current?.focus(), 0)
