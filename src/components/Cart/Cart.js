@@ -177,7 +177,7 @@ export function Cart() {
             [name]: sanitizedValue,
         }));
 
-        setTimeout(()=> emailInputRef.current?.focus(),0);
+        setTimeout(() => emailInputRef.current?.focus(), 0);
     };
 
     const handleAddressChange = (e) => {
@@ -201,13 +201,13 @@ export function Cart() {
         if (activeField === 'apartment') apartmentInputRef.current?.focus();
     }, [activeField, formData]);
 
-    useEffect(()=> {
+    useEffect(() => {
         if (activeField) {
             document.querySelector(`[name = ${CSS.escape(activeField)}]`)?.focus();
         }
     }, [activeField]);
 
-    useEffect(()=> {
+    useEffect(() => {
         console.log('isPaymentValid change', isPaymentValid);
     }, [isPaymentValid])
 
