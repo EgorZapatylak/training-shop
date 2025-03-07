@@ -30,7 +30,7 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
             value = `${value.slice(0, 2)}/${value.slice(2)}`;
         }
         setExpiryDate(value);
-    }
+    };
 
     const handleCvvChange = (e) => {
         let value = e.target.value.replace(/\D/g, '');
