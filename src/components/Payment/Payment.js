@@ -52,6 +52,7 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
                 newErrors.cvv = 'Введите CVV';
             }
         }
+
         if (selectedMethod === 'paypal') {
             if (!email.trim() || !email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
                 newErrors.email = 'Введите корректный email';
