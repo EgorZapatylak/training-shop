@@ -146,17 +146,19 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
                 </form>
             )}
             {selectedMethod === 'paypal' && (
-                <div className={styles.cardDetails}>
-                    <h3>E-MAIL</h3>
-                    <input
-                        type="text"
-                        placeholder='e-mail'
-                        className={styles.emailInput}
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                    {isSubmitted && errors.email && <p className={styles.error}>{errors.email}</p>}
-                </div>
+                <form id="payment-form" onSubmit={handleSubmit}>
+                    <div className={styles.cardDetails}>
+                        <h3>E-MAIL</h3>
+                        <input
+                            type="text"
+                            placeholder="e-mail"
+                            className={styles.emailInput}
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                        {isSubmitted && errors.email && <p className={styles.error}>{errors.email}</p>}
+                    </div>
+                </form>
             )}
         </>
     );
