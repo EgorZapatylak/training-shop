@@ -42,6 +42,20 @@ export function Cart() {
 
     const [isOrderConfirmed, setIsOrderConfirmed] = useState(false);
 
+    const handleReadyClick = () => {
+        if (paymentRef.current) {
+            paymentRef.current.submitPayment();
+        }
+
+        setTimeout (()=> {
+            if (isPaymentValid) {
+                handleOrder();
+            } else {
+                alert('Payment details sre invalid');
+            }
+        }, 100)
+    }
+
     const handleOrder = () => {
         if (!isPaymentValid) {
             return
