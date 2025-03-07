@@ -707,7 +707,7 @@ export function Cart() {
                         )}
                         {step === 3 && (
                             <>
-                                <Payment setIsPaymentValid={setIsPaymentValid}/>
+                                <Payment ref={paymentRef} setIsPaymentValid={setIsPaymentValid}/>
                                 <div className={styles.cart_total_price}>
                                     <h2>Total: ${totalCartPrice.toFixed(2)}</h2>
                                 </div>
