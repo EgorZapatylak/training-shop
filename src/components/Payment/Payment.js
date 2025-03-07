@@ -68,12 +68,8 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsSubmitted(true);
-
-        setTimeout(() => {
-            const isValid = validateForm();
-            setIsPaymentValid(isValid);
-        }, 0);
-    };
+        const isValid = validateForm();
+        setIsPaymentValid(isValid);
 
     useImperativeHandle(ref, () => ({
         validateForm
