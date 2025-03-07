@@ -145,19 +145,22 @@ export function Cart() {
     };
 
     const handleEmailChange = (e) => {
-        let input = e.target.value.replace(/\s/g, ''); // Убираем пробелы
+        const {name, value} = e.target;
+        const sanitizedValue = value.replace(/\s/g, ''); // Убираем пробелы
 
-        setActiveField(input);
         // Разрешаем только буквы, цифры и специальные символы для email
-        if (!/^[a-zA-Z0-9@._-]*$/.test(input)) {
+        if (!/^[a-zA-Z0-9@._-]*$/.test(sanitizedValue)) {
             return;
         }
+
+        setActiveField(name);
+
         setFormData((prevState) => ({
             ...prevState,
-            email: input,
+            [name]: sanitizedValue,
         }));
 
-        setTimeout(() => emailInputRef.current?.focus(), 0)
+        setTimeout(()=> emailInputRef.current?.focus(),0);
     };
 
     const handleAddressChange = (e) => {
@@ -172,6 +175,8 @@ export function Cart() {
     };
 
     useEffect(() => {
+        if (activeField === 'phone') phoneInputRef.current?.focus();
+        if (activeField === 'email') emailInputRef.current?.focus();
         if (activeField === 'country') countryInputRef.current?.focus();
         if (activeField === 'city') cityInputRef.current?.focus();
         if (activeField === 'street') streetInputRef.current?.focus();
