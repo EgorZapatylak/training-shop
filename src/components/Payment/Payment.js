@@ -82,6 +82,10 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
     useEffect(() => {
         setIsSubmitted(false);
         setErrors({});
+        setCardNumber('');
+        setExpiryDate('');
+        setCvv('');
+        setEmail('');
         setIsPaymentValid(selectedMethod === 'cash');
     }, [selectedMethod, setIsPaymentValid]);
 
