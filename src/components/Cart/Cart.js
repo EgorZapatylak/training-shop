@@ -714,18 +714,7 @@ export function Cart() {
                                 <div className={styles.cart_button}>
                                     <button
                                         className={styles.cart_button_black}
-                                        onClick={() =>{
-                                        // document.getElementById('payment-form')?.dispatchEvent(new Event('submit', {cancelable: false, bubbles:false}));
-                                        handleOrder();
-                                        setTimeout(() => {
-                                            if (isPaymentValid) {
-                                            } else {
-                                                console.log("Payment is still")
-                                                alert("payment details sre invalid")
-                                            }
-                                        }, 50)
-
-                                        }}
+                                        onClick={handleReadyClick}
                                     >READY</button>
                                     <button onClick={handleViewCart}>VIEW CART</button>
                                 </div>
