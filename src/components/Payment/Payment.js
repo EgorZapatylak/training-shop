@@ -19,9 +19,7 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
 
     const handleCardNumberChange = (e) => {
         let value = e.target.value.replace(/\D/g, '').slice(0, 16); // Оставляем только цифры, максимум 16 символов
-
-        // Форматируем в виде "#### #### #### ####"
-        value = value.replace(/(\d{4})/g, '$1 ').trim();
+        value = value.replace(/(\d{4})/g, '$1 ').trim(); // Форматируем в виде "#### #### #### ####"
         setCardNumber(value);
     }
 
