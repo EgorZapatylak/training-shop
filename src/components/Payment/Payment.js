@@ -25,7 +25,7 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
 
     const handleExpiryChange = (e) => {
         let value = e.target.value.replace(/\D/g, '');
-        if (value.length > 4) value = value.slice(0, 4)
+        if (value.length > 4) value = value.slice(0, 4);
         if (value.length >= 2) {
             value = `${value.slice(0, 2)}/${value.slice(2)}`;
         }
