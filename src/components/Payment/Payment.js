@@ -11,6 +11,12 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
     const [errors, setErrors] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
 
+    useImperativeHandle(ref, () => ({
+      submitPayment: () => {
+          handleSubmit({preventDefault: () => {}})
+      }
+    }))
+
     const handleCardNumberChange = (e) => {
         let value = e.target.value.replace(/\D/g, '').slice(0, 16); // Оставляем только цифры, максимум 16 символов
 
