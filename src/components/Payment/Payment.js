@@ -21,7 +21,7 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
         let value = e.target.value.replace(/\D/g, '').slice(0, 16); // Оставляем только цифры, максимум 16 символов
         value = value.replace(/(\d{4})/g, '$1 ').trim(); // Форматируем в виде "#### #### #### ####"
         setCardNumber(value);
-    }
+    };
 
     const handleExpiryChange = (e) => {
         let value = e.target.value.replace(/\D/g, '');
