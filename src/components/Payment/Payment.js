@@ -36,7 +36,7 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
         let value = e.target.value.replace(/\D/g, '');
         if (value.length > 3) value = value.slice(0, 3);
         setCvv(value);
-    }
+    };
 
     const validateForm = () => {
         let newErrors = {};
