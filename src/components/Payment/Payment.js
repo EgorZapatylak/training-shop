@@ -119,7 +119,8 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
                         {isSubmitted && errors.cardNumber && <p className={styles.error}>{errors.cardNumber}</p>}
 
                         <div className={styles.cardInfo}>
-                            <input
+                            <div className={styles.cardInfo_style}>
+                                <input
                                 type="text"
                                 placeholder="MM/YY"
                                 className={styles.smallInput}
@@ -127,7 +128,10 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
                                 onChange={handleExpiryChange}
                                 maxLength="5"
                             />
-                            {isSubmitted && errors.expiryDate && <p className={styles.error}>{errors.expiryDate}</p>}
+                                {isSubmitted && errors.expiryDate &&
+                                    <p className={styles.error}>{errors.expiryDate}</p>}
+                            </div>
+                            <div className={styles.cardInfo_style}>
                             <input
                                 type="text"
                                 placeholder="CVV"
@@ -137,6 +141,7 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
                                 maxLength="3"
                             />
                             {isSubmitted && errors.cvv && <p className={styles.error}>{errors.cvv}</p>}
+                            </div>
                         </div>
                     </div>
                 </form>
