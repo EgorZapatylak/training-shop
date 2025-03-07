@@ -420,36 +420,42 @@ export function Cart() {
                 {errors.street && <p className={styles.errorMessage}>{errors.street}</p>}
 
                 <div className={styles.addressRow}>
-                    <input
-                        type="text"
-                        name='house'
-                        placeholder='House number'
-                        ref={houseInputRef}
-                        value={formData.house}
-                        onChange={handleAddressChange}
-                        className={errors.house ? styles.inputError : ''}
-                    />
-                    {errors.house && <p className={styles.errorMessage}>{errors.house}</p>}
-                    <input
-                        type="text"
-                        name='apartment'
-                        placeholder='Apartment number'
-                        value={formData.apartment}
-                        ref={apartmentInputRef}
-                        onChange={handleAddressChange}
-                        className={errors.apartment ? styles.inputError : ''}
-                    />
-                    {errors.apartment && <p className={styles.errorMessage}>{errors.apartment}</p>}
+                    <div className='addressRow_house'>
+                        <input
+                            type="text"
+                            name='house'
+                            placeholder='House number'
+                            ref={houseInputRef}
+                            value={formData.house}
+                            onChange={handleAddressChange}
+                            className={errors.house ? styles.inputError : ''}
+                        />
+                        {errors.house && <p className={styles.errorMessage}>{errors.house}</p>}
+                    </div>
+                    <div className='addressRow_apartment'>
+                        <input
+                            type="text"
+                            name='apartment'
+                            placeholder='Apartment number'
+                            value={formData.apartment}
+                            ref={apartmentInputRef}
+                            onChange={handleAddressChange}
+                            className={errors.apartment ? styles.inputError : ''}
+                        />
+                        {errors.apartment && <p className={styles.errorMessage}>{errors.apartment}</p>}
+                    </div>
                 </div>
 
                 {/* Согласие на обработку данных */}
                 <label className={styles.checkbox}>
-                    <input
-                        type="checkbox"
-                        checked={isAgreed}
-                        onChange={() => setIsAgreed(!isAgreed)}
-                    />
-                    I agree to the processing of me personal information
+                    <div className={styles.checkbox_info}>
+                        <input
+                            type="checkbox"
+                            checked={isAgreed}
+                            onChange={() => setIsAgreed(!isAgreed)}
+                        />
+                        I agree to the processing of me personal information
+                    </div>
                     {errors.agreement && <p className={styles.errorMessage}>{errors.agreement}</p>}
                 </label>
             </form>
