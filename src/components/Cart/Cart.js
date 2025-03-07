@@ -699,7 +699,7 @@ export function Cart() {
                                     <button
                                         className={styles.cart_button_black}
                                         onClick={() =>{
-                                        document.getElementById('payment-form')?.dispatchEvent(new Event('submit', {cancelable: true, bubbles:true}));
+                                        // document.getElementById('payment-form')?.dispatchEvent(new Event('submit', {cancelable: false, bubbles:false}));
                                         handleOrder();
                                         setTimeout(() => {
                                             if (isPaymentValid) {
