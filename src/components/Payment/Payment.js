@@ -71,9 +71,11 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
         const isValid = validateForm();
         setIsPaymentValid(isValid);
 
-    useImperativeHandle(ref, () => ({
-        validateForm
-    }));
+        if (isValid) {
+            // Действия при успешной валидации
+            console.log('Форма успешно отправлена');
+        }
+    };
 
     useEffect(() => {
         setIsSubmitted(false);
