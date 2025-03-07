@@ -47,11 +47,11 @@ export function Cart() {
             paymentRef.current.submitPayment();
         }
 
-        setTimeout (()=> {
+        setTimeout(() => {
             if (isPaymentValid) {
                 handleOrder();
             } else {
-                alert('Payment details sre invalid');
+                alert('Payment details are invalid');
             }
         }, 100)
     }
