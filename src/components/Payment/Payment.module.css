@@ -31,9 +31,17 @@
 
 .cardInfo {
     display: flex;
-    width: 92%;
-    gap: 10px;
+    width: 86%;
+    justify-content: space-between;
+    gap: inherit;
     margin: 0 15px;
+}
+
+.cardInfo_style {
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    width: 100px;
 }
 
 .smallInput {
@@ -54,6 +62,7 @@
 .error {
     color: red;
     font-size: 14px;
-    margin-top: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
