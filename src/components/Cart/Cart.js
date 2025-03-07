@@ -14,6 +14,8 @@ export function Cart() {
     const navigate = useNavigate();
     const [step, setStep] = useState(1); // Шаги в корзине -> 1- товары, 2 - доставка, 3 - оплата
 
+    const paymentRef = useRef(null);
+
     const [isPaymentValid, setIsPaymentValid] = useState(false)
 
     const [formData, setFormData] = useState({
