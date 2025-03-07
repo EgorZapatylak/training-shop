@@ -42,10 +42,15 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
         let newErrors = {};
 
         if (selectedMethod === 'visa' || selectedMethod === 'mastercard') {
-
-            if (isSubmitted && !cardNumber.trim()) newErrors.cardNumber = 'Введите номер карты';
-            if (isSubmitted && !expiryDate.trim()) newErrors.expiryDate = 'Введите срок действия';
-            if (isSubmitted && !cvv.trim()) newErrors.cvv = 'Введите cvv';
+            if (!cardNumber.trim() || cardNumber.replace(/\s/g, '').length !== 16) {
+                newErrors.cardNumber = 'Введите номер карты';
+            }
+            if (!expiryDate.trim() || expiryDate.replace(/\D/g, '').length !== 4) {
+                newErrors.expiryDate = 'Введите срок действия';
+            }
+            if (!cvv.trim() || cvv.length !== 3) {
+                newErrors.cvv = 'Введите CVV';
+            }
         }
         if (selectedMethod === 'paypal') {
             if (!email.trim() || !email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
