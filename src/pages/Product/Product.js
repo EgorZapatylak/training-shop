@@ -428,9 +428,10 @@ export default function Product() {
                                 <Link to={`/${product.category}/${product.id}`}>
                                     <img src={product.images} alt={product.name} height='318' width='255'/>
                                     <div className='related_img_info'>
-                                        <p>{product.name}</p>
-                                        <p>{product.brand}</p>
-                                        <p>$ {product.price}</p>
+                                        <div>
+                                            <p>{product.name}</p>
+                                            <p>$ {product.price}</p>
+                                        </div>
                                         <StarRating rating={product.rating}/>
                                     </div>
                                 </Link>
