@@ -135,7 +135,7 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
                             </div>
                             <div className={styles.cardInfo_style}>
                             <input
-                                type="text"
+                                type="password"
                                 inputMode='numeric'
                                 placeholder="CVV"
                                 className={styles.smallInput}
