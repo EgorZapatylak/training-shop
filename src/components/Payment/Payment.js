@@ -111,6 +111,7 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
                         <h3>CARD</h3>
                         <input
                             type="text"
+                            inputMode='numeric'
                             placeholder="____ ____ ____ ____"
                             className={styles.cardInput}
                             value={cardNumber}
