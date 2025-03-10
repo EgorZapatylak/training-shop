@@ -108,7 +108,7 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
                             checked={selectedMethod === method}
                             onChange={() => setSelectedMethod(method)}
                         />
-                        <img src={`./src/components/${method}.svg`} alt={method}/>
+                        <img src={require(`./images/${method}.svg`)} alt={method}/>
                     </label>
                 ))}
             </div>
