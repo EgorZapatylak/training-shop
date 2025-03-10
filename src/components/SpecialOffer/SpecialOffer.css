@@ -37,6 +37,12 @@
 }
 
 .offer_container p {
+    margin-top: 10px;
+}
+
+.offer_container_p {
+    margin-top: 80px !important;
+    opacity: 0.4;
     font-style: normal;
     font-weight: 600;
     font-size: 12px;
@@ -47,7 +53,6 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: #121212;
-    opacity: 0.4;
 }
 
 .offer_container span {
