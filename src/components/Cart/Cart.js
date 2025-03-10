@@ -199,6 +199,7 @@ export function Cart() {
         if (activeField === 'street') streetInputRef.current?.focus();
         if (activeField === 'house') houseInputRef.current?.focus();
         if (activeField === 'apartment') apartmentInputRef.current?.focus();
+        if (activeField === 'postcode') postcodeInputRef.current?.focus();
     }, [activeField, formData]);
 
     useEffect(() => {
