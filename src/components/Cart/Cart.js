@@ -239,6 +239,7 @@ export function Cart() {
                 <input
                     type="text"
                     name='phone'
+                    inputMode='numeric'
                     placeholder='+375 (__) _______ '
                     ref={phoneInputRef}
                     maxLength='19'
