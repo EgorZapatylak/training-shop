@@ -529,6 +529,7 @@ export function Cart() {
                     <div className={styles.checkbox_info}>
                         <input
                             type="checkbox"
+                            inputMode='numeric'
                             checked={isAgreed}
                             onChange={() => setIsAgreed(!isAgreed)}
                         />
