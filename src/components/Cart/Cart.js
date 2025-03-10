@@ -324,6 +324,7 @@ export function Cart() {
                 <input
                     type="text"
                     name='postcode'
+                    inputMode='numeric'
                     placeholder='BY 123456'
                     maxLength='6'
                     ref={postcodeInputRef}
