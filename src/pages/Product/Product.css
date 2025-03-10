@@ -919,10 +919,10 @@ button.selected {
 
 .related_img_info {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     gap: 10px;
 }
-
 
 
 @media (max-width: 992px) {
