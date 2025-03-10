@@ -7,6 +7,7 @@ export function SpecialOffer () {
     const [error, setError] = useState('') // Состояние для ошибок
     const [isLoading, setIsLoading] = useState(false) // Состояние загрузки
     const [message, setMessage] = useState('') // Сообщение пользователю
+    const [isTouched, setIsTouched] = useState(false); // Было ли поле в фокусе
 
     // Функция для валидации email
     const validateEmail = (email) => {
@@ -23,13 +24,24 @@ export function SpecialOffer () {
     const handleEmailChange = (e) => {
         const value = e.target.value;
         setEmail(value);
-        setError(validateEmail(value));
+
+        if (isTouched) { // Проверяем только если поле уже трогали
+            setError(validateEmail(value));
+        }
+
+        // Убираем сообщение при изменеии поля
+        setMessage('');
     };
+
+    const handleBlur = () => {
+        setIsTouched(true);
+        setError(validateEmail(email));
+    }
 
     // Обрвботчик отправки формы
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (error || !email.trim()) return;
+        if (!isTouched || error || !email.trim()) return;
 
         setIsLoading(true)
         setMessage(''); // Сбрасываем сообщение
@@ -38,6 +50,8 @@ export function SpecialOffer () {
             await new Promise((resolve) => setTimeout(resolve, 2000));
 
             setMessage('Письмо успешно отправлено!');
+            setEmail('');
+            setIsTouched(false);
         } catch (err) {
             setMessage('Ошибка при отправке письма. Попробуйте сноваю');
         } finally {
@@ -53,7 +67,7 @@ export function SpecialOffer () {
             <div className='women_img'></div>
             <div className='men_img'></div>
             <div className='offer_container'>
-                <p>Special Offer</p>
+                <p className='offer_container_p'>Special Offer</p>
                 <span>Subscribe <br/>And Get 10% Off</span>
                 <form onSubmit={handleSubmit}>
                     <input
@@ -61,9 +75,10 @@ export function SpecialOffer () {
                         placeholder="Enter your email"
                         value={email}
                         onChange={handleEmailChange}
+                        onBlur={handleBlur} // Обрабатываем выход из поля
                         disabled={isLoading} // Блокируем поле при отправке
                     />
-                    {error && <p style={{color: 'red'}}>{error}</p>}
+                    {isTouched && error && <p style={{color: 'red'}}>{error}</p>}
                     {message && <p style={{color: message.includes('Ошибка') ? 'red' : 'green'}}>{message}</p>}
                     <button
                         type='submit'
