@@ -39,16 +39,27 @@
 
 .cardInfo_style {
     display: flex;
+    position: relative;
     flex-direction: column;
     height: 50px;
     width: 100px;
 }
 
+.cardInfo_style span {
+    position: absolute;
+    right: -10px;
+    top: 47%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+}
+
 .smallInput {
     flex: 1;
     padding: 10px;
-    width: inherit;
+    width: 123px;
     border: 1px solid lightgray;
+    box-sizing: border-box;
 }
 
 .emailInput {
