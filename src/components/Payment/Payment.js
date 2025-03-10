@@ -7,13 +7,17 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
     const [expiryDate, setExpiryDate] = useState('');
     const [email, setEmail] = useState('');
     const [cvv, setCvv] = useState('');
+    const [showCvv, setShowCvv] = useState(false);  // Состояние для управления видимостью CVV
     const [errors, setErrors] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     useImperativeHandle(ref, () => ({
-      submitPayment: () => {
-          handleSubmit({preventDefault: () => {}})
-      }
+        submitPayment: () => {
+            handleSubmit({
+                preventDefault: () => {
+                }
+            })
+        }
     }))
 
     const handleCardNumberChange = (e) => {
@@ -36,6 +40,10 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
         if (value.length > 3) value = value.slice(0, 3);
         setCvv(value);
     };
+
+    const toggleCvvChange = () => {
+        setShowCvv(!showCvv); // Переключаем видимость CVV
+    }
 
     const validateForm = () => {
         let newErrors = {};
@@ -100,7 +108,7 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
                             checked={selectedMethod === method}
                             onChange={() => setSelectedMethod(method)}
                         />
-                        <img src={`./src/components/${method}.svg`} alt={method} />
+                        <img src={`./src/components/${method}.svg`} alt={method}/>
                     </label>
                 ))}
             </div>
@@ -112,7 +120,7 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
                         <input
                             type="text"
                             inputMode='numeric'
-                            placeholder="____ ____ ____ ____"
+                            placeholder="**** **** **** ****"
                             className={styles.cardInput}
                             value={cardNumber}
                             onChange={handleCardNumberChange}
@@ -122,28 +130,37 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
                         <div className={styles.cardInfo}>
                             <div className={styles.cardInfo_style}>
                                 <input
-                                type="text"
-                                inputMode='numeric'
-                                placeholder="MM/YY"
-                                className={styles.smallInput}
-                                value={expiryDate}
-                                onChange={handleExpiryChange}
-                                maxLength="5"
-                            />
+                                    type="text"
+                                    inputMode='numeric'
+                                    placeholder="MM/YY"
+                                    className={styles.smallInput}
+                                    value={expiryDate}
+                                    onChange={handleExpiryChange}
+                                    maxLength="5"
+                                />
                                 {isSubmitted && errors.expiryDate &&
                                     <p className={styles.error}>{errors.expiryDate}</p>}
                             </div>
                             <div className={styles.cardInfo_style}>
-                            <input
-                                type="password"
-                                inputMode='numeric'
-                                placeholder="CVV"
-                                className={styles.smallInput}
-                                value={cvv}
-                                onChange={handleCvvChange}
-                                maxLength="3"
-                            />
-                            {isSubmitted && errors.cvv && <p className={styles.error}>{errors.cvv}</p>}
+                                <input
+                                    type={showCvv ? 'text' : 'password'}  // Переключаем тип ввода
+                                    inputMode='numeric'
+                                    placeholder="CVV"
+                                    className={styles.smallInput}
+                                    value={cvv}
+                                    onChange={handleCvvChange}
+                                    maxLength="3"
+                                />
+                                <span
+                                    onClick={toggleCvvChange}
+                                    style={{
+                                        cursor: 'pointer',
+                                        userSelect: 'none', // Чтобы текст иконки нельзя было выделить
+                                    }}
+                                >
+                                 {showCvv ? '👁️' : '👁️‍🗨️'} {/* Иконка глаза */}
+                                </span>
+                                {isSubmitted && errors.cvv && <p className={styles.error}>{errors.cvv}</p>}
                             </div>
                         </div>
                     </div>
