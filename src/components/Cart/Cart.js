@@ -478,6 +478,7 @@ export function Cart() {
                 <label>PHONE</label>
                 <input
                     type="text"
+                    inputMode='numeric'
                     name='phone'
                     placeholder='+375 (__) _______ '
                     ref={phoneInputRef}
