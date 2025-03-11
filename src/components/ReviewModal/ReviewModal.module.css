@@ -57,6 +57,7 @@
     margin-top: 15px;
     background-color: black;
     color: white;
+    cursor: pointer;
 }
 
 .error {
@@ -67,12 +68,6 @@
 .submit_button:disabled {
     background: gray;
     cursor: pointer;
-}
-
-.close_button {
-    margin-top: 20px;
-    background: red;
-    color: white;
 }
 
 .star {
