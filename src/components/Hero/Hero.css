@@ -22,7 +22,7 @@
     width: 289px;
     height: 100px;
     left: calc(50% - 289px / 2);
-    top: calc(50% - 100px / 2);
+    top: calc(50% + 280px / 2);
     background: #ffffff;
     border-radius: 4px;
     align-items: center;
