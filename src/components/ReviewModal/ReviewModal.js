@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import style from './ReviewModal.css'
+import style from './ReviewModal.module.css'
 
-export const ReviewModalModule = ({onClose, onSubmit}) => {
+export const ReviewModal = ({onClose, onSubmit}) => {
 
     const [name, setName] = useState('');
     const [text, setText] = useState('');
