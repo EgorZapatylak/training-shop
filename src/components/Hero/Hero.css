@@ -233,7 +233,7 @@
     .banner_content {
         width: 220px;
         height: 65px;
-        top: calc(50% - 70px / 2);
+        top: calc(50% + 135px / 2);
         left: calc(50% - 220px / 2);
     }
 
@@ -313,7 +313,7 @@
     .banner_content {
         width: 220px;
         height: 65px;
-        top: calc(50% - 70px / 2);
+        top: calc(50% + 140px / 2);
         left: calc(50% - 220px / 2);
     }
 
