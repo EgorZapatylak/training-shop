@@ -8,17 +8,55 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 3;
 }
 
 .modal_content {
     background: white;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 20px;
     width: 300px;
     text-align: center;
+    border: 1px solid black;
 }
 
-.error_message {
+.modal_content h2 {
+    margin-bottom: 20px;
+}
+
+.modal_content input{
+    display: flex;
+    width: 285px;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.modal_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.modal_text textarea {
+    width: 295px;
+    height: 200px;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.modal_text button {
+    width: 100px;
+    height: 50px;
+    margin-top: 15px;
+    background-color: black;
+    color: white;
+}
+
+.error {
     color: red;
     font-size: 14px;
 }
@@ -29,7 +67,7 @@
 }
 
 .close_button {
-    margin-top: 10px;
+    margin-top: 20px;
     background: red;
     color: white;
 }
