@@ -1,8 +1,68 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Footer.css';
 import {Link} from "react-router-dom";
 
 export function Footer() {
+
+    const [email, setEmail] = useState('') // Состояние для email
+    const [error, setError] = useState('') // Состояние для ошибок
+    const [isLoading, setIsLoading] = useState(false) // Состояние загрузки
+    const [message, setMessage] = useState('') // Сообщение пользователю
+    const [isTouched, setIsTouched] = useState(false); // Было ли поле в фокусе
+
+    // Функция для валидации email
+    const validateEmail = (email) => {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //Регулярное выражение для email
+        if (!email.trim()) {
+            return 'Поле не должно быть пустым';
+        } else if (!regex.test(email)) {
+            return 'Введите корректный email';
+        }
+        return '';
+    }
+
+    // Обработчик изменений email
+    const handleEmailChange = (e) => {
+        const value = e.target.value;
+        setEmail(value);
+
+        if (isTouched) { // Проверяем только если поле уже трогали
+            setError(validateEmail(value));
+        }
+
+        // Убираем сообщение при изменеии поля
+        setMessage('');
+    };
+
+    const handleBlur = () => {
+        setIsTouched(true);
+        setError(validateEmail(email));
+    }
+
+    // Обрвботчик отправки формы
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (!isTouched || error || !email.trim()) return;
+
+        setIsLoading(true)
+        setMessage(''); // Сбрасываем сообщение
+
+        try{
+            await new Promise((resolve) => setTimeout(resolve, 2000));
+
+            setMessage('Письмо успешно отправлено!');
+            setEmail('');
+            setIsTouched(false);
+        } catch (err) {
+            setMessage('Ошибка при отправке письма. Попробуйте сноваю');
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    // Проверка, валиден ли email
+    const isEmailValid = !error && email.trim() !== '';
+
     return (
         <div className='footer'>
             <div className='footer_top'>
@@ -10,8 +70,23 @@ export function Footer() {
                     <p>BE IN TOUCH WITH US:</p>
                 </div>
                 <div className='join'>
-                    <input type="email" placeholder="Enter your email"/>
-                    <button>Join Us</button>
+                    <form onSubmit={handleSubmit}>
+                        <input
+                            type="email"
+                            placeholder="Enter your email"
+                            value={email}
+                            onChange={handleEmailChange}
+                            onBlur={handleBlur} // Обрабатываем выход из поля
+                            disabled={isLoading} // Блокируем поле при отправке
+                        />
+                        {isTouched && error && <p style={{color: 'red'}}>{error}</p>}
+                        {message && <p style={{color: message.includes('Ошибка') ? 'red' : 'green'}}>{message}</p>}
+                        <button
+                            type='submit'
+                            disabled={!isEmailValid || isLoading}>
+                            {isLoading ? 'Sending...' : 'Join Us'}
+                            </button>
+                    </form>
                 </div>
                 <div className='social_bot'>
                     <a href='https://www.facebook.com/'>
