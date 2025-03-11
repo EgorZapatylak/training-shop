@@ -1,0 +1,13 @@
+.star {
+    font-size: 18px;
+    cursor: pointer;
+    color: gray;
+    opacity: 0.1;
+}
+
+.star_selected {
+    color: gold;
+    cursor: pointer;
+    font-size: 18px;
+    opacity: 1;
+}
