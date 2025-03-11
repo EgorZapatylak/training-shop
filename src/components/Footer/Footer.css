@@ -32,17 +32,27 @@
     align-items: center;
 }
 
+.join form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.input_text {
+    color: white;
+    opacity: 1;
+}
+
 .footer_top input {
     display: flex;
     width: 400px;
-    height: 32px;
+    height: 20px;
     background: #FFFFFF;
     font-style: normal;
     font-weight: 500;
     font-size: 13px;
     line-height: 18px;
     margin-right: 12px;
-    color: #FFFFFF;
     opacity: 0.4;
 }
 
@@ -64,6 +74,7 @@
     text-transform: uppercase;
     color: #FFFFFF;
     opacity: 0.9;
+    cursor: pointer;
 }
 
 .social_bot {
