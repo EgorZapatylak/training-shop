@@ -23,7 +23,7 @@ export default function Product() {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const [mainSwiper, setMainSwiper] = useState(null);
 
-    const [reviews, setReviews] = useState(product.reviews);
+    const [reviews, setReviews] = useState(()=>product.reviews || []);
     const [showModal, setShowModal] = useState(false);
 
     const [selectedColor, setSelectedColor] = useState(null);
