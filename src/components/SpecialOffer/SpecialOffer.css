@@ -150,7 +150,7 @@
     }
 
     .offer_container p {
-        margin-top: 20px;
+        margin-top: 20px !important;
         font-size: 4px;
     }
 
@@ -209,7 +209,7 @@
     }
 
     .offer_container p {
-        margin-top: 20px;
+        margin-top: 20px !important;
         font-size: 4px;
     }
 
