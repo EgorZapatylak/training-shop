@@ -38,11 +38,6 @@
     align-items: center;
 }
 
-.input_text {
-    color: white;
-    opacity: 1;
-}
-
 .footer_top input {
     display: flex;
     width: 400px;
