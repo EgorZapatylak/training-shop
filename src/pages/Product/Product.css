@@ -795,6 +795,7 @@ button.selected {
     /* dark */
 
     color: #121212;
+    cursor: pointer;
 }
 
 .reviews_list {
