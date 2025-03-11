@@ -28,10 +28,20 @@ export const ReviewModal = ({onClose, onSubmit}) => {
     useEffect(()=>{
         // Блокируем scroll при открытом модальном окне
         document.body.style.overflow = 'hidden';
+
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape') {
+                onClose();
+            }
+        }
+
+        document.addEventListener('keydown', handleKeyDown);
+
         return () => {
             document.body.style.overflow = 'auto'; // Разблокируем при открытом
+            document.removeEventListener('keydown', handleKeyDown);
         };
-    }, []);
+    }, [onClose]);
 
     const validateForm = () => {
         const newError = {
@@ -64,8 +74,14 @@ export const ReviewModal = ({onClose, onSubmit}) => {
         }
     };
 
+    const  handleOverlayClick = (e) => {
+        if (e.target.classList.contains(style.modal_overlay)){
+            onClose();
+        }
+    }
+
     return (
-        <div className={style.modal_overlay}>
+        <div className={style.modal_overlay} onClick={handleOverlayClick}>
             <div className={style.modal_content}>
                 <h2>Write a review</h2>
 
