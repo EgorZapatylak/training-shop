@@ -66,35 +66,33 @@ export const ReviewModal = ({onClose, onSubmit}) => {
 
     return (
         <div className={style.modal_overlay}>
-            <div className={style.maodal}>
-                <h2>Написать отзыв</h2>
+            <div className={style.modal_content}>
+                <h2>Write a review</h2>
+
+                <StarRatingInput rating={rating} setRating={setRating}/>
+                
                 <input
                     type="text"
-                    placeholder='Выше имя'
+                    placeholder='Your name'
                     value={name}
                     onChange={(e)=>setName(e.target.value)}
                 />
                 {error.name && <p className={style.error}>{error.name}</p>}
 
-                <textarea
-                    placeholder='Your review'
+                <div className={style.modal_text}>
+                    <textarea
+                    placeholder=' Your review'
                     value={text}
-                    onChange={(e)=>setText(e.target.value)}
-                />
-                {error.text && <p className={style.error}>{error.text}</p>}
+                    onChange={(e) => setText(e.target.value)}
+                    />
+                    {error.text && <p className={style.error}>{error.text}</p>}
 
-                <StarRatingInput rating={rating} setRating={setRating}/>
-
-                <button
-                    onClick={handleSubmit}
-                    disabled={isSubmitting}
-                >{isSubmitting ? 'Sending...' :'Send'}
-                </button>
-                <button
-                    onClick={onClose}
-                    disabled={isSubmitting}>
-                    Close
-                </button>
+                    <button
+                        onClick={handleSubmit}
+                        disabled={isSubmitting}
+                    >{isSubmitting ? 'Sending...' : 'Send'}
+                    </button>
+                </div>
             </div>
         </div>
     );
