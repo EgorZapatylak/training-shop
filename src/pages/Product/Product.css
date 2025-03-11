@@ -797,6 +797,10 @@ button.selected {
     color: #121212;
 }
 
+.reviews_header_write span {
+    cursor: pointer;
+}
+
 .reviews_list {
     display: flex;
     flex-direction: column;
