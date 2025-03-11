@@ -9,6 +9,8 @@
 
 .header_container {
     width: 1280px;
+    position: fixed;
+    z-index: 4;
 }
 
 p {
