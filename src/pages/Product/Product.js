@@ -393,7 +393,7 @@ export default function Product() {
                                 <p>{reviewCount} Reviews</p>
                             </div>
                             <div className="reviews_header_write">
-                                <button onClick={() => setShowModal(true)}>Write a review</button>
+                                <span onClick={() => setShowModal(true)}>Write a review</span>
                                 {showModal && (
                                     <ReviewModal
                                         onClose={()=> setShowModal(false)}
