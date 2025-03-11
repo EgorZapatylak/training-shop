@@ -108,6 +108,14 @@ export const ReviewModal = ({onClose, onSubmit}) => {
                         disabled={isSubmitting}
                     >{isSubmitting ? 'Sending...' : 'Send'}
                     </button>
+                    <button
+                        onClick={onClose}
+                        style={{
+                            color: 'black',
+                            backgroundColor: 'gray'
+                    }}>
+                        Close
+                    </button>
                 </div>
             </div>
         </div>
