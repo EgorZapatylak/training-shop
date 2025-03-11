@@ -22,7 +22,9 @@ export function Products({title, item}) {
             <div className='line'></div>
             <div className='item_hed'>
                 <div className='item_info'>
-                    <h2>{title}</h2>
+                        <Link to={"/" + title.toLowerCase().slice(0, -2)}>
+                            <h2>{title}</h2>
+                        </Link>
                 </div>
                 <div className='sort'>
                     <h3 onClick={() => setFilter(null)}
