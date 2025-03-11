@@ -125,7 +125,7 @@ export default function Product() {
     }
 
     const handleReviewSubmit = (newReview) => {
-        const updatedReviews = [...reviews, newReview];
+        const updatedReviews = [newReview, ...reviews];
         setReviews(updatedReviews);
 
         // Обновляем локальную базу данных
