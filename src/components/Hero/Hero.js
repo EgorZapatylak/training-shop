@@ -21,14 +21,28 @@ export function Hero() {
                         prevEl: '.chevron-left'
                     }}
                 >
-                    <SwiperSlide><img src={Banner} alt=''/></SwiperSlide>
-                    <SwiperSlide><img src={Banner} alt=''/></SwiperSlide>
-                    <SwiperSlide><img src={Banner} alt=''/></SwiperSlide>
+                    <SwiperSlide>
+                        <img src={Banner} alt=''/>
+                        <div className='banner_content'>
+                            <p>Banner</p>
+                            <span>Your Title Text</span>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img src={Banner} alt=''/>
+                        <div className='banner_content'>
+                            <p>Banner</p>
+                            <span>Your Title Text</span>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img src={Banner} alt=''/>
+                        <div className='banner_content'>
+                            <p>Banner</p>
+                            <span>Your Title Text</span>
+                        </div>
+                    </SwiperSlide>
                 </Swiper>
-                <div className='banner_content'>
-                    <p>Banner</p>
-                    <span>Your Title Text</span>
-                </div>
                 <div className='chevron-right'></div>
                 <div className='chevron-left'></div>
             </div>
