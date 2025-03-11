@@ -12,6 +12,7 @@ import {addToCart, removeFromCart} from "../../cartSlice";
 import {StarRating} from "../../components/StarRating/StarRating";
 import {useParams} from "react-router";
 import {Link} from "react-router-dom";
+import {ReviewModal} from "../../components/ReviewModal/ReviewModal";
 
 
 export default function Product() {
@@ -21,6 +22,9 @@ export default function Product() {
 
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const [mainSwiper, setMainSwiper] = useState(null);
+
+    const [reviews, setReviews] = useState(product.reviews);
+    const [showModal, setShowModal] = useState(false);
 
     const [selectedColor, setSelectedColor] = useState(null);
     const [selectedSize, setSelectedSize] = useState(null);
@@ -119,6 +123,15 @@ export default function Product() {
             }
         }
     }
+
+    const handleReviewSubmit = (newReview) => {
+        const updatedReviews = [...reviews, newReview];
+        setReviews(updatedReviews);
+
+        // Обновляем локальную базу данных
+        product.reviews = updatedReviews;
+        setShowModal(false);
+    };
 
     const updateSwiper = useCallback(() => {
         if (thumbsSwiper) {
@@ -380,7 +393,13 @@ export default function Product() {
                                 <p>{reviewCount} Reviews</p>
                             </div>
                             <div className="reviews_header_write">
-                                <p>Write a review</p>
+                                <button onClick={() => setShowModal(true)}>Write a review</button>
+                                {showModal && (
+                                    <ReviewModal
+                                        onClose={()=> setShowModal(false)}
+                                        onSubmit={handleReviewSubmit}
+                                    />
+                                )}
                             </div>
                         </div>
                         {reviewCount > 0 ? (
