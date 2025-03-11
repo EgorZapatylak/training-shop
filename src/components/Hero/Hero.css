@@ -1,8 +1,8 @@
 .hero {
     display: flex;
     justify-content: space-between;
-    margin: 32px 70px 0 70px;
-    padding: 0 15px;
+    margin: 0 70px;
+    padding: 123px 15px 0 15px;
 }
 
 .mySwiper {
