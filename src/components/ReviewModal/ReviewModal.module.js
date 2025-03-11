@@ -10,14 +10,14 @@ export const ReviewModalModule = ({onClose, onSubmit}) => {
     const handleSubmit = () => {
         if (!name.trim() || !text.trim()) return;
 
-        const newReniew = {
+        const newReview = {
             name,
             text,
             rating,
             id: Date.now().toString(),
         };
 
-        onSubmit(newReniew);
+        onSubmit(newReview);
         setName('');
         setText('');
     };
