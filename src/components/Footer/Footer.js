@@ -14,9 +14,9 @@ export function Footer() {
     const validateEmail = (email) => {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //Регулярное выражение для email
         if (!email.trim()) {
-            return 'Поле не должно быть пустым';
+            return '';
         } else if (!regex.test(email)) {
-            return 'Введите корректный email';
+            return '';
         }
         return '';
     }
@@ -50,7 +50,7 @@ export function Footer() {
         try{
             await new Promise((resolve) => setTimeout(resolve, 2000));
 
-            setMessage('Письмо успешно отправлено!');
+            alert('Письмо успешно отправлено!');
             setEmail('');
             setIsTouched(false);
         } catch (err) {
