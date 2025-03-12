@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './Women.css';
 import {Link} from "react-router-dom";
+import {Products_base} from "../../Products_base";
+import {StarRating} from "../../components/StarRating/StarRating";
 
 export default function Women() {
     return (
