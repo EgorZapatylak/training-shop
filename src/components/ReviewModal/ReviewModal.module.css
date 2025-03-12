@@ -83,3 +83,15 @@
     font-size: 18px;
     opacity: 1;
 }
+
+@media (max-width: 380px) {
+
+    .modal_content {
+        padding-top: 10px;
+        margin-top: 80px;
+    }
+
+    .modal_text textarea {
+        height: 100px;
+    }
+}
