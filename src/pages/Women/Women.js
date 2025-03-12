@@ -127,52 +127,83 @@ export default function Women() {
                     <p>Filter</p>
                 </div>
                 <div className='veia'>
-                    <div className='tabl'/>
-                    <div className='plit'/>
+                    <div className='tabl' onClick={() => setViewMode("list")}>
+                    </div>
+                    <div className="plit" onClick={() => setViewMode("grid")}>
+                    </div>
                 </div>
                 <div className='categor'>
-                    <p>BESTSELLERS</p>
-                    <div className='vector'/>
+                    <select onChange={(e) => setSelectedCategory(e.target.value)}>
+                        {categories.map(({key, label}) => (
+                            <option key={key} value={key}>{label}</option>
+                        ))}
+                    </select>
                 </div>
             </div>
-            <div className='items'>
-                <Link to="/product">
-                    <div className='clothes'>
-                        <div className='id_1'></div>
-                        <p>Women's tracksuit Q109</p>
-                        <div className='cost-rate'>
-                            <p>$30.00</p>
-                            <div className='stars'></div>
+
+            {/* Отображение выбранных фильтров */}
+            <div className="selected-filters">
+                {/* Отображение счетчик товаров */}
+                <div>
+                    <b>{hasActiveFilters && <p>{filteredCount} items found</p>}</b>
+                </div>
+                {Object.entries(filters).flatMap(([key, values]) =>
+                    values.map(value => (
+                        <span key={value} className="filter-tag">
+                            {typeof value === "object" && value.label ? value.label : value}
+                            <button onClick={() => handleFilterChange(key, value)}>✕</button>
+                        </span>
+                    ))
+                )}
+            </div>
+
+
+            {/* Всплывающее бургер-меню фильтро*/}
+            {showFilter && (
+                <div className='filter-modal'>
+                    <div className='filter-content'>
+
+                        {/* Фильтр по цвету */}
+                        <div className='filter_group'>
+                            <label>Цвет:</label>
+                            {isMobile ? (
+                                <select onChange={(e) => handleFilterChange('color', e.target.value)}>
+                                    <option value="">Выберите цвет</option>
+                                    {uniqueColors.map((color, index) => (
+                                        <option key={index} value={color}>{color}</option>
+                                    ))}
+                                </select>
+                            ) : (uniqueColors.map((color, index) => (
+                                <div
+                                    key={index}
+                                    className={`color-option ${color} ${filters.color.includes(color) ? 'active' : ''}`}
+                                    onClick={() => handleColorSelect(color)}>
+                                    {color.charAt(0).toUpperCase() + color.slice(1)}
+                                </div>
+                            )))}
                         </div>
-                    </div>
-                </Link>
-                <Link to="/product">
-                    <div className='clothes'>
-                        <div className='id_2'></div>
-                        <p>Women's tracksuit Q109</p>
-                        <div className='cost-rate'>
-                            <p>$30.00</p>
-                            <div className='stars'></div>
-                        </div>
-                    </div>
-                </Link>
-                <Link to="/product">
-                    <div className='clothes'>
-                        <div className='id_3'></div>
-                        <p>Women's tracksuit Q109</p>
-                        <div className='cost-rate'>
-                            <p>$30.00</p>
-                            <div className='stars'></div>
-                        </div>
-                    </div>
-                </Link>
-                <Link to="/product">
-                    <div className='clothes'>
-                        <div className='id_4'></div>
-                        <p>Women's tracksuit Q109</p>
-                        <div className='cost-rate'>
-                            <p>$30.00</p>
-                            <div className='stars'></div>
+
+                        {/* Фильтр по размеру */}
+                        <div className='filter_group'>
+                            <label>Размер:</label>
+                            {isMobile ? (
+                                <select onChange={(e) => handleFilterChange('size', e.target.value)}>
+                                    <option value="">Выберите размер</option>
+                                    {availableSizes.map((size, index) => (
+                                        <option key={index} value={size}>{size.slice(0, -3)}</option>
+                                    ))}
+                                </select>
+                            ) : (availableSizes.map((size, index) => (
+                                    <label key={index}>
+                                        <input
+                                            type="checkbox"
+                                            checked={filters.size.includes(size)}
+                                            onChange={() => handleFilterChange("size", size)}
+                                        />
+                                        {size.slice(0, -3)}
+                                    </label>
+                                ))
+                            )}
                         </div>
                     </div>
                 </Link>
