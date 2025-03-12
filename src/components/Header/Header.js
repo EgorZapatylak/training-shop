@@ -22,7 +22,7 @@ export function Header() {
 
     const cartItems = useSelector((state) => state.cart.items); // Получаем данные из корзины Redux
     const isCartOpen = useSelector((state) => state.cart.isCartOpen); // Состояние открытия корзины
-    const totalItems= cartItems.reduce((total, item) => total + item.quantity,0); // Считакм количество товаров
+    const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0); // Считакм количество товаров
 
     const dispatch = useDispatch();
 
@@ -92,7 +92,8 @@ export function Header() {
                         <li>
                             <a href='/blog'>Blog</a></li>
                         <li>
-                            <a href='/contact'>Contact</a></li>
+                            <Link to="/contact"><a href='/contact'>Contact</a></Link>
+                        </li>
                     </ul>
                 </div>
                 <div className='instryment'>
@@ -105,7 +106,7 @@ export function Header() {
                     <a href='https://www.google.by/'>
                         <img src={User} alt=''/>
                     </a>
-                    <div className='cart_icon' onClick={()=> dispatch(openCart())}>
+                    <div className='cart_icon' onClick={() => dispatch(openCart())}>
                         <img src={Shopping} alt="Cart"/>
                         {totalItems > 0 && <span className='cart_count'>{totalItems}</span>}
                     </div>
