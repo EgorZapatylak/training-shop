@@ -200,8 +200,8 @@ export default function Product() {
                         <p>Home</p>
                     </Link>
                     <div className='ul'/>
-                    <Link to='/men'>
-                        <p>Men</p>
+                    <Link to={'/' + category}>
+                        <p>{category.toUpperCase()}</p>
                     </Link>
                     <div className='ul'/>
                     <span>{product.name}</span>
