@@ -965,6 +965,7 @@ export const Products_base = {
                     id: '6205132577fffe0cd128c8c0',
                 },
             ],
+            imageURL: require("../src/pages/Women/img/women_1.jpg"),
             images: [
                 {
                     color: 'Multicolor',
@@ -1010,6 +1011,7 @@ export const Products_base = {
                     id: '6205142277fffe0cd128c9ab',
                 },
             ],
+            imageURL: require("../src/pages/Women/img/women_2.jpg"),
             images: [
                 {
                     color: 'Black',
@@ -1041,6 +1043,7 @@ export const Products_base = {
             sizes: ['XS INT', 'S INT', 'M INT'],
             discount: null,
             reviews: [],
+            imageURL: require("../src/pages/Women/img/women_3.jpg"),
             images: [
                 {
                     color: 'Multicolor',
@@ -1080,6 +1083,7 @@ export const Products_base = {
                     id: '6205159e77fffe0cd128c9c7',
                 },
             ],
+            imageURL: require("../src/pages/Women/img/women_4.jpg"),
             images: [
                 {
                     color: 'Red',
@@ -1172,6 +1176,7 @@ export const Products_base = {
                     id: '6205170077fffe0cd128cadf',
                 },
             ],
+            imageURL: require("../src/pages/Women/img/women_5.jpg"),
             images: [
                 {
                     color: 'Black',
@@ -1240,6 +1245,7 @@ export const Products_base = {
                     id: '620517ff77fffe0cd128cb2d',
                 },
             ],
+            imageURL: require("../src/pages/Women/img/women_6.jpg"),
             images: [
                 {
                     color: 'Black',
@@ -1285,6 +1291,7 @@ export const Products_base = {
                     id: '6205191377fffe0cd128cb63',
                 },
             ],
+            imageURL: require("../src/pages/Women/img/women_7.jpg"),
             images: [
                 {
                     color: 'Black',
@@ -1334,6 +1341,7 @@ export const Products_base = {
                     id: '620519c477fffe0cd128cb7d',
                 },
             ],
+            imageURL: require("../src/pages/Women/img/women_8.jpg"),
             images: [
                 {
                     color: 'Black',
@@ -1365,15 +1373,16 @@ export const Products_base = {
             sizes: ['XS INT', 'S INT', 'M INT'],
             discount: null,
             reviews: [],
+            imageURL: require("../src/pages/Women/img/women_1.jpg"),
             images: [
                 {
                     color: 'Brown',
-                    url: '/media/620126dda5293589353a9c7c/RTLABB101301_16177596_2_v1.webp',
+                    url: require("../src/pages/Women/img/women_1.jpg"),
                     id: '62051ad577fffe0cd128cc0f',
                 },
                 {
                     color: 'Brown',
-                    url: '/media/620126dda5293589353a9c7c/RTLABB101301_16177595_1_v1.webp',
+                    url: require("../src/pages/Women/img/women_1.jpg"),
                     id: '62051ad977fffe0cd128cc12',
                 },
             ],
@@ -1396,15 +1405,16 @@ export const Products_base = {
             sizes: ['32 EUR', '34 EUR', '36 EUR'],
             discount: null,
             reviews: [],
+            imageURL: require("../src/pages/Women/img/women_2.jpg"),
             images: [
                 {
                     color: 'Blue',
-                    url: '/media/620126dda5293589353a9c7a/RTLABB350001_16215215_2_v1.webp',
+                    url: require("../src/pages/Women/img/women_2.jpg"),
                     id: '62051b8177fffe0cd128cf63',
                 },
                 {
                     color: 'Blue',
-                    url: '/media/620126dda5293589353a9c7a/RTLABB350001_16215214_1_v1.webp',
+                    url: require("../src/pages/Women/img/women_2.jpg"),
                     id: '62051b8477fffe0cd128cf66',
                 },
             ],
