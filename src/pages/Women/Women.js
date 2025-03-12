@@ -106,7 +106,9 @@ export default function Women() {
         <section>
             <div className='women_header'>
                 <div className='road'>
-                    <p>Home</p>
+                    <Link to='/'>
+                        <p>Home</p>
+                    </Link>
                     <div className='ul'/>
                     <span>Women</span>
                 </div>
