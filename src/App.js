@@ -6,6 +6,7 @@ import {HashRouter as Router, Route, Routes} from "react-router-dom";
 import Men from "./pages/Men/Men";
 import Women from "./pages/Women/Women";
 import Product from "./pages/Product/Product";
+import {Contact} from "./components/Contact/Contact";
 
 const App = () => {
     return (
@@ -17,6 +18,7 @@ const App = () => {
                     <Route exact path="/men" element={<Men/>}/>
                     <Route exact path="/women" element={<Women/>}/>
                     <Route exact path="/:category/:id" element={<Product/>}/>
+                    <Route exact path="/contact" element={<Contact/>}/>
                 </Routes>
                 <Footer/>
             </Router>
