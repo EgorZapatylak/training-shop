@@ -284,11 +284,14 @@ export default function Women() {
                             </div>
                         </Link>
                     </div>
-                </Link>
+                ))}
             </div>
-            <div className='loading'>
-            </div>
-        </section>
-    )
-}
 
+            {/* Кнопка "Показать еще" */}
+            {visibleCount < filteredItems.length && (
+                <div className="load_more" onClick={loadMore}>
+                </div>
+            )}
+        </section>
+    );
+}
