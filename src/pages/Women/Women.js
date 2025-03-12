@@ -205,15 +205,52 @@ export default function Women() {
                                 ))
                             )}
                         </div>
-                    </div>
-                </Link>
-                <Link to="/product">
-                    <div className='clothes'>
-                        <div className='id_5'></div>
-                        <p>Women's tracksuit Q109</p>
-                        <div className='cost-rate'>
-                            <p>$30.00</p>
-                            <div className='stars'></div>
+
+                        {/* Фильтр по бренду */}
+                        <div className='filter_group'>
+                            <label>Бренд:</label>
+                            {isMobile ? (
+                                <select onChange={(e) => handleFilterChange('brand', e.target.value)}>
+                                    <option value="">Выберите бренд</option>
+                                    {availableBrands.map((brand, index) => (
+                                        <option key={index} value={brand}>{brand}</option>
+                                    ))}
+                                </select>
+                            ) : (
+                                availableBrands.map((brand, index) => (
+                                    <label key={index}>
+                                        <input
+                                            type="checkbox"
+                                            checked={filters.brand.includes(brand)}
+                                            onChange={() => handleFilterChange("brand", brand)}
+                                        />
+                                        {brand}
+                                    </label>
+                                ))
+                            )}
+                        </div>
+
+
+                        {/* Фильтр по цене */}
+                        <div className='filter_group'>
+                            <label>Цена:</label>
+                            {isMobile ? (
+                                <select onChange={(e) => handleFilterChange('price', e.target.value)}>
+                                    <option value="">Выберите диапазон</option>
+                                    {priceRanges.map((range) => (
+                                        <option key={range.label} value={range.label}>{range.label}</option>
+                                    ))}
+                                </select>
+                            ) : (priceRanges.map(range => (
+                                <label key={range.label}>
+                                    <input
+                                        type="checkbox"
+                                        checked={filters.price.some(p => p.min === range.min && p.max === range.max)}
+                                        onChange={() => handleFilterChange("price", range)}
+                                    />
+                                    {range.label}
+                                </label>
+                            )))}
                         </div>
                     </div>
                 </Link>
