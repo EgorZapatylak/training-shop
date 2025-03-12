@@ -106,7 +106,9 @@ export default function Men() {
         <section>
             <div className='men_header'>
                 <div className='road'>
-                    <p>Home</p>
+                    <Link to='/'>
+                        <p>Home</p>
+                    </Link>
                     <div className='ul'/>
                     <span>Men</span>
                 </div>
