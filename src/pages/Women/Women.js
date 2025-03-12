@@ -118,9 +118,12 @@ export default function Women() {
             <div className='title'>
                 <h1>Women</h1>
             </div>
+
+            {/* Панель управления */}
             <div className='edit'>
                 <div className='filter'>
-                    <div className='filter_img'/>
+                    <div className={`${showFilter ? 'filter_img_close' : 'filter_img'}`}
+                         onClick={() => setShowFilter(!showFilter)}/>
                     <p>Filter</p>
                 </div>
                 <div className='veia'>
