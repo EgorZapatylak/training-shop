@@ -1,4 +1,5 @@
 import React from 'react';
+import {MapComponent} from "../MapComponent/MapComponent";
 
 export const Contact = () => {
     return (
