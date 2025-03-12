@@ -351,7 +351,7 @@ h1 {
 @media (min-width: 381px) and (max-width: 576px) {
 
     .header_container {
-        width: auto;
+        width: 100%;
         margin: 0 auto;
     }
 
