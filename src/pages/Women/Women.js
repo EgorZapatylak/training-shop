@@ -253,35 +253,36 @@ export default function Women() {
                             )))}
                         </div>
                     </div>
-                </Link>
-                <Link to="/product">
-                    <div className='clothes'>
-                        <div className='id_6'></div>
-                        <p>Women's tracksuit Q109</p>
-                        <div className='cost-rate'>
-                            <p>$30.00</p>
-                            <div className='stars'></div>
-                        </div>
-                    </div>
-                </Link>
-                <Link to="/product">
-                    <div className='clothes'>
-                        <div className='id_7'></div>
-                        <p>Women's tracksuit Q109</p>
-                        <div className='cost-rate'>
-                            <p>$30.00</p>
-                            <div className='stars'></div>
-                        </div>
-                    </div>
-                </Link>
-                <Link to="/product">
-                    <div className='clothes'>
-                        <div className='id_8'></div>
-                        <p>Women's tracksuit Q109</p>
-                        <div className='cost-rate'>
-                            <p>$30.00</p>
-                            <div className='stars'></div>
-                        </div>
+                </div>
+            )}
+
+            {/* Вывод товаров */}
+            <div className={viewMode === "grid" ? "items grid" : "items list"}>
+                {filteredItems.slice(0, visibleCount).map(prod => (
+                    <div key={prod.id} className='clothes'>
+                        <Link to={`/women/${prod.id}`}>
+                            <div className={`mid_${prod.id}`}>
+                                {prod.discount && (
+                                    <div className='discount_badge'>{prod.discount}</div>
+                                )}
+                                <img className='mid' src={prod.imageURL} alt={prod.name}/>
+                            </div>
+                            <p>{prod.name}</p>
+                            <div className='cost-rate'>
+                                {prod.discount ? (
+                                    <div className='price_item'>
+                                        <p className='new_price'>
+                                            {(prod.price * (1 + parseFloat(prod.discount) / 100)).toFixed(2)} $
+                                            {/* Учитываем скидку */}
+                                        </p>
+                                        <p className='old_price'>{prod.price} $</p>
+                                    </div>
+                                ) : (
+                                    <p>{prod.price}$</p>
+                                )}
+                                <StarRating rating={prod.rating}/>
+                            </div>
+                        </Link>
                     </div>
                 </Link>
             </div>
