@@ -5,6 +5,103 @@ import {Products_base} from "../../Products_base";
 import {StarRating} from "../../components/StarRating/StarRating";
 
 export default function Women() {
+
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 785);
+
+    const [filters, setFilters] = useState({
+        size: [],
+        price: [],
+        brand: [],
+        color: []
+    });
+
+    const [showFilter, setShowFilter] = useState(false);
+    const [viewMode, setViewMode] = useState("grid"); // По умолчанию плитки
+    const [visibleCount, setVisibleCount] = useState(8); // Количество отображаемых товаров
+    const [filteredItems, setFilteredItems] = useState([]); // Отфильтрованные товары
+    const [filteredCount, setFilteredCount] = useState(0); // Количество найденых товаров
+    const [selectedCategory, setSelectedCategory] = useState('all'); // Установка фильтра по умолчанию
+    const products = Products_base.women;
+
+    // Доступные фильтры
+    const availableSizes = [...new Set(products.flatMap(prod => prod.sizes))];
+    const availableBrands = [...new Set(products.map(prod => prod.brand))];
+
+    // Проверка, есть ли активные фильтры
+    const hasActiveFilters = Object.values(filters).some(filter => filter.length > 0);
+
+    // Диапазоны цен
+    const priceRanges = [
+        {min: 0, max: 50, label: "$ 0 - 50"},
+        {min: 50, max: 100, label: "$ 50 - 100"},
+        {min: 100, max: 150, label: "$ 100 - 150"},
+        {min: 150, max: 200, label: "$ 150 - 200"},
+        {min: 200, max: 300, label: "$ 200 - 300"},
+        {min: 300, max: 500, label: "$ 300 - 500"}
+    ];
+
+    const categories = [
+        {key: 'all', label: 'All'},
+        ...Object.keys(products[0].particulars).map(key => ({
+            key,
+            label: key.replace(/^is/, ''),
+        }))
+    ];
+
+    useEffect(() => {
+        // Прокрутка страницы к началу
+        window.scrollTo(0, 0);
+    }, []); // Пустой массив зависимостей, чтобы эффект срабатывал только при монтировани компонента
+
+
+    // Фильтрация товаров
+    useEffect(() => {
+        const filtered = products.filter(prod =>
+            (selectedCategory === 'all' || prod.particulars[selectedCategory]) &&
+            (filters.size.length === 0 || filters.size.some(size => prod.sizes.includes(size))) &&
+            (filters.brand.length === 0 || filters.brand.includes(prod.brand)) &&
+            (filters.color.length === 0 || prod.images.some(img => filters.color.includes(img.color))) &&
+            (filters.price.length === 0 || filters.price.some(range => prod.price >= range.min && prod.price < range.max))
+        );
+
+        setFilteredItems(filtered); // Обновляем список отфильтрованных товаров
+        setFilteredCount(filtered.length); // Обновляем счётчик товаров
+    }, [filters, products, selectedCategory]); // Отслеживаем изменения в фильтрах
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 785);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, [])
+
+    // Функция подгрузки товаров
+    const loadMore = () => {
+        setVisibleCount(prev => prev + 4);
+    };
+
+    // Функция выбора фильтров (моментальное обновление)
+    const handleFilterChange = (type, value) => {
+        setFilters(prev => ({
+            ...prev,
+            [type]: prev[type].some(v => JSON.stringify(v) === JSON.stringify(value))
+                ? prev[type].filter(v => JSON.stringify(v) !== JSON.stringify(value)) // Убираем фильтр
+                : [...prev[type], value] // Добавляем фильтр
+        }));
+    };
+
+    // Собираем все цвета из товаров
+    const uniqueColors = [
+        ...new Set(
+            Products_base.women.flatMap(product =>
+                product.images.map(image => image.color)
+            )
+        ),
+    ]
+
+    const handleColorSelect = (color) => {
+        handleFilterChange('color', color);
+    }
+
     return (
         <section>
             <div className='women_header'>
