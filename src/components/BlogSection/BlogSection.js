@@ -1,7 +1,7 @@
 import React from 'react';
-import './Blog.css'
+import './BlogSection.css'
 
-export function Blog () {
+export function BlogSection () {
     return (
         <>
             <div className='blog_header'>
