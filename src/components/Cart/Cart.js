@@ -609,7 +609,7 @@ export function Cart() {
         <div className={styles.cart}>
             <div className={styles.cart_header}>
                 <p>SHOPPING CART</p>
-                <img className='filter_img_close' alt='' onClick={() => dispatch(closeCart())}/>
+                <button className={styles.button_filter} onClick={() => dispatch(closeCart())}>&times;</button>
             </div>
             {cartItems.length === 0 ? (
                 <div className={styles.empty_cart}>
