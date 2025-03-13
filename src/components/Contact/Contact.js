@@ -1,5 +1,5 @@
 import React from 'react';
-import {MapComponent} from "../MapComponent/MapComponent";
+// import {MapComponent} from "../MapComponent/MapComponent";
 import style from './Contact.module.css'
 import Map from './img/map.png'
 
