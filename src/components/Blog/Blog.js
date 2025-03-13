@@ -5,7 +5,7 @@ export const Blog = () => {
     return (
         <div>
             <h2>Последние новости</h2>
-            <div  style={{ border: '1px solid #ccc', padding: '10px', marginBottom: '10px' }}>
+            <div>
                 <h3>The Easiest Way to Break</h3>
                 <p>But I must explain to you how all this mistaken idea of denouncing pleas and praising
                     pain was bor</p>
@@ -13,7 +13,7 @@ export const Blog = () => {
                     <p>April 6, 2022<span>Read More</span></p>
                 </div>
             </div>
-            <div  style={{ border: '1px solid #ccc', padding: '10px', marginBottom: '10px' }}>
+            <div>
                 <h3>The Easiest Way to Break</h3>
                 <p>But I must explain to you how all this mistaken idea of denouncing pleas and praising
                     pain was bor</p>
@@ -21,7 +21,7 @@ export const Blog = () => {
                     <p>April 6, 2022<span>Read More</span></p>
                 </div>
             </div>
-            <div  style={{ border: '1px solid #ccc', padding: '10px', marginBottom: '10px' }}>
+            <div>
                 <h3>The Easiest Way to Break</h3>
                 <p>But I must explain to you how all this mistaken idea of denouncing pleas and praising
                     pain was bor</p>
