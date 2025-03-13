@@ -1,12 +1,13 @@
 import React from 'react';
 import './BlogSection.css'
+import {Link} from "react-router-dom";
 
 export function BlogSection () {
     return (
         <>
             <div className='blog_header'>
                 <h2>LATEST FROM BLOG</h2>
-                <p>SEE ALL</p>
+                <Link to="/blog"><a href='/blog'>SEE ALL</a></Link>
             </div>
             <div className='blog_post'>
                 <div className='box_1'>
