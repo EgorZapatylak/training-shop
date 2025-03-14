@@ -951,7 +951,7 @@ button.selected {
         width: 962px;
         margin: 15px 0 0 0;
         padding: 0 15px;
-        flex-direction: column     ;
+        flex-direction: column    ;
     }
 
     .content_img {
