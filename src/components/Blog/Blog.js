@@ -26,7 +26,7 @@ export const Blog = () => {
                 <p>But I must explain to you how all this mistaken idea of denouncing pleas and praising
                     pain was bor</p>
                 <div className='data'>
-                    <p>April 6, 2022<span>R e a d M o r e</span></p>
+                    <p>April 6, 2022<span>Re a d M o r e</span></p>
                 </div>
             </div>
         </div>
