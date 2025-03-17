@@ -1,3 +1,7 @@
+.blog_container {
+    padding-top: 100px;
+}
+
 .container_item img{
     display: flex;
     position: relative;
