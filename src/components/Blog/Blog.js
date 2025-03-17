@@ -4,7 +4,7 @@ import style from './Blog.module.css'
 export const Blog = () => {
     return (
         <div className={style.blog_container}>
-            <h2>Последние новости</h2>
+            <h2>Последние н овости</h2>
             <div className={style.container_item}>
                 <h3>The Easiest Way to Break</h3>
                 <img src="../BlogSection/img/blog_1.jpg" alt="image"/>
