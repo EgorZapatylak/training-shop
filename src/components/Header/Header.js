@@ -90,7 +90,8 @@ export function Header() {
                         <li>
                             <a href='/accessories'>Accessories</a></li>
                         <li>
-                            <a href='/blog'>Blog</a></li>
+                            <Link to="/blog"><a href='/blog'>Blog</a></Link>
+                        </li>
                         <li>
                             <Link to="/contact"><a href='/contact'>Contact</a></Link>
                         </li>
