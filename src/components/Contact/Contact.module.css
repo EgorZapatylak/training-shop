@@ -71,3 +71,42 @@
     background-position: left;
     background-repeat: no-repeat;
 }
+
+@media (max-width: 992px) {
+    .container{
+        width: 100%;
+        height: 50vh;
+    }
+}
+@media (min-width:381px) and (max-width: 576px){
+    .container{
+        height: 65vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .container img {
+        width: 100%;
+    }
+    .contacts {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 380px){
+    .container{
+        height: 65vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .container img {
+        width: 80%;
+    }
+    .contacts {
+        margin-top: 20px;
+    }
+}
