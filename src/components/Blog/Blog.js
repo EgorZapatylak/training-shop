@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import style from './Blog.module.css'
 import BlogImages from './../BlogSection/img/blog_1.jpg'
 
 export const Blog = () => {
+
+    useEffect(() => {
+        // Прокрутка страницы к началу
+        window.scrollTo(0, 0);
+    }, []); // Пустой массив зависимостей, чтобы эффект срабатывал только при монтировани компонента
     return (
         <div className={style.blog_container}>
             <h2>Последние новости</h2>
