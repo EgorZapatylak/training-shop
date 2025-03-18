@@ -77,7 +77,7 @@ export function Header() {
                 <div className='nav-item'>
                     <ul className={menuActive ? 'active' : ''} onClick={() => setMenuActive(false)}>
                         <li>
-                            <a href='/about'>About Us</a>
+                            <Link to="/about"><a href='/about'>About Us</a></Link>
                         </li>
                         <li>
                             <Link to="/women"><a href='/women'>Women</a></Link>
@@ -86,9 +86,10 @@ export function Header() {
                             <Link to="/men"><a href='/men'>Men</a></Link>
                         </li>
                         <li>
-                            <a href='/beauty'>Beauty</a></li>
+                            <Link to="/beauty"><a href='/beauty'>Beauty</a></Link>
+                        </li>
                         <li>
-                            <a href='/accessories'>Accessories</a></li>
+                            <Link to="/accessories"><a href='/accessories'>Accessories</a></Link></li>
                         <li>
                             <Link to="/blog"><a href='/blog'>Blog</a></Link>
                         </li>
