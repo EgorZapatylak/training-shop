@@ -382,12 +382,12 @@
 
 @media (max-width: 380px) {
     .footer {
-        width: 375px;
+        width: 380px;
         margin: 0 auto;
     }
 
     .footer_top {
-        width: 345px;
+        width: 350px;
         margin-top: 20px;
     }
 
