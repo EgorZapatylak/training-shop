@@ -8,6 +8,7 @@ import Women from "./pages/Women/Women";
 import Product from "./pages/Product/Product";
 import {Contact} from "./components/Contact/Contact";
 import {Blog} from "./components/Blog/Blog";
+import NotFoundPage from "./components/NotFoundPage";
 
 const App = () => {
     return (
@@ -21,6 +22,7 @@ const App = () => {
                     <Route exact path="/:category/:id" element={<Product/>}/>
                     <Route exact path="/contact" element={<Contact/>}/>
                     <Route exact path="/blog" element={<Blog/>}/>
+                    <Route exact path = '*' element={<NotFoundPage/>}/>
                 </Routes>
                 <Footer/>
             </Router>
