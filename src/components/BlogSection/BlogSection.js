@@ -16,7 +16,11 @@ export function BlogSection () {
                         <p>But I must explain to you how all this mistaken idea of denouncing pleas and praising
                             pain was bor</p>
                         <div className='data'>
-                            <p>April 6, 2022<span>Read More</span></p>
+                            <p>April 6, 2022
+                                <Link to="/blog">
+                                    <a href='/blog'>READ MORE</a>
+                                </Link>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -26,7 +30,11 @@ export function BlogSection () {
                         <p>But I must explain to you how all this mistaken idea of denouncing pleas and praising
                             pain was bor</p>
                         <div className='data'>
-                            <p>April 6, 2022<span>Read More</span></p>
+                            <p>April 6, 2022
+                                <Link to="/blog">
+                                    <a href='/blog'>READ MORE</a>
+                                </Link>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -36,7 +44,11 @@ export function BlogSection () {
                         <p>But I must explain to you how all this mistaken idea of denouncing pleas and praising
                             pain was bor</p>
                         <div className='data'>
-                            <p>April 6, 2022<span>Read More</span></p>
+                            <p>April 6, 2022
+                                <Link to="/blog">
+                                <a href='/blog'>READ MORE</a>
+                                </Link>
+                            </p>
                         </div>
                     </div>
                 </div>
