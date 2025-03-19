@@ -24,6 +24,12 @@
     text-decoration: none;
 }
 
+@media (min-width: 321px) and (max-width: 374px) {
+    .container {
+        width: 380px;
+    }
+}
+
 @media (max-width: 320px) {
     .container {
         width: 380px;
