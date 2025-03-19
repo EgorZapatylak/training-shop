@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    color: #343a40;
+    text-align: center;
+}
+.header {
+    font-size: 6rem;
+    margin: 0;
+}
+.message {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.link {
+    font-size: 1rem;
+    color: #007bff;
+    text-decoration: none;
+}
+
