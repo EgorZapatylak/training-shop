@@ -61,6 +61,17 @@
     margin-inside: 10px;
 }
 
+@media (min-width: 577px) and (max-width: 992px) {
+    .search_container {
+        width: 100%;
+        top: calc(100% - 68px);
+        align-content: center;
+    }
+    .search_container input {
+        width: 80%;
+    }
+}
+
 @media (min-width: 320px) and (max-width: 576px) {
     .search_container {
         width: 100%;
