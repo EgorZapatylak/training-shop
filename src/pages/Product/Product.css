@@ -1038,6 +1038,7 @@ button.selected {
 @media (min-width:381px) and (max-width: 576px) {
     .product_header {
         width: auto;
+        padding-top: 120px;
     }
 
     .rate {
@@ -1173,6 +1174,7 @@ button.selected {
 @media (max-width: 380px) {
     .product_header {
         width: 345px;
+        padding-top: 120px;
     }
 
     .rate {
