@@ -107,7 +107,7 @@ export function Header() {
                             onClick={()=> setIsSearchVisible(!isSearchVisible)}
                             style={{cursor: 'pointer'}}
                         />
-                    {isSearchVisible && <SearchBar/>}
+                    {isSearchVisible && <SearchBar closeSearch={()=>setIsSearchVisible(false)}/>}
                     <a href='https://www.google.by/'>
                         <img src={Global} alt=''/>
                     </a>
