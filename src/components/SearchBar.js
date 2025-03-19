@@ -77,7 +77,7 @@ export const SearchBar = ({closeSearch}) => {
                             onClick={()=>handleProductClick(product.category, product.id)} // Обработчик клика
                         >
                             <img src={product.imageURL} alt={product.name} className={styles.search_img}/>
-                            <span>{product.name}</span>
+                            <span dangerouslySetInnerHTML={{__html: highlightText(product.name, query)}}></span>
                         </li>
                         ))}
                 </ul>
@@ -85,3 +85,9 @@ export const SearchBar = ({closeSearch}) => {
         </div>
     );
 };
+
+// Функция для подсветки текста
+const highlightText = (text,query) => {
+    const regex = new RegExp(`(${query})`, 'gi');
+    return text.replace(regex, '<b>$1</b>');
+}
