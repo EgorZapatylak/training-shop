@@ -6,7 +6,7 @@ const ErrorPage = ({ errorCode, errorMessage }) => {
         <div className={style.container}>
             <h1 className={style.header}>{errorCode}</h1>
             <p className={style.message}>{errorMessage}</p>
-            <a href="/" className={style.link}>Вернуться на главную</a>
+            <a href="/#" className={style.link}>Вернуться на главную</a>
         </div>
     );
 };
