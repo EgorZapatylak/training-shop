@@ -50,6 +50,13 @@ export const SearchBar = () => {
         setShowDropdown(false); // Закрываем список после клика
     };
 
+    const handleEnterPress = (event) =>  {
+        if (event.key === 'Enter' && query.trim()) {
+            navigate(`/search?q=${query}`);
+            closeSearch();
+        }
+    }
+
     return(
         <div className={styles.search_container} ref={searchRef}>
             <input
