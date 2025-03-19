@@ -60,12 +60,13 @@
         padding-top: 140px;
         display: flex;
         flex-direction: column;
-        width: 100%;
+        width: 380px;
     }
 
     .container_item {
         display: flex;
         flex-direction: column;
+        width: auto;
     }
 
     .blog_container h2 {
