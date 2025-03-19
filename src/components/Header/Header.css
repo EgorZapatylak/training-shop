@@ -390,7 +390,7 @@ h1 {
 
     ul {
         top: 120px;
-        height: 55.5vh;
+        flex: 1;
     }
 
     .logo {
@@ -463,7 +463,6 @@ h1 {
 
     ul {
         top: 120px;
-        height: 55.5vh;
     }
 
     .logo {
