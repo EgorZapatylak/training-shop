@@ -40,8 +40,18 @@ export const SearchBar = ({closeSearch}) => {
             }
         };
 
+        const handleKeyDown = (event) => {
+            if (event.key === 'Escape') {
+                closeSearch();
+            }
+        }
+
         document.addEventListener('click', handleClickOutside);
-        return () => document.removeEventListener('click', handleClickOutside);
+        document.addEventListener('keydown', handleKeyDown);
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+            document.removeEventListener('keydown', handleKeyDown);
+        }
     }, [closeSearch]);
     
     // Функция для перехода на страницу товара
