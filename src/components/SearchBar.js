@@ -4,7 +4,7 @@ import styles from './SearchBar.module.css'
 import {useNavigate} from "react-router-dom";
 
 
-export const SearchBar = () => {
+export const SearchBar = ({closeSearch}) => {
 
     const [query, setQuery] = useState('');
     const [filteredProducts, setFilteredProducts] = useState([]);
@@ -36,18 +36,18 @@ export const SearchBar = () => {
     useEffect(()=>{
         const handleClickOutside = (event) => {
             if (searchRef.current && !searchRef.current.contains(event.target)){
-                setShowDropdown(false);
+                closeSearch();
             }
         };
 
         document.addEventListener('click', handleClickOutside);
         return () => document.removeEventListener('click', handleClickOutside);
-    }, []);
+    }, [closeSearch]);
     
     // Функция для перехода на страницу товара
     const handleProductClick = (category, id) => {
         navigate(`/${category}/${id}`); // Переход на страницу товара
-        setShowDropdown(false); // Закрываем список после клика
+        closeSearch(); // Закрываем список после клика
     };
 
     const handleEnterPress = (event) =>  {
