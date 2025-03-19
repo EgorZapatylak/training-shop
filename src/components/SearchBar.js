@@ -65,7 +65,8 @@ export const SearchBar = () => {
                 placeholder='Поиск товаров'
                 value={query}
                 onChange={(e)=> setQuery(e.target.value)}
-                onFocus={()=> setShowDropdown(true)}
+                onKeyDown={handleEnterPress}
+                autoFocus
             />
             {showDropdown && filteredProducts.length > 0 && (
                 <ul className={styles.search_dropdown}>
