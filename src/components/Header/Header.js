@@ -20,6 +20,7 @@ import {SearchBar} from "../SearchBar";
 export function Header() {
 
     const [menuActive, setMenuActive] = useState(false);
+    const [isSearchVisible, setIsSearchVisible] = useState(false);
 
     const cartItems = useSelector((state) => state.cart.items); // Получаем данные из корзины Redux
     const isCartOpen = useSelector((state) => state.cart.isCartOpen); // Состояние открытия корзины
