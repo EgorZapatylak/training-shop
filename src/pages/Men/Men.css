@@ -363,6 +363,7 @@
 @media (min-width:381px) and (max-width: 576px) {
     .men_header {
         width: auto;
+        padding-top: 120px;
     }
 
     .veia {
@@ -421,6 +422,7 @@
 @media (max-width: 380px) {
     .men_header {
         width: 345px;
+        padding-top: 120px;
     }
 
     .veia {
