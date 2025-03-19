@@ -1,4 +1,4 @@
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useMemo, useRef, useState} from "react";
 import {Products_base} from '../Products_base'
 import styles from './SearchBar.module.css'
 import {useNavigate} from "react-router-dom";
@@ -13,8 +13,9 @@ export const SearchBar = ({closeSearch}) => {
     const navigate = useNavigate(); // Создаем хук навигации
 
     // Объединяем товары из всех категорий в один массив
-    const allProducts = [...Products_base.men.map((p) => ({...p, category:'men'})),
-        ...Products_base.women.map((p) => ({...p, category:'women'}))]
+
+    const allProducts = useMemo(()=> [...Products_base.men.map((p) => ({...p, category:'men'})),
+        ...Products_base.women.map((p) => ({...p, category:'women'}))],[])
 
     // Фильтрация товаров при изменении запроса
     useEffect(()=> {
@@ -29,7 +30,7 @@ export const SearchBar = ({closeSearch}) => {
 
         setFilteredProducts(results);
         setShowDropdown(true);
-    }, [query]);
+    }, [allProducts, query]);
 
     //Закрытие списка при клике вне области поиска
 
