@@ -101,9 +101,13 @@ export function Header() {
                     </ul>
                 </div>
                 <div className='instryment'>
-                    <a href='https://www.google.by/'>
-                        <img src={Search} alt=''/>
-                    </a>
+                        <img
+                            src={Search}
+                            alt=''
+                            onClick={()=> setIsSearchVisible(!isSearchVisible)}
+                            style={{cursor: 'pointer'}}
+                        />
+                    {isSearchVisible && <SearchBar/>}
                     <a href='https://www.google.by/'>
                         <img src={Global} alt=''/>
                     </a>
