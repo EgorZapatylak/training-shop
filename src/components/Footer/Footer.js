@@ -108,22 +108,22 @@ export function Footer() {
                     <h3>Categories</h3>
                     <Link to="/men">Men</Link>
                     <Link to="/women">Women</Link>
-                    <a href="/accessories">Accessories</a>
-                    <a href="/beauty">Beauty</a>
+                    <Link to="/accessories">Accessories</Link>
+                    <Link to="/beauty">Beauty</Link>
                 </div>
                 <div className='categories'>
                     <h3>Information</h3>
-                    <a href="/aboutus">About Us</a>
-                    <a href="/contactus">Contact Us</a>
-                    <a href="/blog">Blog</a>
-                    <a href="/fqs">FAQs</a>
+                    <Link to="/aboutus">About Us</Link>
+                    <Link to="/contactus">Contact Us</Link>
+                    <Link to="/blog">Blog</Link>
+                    <Link to="/fqs">FAQs</Link>
                 </div>
                 <div className='categories'>
                     <h3>Useful Links</h3>
-                    <a href="/terms">Terms & Conditions</a>
-                    <a href="/returns">Returns & Exchanges</a>
-                    <a href="/shipping">Shipping & Delivery</a>
-                    <a href="/privacya">Privacy Policy</a>
+                    <Link to="/terms">Terms & Conditions</Link>
+                    <Link to="/returns">Returns & Exchanges</Link>
+                    <Link to="/shipping">Shipping & Delivery</Link>
+                    <Link to="/privacya">Privacy Policy</Link>
                 </div>
                 <div className='categories'>
                     <h3>Contact Us</h3>
