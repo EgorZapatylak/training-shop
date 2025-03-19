@@ -194,6 +194,7 @@
 @media (max-width: 992px) {
     .women_header {
         width: 962px;
+
     }
 
     .edit {
@@ -203,7 +204,8 @@
 
 @media (min-width:381px) and (max-width: 576px) {
     .women_header {
-        max-width: 100%;
+        width: auto;
+        padding-top: 120px;
     }
 
     .road,
@@ -222,7 +224,8 @@
 
 @media (max-width: 380px) {
     .women_header {
-        width: 330px;
+        width: 345px;
+        padding-top: 120px;
     }
 
     .road,
