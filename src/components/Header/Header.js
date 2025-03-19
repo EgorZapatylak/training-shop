@@ -15,6 +15,7 @@ import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {Cart} from "../Cart/Cart";
 import {closeCart, openCart} from "../../cartSlice";
+import {SearchBar} from "../SearchBar";
 
 export function Header() {
 
