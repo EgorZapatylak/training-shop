@@ -20,6 +20,7 @@ const styles = {
         backgroundColor: '#f8f9fa',
         color: '#343a40',
         textAlign: 'center',
+        width: '380px',
     },
     header: {
         fontSize: '6rem',
