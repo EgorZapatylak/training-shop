@@ -8,7 +8,6 @@ export const Contact = () => {
             <div className={style.container_map}>
                 <h1>Карта с маркером</h1>
                 <MapComponent/>
-                {/*<img src={Map} alt="map"/>*/}
             </div>
             <div className={style.contacts}>
                 <div className='loc'>
