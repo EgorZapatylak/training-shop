@@ -1,0 +1,26 @@
+.compare-bar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FFD500;
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+.compare-link {
+    text-decoration: none;
+    color: black;
+    margin-right: 10px;
+}
+
+.compare-clear {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
