@@ -341,8 +341,7 @@ export default function Product() {
                             isInCart ? 'REMOVE FROM CART' : 'ADD TO CART'
                         }</button>
                         <div className="heart_1"></div>
-                        <div className="scale_1" onClick={()=> (isInCompare ? removeFromCompare(product.id) : addToCompare(product))}>{isInCompare ? 'Убрать из сравнения' : 'Сравнить'}</div>
-                        <Link to='/compare'>Перейти к сравнению</Link>
+                        <div className="scale_1" onClick={()=> (isInCompare ? removeFromCompare(product.id) : addToCompare(product))}>{isInCompare}</div>
                     </div>
                     <div className="line"></div>
                     <div className='ship'>
