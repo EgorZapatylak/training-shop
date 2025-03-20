@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
+import React, {useCallback, useContext, useEffect, useRef, useState} from 'react';
 import './Product.css';
 import {Products_base} from "../../Products_base";
 import {Swiper, SwiperSlide} from "swiper/react";
@@ -13,6 +13,7 @@ import {StarRating} from "../../components/StarRating/StarRating";
 import {useParams} from "react-router";
 import {Link} from "react-router-dom";
 import {ReviewModal} from "../../components/ReviewModal/ReviewModal";
+import {CompareContext} from "../../context/CompareContext";
 
 
 export default function Product() {
@@ -30,6 +31,9 @@ export default function Product() {
     const [selectedSize, setSelectedSize] = useState(null);
     const dispatch = useDispatch();
     const cartItems = useSelector((state) => state.cart.items);
+
+    //
+    const {compareItems, addToCompare, removeFromCompare} = useContext(CompareContext);
 
     // Рефы для кнопок Swiper
     const prevThumbsRef = useRef(null);
@@ -192,6 +196,9 @@ export default function Product() {
         return <p>Товар не найден</p>;
     }
 
+    if (!compareItems) return null;
+    const isInCompare = compareItems.some((item) => item.id === product.id);
+
     return (
         <section>
             <div className='product_header'>
@@ -334,7 +341,8 @@ export default function Product() {
                             isInCart ? 'REMOVE FROM CART' : 'ADD TO CART'
                         }</button>
                         <div className="heart_1"></div>
-                        <div className="scale_1"></div>
+                        <div className="scale_1" onClick={()=> (isInCompare ? removeFromCompare(product.id) : addToCompare(product))}>{isInCompare ? 'Убрать из сравнения' : 'Сравнить'}</div>
+                        <Link to='/compare'>Перейти к сравнению</Link>
                     </div>
                     <div className="line"></div>
                     <div className='ship'>
