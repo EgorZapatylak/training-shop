@@ -9,24 +9,35 @@ import Product from "./pages/Product/Product";
 import {Contact} from "./components/Contact/Contact";
 import {Blog} from "./components/Blog/Blog";
 import NotFoundPage from "./components/NotFoundPage";
+import {CompareProvider} from "./context/CompareContext";
+import CompareBar from "./components/CompareBar/CompareBar";
+import ComparePage from "./components/ComparePage";
+
+// Импортируем
+
 
 const App = () => {
     return (
-        <div className="App">
-            <Router>
-                <Header/>
-                <Routes>
-                    <Route exact path="/" element={<Main/>}/>
-                    <Route exact path="/men" element={<Men/>}/>
-                    <Route exact path="/women" element={<Women/>}/>
-                    <Route exact path="/:category/:id" element={<Product/>}/>
-                    <Route exact path="/contact" element={<Contact/>}/>
-                    <Route exact path="/blog" element={<Blog/>}/>
-                    <Route exact path = '*' element={<NotFoundPage/>}/>
-                </Routes>
-                <Footer/>
-            </Router>
-        </div>
+        <CompareProvider>
+            <div className="App">
+                <Router>
+                    <Header/>
+                    <Routes>
+                        <Route exact path="/" element={<Main/>}/>
+                        <Route exact path="/men" element={<Men/>}/>
+                        <Route exact path="/women" element={<Women/>}/>
+                        <Route exact path="/:category/:id" element={<Product/>}/>
+                        <Route exact path="/contact" element={<Contact/>}/>
+                        <Route exact path="/blog" element={<Blog/>}/>
+                        <Route exact path='/compare' element={<ComparePage/>}/>
+                        <Route exact path = '*' element={<NotFoundPage/>}/>
+                    </Routes>
+                    <CompareBar/>
+                    <Footer/>
+                </Router>
+            </div>
+        </CompareProvider>
+
     );
 }
 
