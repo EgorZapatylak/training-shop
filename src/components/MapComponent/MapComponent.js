@@ -19,7 +19,7 @@ const MapComponent = () => {
 
     if (!isClient) return null; // Не рендерим карту на сервере
 
-    const position = [52.424162, 31.014214];
+    const position = [52.427878, 31.014614];
 
     return (
         <MapContainer center={position} zoom={13} style={{ height: '400px', width: '100%' }}>
@@ -28,7 +28,7 @@ const MapComponent = () => {
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             />
             <Marker position={position}>
-                <Popup>Москва, Россия</Popup>
+                <Popup>Гомель, Беларусь</Popup>
             </Marker>
         </MapContainer>
     );
