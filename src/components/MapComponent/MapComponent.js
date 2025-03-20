@@ -22,7 +22,7 @@ const MapComponent = () => {
     const position = [52.427878, 31.014614];
 
     return (
-        <MapContainer center={position} zoom={13} style={{ height: '400px', width: '100%' }}>
+        <MapContainer center={position} zoom={13} style={{ height: '350px', width: '100%' , zIndex: '3'}}>
             <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
