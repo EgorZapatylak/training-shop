@@ -57,3 +57,18 @@ export default function ComparePage() {
         </div>
     );
 }
+
+//Функция для замены названий полей на читабельные
+function getFieldLabel(key) {
+    const labels = {
+        imageURL: "Фото",
+        brand:"Брэнд",
+        material:"Материал",
+        price:"Цена",
+        sizes:"Размеры",
+        reviews:"Отзывы",
+        images:"Доступные цвета",
+    };
+    return labels[key] || key;
+}
+
