@@ -16,11 +16,15 @@ export default function ComparePage() {
         );
     }
 
-// Находим отличающиеся параметры
-    const allKeys = new Set(compareItems.flatMap((product) => Object.keys(product)));
-    const differentKeys = [...allKeys].filter((key) =>
-        compareItems.some((product, _, arr) => product[key] !== arr[0][key])
-    );
+    // Оставляем только нужные поля
+    const fieldToShow = ['imageURL','brand','material', 'price', 'sizes', 'reviews', 'images'];
+
+    //Определяем, какие поля отличаются
+
+    const differentKeys = fieldToShow.filter((key)=> {
+        const uniqueValues = new Set(compareItems.map((product)=> JSON.stringify(product[key])));
+        return uniqueValues.size > 1; // Если есть разные значения - это отличие
+    });
 
     return (
         <div className={style.compare_container}>
