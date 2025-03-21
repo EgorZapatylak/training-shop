@@ -34,9 +34,9 @@ export default function ComparePage() {
                 <tr>
                     <th>Название</th>
                     {compareItems.map((product) => (
-                        <th key={product.id}>
+                        <th key={product.name}>
                             {product.name}
-                            <button  className={style.remove_btn} onClick={() => removeFromCompare(product.id)}>×</button>
+                            <button  className={style.remove_btn} onClick={() => removeFromCompare(product.name)}>×</button>
                         </th>
                     ))}
                 </tr>
