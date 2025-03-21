@@ -91,3 +91,9 @@ function renderFieldValue(key, value) {
     return value || '-'
 }
 
+// Функция для вычисления среднего рейтинга
+function calculateAverageRating(reviews) {
+    if (!reviews || reviews.length === 0) return 'Нет оценок';
+    const sum = reviews.reduce((acc, review) => acc + review.rating, 0);
+    return (sum / reviews.length).toFixed(1);
+}
