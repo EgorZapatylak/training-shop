@@ -84,8 +84,9 @@ function renderFieldValue(key, value) {
         return `${value.length} отзыв(-ов), ${calculateAverageRating(value)} ⭐`;
     }
     if (key === 'images') {
-        return value.map((img, index)=>(
-            <span key={index} className={style.color_dot}>{img.color}</span>
+        const uniqueColors = [...new Set((value.map(img => img.color)))]
+        return uniqueColors.map((img, index)=>(
+            <span key={index} className={style.color_dot}>{img} </span>
         ));
     }
     return value || '-'
