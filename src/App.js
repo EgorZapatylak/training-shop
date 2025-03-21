@@ -11,7 +11,7 @@ import {Blog} from "./components/Blog/Blog";
 import NotFoundPage from "./components/NotFoundPage";
 import {CompareProvider} from "./context/CompareContext";
 import CompareBar from "./components/CompareBar/CompareBar";
-import ComparePage from "./components/ComparePage";
+import ComparePage from "./components/ComparePage/ComparePage";
 
 // Импортируем
 
@@ -37,7 +37,6 @@ const App = () => {
                 </Router>
             </div>
         </CompareProvider>
-
     );
 }
 
