@@ -70,3 +70,17 @@
     margin-left: 10px;
     border-radius: 50%;
 }
+
+@media (min-width: 320px) and (max-width: 576px) {
+    .compare_container {
+        width: 95vw;
+        padding-top: 140px;
+    }
+    .compare_table {
+        min-width: 320px;
+    }
+}
+
+* {
+    outline: 1px solid red;
+}
