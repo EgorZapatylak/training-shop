@@ -72,3 +72,22 @@ function getFieldLabel(key) {
     return labels[key] || key;
 }
 
+// Функция для рендеринга значений
+function renderFieldValue(key, value) {
+    if (key === 'imageURL') {
+        return <img src={value} alt="Товар" className={style.compare_image}/>;
+    }
+    if (key === 'sizes') {
+        return value.join(', ');
+    }
+    if (key === 'reviews') {
+        return `${value.length} отзыв(-ов), ${calculateAverageRating(value)} ⭐`;
+    }
+    if (key === 'images') {
+        return value.map((img, index)=>(
+            <span key={index} className={style.color_dot} style={{backgroundColor: img.color}}></span>
+        ));
+    }
+    return value || '-'
+}
+
