@@ -85,7 +85,7 @@ function renderFieldValue(key, value) {
     }
     if (key === 'images') {
         return value.map((img, index)=>(
-            <span key={index} className={style.color_dot} style={{backgroundColor: img.color}}></span>
+            <span key={index} className={style.color_dot}>{img.color}</span>
         ));
     }
     return value || '-'
