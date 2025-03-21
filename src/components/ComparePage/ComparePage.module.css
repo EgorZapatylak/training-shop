@@ -7,6 +7,10 @@
     font-family: Arial, sans-serif;
 }
 
+.compare_container h2{
+    margin-bottom: 20px;
+}
+
 .compare_table {
     width: 100%;
     min-width: 700px;
