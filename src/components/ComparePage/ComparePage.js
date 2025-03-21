@@ -42,21 +42,18 @@ export default function ComparePage() {
                 </tr>
                 </thead>
                 <tbody>
-                {differentKeys.map((key) => (
-                    <tr key={key}>
-                        <td>{key}</td>
+                {fieldToShow.map((key) => (
+                    <tr key={key} className={differentKeys.includes(key) ? `${style.compare_highlight}`:`${style}`}>
+                        <td>{getFieldLabel(key)}</td>
                         {compareItems.map((product) => (
-                            <td key={product.id} style={{ background: "yellow" }}>
-                                {typeof product[key] === 'object'
-                                ? JSON.stringify(product[key])
-                                : product[key] || '-'}
+                            <td key={product.name}>
+                                {renderFieldValue(key, product[key])}
                             </td>
                         ))}
                     </tr>
                 ))}
                 </tbody>
             </table>
-            <Link to="/">Вернуться к товарам</Link>
         </div>
     );
 }
