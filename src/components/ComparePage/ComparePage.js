@@ -1,14 +1,15 @@
-import {useCompare} from "../context/CompareContext";
+import {useCompare} from "../../context/CompareContext";
 import React from "react";
 import { Link } from "react-router-dom";
+import style from './ComparePage.module.css'
 
 export default function ComparePage() {
     const { compareItems, removeFromCompare } = useCompare();
-    
+
 
     if (!compareItems || compareItems.length === 0) {
         return (
-            <div>
+            <div className={style.compare_container}>
                 <h2>Список сравнения пуст</h2>
                 <Link to="/">Вернуться к товарам</Link>
             </div>
@@ -22,16 +23,16 @@ export default function ComparePage() {
     );
 
     return (
-        <div>
+        <div className={style.compare_container}>
             <h2>Сравнение товаров</h2>
-            <table border="1">
+            <table className={style.compare_table} border="1">
                 <thead>
                 <tr>
                     <th>Название</th>
                     {compareItems.map((product) => (
                         <th key={product.id}>
                             {product.name}
-                            <button onClick={() => removeFromCompare(product.id)}>×</button>
+                            <button  className={style.remove_btn} onClick={() => removeFromCompare(product.id)}>×</button>
                         </th>
                     ))}
                 </tr>
