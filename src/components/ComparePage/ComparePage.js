@@ -64,7 +64,7 @@ function getFieldLabel(key) {
         imageURL: "Фото",
         brand:"Брэнд",
         material:"Материал",
-        price:"Цена",
+        price:"Цена $",
         sizes:"Размеры",
         reviews:"Отзывы",
         images:"Доступные цвета",
