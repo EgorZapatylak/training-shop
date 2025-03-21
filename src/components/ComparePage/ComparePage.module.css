@@ -13,19 +13,24 @@
     border-collapse: collapse;
     background: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
 }
 
 .compare_table th {
     background: #FFD500; /* Жёлтый фон заголовков */
     padding: 10px;
-    text-align: left;
+    text-align: center;
     border: 1px solid #ddd;
 }
 
 .compare_table td {
     padding: 10px;
     border: 1px solid #ddd;
-    text-align: left;
+    text-align: center;
+}
+
+.compare_highlight td {
+    background-color: #ffecc4;
 }
 
 .compare_table tr:nth-child(even) {
@@ -34,6 +39,22 @@
 
 .compare_table tr:nth-child(odd) {
     background: white;
+}
+
+.compare_image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.compare_dot {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 5px;
+    border: 1px solid #ddd;
 }
 
 .remove_btn {
