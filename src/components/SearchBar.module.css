@@ -61,6 +61,20 @@
     margin-inside: 10px;
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    z-index: 998;
+}
+
+.no_scroll {
+    overflow: hidden !important;
+}
+
 @media (min-width: 577px) and (max-width: 992px) {
     .search_container {
         width: 100%;
