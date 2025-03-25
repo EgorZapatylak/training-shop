@@ -73,6 +73,7 @@
 
 .no_scroll {
     overflow: hidden !important;
+    padding-right: 15px;
 }
 
 @media (min-width: 577px) and (max-width: 992px) {
