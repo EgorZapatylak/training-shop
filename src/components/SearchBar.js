@@ -49,9 +49,15 @@ export const SearchBar = ({closeSearch}) => {
 
         document.addEventListener('click', handleClickOutside);
         document.addEventListener('keydown', handleKeyDown);
+
+        document.body.classList.add(`${styles.no_scroll}`);
+
         return () => {
             document.removeEventListener('click', handleClickOutside);
             document.removeEventListener('keydown', handleKeyDown);
+
+            // Выключаем скролл при закрытии поиска
+            document.body.classList.remove(`${styles.no_scroll}`);
         }
     }, [closeSearch]);
     
@@ -69,31 +75,34 @@ export const SearchBar = ({closeSearch}) => {
     }
 
     return(
-        <div className={styles.search_container} ref={searchRef}>
-            <input
-                type="text"
-                className={styles.search_info}
-                placeholder='Поиск товаров'
-                value={query}
-                onChange={(e)=> setQuery(e.target.value)}
-                onKeyDown={handleEnterPress}
-                autoFocus
-            />
-            {showDropdown && filteredProducts.length > 0 && (
-                <ul className={styles.search_dropdown}>
-                    {filteredProducts.map((product) => (
-                        <li
-                            key={product.id}
-                            className={styles.search_item}
-                            onClick={()=>handleProductClick(product.category, product.id)} // Обработчик клика
-                        >
-                            <img src={product.imageURL} alt={product.name} className={styles.search_img}/>
-                            <span dangerouslySetInnerHTML={{__html: highlightText(product.name, query)}}></span>
-                        </li>
+        <>
+            <div className={styles.overlay} onClick={closeSearch}></div>
+            <div className={styles.search_container} ref={searchRef}>
+                <input
+                    type="text"
+                    className={styles.search_info}
+                    placeholder='Поиск товаров'
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    onKeyDown={handleEnterPress}
+                    autoFocus
+                />
+                {showDropdown && filteredProducts.length > 0 && (
+                    <ul className={styles.search_dropdown}>
+                        {filteredProducts.map((product) => (
+                            <li
+                                key={product.id}
+                                className={styles.search_item}
+                                onClick={() => handleProductClick(product.category, product.id)} // Обработчик клика
+                            >
+                                <img src={product.imageURL} alt={product.name} className={styles.search_img}/>
+                                <span dangerouslySetInnerHTML={{__html: highlightText(product.name, query)}}></span>
+                            </li>
                         ))}
-                </ul>
-            )}
-        </div>
+                    </ul>
+                )}
+            </div>
+        </>
     );
 };
 
