@@ -131,8 +131,6 @@
 .green_button:hover {
     left: 0;
     right: 0;
-    top: 38%;
-    bottom: 38%;
     width: 100%;
     border-radius: 0;
 }
