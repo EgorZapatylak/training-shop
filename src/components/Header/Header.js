@@ -132,7 +132,7 @@ export function Header() {
             </div>
             <div className='line'></div>
             {/* Модальное окно корзины */}
-            {isCartOpen && <div className='cart_overlay' onClick={handleOverLayClick}></div>}
+            {isCartOpen && <div className={style.cart_overlay} onClick={handleOverLayClick}></div>}
 
             {isCartOpen && (
                 <div className={style.cart_modal}>
