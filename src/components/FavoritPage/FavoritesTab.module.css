@@ -20,6 +20,12 @@
     border-radius: 8px;
     background: #fff;
     cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.productCard:hover {
+    scale: 1.05;
+    transition: 0.5s ease;
 }
 
 .productCard img {
