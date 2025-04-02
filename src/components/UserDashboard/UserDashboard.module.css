@@ -13,6 +13,7 @@
 /* Навигация */
 .dashboard_nav {
     width: auto;
+    height: max-content;
     background: #f8f9fa;
     border-radius: 10px;
     align-content: center;
