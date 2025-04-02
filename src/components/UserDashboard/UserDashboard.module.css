@@ -1,0 +1,80 @@
+/* Общие стили */
+.user_dashboard {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding-top: 100px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 20px;
+}
+
+/* Навигация */
+.dashboard_nav {
+    width: auto;
+    background: #f8f9fa;
+    border-radius: 10px;
+    align-content: center;
+    padding: 15px;
+}
+
+.dashboard_nav ul {
+    list-style: none;
+    padding: 0;
+    gap: 15px;
+    align-content: center;
+}
+
+.dashboard_nav li {
+}
+
+.dashboard_nav button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: none;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    border-radius: 5px;
+}
+
+.dashboard_nav button:hover,
+.dashboard_nav button.active {
+    background: #007bff;
+    color: white;
+}
+
+/* Контент */
+.dashboard_content {
+    flex-grow: 1;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .user_dashboard {
+        flex-direction: column;
+    }
+
+    .dashboard_nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .dashboard_nav ul {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .dashboard_nav li {
+        flex-grow: 1;
+        text-align: center;
+    }
+}
