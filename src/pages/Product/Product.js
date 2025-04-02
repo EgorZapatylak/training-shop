@@ -14,6 +14,7 @@ import {useParams} from "react-router";
 import {Link} from "react-router-dom";
 import {ReviewModal} from "../../components/ReviewModal/ReviewModal";
 import {CompareContext} from "../../context/CompareContext";
+import {FavoritesContext} from "../../components/FavoritPage/FavotirContext";
 
 
 export default function Product() {
@@ -169,6 +170,9 @@ export default function Product() {
             }, 300);
         }
     }, [thumbsSwiper]);
+
+    const {favorites, toggleFavorite} = useContext(FavoritesContext);
+    const isFavorite = favorites.some((fav)=> fav.id === product.id);
 
     useEffect(() => {
         // Прокрутка страницы к началу
@@ -340,7 +344,7 @@ export default function Product() {
                         <button onClick={handleCartButtonClick}>{
                             isInCart ? 'REMOVE FROM CART' : 'ADD TO CART'
                         }</button>
-                        <div className="heart_1"></div>
+                        <div className="heart_1" onClick={()=> toggleFavorite(product)}></div>
                         <div className="scale_1" onClick={()=> (isInCompare ? removeFromCompare(product.id) : addToCompare(product))}>{isInCompare}</div>
                     </div>
                     <div className="line"></div>
