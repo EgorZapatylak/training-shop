@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './Header.css';
+import style from './Header.module.css';
 import Phone from '../Header/img/phone.svg';
 import Location from '../Header/img/location.svg';
 import Clock from '../Header/img/clock.svg';
@@ -41,23 +41,23 @@ export function Header() {
     }
 
     return (
-        <div className="header_container">
-            <div className="top_bar">
-                <div className='info'>
-                    <div className='phone'>
+        <div className={style.header_container}>
+            <div className={style.top_bar}>
+                <div className={style.info}>
+                    <div className={style.phone}>
                         <img src={Phone} alt=''/>
                         <p>+375 29 100 20 30</p>
                     </div>
-                    <div className='location'>
+                    <div className={style.location}>
                         <img src={Location} alt=''/>
                         <p>Belarus, Gomel, Lange 17</p>
                     </div>
-                    <div className='time'>
+                    <div className={style.time}>
                         <img src={Clock} alt=''/>
                         <p>All week 24/7</p>
                     </div>
                 </div>
-                <div className='social'>
+                <div className={style.social}>
                     <a href='https://www.facebook.com/'>
                         <img src={Facebook} alt=''/>
                     </a>
@@ -72,12 +72,12 @@ export function Header() {
                     </a>
                 </div>
             </div>
-            <div className="nav">
-                <div className='logo'>
+            <div className={style.nav}>
+                <div className={style.logo}>
                     <Link to="/"><h1>CleverShop</h1></Link>
                 </div>
-                <div className='nav-item'>
-                    <ul className={menuActive ? 'active' : ''} onClick={() => setMenuActive(false)}>
+                <div className={style.nav_item}>
+                    <ul className={menuActive ? style.active : ''} onClick={() => setMenuActive(false)}>
                         <li>
                             <Link to="/about"><a href='/about'>About Us</a></Link>
                         </li>
@@ -100,7 +100,7 @@ export function Header() {
                         </li>
                     </ul>
                 </div>
-                <div className='instryment'>
+                <div className={style.instryment}>
                         <img
                             src={Search}
                             alt=''
@@ -111,17 +111,21 @@ export function Header() {
                     <a href='https://www.google.by/'>
                         <img src={Global} alt=''/>
                     </a>
-                    <a href='https://www.google.by/'>
-                        <img src={User} alt=''/>
-                    </a>
-                    <div className='cart_icon' onClick={() => dispatch(openCart())}>
+                    <Link to='/dashboard'>
+                        <img
+                        src={User}
+                        alt=''
+                        style={{cursor: 'pointer'}}
+                    />
+                    </Link>
+                    <div className={style.cart_icon} onClick={() => dispatch(openCart())}>
                         <img src={Shopping} alt="Cart"/>
-                        {totalItems > 0 && <span className='cart_count'>{totalItems}</span>}
+                        {totalItems > 0 && <span className={style.cart_count}>{totalItems}</span>}
                     </div>
                     <nav>
-                        <div className={menuActive ? 'toggle' : 'burger_btn'}
+                        <div className={menuActive ? style.toggle : style.burger_btn}
                              onClick={() => setMenuActive(!menuActive)}>
-                            <span className={menuActive ? 'active' : ''}/>
+                            <span className={menuActive ? style.active : ''}/>
                         </div>
                     </nav>
                 </div>
@@ -131,8 +135,8 @@ export function Header() {
             {isCartOpen && <div className='cart_overlay' onClick={handleOverLayClick}></div>}
 
             {isCartOpen && (
-                <div className='cart_modal'>
-                    <div className='cart_modal_content' onClick={(e) => e.stopPropagation()}>
+                <div className={style.cart_modal}>
+                    <div className={style.cart_modal_content} onClick={(e) => e.stopPropagation()}>
                         <Cart/>
                     </div>
                 </div>
