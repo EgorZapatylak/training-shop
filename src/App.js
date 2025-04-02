@@ -13,32 +13,36 @@ import {CompareProvider} from "./context/CompareContext";
 import CompareBar from "./components/CompareBar/CompareBar";
 import ComparePage from "./components/ComparePage/ComparePage";
 import {UserDashboard} from "./components/UserDashboard/UserDashboard";
+import {FavoritesProvider} from "./components/FavoritPage/FavotirContext";
 
 // Импортируем
 
 
 const App = () => {
     return (
-        <CompareProvider>
-            <div className="App">
-                <Router>
-                    <Header/>
-                    <Routes>
-                        <Route exact path="/" element={<Main/>}/>
-                        <Route exact path="/men" element={<Men/>}/>
-                        <Route exact path="/women" element={<Women/>}/>
-                        <Route exact path="/:category/:id" element={<Product/>}/>
-                        <Route exact path="/contact" element={<Contact/>}/>
-                        <Route exact path="/blog" element={<Blog/>}/>
-                        <Route exact path='/compare' element={<ComparePage/>}/>
-                        <Route exact path='/dashboard' element={<UserDashboard/>}/>
-                        <Route exact path = '*' element={<NotFoundPage/>}/>
-                    </Routes>
-                    <CompareBar/>
-                    <Footer/>
-                </Router>
-            </div>
-        </CompareProvider>
+        <FavoritesProvider>
+            <CompareProvider>
+                <div className="App">
+                    <Router>
+                        <Header/>
+                        <Routes>
+                            <Route exact path="/" element={<Main/>}/>
+                            <Route exact path="/men" element={<Men/>}/>
+                            <Route exact path="/women" element={<Women/>}/>
+                            <Route exact path="/:category/:id" element={<Product/>}/>
+                            <Route exact path="/contact" element={<Contact/>}/>
+                            <Route exact path="/blog" element={<Blog/>}/>
+                            <Route exact path='/compare' element={<ComparePage/>}/>
+                            <Route exact path='/dashboard' element={<UserDashboard/>}/>
+                            <Route exact path = '*' element={<NotFoundPage/>}/>
+                        </Routes>
+                        <CompareBar/>
+                        <Footer/>
+                    </Router>
+                </div>
+            </CompareProvider>
+        </FavoritesProvider>
+
     );
 }
 
