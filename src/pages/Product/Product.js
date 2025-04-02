@@ -344,7 +344,9 @@ export default function Product() {
                         <button onClick={handleCartButtonClick}>{
                             isInCart ? 'REMOVE FROM CART' : 'ADD TO CART'
                         }</button>
-                        <div className="heart_1" onClick={()=> toggleFavorite(product)}></div>
+                        <div className="heart_1" onClick={()=> toggleFavorite(product)}>
+                            {isFavorite}
+                        </div>
                         <div className="scale_1" onClick={()=> (isInCompare ? removeFromCompare(product.id) : addToCompare(product))}>{isInCompare}</div>
                     </div>
                     <div className="line"></div>
