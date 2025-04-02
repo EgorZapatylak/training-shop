@@ -12,6 +12,7 @@ import NotFoundPage from "./components/NotFoundPage";
 import {CompareProvider} from "./context/CompareContext";
 import CompareBar from "./components/CompareBar/CompareBar";
 import ComparePage from "./components/ComparePage/ComparePage";
+import {UserDashboard} from "./components/UserDashboard/UserDashboard";
 
 // Импортируем
 
@@ -30,6 +31,7 @@ const App = () => {
                         <Route exact path="/contact" element={<Contact/>}/>
                         <Route exact path="/blog" element={<Blog/>}/>
                         <Route exact path='/compare' element={<ComparePage/>}/>
+                        <Route exact path='/dashboard' element={<UserDashboard/>}/>
                         <Route exact path = '*' element={<NotFoundPage/>}/>
                     </Routes>
                     <CompareBar/>
