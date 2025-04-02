@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import styles from './UserDashboard.module.css'
+import {Profile} from "../Profile/Profile";
 
 
     // Заглушки для секций
-    const Profile = () => <div>Информация о профиле</div>;
     const Favorites = () => <div>Список избранных товаров</div>;
     const Orders = () => <div>История заказов</div>;
     const Settings = () => <div>Настройки аккаунта</div>;
