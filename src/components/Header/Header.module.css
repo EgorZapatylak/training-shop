@@ -117,19 +117,19 @@ h1 {
     line-height: 32px;
 }
 
-.nav-item {
+.nav_item {
     height: 16px;
     width: 585px;
 }
 
-.nav-item li {
+.nav_item li {
     list-style-type: none;
     font-style: normal;
     font-weight: normal;
     line-height: 16px;
 }
 
-.nav-item a {
+.nav_item a {
     text-decoration: none;
     color: #121212;
 }
