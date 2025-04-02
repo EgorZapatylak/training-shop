@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import styles from './UserDashboard.module.css'
 import {Profile} from "../Profile/Profile";
+import {FavoritesTab} from "../FavoritPage/FavoritPage"
 
 
     // Заглушки для секций
-    const Favorites = () => <div>Список избранных товаров</div>;
     const Orders = () => <div>История заказов</div>;
     const Settings = () => <div>Настройки аккаунта</div>;
 
@@ -16,7 +16,7 @@ import {Profile} from "../Profile/Profile";
                 case "profile":
                     return <Profile />;
                 case "favorites":
-                    return <Favorites />;
+                    return <FavoritesTab />;
                 case "orders":
                     return <Orders />;
                 case "settings":
