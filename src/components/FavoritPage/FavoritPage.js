@@ -7,6 +7,14 @@ export const FavoritesTab = () => {
     const { favorites, toggleFavorite } = useContext(FavoritesContext);
     const navigate = useNavigate();
 
+    const handleProductClick = (product) => {
+        if (product.category === 'men') {
+            navigate(`/men/${product.id}`);
+        } else if (product.category === 'women') {
+            navigate(`/women/${product.id}`)
+        }
+    }
+
     return (
         <div className={styles.favorites}>
             <h2>Избранное</h2>
@@ -18,13 +26,12 @@ export const FavoritesTab = () => {
                         <div
                             key={product.id}
                             className={styles.productCard}
-                            onClick={() => navigate(`/${category}/${product.id}`)}
+                            onClick={() => handleProductClick(product)}
                         >
-                            <img src={product.image} alt={product.name} />
+                            <img src={product.imageURL} alt={product.name} />
                             <h3>{product.name}</h3>
                             <p>{product.price} руб.</p>
                             <button
-                                className={styles.removeButton}
                                 onClick={(e) => {
                                     e.stopPropagation(); // Предотвращает переход при нажатии на кнопку
                                     toggleFavorite(product);
