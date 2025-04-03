@@ -17,7 +17,6 @@ import {FavoritesProvider} from "./components/FavoritPage/FavotirContext";
 
 // Импортируем
 
-
 const App = () => {
     return (
         <FavoritesProvider>
