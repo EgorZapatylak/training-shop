@@ -1,0 +1,37 @@
+.orders {
+    padding: 20px;
+}
+
+.ordersList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.orderCard {
+    background: #f8f8f8;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.orderCard h3 {
+    margin: 0;
+}
+
+.orderCard p {
+    margin: 5px 0;
+}
+
+.orderCard button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.orderCard button:hover {
+    background: #0056b3;
+}
