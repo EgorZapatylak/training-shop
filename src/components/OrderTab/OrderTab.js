@@ -57,7 +57,7 @@ export const OrderTab = () => {
                             <p><strong>Дата:</strong> {order.date}</p>
                             <p><strong>Статус:</strong> {order.status}</p>
                             <p><strong>Метод оплаты:</strong> {order.paymentDetails.method}</p>
-                            <p><strong>Доставка:</strong> {order.deliveryInfo.address || "Не указано"}</p>
+                            <p><strong>Доставка:</strong> {order.deliveryInfo.apartment || "Не указано"}</p>
                         </li>
                     ))}
                 </ul>
