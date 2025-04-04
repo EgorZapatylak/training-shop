@@ -46,15 +46,12 @@ export function Cart() {
         if (paymentRef.current) {
             paymentRef.current.submitPayment();
         }
-
-        setTimeout(() => {
             if (isPaymentValid) {
                 handleOrder();
             } else {
                 alert('Payment details are invalid');
             }
-        }, 100)
-    }
+        }
 
     const handleOrder = () => {
         if (!isPaymentValid) {
