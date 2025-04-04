@@ -83,7 +83,9 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
             console.log('Форма успешно отправлена');
 
             //Получаем данные корзины и доставки из localStorage
-            const cartItems = JSON.parse(localStorage.getItem('cart'))||[];
+            console.log('cart before parse:', localStorage.getItem('cart'));
+            console.log('deliveryInfo before parse:', localStorage.getItem('deliveryInfo'));
+            const cartItems = JSON.parse(localStorage.getItem('cartItems'))||[];
             const deliveryInfo = JSON.parse(localStorage.getItem('deliveryInfo'))||[];
 
             //Формируем заказ
@@ -110,7 +112,7 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
             localStorage.removeItem('cart');
 
             //Выводим сообщение
-            alert('Заказ успешного оформления!');
+            alert('Заказ успешно оформлен!');
         }
     };
 
