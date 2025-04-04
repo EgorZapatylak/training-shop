@@ -81,6 +81,36 @@ export const Payment = forwardRef(({setIsPaymentValid}, ref) => {
         if (isValid) {
             // Действия при успешной валидации
             console.log('Форма успешно отправлена');
+
+            //Получаем данные корзины и доставки из localStorage
+            const cartItems = JSON.parse(localStorage.getItem('cart'))||[];
+            const deliveryInfo = JSON.parse(localStorage.getItem('deliveryInfo'))||[];
+
+            //Формируем заказ
+            const newOrder = {
+                id: Date.now(),
+                items: cartItems,
+                deliveryInfo,
+                paymentDetails: {
+                    method: selectedMethod,
+                    cardNumber: selectedMethod !=='cash' ? cardNumber: 'Наличные',
+                    expiryDate: selectedMethod === 'visa' || selectedMethod === 'mastercard' ? expiryDate : null,
+                    email: selectedMethod === 'paypal' ? email: null,
+                },
+                date: new Date().toLocaleString(),
+                status: 'Ожидает подтверждения',
+            };
+
+            // Сохраняем заказ в localStorage
+            const savedOrder = JSON.parse(localStorage.getItem('orders')) || [];
+            savedOrder.push(newOrder);
+            localStorage.setItem('orders', JSON.stringify(savedOrder));
+
+            //Очищаем корзину
+            localStorage.removeItem('cart');
+
+            //Выводим сообщение
+            alert('Заказ успешного оформления!');
         }
     };
 
