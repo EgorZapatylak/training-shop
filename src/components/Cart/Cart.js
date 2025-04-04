@@ -76,6 +76,11 @@ export function Cart() {
         }
     }
 
+    // const handleDeliveryChange = (e) => {
+    //     const {name, value} = e.target;
+    //     setFormData((prev) => ({...prev, [name]: value}));
+    // }
+
     // Функция для расчета цены за еденицу товара с учетом скидки
     const calculatePriceDiscount = (item) => {
 
@@ -96,6 +101,11 @@ export function Cart() {
 
     const handleNextStep = () => {
         console.log('HandleNextStep called')
+
+        //Сохранение данных в localStorage перед переходом к оплате
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        localStorage.setItem('deliveryInfo', JSON.stringify(formData));
+
         if (step === 2) {
             const isValid = validateForm();
             console.log('validation result:', isValid);
