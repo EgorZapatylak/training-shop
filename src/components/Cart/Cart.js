@@ -104,7 +104,7 @@ export function Cart() {
 
         //Сохранение данных в localStorage перед переходом к оплате
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
-        localStorage.setItem('deliveryInfo', JSON.stringify(formData));
+        localStorage.setItem('deliveryInfo', JSON.stringify(formData,deliveryMethod));
 
         if (step === 2) {
             const isValid = validateForm();
